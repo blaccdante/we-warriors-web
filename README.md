@@ -34,20 +34,69 @@ We Warriors is committed to supporting people afflicted with sickle cell disease
 
 ## 🖼️ Website Showcase
 
-### Homepage - Hero Section
-*The powerful "We Warriors" branding with the journey visualization showing the path from Pain → Faith → Hope → Strength*
+Below are screenshots showcasing the beautiful, modern design and comprehensive features of the We Warriors platform:
 
-### Support Resources
-*Comprehensive support sections organized into three main categories: Medical Support, Financial Assistance, and Educational Resources*
+### 1. Homepage - Hero Section
+![We Warriors Hero Section](docs/images/01-hero-section.png)
+*The powerful "We Warriors" branding with the journey visualization showing the path from **Pain → Faith → Hope → Strength**. Features the clean logo design, inspiring tagline "From Pain comes Strength • Through Faith we Hope", and the floating journey elements with beautiful animations.*
 
-### Faith & Hope Section
-*Spiritual strength resources featuring inspirational content, scripture, and community prayer support*
+### 2. Support Resources Page
+![Support Resources](docs/images/02-support-resources.png)
+*Comprehensive support sections organized into three main categories:*
+- **Medical Support**: Find Specialists, Treatment Centers, Emergency Care Guide, Pain Management
+- **Financial Assistance**: Insurance Navigation, Prescription Assistance, Travel Support, Emergency Funds  
+- **Educational Resources**: School Advocacy, Workplace Rights, Family Education, Caregiver Support
 
-### Get Involved Section
-*Multiple ways to contribute to the warrior community through donations, volunteering, and advocacy with beautifully designed call-to-action cards*
+### 3. Faith & Hope Section
+![Faith and Hope Section](docs/images/03-faith-hope.png)
+*Spiritual strength resources featuring inspirational content with:*
+- **Scripture**: "But those who hope in the Lord will renew their strength..." - Isaiah 40:31
+- **Through Faith We Hope**: Message of faith anchoring warriors through the storm
+- **Spiritual Resources**: Daily Devotions, Prayer Request Network, Faith-Based Coping Strategies, Community Prayer Groups
 
-### Warrior Community Stories
-*Community testimonials showcasing strength, hope, and triumph over adversity with personal stories of faith and resilience*
+### 4. Get Involved Section  
+![Get Involved Section](docs/images/04-get-involved.png)
+*Multiple ways to contribute to the warrior community with beautifully designed call-to-action cards:*
+- **💗 Donate**: Fund research, support services, and advocacy efforts for the warrior community
+- **🤝 Volunteer**: Join the volunteer network to support warriors, families, and community outreach
+- **📢 Advocate**: Raise awareness, influence policy, and ensure sickle cell disease gets the attention it deserves
+
+### 5. Warrior Community Stories
+![Warrior Stories Section](docs/images/05-warrior-stories.png)
+*Community testimonials showcasing strength, hope, and triumph over adversity:*
+- **Warrior Stories**: Personal testimonies like "Through faith, I found strength I never knew I had. Every crisis became a testimony of God's grace."
+- **Connect & Support**: Join Support Groups, Share Your Story, Find Events
+- **Community Strength**: Stories from warriors like **Rachel, 34, Sickle Cell Warrior** and others sharing their journeys
+
+### 6. Dark Mode Hero Section
+![Dark Mode Hero](docs/images/06-hero-dark-mode.png)
+*The stunning dark mode view of the homepage showing:*
+- **Elegant Dark Theme**: Beautiful contrast with the maroon-to-gold journey theme
+- **Enhanced Readability**: Perfect visibility with the Journey visualization (Pain, Faith, Hope, Strength circles)
+- **Modern Design**: Sophisticated dark background highlighting the "We Warriors" branding
+- **Consistent Branding**: Clean navigation with theme toggle functionality
+
+---
+
+### Design Highlights
+
+🎨 **Visual Excellence**: 
+- Sophisticated maroon-to-gold gradient journey theme
+- Clean, modern typography with Playfair Display and Inter fonts
+- Beautiful floating animations and hover effects
+- Consistent visual hierarchy throughout
+
+♿ **Accessibility First**: 
+- WCAG 2.1 AA compliant design
+- High contrast ratios for readability
+- Keyboard navigation support
+- Screen reader compatible
+
+📱 **Responsive Design**: 
+- Mobile-first approach
+- Beautiful layouts across all device sizes
+- Touch-friendly interactions
+- Progressive enhancement
 
 ## 🚀 Technical Stack
 
