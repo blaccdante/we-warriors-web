@@ -1,0 +1,350 @@
+/* Emergency Debug CSS - Forces visible text and backgrounds */
+
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: #1A1A1A !important;
+    background-color: #FFFFFF !important;
+}
+
+/* Header and navigation */
+.site-header {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #E5E7EB;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 70px;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #8B5CF6 !important;
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: #374151 !important;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #8B5CF6 !important;
+    background-color: rgba(139, 92, 246, 0.1);
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #8B5CF6, #A855F7) !important;
+    color: white !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.25);
+}
+
+/* Main content */
+main {
+    margin-top: 80px;
+}
+
+/* Hero section */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white !important;
+}
+
+.hero-tagline {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.hero-description {
+    font-size: 1.125rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #DC2626 !important;
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25);
+}
+
+.btn-primary:hover {
+    background: #B91C1C !important;
+    transform: translateY(-2px);
+    color: white !important;
+}
+
+.btn-secondary {
+    background: transparent !important;
+    color: white !important;
+    border: 2px solid white;
+}
+
+.btn-secondary:hover {
+    background: white !important;
+    color: #667eea !important;
+}
+
+/* Sections */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+section {
+    padding: 6rem 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1A1A1A !important;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1.25rem;
+    color: #6B7280 !important;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Cards */
+.about-grid, .support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.about-card, .support-card, .content-card {
+    background: white !important;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.about-card:hover, .support-card:hover, .content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1A1A1A !important;
+    margin-bottom: 1rem;
+}
+
+.card-description {
+    color: #6B7280 !important;
+    margin-bottom: 1.5rem;
+}
+
+.card-link {
+    color: #8B5CF6 !important;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.card-link:hover {
+    color: #7C3AED !important;
+}
+
+/* Page specific styles */
+.page-header {
+    background: linear-gradient(135deg, #8B5CF6, #A855F7) !important;
+    color: white !important;
+    padding: 8rem 0 4rem;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white !important;
+    margin-bottom: 1rem;
+}
+
+.page-description {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9) !important;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.page-content {
+    padding: 6rem 0;
+    background: #F9FAFB !important;
+}
+
+/* Text elements */
+h1, h2, h3, h4, h5, h6 {
+    color: #1A1A1A !important;
+    font-weight: 600;
+}
+
+p, li, span {
+    color: #374151 !important;
+}
+
+a {
+    color: #8B5CF6 !important;
+}
+
+a:hover {
+    color: #7C3AED !important;
+}
+
+/* Footer */
+.site-footer {
+    background: #1F2937 !important;
+    color: white !important;
+    padding: 3rem 0 1rem;
+}
+
+.site-footer h1, .site-footer h2, .site-footer h3, .site-footer h4, .site-footer h5, .site-footer h6,
+.site-footer p, .site-footer li, .site-footer span {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.site-footer a {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.site-footer a:hover {
+    color: white !important;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .about-grid, .support-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Ensure visibility of all interactive elements */
+button, input, select, textarea {
+    background: white !important;
+    color: #1A1A1A !important;
+    border: 1px solid #D1D5DB;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+}
+
+button:hover, input:focus, select:focus, textarea:focus {
+    border-color: #8B5CF6 !important;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}

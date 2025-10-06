@@ -43,6 +43,7 @@
                 <div class="logo-container">
                     <a href="#home" class="logo-link" aria-label="We Warriors Home">
                         <img src="images/logo.svg" alt="We Warriors Logo - From Pain comes Strength Through Faith we Hope" class="logo">
+                        <span class="logo-text">We Warriors</span>
                     </a>
                 </div>
                 
@@ -58,17 +59,41 @@
                     <li class="nav-item" role="none">
                         <a href="#home" class="nav-link active" role="menuitem">Home</a>
                     </li>
-                    <li class="nav-item" role="none">
-                        <a href="#about" class="nav-link" role="menuitem">About Sickle Cell</a>
+                    <li class="nav-item dropdown" role="none">
+                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Support</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="support/about-sickle-cell.html">About Sickle Cell</a></li>
+                            <li><a href="support/support-groups.html">Support Groups</a></li>
+                            <li><a href="support/counseling.html">Counseling Services</a></li>
+                            <li><a href="support/resources.html">Resources</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown" role="none">
+                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Information</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="information/what-is-sickle-cell.html">What is Sickle Cell</a></li>
+                            <li><a href="information/types.html">Types of Sickle Cell</a></li>
+                            <li><a href="information/diagnosis-treatment.html">Diagnosis & Treatment</a></li>
+                            <li><a href="information/research.html">Research & Trials</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown" role="none">
+                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Community</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="community/forum.html">Forum</a></li>
+                            <li><a href="community/blog.html">Blog</a></li>
+                            <li><a href="community/events.html">Events</a></li>
+                            <li><a href="community/gallery.html">Gallery</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item" role="none">
-                        <a href="#support" class="nav-link" role="menuitem">Support Resources</a>
+                        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                            <span class="sun-icon">☀️</span>
+                            <span class="moon-icon">🌙</span>
+                        </button>
                     </li>
                     <li class="nav-item" role="none">
-                        <a href="#community" class="nav-link" role="menuitem">Community</a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a href="#faith" class="nav-link" role="menuitem">Faith & Hope</a>
+                        <a href="pages/contact.html" class="nav-link" role="menuitem">Contact</a>
                     </li>
                     <li class="nav-item" role="none">
                         <a href="#get-involved" class="nav-link cta-button" role="menuitem">Get Involved</a>
@@ -138,7 +163,7 @@
                             A genetic blood disorder where red blood cells become misshapen, 
                             causing pain and complications throughout the body.
                         </p>
-                        <a href="#" class="card-link">Learn More</a>
+                        <a href="information/what-is-sickle-cell.html" class="card-link">Learn More</a>
                     </div>
                     
                     <div class="about-card">
@@ -148,7 +173,7 @@
                             Modern treatments including medications, blood transfusions, 
                             and emerging gene therapies offer hope for better outcomes.
                         </p>
-                        <a href="#" class="card-link">Explore Treatments</a>
+                        <a href="information/diagnosis-treatment.html" class="card-link">Explore Treatments</a>
                     </div>
                     
                     <div class="about-card">
@@ -158,7 +183,7 @@
                             Breakthrough research in gene therapy and cure development 
                             brings us closer to ending sickle cell disease.
                         </p>
-                        <a href="#" class="card-link">Research Updates</a>
+                        <a href="information/research.html" class="card-link">Research Updates</a>
                     </div>
                 </div>
             </div>
@@ -176,30 +201,30 @@
                     <div class="support-category">
                         <h3 class="category-title">Medical Support</h3>
                         <ul class="support-list">
-                            <li><a href="#">Find Specialists</a></li>
-                            <li><a href="#">Treatment Centers</a></li>
-                            <li><a href="#">Emergency Care Guide</a></li>
-                            <li><a href="#">Pain Management</a></li>
+                            <li><a href="support/resources.html#specialists">Find Specialists</a></li>
+                            <li><a href="support/resources.html#treatment-centers">Treatment Centers</a></li>
+                            <li><a href="support/resources.html#emergency">Emergency Care Guide</a></li>
+                            <li><a href="information/diagnosis-treatment.html#pain-management">Pain Management</a></li>
                         </ul>
                     </div>
                     
                     <div class="support-category">
                         <h3 class="category-title">Financial Assistance</h3>
                         <ul class="support-list">
-                            <li><a href="#">Insurance Navigation</a></li>
-                            <li><a href="#">Prescription Assistance</a></li>
-                            <li><a href="#">Travel Support</a></li>
-                            <li><a href="#">Emergency Funds</a></li>
+                            <li><a href="support/resources.html#insurance">Insurance Navigation</a></li>
+                            <li><a href="support/resources.html#prescription-assistance">Prescription Assistance</a></li>
+                            <li><a href="support/resources.html#travel-support">Travel Support</a></li>
+                            <li><a href="support/resources.html#emergency-funds">Emergency Funds</a></li>
                         </ul>
                     </div>
                     
                     <div class="support-category">
                         <h3 class="category-title">Educational Resources</h3>
                         <ul class="support-list">
-                            <li><a href="#">School Advocacy</a></li>
-                            <li><a href="#">Workplace Rights</a></li>
-                            <li><a href="#">Family Education</a></li>
-                            <li><a href="#">Caregiver Support</a></li>
+                            <li><a href="information/what-is-sickle-cell.html#living-with">School Advocacy</a></li>
+                            <li><a href="information/what-is-sickle-cell.html#living-with">Workplace Rights</a></li>
+                            <li><a href="information/what-is-sickle-cell.html">Family Education</a></li>
+                            <li><a href="support/about-sickle-cell.html">Caregiver Support</a></li>
                         </ul>
                     </div>
                 </div>
@@ -239,9 +264,9 @@
                     <div class="community-actions">
                         <h3 class="actions-title">Connect & Support</h3>
                         <div class="action-buttons">
-                            <a href="#" class="btn btn-community">Join Support Groups</a>
-                            <a href="#" class="btn btn-community">Share Your Story</a>
-                            <a href="#" class="btn btn-community">Find Events</a>
+                            <a href="support/support-groups.html" class="btn btn-community">Join Support Groups</a>
+                            <a href="community/forum.html" class="btn btn-community">Share Your Story</a>
+                            <a href="community/events.html" class="btn btn-community">Find Events</a>
                         </div>
                     </div>
                 </div>
@@ -275,11 +300,11 @@
                     <div class="faith-resources">
                         <h3 class="resources-title">Spiritual Resources</h3>
                         <ul class="faith-list">
-                            <li><a href="#">Daily Devotions for Warriors</a></li>
-                            <li><a href="#">Prayer Request Network</a></li>
-                            <li><a href="#">Faith-Based Coping Strategies</a></li>
-                            <li><a href="#">Spiritual Counseling</a></li>
-                            <li><a href="#">Community Prayer Groups</a></li>
+                            <li><a href="community/blog.html">Daily Devotions for Warriors</a></li>
+                            <li><a href="community/forum.html">Prayer Request Network</a></li>
+                            <li><a href="support/counseling.html">Faith-Based Coping Strategies</a></li>
+                            <li><a href="support/counseling.html">Spiritual Counseling</a></li>
+                            <li><a href="support/support-groups.html">Community Prayer Groups</a></li>
                         </ul>
                     </div>
                 </div>
@@ -302,7 +327,7 @@
                             Your donations fund research, support services, 
                             and advocacy efforts for the warrior community.
                         </p>
-                        <a href="#" class="btn btn-primary">Donate Now</a>
+                        <a href="pages/donate.html" class="btn btn-primary">Donate Now</a>
                     </div>
                     
                     <div class="involvement-card">
@@ -312,7 +337,7 @@
                             Join our volunteer network to support warriors, 
                             families, and community outreach efforts.
                         </p>
-                        <a href="#" class="btn btn-primary">Volunteer</a>
+                        <a href="pages/volunteer.html" class="btn btn-primary">Volunteer</a>
                     </div>
                     
                     <div class="involvement-card">
@@ -322,7 +347,7 @@
                             Raise awareness, influence policy, and ensure 
                             sickle cell disease gets the attention it deserves.
                         </p>
-                        <a href="#" class="btn btn-primary">Take Action</a>
+                        <a href="pages/advocacy.html" class="btn btn-primary">Take Action</a>
                     </div>
                 </div>
             </div>
@@ -344,20 +369,20 @@
                 <div class="footer-section">
                     <h4 class="footer-title">Support</h4>
                     <ul class="footer-links">
-                        <li><a href="#support">Resources</a></li>
-                        <li><a href="#community">Community</a></li>
-                        <li><a href="#">Emergency Help</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="support/resources.html">Resources</a></li>
+                        <li><a href="community/forum.html">Community</a></li>
+                        <li><a href="support/resources.html#emergency">Emergency Help</a></li>
+                        <li><a href="pages/contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h4 class="footer-title">Learn</h4>
                     <ul class="footer-links">
-                        <li><a href="#about">About Sickle Cell</a></li>
-                        <li><a href="#">Research</a></li>
-                        <li><a href="#">Treatment Options</a></li>
-                        <li><a href="#">Educational Materials</a></li>
+                        <li><a href="information/what-is-sickle-cell.html">About Sickle Cell</a></li>
+                        <li><a href="information/research.html">Research</a></li>
+                        <li><a href="information/diagnosis-treatment.html">Treatment Options</a></li>
+                        <li><a href="support/about-sickle-cell.html">Educational Materials</a></li>
                     </ul>
                 </div>
                 
@@ -369,6 +394,10 @@
                         <li><a href="#">Instagram</a></li>
                         <li><a href="#">Newsletter</a></li>
                     </ul>
+                    <div class="contact-info">
+                        <p><strong>Direct:</strong> +2347041120734</p>
+                        <p><strong>Email:</strong> contact@wewarriors.org</p>
+                    </div>
                 </div>
             </div>
             
@@ -384,5 +413,6 @@
     <!-- JavaScript -->
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
+    
 </body>
 </html>

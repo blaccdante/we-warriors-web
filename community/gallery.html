@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="We Warriors Gallery - Photos and memories from our sickle cell warrior community">
+    <meta name="keywords" content="sickle cell, warriors, community, gallery, photos, events">
+    <meta name="author" content="We Warriors Organization">
+    
+    <title>Community Gallery - We Warriors</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/accessibility.css">
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Main navigation">
+            <div class="nav-container">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <a href="../index.html" class="logo-link" aria-label="We Warriors Home">
+                        <img src="../images/logo.svg" alt="We Warriors Logo" class="logo">
+                        <span class="logo-text">We Warriors</span>
+                    </a>
+                </div>
+                
+                <!-- Mobile menu toggle -->
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                
+                <!-- Navigation Menu -->
+                <ul class="nav-menu" role="menubar">
+                    <li class="nav-item" role="none">
+                        <a href="../index.html" class="nav-link" role="menuitem">Home</a>
+                    </li>
+                    <li class="nav-item dropdown" role="none">
+                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Support</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../support/about-sickle-cell.html">About Sickle Cell</a></li>
+                            <li><a href="../support/support-groups.html">Support Groups</a></li>
+                            <li><a href="../support/counseling.html">Counseling Services</a></li>
+                            <li><a href="../support/resources.html">Resources</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown" role="none">
+                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Information</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../information/what-is-sickle-cell.html">What is Sickle Cell</a></li>
+                            <li><a href="../information/types.html">Types of Sickle Cell</a></li>
+                            <li><a href="../information/diagnosis-treatment.html">Diagnosis & Treatment</a></li>
+                            <li><a href="../information/research.html">Research & Trials</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown" role="none">
+                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Community</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="forum.html">Forum</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="events.html">Events</a></li>
+                            <li><a href="gallery.html" class="active">Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                            <span class="sun-icon">☀️</span>
+                            <span class="moon-icon">🌙</span>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact</a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="../index.html#get-involved" class="nav-link cta-button" role="menuitem">Get Involved</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        
+        <!-- Hero Section -->
+        <section class="page-hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Community Gallery</h1>
+                    <p class="hero-description">
+                        Celebrating the strength, courage, and resilience of our warrior community
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery-section">
+            <div class="container">
+                
+                <!-- Gallery Categories -->
+                <div class="gallery-categories">
+                    <button class="category-btn active" data-category="all">All Photos</button>
+                    <button class="category-btn" data-category="events">Events</button>
+                    <button class="category-btn" data-category="warriors">Warriors</button>
+                    <button class="category-btn" data-category="community">Community</button>
+                    <button class="category-btn" data-category="awareness">Awareness</button>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="gallery-grid">
+                    
+                    <!-- Placeholder Gallery Items -->
+                    <div class="gallery-item" data-category="events">
+                        <div class="gallery-image-placeholder">
+                            <span class="placeholder-text">🎉<br>Annual Warrior<br>Celebration</span>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Annual Warrior Celebration 2024</h3>
+                            <p>Our annual celebration bringing together warriors, families, and supporters.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="warriors">
+                        <div class="gallery-image-placeholder">
+                            <span class="placeholder-text">💪<br>Warrior<br>Spotlight</span>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Warrior Spotlight: Sarah's Journey</h3>
+                            <p>From pain to strength - Sarah shares her inspiring journey with sickle cell.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="community">
+                        <div class="gallery-image-placeholder">
+                            <span class="placeholder-text">🤝<br>Support<br>Groups</span>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Support Group Meetings</h3>
+                            <p>Warriors coming together to share experiences and build community.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="awareness">
+                        <div class="gallery-image-placeholder">
+                            <span class="placeholder-text">🩸<br>Awareness<br>Campaign</span>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Sickle Cell Awareness Day</h3>
+                            <p>Spreading awareness and education about sickle cell disease.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="events">
+                        <div class="gallery-image-placeholder">
+                            <span class="placeholder-text">🏃‍♀️<br>Warrior<br>Walk</span>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Warrior Walk for Awareness</h3>
+                            <p>Community walk to raise funds and awareness for sickle cell research.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="warriors">
+                        <div class="gallery-image-placeholder">
+                            <span class="placeholder-text">⭐<br>Young<br>Warriors</span>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Young Warriors Program</h3>
+                            <p>Empowering the next generation of sickle cell warriors.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="community">
+                        <div class="gallery-image-placeholder">
+                            <span class="placeholder-text">❤️<br>Family<br>Support</span>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Family Support Network</h3>
+                            <p>Families connecting and supporting each other through the journey.</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="awareness">
+                        <div class="gallery-image-placeholder">
+                            <span class="placeholder-text">🎓<br>Educational<br>Workshops</span>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Educational Workshops</h3>
+                            <p>Teaching communities about sickle cell disease and prevention.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Upload Section -->
+                <div class="gallery-upload">
+                    <h3>Share Your Story</h3>
+                    <p>Have photos or stories from your warrior journey? We'd love to feature them!</p>
+                    <a href="../pages/contact.html" class="btn btn-primary">Submit Your Photos</a>
+                </div>
+
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="../images/logo.svg" alt="We Warriors Logo" class="footer-logo-img">
+                        <p class="footer-tagline">From Pain comes Strength • Through Faith we Hope</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="../support/resources.html">Resources</a></li>
+                        <li><a href="forum.html">Community</a></li>
+                        <li><a href="../support/resources.html#emergency">Emergency Help</a></li>
+                        <li><a href="../pages/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Learn</h4>
+                    <ul class="footer-links">
+                        <li><a href="../information/what-is-sickle-cell.html">About Sickle Cell</a></li>
+                        <li><a href="../information/research.html">Research</a></li>
+                        <li><a href="../information/diagnosis-treatment.html">Treatment Options</a></li>
+                        <li><a href="../support/about-sickle-cell.html">Educational Materials</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Newsletter</a></li>
+                    </ul>
+                    <div class="contact-info">
+                        <p><strong>Direct:</strong> +2347041120734</p>
+                        <p><strong>Email:</strong> contact@wewarriors.org</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">
+                    © 2025 We Warriors Organization. All rights reserved. 
+                    <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../js/modern.js"></script>
+    
+    <script>
+        // Gallery filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.dataset.category;
+                    
+                    // Update active button
+                    categoryBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter gallery items
+                    galleryItems.forEach(item => {
+                        if (category === 'all' || item.dataset.category === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -161,6 +161,13 @@
   }
 }
 
+/* Tablet and Desktop - Show logo text */
+@media (min-width: 769px) {
+  .logo-text {
+    display: block;
+  }
+}
+
 /* Small mobile devices (up to 480px) */
 @media (max-width: 480px) {
   /* Further typography scaling */

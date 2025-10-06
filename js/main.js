@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initKeyboardNavigation();
     initAccessibilityFeatures();
     initContactForms();
+    initThemeToggle();
     
     console.log('We Warriors website loaded successfully');
 });
@@ -426,6 +427,68 @@ function showSuccessMessage(message) {
             document.body.removeChild(successElement);
         }
     }, 5000);
+}
+
+// Dark Theme Toggle
+function initThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    if (!themeToggle) return;
+    
+    // Check for saved theme preference or default to light
+    const currentTheme = localStorage.getItem('theme') ||
+                        (prefersDark.matches ? 'dark' : 'light');
+    
+    // Set initial theme
+    document.documentElement.setAttribute('data-theme', currentTheme);
+    updateThemeToggleState(currentTheme);
+    
+    // Theme toggle click handler
+    themeToggle.addEventListener('click', function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeToggleState(newTheme);
+        
+        // Announce theme change to screen readers
+        announceThemeChange(newTheme);
+    });
+    
+    // Listen for system theme changes
+    prefersDark.addListener((e) => {
+        if (!localStorage.getItem('theme')) {
+            const newTheme = e.matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            updateThemeToggleState(newTheme);
+        }
+    });
+}
+
+function updateThemeToggleState(theme) {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.setAttribute('aria-label', 
+            theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+}
+
+function announceThemeChange(newTheme) {
+    const announcement = document.createElement('div');
+    announcement.setAttribute('aria-live', 'polite');
+    announcement.setAttribute('aria-atomic', 'true');
+    announcement.className = 'sr-only';
+    announcement.textContent = `Switched to ${newTheme} theme`;
+    
+    document.body.appendChild(announcement);
+    
+    setTimeout(() => {
+        if (announcement.parentNode) {
+            document.body.removeChild(announcement);
+        }
+    }, 1000);
 }
 
 // Utility Functions
