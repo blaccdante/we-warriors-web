@@ -1,0 +1,462 @@
+/* We Warriors Website - Responsive Design */
+/* Mobile-first approach for accessibility */
+
+/* Mobile devices (up to 768px) */
+@media (max-width: 768px) {
+  /* Typography scaling */
+  :root {
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-xxl: 2.5rem;
+  }
+  
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.25rem; }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  /* Header - Mobile */
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: var(--background-primary);
+    flex-direction: column;
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: var(--transition-normal);
+    z-index: 99;
+  }
+  
+  .nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .nav-link {
+    display: block;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .nav-link.cta-button {
+    margin-top: var(--spacing-md);
+  }
+  
+  /* Hero - Mobile */
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    text-align: center;
+  }
+  
+  .hero-we,
+  .hero-warriors {
+    font-size: 2.5rem;
+  }
+  
+  .hero-tagline {
+    font-size: 1.125rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+  }
+  
+  .hero-actions {
+    justify-content: center;
+  }
+  
+  /* Journey Visual - Mobile */
+  .journey-visual {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-sm);
+  }
+  
+  .journey-step {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .journey-connector {
+    display: none;
+  }
+  
+  .step-label {
+    font-size: 0.75rem;
+  }
+  
+  /* Grids - Mobile */
+  .about-grid,
+  .support-grid,
+  .involvement-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  /* Community - Mobile */
+  .community-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .action-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* Faith - Mobile */
+  .faith-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  /* Footer - Mobile */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    text-align: center;
+  }
+  
+  .footer-section {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  /* Cards - Mobile optimized */
+  .about-card,
+  .involvement-card,
+  .support-category {
+    padding: var(--spacing-lg);
+  }
+  
+  .story-card {
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .story-quote {
+    font-size: 1rem;
+  }
+}
+
+/* Small mobile devices (up to 480px) */
+@media (max-width: 480px) {
+  /* Further typography scaling */
+  .hero-we,
+  .hero-warriors {
+    font-size: 2rem;
+  }
+  
+  .hero-tagline {
+    font-size: 1rem;
+  }
+  
+  .hero-description {
+    font-size: 0.95rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  /* Spacing adjustments */
+  .container,
+  .nav-container,
+  .footer-container {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  /* Button adjustments */
+  .btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.9rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .hero-actions .btn {
+    text-align: center;
+  }
+  
+  /* Journey steps even smaller */
+  .journey-step {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .step-label {
+    font-size: 0.7rem;
+  }
+  
+  /* Cards more compact */
+  .about-card,
+  .involvement-card,
+  .support-category {
+    padding: var(--spacing-md);
+  }
+  
+  .card-icon {
+    font-size: 2.5rem;
+  }
+  
+  /* Logo smaller on very small screens */
+  .logo-container .logo {
+    height: 50px;
+  }
+  
+  .footer-logo-img {
+    height: 40px;
+  }
+}
+
+/* Tablet devices (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-container {
+    gap: var(--spacing-xl);
+  }
+  
+  .hero-we,
+  .hero-warriors {
+    font-size: 2.75rem;
+  }
+  
+  /* Adjust grid layouts for tablet */
+  .about-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .support-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .involvement-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  /* Community and Faith sections */
+  .community-content,
+  .faith-content {
+    grid-template-columns: 3fr 2fr;
+    gap: var(--spacing-xl);
+  }
+  
+  /* Footer adjustment */
+  .footer-content {
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
+/* Large screens (1025px - 1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .container,
+  .nav-container,
+  .footer-container,
+  .hero-container {
+    max-width: 1100px;
+  }
+}
+
+/* Extra large screens (1201px+) */
+@media (min-width: 1201px) {
+  .hero-we,
+  .hero-warriors {
+    font-size: 3.5rem;
+  }
+  
+  .hero-tagline {
+    font-size: 1.5rem;
+  }
+  
+  .hero-description {
+    font-size: 1.25rem;
+  }
+  
+  .section-title {
+    font-size: 3rem;
+  }
+  
+  /* Larger journey steps on big screens */
+  .journey-step {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .step-label {
+    font-size: 1rem;
+  }
+  
+  .journey-connector {
+    height: 40px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Larger touch targets */
+  .btn {
+    padding: var(--spacing-md) var(--spacing-lg);
+    min-height: 48px;
+  }
+  
+  .nav-link {
+    padding: var(--spacing-md);
+    min-height: 44px;
+  }
+  
+  .card-link,
+  .support-list a,
+  .faith-list a,
+  .footer-links a {
+    padding: var(--spacing-sm);
+    min-height: 44px;
+  }
+  
+  /* Remove hover effects on touch devices */
+  .about-card:hover,
+  .involvement-card:hover,
+  .journey-step:hover {
+    transform: none;
+  }
+  
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .btn-community:hover {
+    transform: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+  
+  .site-header,
+  .hero-visual,
+  .mobile-menu-toggle,
+  .btn {
+    display: none !important;
+  }
+  
+  main {
+    margin-top: 0 !important;
+  }
+  
+  .hero-section {
+    padding: var(--spacing-lg) 0;
+    min-height: auto;
+  }
+  
+  .hero-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  section {
+    padding: var(--spacing-md) 0;
+    break-inside: avoid;
+  }
+  
+  .about-grid,
+  .support-grid,
+  .involvement-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .community-content,
+  .faith-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --text-primary: #000000;
+    --text-secondary: #000000;
+    --background-primary: #ffffff;
+    --background-secondary: #ffffff;
+    --background-accent: #ffffff;
+    --blood-color: #000000;
+    --blood-light: #000000;
+    --faith-color: #000000;
+  }
+  
+  .btn-primary {
+    background: #000000;
+    color: #ffffff;
+    border: 2px solid #000000;
+  }
+  
+  .btn-secondary {
+    background: #ffffff;
+    color: #000000;
+    border: 2px solid #000000;
+  }
+  
+  .nav-link:hover,
+  .nav-link:focus,
+  .nav-link.active {
+    background: #000000;
+    color: #ffffff;
+  }
+}

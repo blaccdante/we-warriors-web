@@ -1,0 +1,59 @@
+{
+  "name": "we-warriors-website",
+  "version": "1.0.0",
+  "description": "We Warriors - Supporting people afflicted with sickle cell disease and educating others to drive the last generation of people with sickle cell. From Pain comes Strength • Through Faith we Hope",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve -s . -l 3000",
+    "build": "echo 'Build process for static site'",
+    "test": "echo 'No tests specified yet'",
+    "dev": "live-server --port=3000",
+    "format": "prettier --write '**/*.{html,css,js}'",
+    "lint": "eslint js/**/*.js"
+  },
+  "keywords": [
+    "sickle-cell",
+    "health",
+    "support",
+    "community",
+    "warriors",
+    "medical",
+    "education",
+    "faith",
+    "hope",
+    "strength",
+    "non-profit",
+    "healthcare",
+    "awareness"
+  ],
+  "author": {
+    "name": "We Warriors Organization",
+    "email": "contact@wewarriors.org",
+    "url": "https://wewarriors.org"
+  },
+  "license": "MIT",
+  "homepage": "https://wewarriors.org",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wewarriors/website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wewarriors/website/issues"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "serve": "^14.2.1",
+    "prettier": "^3.0.3",
+    "eslint": "^8.50.0"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11"
+  ]
+}
