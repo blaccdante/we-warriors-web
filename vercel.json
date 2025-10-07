@@ -1,0 +1,28 @@
+{
+  "outputDirectory": ".",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/pages/(.*)",
+      "destination": "/pages/$1"
+    },
+    {
+      "source": "/community/(.*)",
+      "destination": "/community/$1"
+    },
+    {
+      "source": "/information/(.*)",
+      "destination": "/information/$1"
+    },
+    {
+      "source": "/support/(.*)",
+      "destination": "/support/$1"
+    },
+    {
+      "source": "/docs/(.*)",
+      "destination": "/docs/$1"
+    }
+  ]
+}

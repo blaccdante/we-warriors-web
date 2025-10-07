@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "start": "serve -s . -l 3000",
-    "build": "echo 'Build process for static site'",
+    "build": "echo 'Static site ready for deployment - all files are already in place'",
     "test": "echo 'No tests specified yet'",
     "dev": "live-server --port=3000",
     "format": "prettier --write '**/*.{html,css,js}'",
