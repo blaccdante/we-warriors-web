@@ -73,11 +73,18 @@
                     <li class="nav-item dropdown active" role="none">
                         <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Community</a>
                         <ul class="dropdown-menu">
-                            <li><a href="../community/forum.html">Forum</a></li>
-                            <li><a href="../community/blog.html" class="active">Blog</a></li>
-                            <li><a href="../community/events.html">Events</a></li>
-                            <li><a href="../community/gallery.html">Gallery</a></li>
+                            <li><a href="forum.html">Forum</a></li>
+                            <li><a href="blog.html" class="active">Blog</a></li>
+                            <li><a href="events.html">Events</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" aria-describedby="theme-status">
+                            <span class="sun-icon" aria-hidden="true">☀</span>
+                            <span class="moon-icon" aria-hidden="true">☾</span>
+                            <span class="sr-only" id="theme-status">Current theme: light mode</span>
+                        </button>
                     </li>
                     <li class="nav-item" role="none">
                         <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact</a>
@@ -140,7 +147,7 @@
                         <div class="blog-posts">
                             <article class="blog-post featured" data-category="stories">
                                 <div class="post-image">
-                                    <div class="placeholder-image">📖</div>
+                                    <div class="placeholder-image"><span class="icon-book" aria-label="Book"></span></div>
                                 </div>
                                 <div class="post-content">
                                     <div class="post-meta">
@@ -165,7 +172,7 @@
 
                             <article class="blog-post" data-category="medical">
                                 <div class="post-image">
-                                    <div class="placeholder-image">🏥</div>
+                                    <div class="placeholder-image"><span class="icon-medical" aria-label="Medical"></span></div>
                                 </div>
                                 <div class="post-content">
                                     <div class="post-meta">
@@ -189,7 +196,7 @@
 
                             <article class="blog-post" data-category="research">
                                 <div class="post-image">
-                                    <div class="placeholder-image">🔬</div>
+                                    <div class="placeholder-image"><span class="icon-research" aria-label="Research"></span></div>
                                 </div>
                                 <div class="post-content">
                                     <div class="post-meta">
@@ -213,7 +220,7 @@
 
                             <article class="blog-post" data-category="faith">
                                 <div class="post-image">
-                                    <div class="placeholder-image">🙏</div>
+                                    <div class="placeholder-image"><span class="icon-prayer" aria-label="Prayer"></span></div>
                                 </div>
                                 <div class="post-content">
                                     <div class="post-meta">
@@ -237,7 +244,7 @@
 
                             <article class="blog-post" data-category="community">
                                 <div class="post-image">
-                                    <div class="placeholder-image">🤝</div>
+                                    <div class="placeholder-image"><span class="icon-community" aria-label="Community"></span></div>
                                 </div>
                                 <div class="post-content">
                                     <div class="post-meta">
@@ -261,7 +268,7 @@
 
                             <article class="blog-post" data-category="stories">
                                 <div class="post-image">
-                                    <div class="placeholder-image">💪</div>
+                                    <div class="placeholder-image"><span class="icon-strength" aria-label="Strength"></span></div>
                                 </div>
                                 <div class="post-content">
                                     <div class="post-meta">
@@ -428,7 +435,7 @@
                         </a>
                     </div>
                     <div class="contact-info">
-                        <p><strong>Email:</strong> contact@wewarriors.org</p>
+                        <p><strong>Email:</strong> wewarriorsng@gmail.com</p>
                         <p><strong>Direct:</strong> +2347041120734</p>
                         <p><strong>Phone:</strong> 1-800-WARRIOR</p>
                     </div>
@@ -449,6 +456,7 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="../js/main.js"></script>
     <script src="../js/modern.js"></script>
     
     <script src="../js/pages.js"></script>

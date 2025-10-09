@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/accessibility.css">
+    <link rel="stylesheet" href="../css/pages.css">
 </head>
 <body class="page-body">
     <!-- Skip to main content -->
@@ -51,6 +52,9 @@
                 
                 <!-- Navigation Menu -->
                 <ul class="nav-menu modern-nav" role="menubar">
+                    <li class="nav-item" role="none">
+                        <a href="../index.html" class="nav-link" role="menuitem">Home</a>
+                    </li>
                     <li class="nav-item dropdown" role="none">
                         <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Support</a>
                         <ul class="dropdown-menu">
@@ -77,6 +81,13 @@
                             <li><a href="../community/events.html">Events</a></li>
                             <li><a href="../community/gallery.html">Gallery</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" aria-describedby="theme-status">
+                            <span class="sun-icon" aria-hidden="true">☀</span>
+                            <span class="moon-icon" aria-hidden="true">☾</span>
+                            <span class="sr-only" id="theme-status">Current theme: light mode</span>
+                        </button>
                     </li>
                     <li class="nav-item" role="none">
                         <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact</a>
@@ -137,7 +148,7 @@
                         <div class="types-grid">
                             <div class="type-card major">
                                 <div class="type-header">
-                                    <div class="type-icon">🔴</div>
+                                    <div class="type-icon severe-icon" role="img" aria-label="Severe type indicator"></div>
                                     <h3 class="type-title">HbSS (Sickle Cell Anemia)</h3>
                                     <span class="severity-badge severe">Most Common & Severe</span>
                                 </div>
@@ -167,7 +178,7 @@
 
                             <div class="type-card moderate">
                                 <div class="type-header">
-                                    <div class="type-icon">🟡</div>
+                                    <div class="type-icon moderate-icon" role="img" aria-label="Moderate severity indicator"></div>
                                     <h3 class="type-title">HbSC Disease</h3>
                                     <span class="severity-badge moderate">Moderate Severity</span>
                                 </div>
@@ -197,7 +208,7 @@
 
                             <div class="type-card variable">
                                 <div class="type-header">
-                                    <div class="type-icon">🟠</div>
+                                    <div class="type-icon variable-icon" role="img" aria-label="Variable severity indicator"></div>
                                     <h3 class="type-title">HbS β-thalassemia</h3>
                                     <span class="severity-badge variable">Variable Severity</span>
                                 </div>
@@ -225,7 +236,7 @@
 
                             <div class="type-card rare">
                                 <div class="type-header">
-                                    <div class="type-icon">🔵</div>
+                                    <div class="type-icon rare-icon" role="img" aria-label="Rare variants indicator"></div>
                                     <h3 class="type-title">Other Variants</h3>
                                     <span class="severity-badge rare">Rare Forms</span>
                                 </div>
@@ -446,7 +457,7 @@
                         </a>
                     </div>
                     <div class="contact-info">
-                        <p><strong>Email:</strong> contact@wewarriors.org</p>
+                        <p><strong>Email:</strong> wewarriorsng@gmail.com</p>
                         <p><strong>Phone:</strong> 1-800-WARRIOR</p>
                     </div>
                 </div>
@@ -466,6 +477,7 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="../js/main.js"></script>
     <script src="../js/modern.js"></script>
     
     <script src="../js/pages.js"></script>

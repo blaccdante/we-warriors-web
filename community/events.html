@@ -80,6 +80,13 @@
                         </ul>
                     </li>
                     <li class="nav-item" role="none">
+                        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" aria-describedby="theme-status">
+                            <span class="sun-icon" aria-hidden="true">☀</span>
+                            <span class="moon-icon" aria-hidden="true">☾</span>
+                            <span class="sr-only" id="theme-status">Current theme: light mode</span>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="none">
                         <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact</a>
                     </li>
                     <li class="nav-item" role="none">
@@ -144,7 +151,7 @@
                                         <span class="event-month">JUN</span>
                                         <span class="event-day">19</span>
                                     </div>
-                                    <div class="placeholder-image">🚶‍♀️</div>
+                                    <div class="placeholder-image"><span class="icon-walk" aria-label="Walk"></span></div>
                                 </div>
                                 <div class="event-content">
                                     <div class="event-meta">
@@ -159,19 +166,19 @@
                                     </p>
                                     <div class="event-details">
                                         <div class="event-detail">
-                                            <span class="detail-icon">📅</span>
+                                            <span class="detail-icon"><span class="icon-calendar" aria-label="Calendar"></span></span>
                                             <span class="detail-text">June 19, 2025 (World Sickle Cell Day)</span>
                                         </div>
                                         <div class="event-detail">
-                                            <span class="detail-icon">⏰</span>
+                                            <span class="detail-icon"><span class="icon-clock" aria-label="Clock"></span></span>
                                             <span class="detail-text">8:00 AM - 12:00 PM</span>
                                         </div>
                                         <div class="event-detail">
-                                            <span class="detail-icon">📍</span>
+                                            <span class="detail-icon"><span class="icon-location" aria-label="Location"></span></span>
                                             <span class="detail-text">Atlanta Memorial Park, GA</span>
                                         </div>
                                         <div class="event-detail">
-                                            <span class="detail-icon">💰</span>
+                                            <span class="detail-icon"><span class="icon-money" aria-label="Money"></span></span>
                                             <span class="detail-text">Registration: $25 (includes t-shirt & breakfast)</span>
                                         </div>
                                     </div>
@@ -193,7 +200,7 @@
                                             <span class="event-month">JAN</span>
                                             <span class="event-day">15</span>
                                         </div>
-                                        <div class="placeholder-image">👥</div>
+                                        <div class="placeholder-image"><span class="icon-group" aria-label="Group"></span></div>
                                     </div>
                                     <div class="event-content">
                                         <div class="event-meta">
@@ -219,7 +226,7 @@
                                             <span class="event-month">JAN</span>
                                             <span class="event-day">20</span>
                                         </div>
-                                        <div class="placeholder-image">🎓</div>
+                                        <div class="placeholder-image"><span class="icon-education" aria-label="Education"></span></div>
                                     </div>
                                     <div class="event-content">
                                         <div class="event-meta">
@@ -245,7 +252,7 @@
                                             <span class="event-month">FEB</span>
                                             <span class="event-day">14</span>
                                         </div>
-                                        <div class="placeholder-image">❤️</div>
+                                        <div class="placeholder-image"><span class="icon-heart" aria-label="Heart"></span></div>
                                     </div>
                                     <div class="event-content">
                                         <div class="event-meta">
@@ -271,7 +278,7 @@
                                             <span class="event-month">FEB</span>
                                             <span class="event-day">22</span>
                                         </div>
-                                        <div class="placeholder-image">👨‍👩‍👧‍👦</div>
+                                        <div class="placeholder-image"><span class="icon-family" aria-label="Family"></span></div>
                                     </div>
                                     <div class="event-content">
                                         <div class="event-meta">
@@ -297,7 +304,7 @@
                                             <span class="event-month">MAR</span>
                                             <span class="event-day">10</span>
                                         </div>
-                                        <div class="placeholder-image">🩺</div>
+                                        <div class="placeholder-image"><span class="icon-stethoscope" aria-label="Stethoscope"></span></div>
                                     </div>
                                     <div class="event-content">
                                         <div class="event-meta">
@@ -323,7 +330,7 @@
                                             <span class="event-month">APR</span>
                                             <span class="event-day">05</span>
                                         </div>
-                                        <div class="placeholder-image">🎯</div>
+                                        <div class="placeholder-image"><span class="icon-target" aria-label="Target"></span></div>
                                     </div>
                                     <div class="event-content">
                                         <div class="event-meta">
@@ -349,21 +356,21 @@
                             <h2 class="section-title">Regular Events</h2>
                             <div class="recurring-grid">
                                 <div class="recurring-card">
-                                    <div class="recurring-icon">📅</div>
+                                    <div class="recurring-icon"><span class="icon-calendar" aria-label="Calendar"></span></div>
                                     <h3 class="recurring-title">Weekly Support Circles</h3>
                                     <p class="recurring-description">Every Thursday, 7:00 PM - Safe space for warriors to connect and share</p>
                                     <div class="recurring-frequency">Weekly • Online</div>
                                 </div>
                                 
                                 <div class="recurring-card">
-                                    <div class="recurring-icon">🙏</div>
+                                    <div class="recurring-icon"><span class="icon-prayer" aria-label="Prayer"></span></div>
                                     <h3 class="recurring-title">Prayer & Meditation</h3>
                                     <p class="recurring-description">Every Sunday, 10:00 AM - Community prayer and meditation session</p>
                                     <div class="recurring-frequency">Weekly • In-Person & Online</div>
                                 </div>
                                 
                                 <div class="recurring-card">
-                                    <div class="recurring-icon">📚</div>
+                                    <div class="recurring-icon"><span class="icon-book" aria-label="Book"></span></div>
                                     <h3 class="recurring-title">Educational Seminars</h3>
                                     <p class="recurring-description">First Saturday of each month - Medical updates and health education</p>
                                     <div class="recurring-frequency">Monthly • Medical Center</div>
@@ -507,7 +514,7 @@
                         </a>
                     </div>
                     <div class="contact-info">
-                        <p><strong>Email:</strong> contact@wewarriors.org</p>
+                        <p><strong>Email:</strong> wewarriorsng@gmail.com</p>
                         <p><strong>Direct:</strong> +2347041120734</p>
                         <p><strong>Phone:</strong> 1-800-WARRIOR</p>
                     </div>
@@ -528,6 +535,7 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="../js/main.js"></script>
     <script src="../js/modern.js"></script>
     
     <script src="../js/pages.js"></script>

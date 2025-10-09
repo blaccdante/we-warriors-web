@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/accessibility.css">
+    <link rel="stylesheet" href="../css/pages.css">
 </head>
 <body class="page-body">
     <!-- Skip to main content -->
@@ -72,11 +73,18 @@
                     <li class="nav-item dropdown active" role="none">
                         <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Community</a>
                         <ul class="dropdown-menu">
-                            <li><a href="../community/forum.html" class="active">Forum</a></li>
-                            <li><a href="../community/blog.html">Blog</a></li>
-                            <li><a href="../community/events.html">Events</a></li>
-                            <li><a href="../community/gallery.html">Gallery</a></li>
+                            <li><a href="forum.html" class="active">Forum</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="events.html">Events</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" aria-describedby="theme-status">
+                            <span class="sun-icon" aria-hidden="true">☀</span>
+                            <span class="moon-icon" aria-hidden="true">☾</span>
+                            <span class="sr-only" id="theme-status">Current theme: light mode</span>
+                        </button>
                     </li>
                     <li class="nav-item" role="none">
                         <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact</a>
@@ -157,7 +165,7 @@
                             <h2 class="section-title">Forum Categories</h2>
                             <div class="categories-grid">
                                 <div class="category-card">
-                                    <div class="category-icon">💬</div>
+                                    <div class="category-icon chat-icon" role="img" aria-label="Chat icon"></div>
                                     <h3 class="category-title">General Discussion</h3>
                                     <p class="category-description">Share your thoughts, ask questions, and connect with fellow warriors</p>
                                     <div class="category-stats">
@@ -168,7 +176,7 @@
                                 </div>
 
                                 <div class="category-card">
-                                    <div class="category-icon">🩺</div>
+                                    <div class="category-icon medical-icon" role="img" aria-label="Medical stethoscope icon"></div>
                                     <h3 class="category-title">Medical & Treatment</h3>
                                     <p class="category-description">Discuss treatments, medications, and healthcare experiences</p>
                                     <div class="category-stats">
@@ -179,7 +187,7 @@
                                 </div>
 
                                 <div class="category-card">
-                                    <div class="category-icon">💪</div>
+                                    <div class="category-icon strength-icon" role="img" aria-label="Strength icon"></div>
                                     <h3 class="category-title">Pain Management</h3>
                                     <p class="category-description">Share coping strategies and support during difficult times</p>
                                     <div class="category-stats">
@@ -190,7 +198,7 @@
                                 </div>
 
                                 <div class="category-card">
-                                    <div class="category-icon">👨‍👩‍👧‍👦</div>
+                                    <div class="category-icon family-icon" role="img" aria-label="Family icon"></div>
                                     <h3 class="category-title">Family & Caregivers</h3>
                                     <p class="category-description">Support and resources for families and caregivers</p>
                                     <div class="category-stats">
@@ -201,7 +209,7 @@
                                 </div>
 
                                 <div class="category-card">
-                                    <div class="category-icon">🙏</div>
+                                    <div class="category-icon faith-icon" role="img" aria-label="Prayer hands icon"></div>
                                     <h3 class="category-title">Faith & Spirituality</h3>
                                     <p class="category-description">Share spiritual encouragement and prayer requests</p>
                                     <div class="category-stats">
@@ -212,7 +220,7 @@
                                 </div>
 
                                 <div class="category-card">
-                                    <div class="category-icon">🌟</div>
+                                    <div class="category-icon star-icon" role="img" aria-label="Star icon"></div>
                                     <h3 class="category-title">Success Stories</h3>
                                     <p class="category-description">Celebrate victories, milestones, and inspiring moments</p>
                                     <div class="category-stats">
@@ -223,7 +231,7 @@
                                 </div>
 
                                 <div class="category-card">
-                                    <div class="category-icon">🎓</div>
+                                    <div class="category-icon education-icon" role="img" aria-label="Education cap icon"></div>
                                     <h3 class="category-title">Education & Advocacy</h3>
                                     <p class="category-description">Discuss awareness, advocacy, and educational initiatives</p>
                                     <div class="category-stats">
@@ -234,7 +242,7 @@
                                 </div>
 
                                 <div class="category-card">
-                                    <div class="category-icon">🔬</div>
+                                    <div class="category-icon research-icon" role="img" aria-label="Research microscope icon"></div>
                                     <h3 class="category-title">Research & Clinical Trials</h3>
                                     <p class="category-description">Share information about research and trial opportunities</p>
                                     <div class="category-stats">
@@ -414,7 +422,7 @@
                         </a>
                     </div>
                     <div class="contact-info">
-                        <p><strong>Email:</strong> contact@wewarriors.org</p>
+                        <p><strong>Email:</strong> wewarriorsng@gmail.com</p>
                         <p><strong>Phone:</strong> 1-800-WARRIOR</p>
                     </div>
                 </div>

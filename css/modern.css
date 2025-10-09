@@ -65,6 +65,223 @@
     --z-tooltip: 1060;
 }
 
+/* Dark Theme Variables for Modern CSS */
+:root[data-theme="dark"] {
+    --background: #1A1A1A;
+    --surface: #2C2C2C;
+    --surface-elevated: #3A3A3A;
+    --text-primary: #E8E8E8;
+    --text-secondary: #B8B8B8;
+    --text-muted: #888888;
+    --border-light: rgba(255, 255, 255, 0.1);
+    --border-medium: rgba(255, 255, 255, 0.2);
+    --glass-bg: rgba(26, 26, 26, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --gradient-surface: linear-gradient(135deg, #1A1A1A 0%, #2C2C2C 100%);
+}
+
+/* Dark theme dropdown styles for modern.css */
+:root[data-theme="dark"] .dropdown-menu {
+    background: var(--surface-elevated);
+    border: 1px solid var(--border-light);
+    box-shadow: 0 16px 64px rgba(0, 0, 0, 0.5);
+}
+
+:root[data-theme="dark"] .dropdown-menu a {
+    color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .dropdown-menu a:hover,
+:root[data-theme="dark"] .dropdown-menu a.active {
+    background: var(--surface);
+    color: var(--secondary);
+}
+
+/* Dark theme modern page content */
+:root[data-theme="dark"] .modern-header {
+    background: var(--surface) !important;
+    border-bottom: 1px solid var(--border-light) !important;
+}
+
+:root[data-theme="dark"] .page-title,
+:root[data-theme="dark"] .modern-title {
+    color: var(--text-primary) !important;
+    text-shadow: none !important;
+}
+
+:root[data-theme="dark"] .page-subtitle,
+:root[data-theme="dark"] .modern-subtitle {
+    color: var(--text-secondary) !important;
+}
+
+:root[data-theme="dark"] .page-hero,
+:root[data-theme="dark"] .modern-hero {
+    background: var(--surface) !important;
+}
+
+:root[data-theme="dark"] .page-header {
+    background: var(--gradient-surface) !important;
+}
+
+:root[data-theme="dark"] .breadcrumb,
+:root[data-theme="dark"] .modern-breadcrumb {
+    background: rgba(44, 44, 44, 0.8) !important;
+}
+
+:root[data-theme="dark"] .breadcrumb a,
+:root[data-theme="dark"] .modern-breadcrumb a {
+    color: var(--secondary) !important;
+}
+
+:root[data-theme="dark"] .site-header {
+    background: var(--glass-bg) !important;
+    border-bottom: 1px solid var(--glass-border) !important;
+}
+
+/* Comprehensive dark theme content visibility */
+:root[data-theme="dark"] p,
+:root[data-theme="dark"] li,
+:root[data-theme="dark"] span:not(.sun-icon):not(.moon-icon),
+:root[data-theme="dark"] div,
+:root[data-theme="dark"] label,
+:root[data-theme="dark"] .card-content,
+:root[data-theme="dark"] .intro-text {
+    color: var(--text-primary) !important;
+}
+
+/* Dark theme cards and sections */
+:root[data-theme="dark"] .content-card,
+:root[data-theme="dark"] .comparison-item,
+:root[data-theme="dark"] .progression-step,
+:root[data-theme="dark"] .gallery-item,
+:root[data-theme="dark"] .feature-card {
+    background: var(--surface-elevated) !important;
+    border: 1px solid var(--border-light) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Dark theme buttons */
+:root[data-theme="dark"] .btn,
+:root[data-theme="dark"] .button,
+:root[data-theme="dark"] .category-btn:not(.active) {
+    background: var(--surface-elevated) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-light) !important;
+}
+
+:root[data-theme="dark"] .btn:hover,
+:root[data-theme="dark"] .button:hover {
+    background: var(--surface) !important;
+    color: var(--secondary) !important;
+}
+
+/* Dark theme active states */
+:root[data-theme="dark"] .category-btn.active {
+    background: var(--primary) !important;
+    color: white !important;
+}
+
+/* Dark theme page content */
+:root[data-theme="dark"] .page-content,
+:root[data-theme="dark"] .modern-content {
+    background: var(--background) !important;
+}
+
+/* Dark theme floating elements */
+:root[data-theme="dark"] .floating-elements .float-element {
+    background: var(--surface-elevated) !important;
+    border: 1px solid var(--border-light) !important;
+}
+
+/* Dark theme navigation links - CRITICAL FIX */
+:root[data-theme="dark"] .nav-link {
+    color: var(--text-primary) !important;
+    background: transparent !important;
+}
+
+:root[data-theme="dark"] .nav-link:hover,
+:root[data-theme="dark"] .nav-link:focus,
+:root[data-theme="dark"] .nav-link.active {
+    background: var(--surface) !important;
+    color: var(--secondary) !important;
+}
+
+/* Dark theme dropdown toggles */
+:root[data-theme="dark"] .dropdown-toggle {
+    color: var(--text-primary) !important;
+}
+
+:root[data-theme="dark"] .dropdown-toggle:hover {
+    color: var(--secondary) !important;
+}
+
+/* Dark theme modern navigation */
+:root[data-theme="dark"] .modern-nav .nav-link {
+    color: var(--text-primary) !important;
+}
+
+/* Dark theme glass effect */
+:root[data-theme="dark"] .glass-effect {
+    background: var(--glass-bg) !important;
+    border-bottom: 1px solid var(--glass-border) !important;
+}
+
+/* Dark theme text contrast improvements */
+:root[data-theme="dark"] .page-subtitle,
+:root[data-theme="dark"] .modern-subtitle,
+:root[data-theme="dark"] .section-subtitle {
+    color: #B8B8B8 !important;
+    opacity: 0.9 !important;
+}
+
+/* Dark theme modern floating elements - AGGRESSIVE FIX */
+:root[data-theme="dark"] .floating-elements .float-element,
+:root[data-theme="dark"] .hero-visual .float-element,
+:root[data-theme="dark"] .modern-visual .float-element {
+    background: #444444 !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+:root[data-theme="dark"] .floating-elements .float-element.hope,
+:root[data-theme="dark"] .hero-visual .float-element.hope,
+:root[data-theme="dark"] .modern-visual .float-element.hope {
+    background: linear-gradient(135deg, #FF6B6B, #FF8E8E) !important;
+    border: 2px solid #FF6B6B !important;
+    box-shadow: 0 8px 32px rgba(255, 107, 107, 0.5) !important;
+}
+
+:root[data-theme="dark"] .floating-elements .float-element.faith,
+:root[data-theme="dark"] .hero-visual .float-element.faith,
+:root[data-theme="dark"] .modern-visual .float-element.faith {
+    background: linear-gradient(135deg, #FFD700, #FFF200) !important;
+    border: 2px solid #FFD700 !important;
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.5) !important;
+}
+
+:root[data-theme="dark"] .floating-elements .float-element.strength,
+:root[data-theme="dark"] .hero-visual .float-element.strength,
+:root[data-theme="dark"] .modern-visual .float-element.strength {
+    background: linear-gradient(135deg, #FFA500, #FFB84D) !important;
+    border: 2px solid #FFA500 !important;
+    box-shadow: 0 8px 32px rgba(255, 165, 0, 0.5) !important;
+}
+
+/* Dark theme improved text visibility */
+:root[data-theme="dark"] .text-muted,
+:root[data-theme="dark"] .subtitle,
+:root[data-theme="dark"] .description {
+    color: var(--text-secondary) !important;
+    opacity: 0.9 !important;
+}
+
+/* Dark theme content sections */
+:root[data-theme="dark"] .modern-content section {
+    background: var(--background) !important;
+    color: var(--text-primary) !important;
+}
+
 /* Modern Base Styles */
 * {
     box-sizing: border-box;
@@ -205,9 +422,29 @@ body {
 .nav-menu {
     display: none;
     align-items: center;
-    gap: var(--space-lg);
+    gap: 0;
     list-style: none;
     margin: 0;
+    padding: 0;
+    height: 60px;
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+}
+
+/* Modern navigation items with flex distribution */
+.nav-menu .nav-item {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Theme toggle smaller width */
+.nav-menu .nav-item:nth-child(5) {
+    flex: 0 0 60px;
+    justify-content: center;
 }
 
 @media (min-width: 1024px) {
@@ -216,9 +453,7 @@ body {
     }
 }
 
-.nav-item {
-    position: relative;
-}
+/* Nav-item styles handled above */
 
 .nav-link {
     font-weight: 500;
@@ -229,6 +464,14 @@ body {
     transition: all var(--transition-normal);
     position: relative;
     overflow: hidden;
+    width: 100%;
+    max-width: 140px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    height: 40px;
 }
 
 .nav-link::before {

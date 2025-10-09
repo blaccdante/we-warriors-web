@@ -19,32 +19,33 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/accessibility.css">
+    <link rel="stylesheet" href="../css/pages.css">
 </head>
-<body>
+<body class="page-body">
     <!-- Skip to main content link for accessibility -->
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
     
     <!-- Header -->
-    <header class="site-header" role="banner">
-        <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <header class="site-header modern-header" role="banner">
+        <nav class="navbar glass-effect" role="navigation" aria-label="Main navigation">
             <div class="nav-container">
                 <!-- Logo -->
                 <div class="logo-container">
-                    <a href="../index.html" class="logo-link" aria-label="We Warriors Home">
+                    <a href="../index.html" class="logo-link modern-logo" aria-label="We Warriors Home">
                         <img src="../images/logo.svg" alt="We Warriors Logo" class="logo">
                         <span class="logo-text">We Warriors</span>
                     </a>
                 </div>
                 
                 <!-- Mobile menu toggle -->
-                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                <button class="mobile-menu-toggle modern-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
                 </button>
                 
                 <!-- Navigation Menu -->
-                <ul class="nav-menu" role="menubar">
+                <ul class="nav-menu modern-nav" role="menubar">
                     <li class="nav-item" role="none">
                         <a href="../index.html" class="nav-link" role="menuitem">Home</a>
                     </li>
@@ -77,8 +78,8 @@
                     </li>
                     <li class="nav-item" role="none">
                         <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                            <span class="sun-icon">☀️</span>
-                            <span class="moon-icon">🌙</span>
+                            <span class="sun-icon"><span class="icon-sun" aria-label="Light mode"></span></span>
+                            <span class="moon-icon"><span class="icon-moon" aria-label="Dark mode"></span></span>
                         </button>
                     </li>
                     <li class="nav-item" role="none">
@@ -93,22 +94,40 @@
     </header>
 
     <!-- Main Content -->
-    <main id="main-content" role="main">
+    <main id="main-content" role="main" class="modern-main">
         
         <!-- Hero Section -->
-        <section class="page-hero">
+        <section class="page-hero modern-hero">
+            <div class="hero-background">
+                <div class="hero-gradient"></div>
+                <div class="hero-pattern"></div>
+            </div>
             <div class="hero-container">
                 <div class="hero-content">
-                    <h1 class="hero-title">Community Gallery</h1>
-                    <p class="hero-description">
+                    <nav class="breadcrumb modern-breadcrumb" aria-label="Breadcrumb">
+                        <ol>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../index.html#community">Community</a></li>
+                            <li><span aria-current="page">Gallery</span></li>
+                        </ol>
+                    </nav>
+                    <h1 class="page-title modern-title">Community Gallery</h1>
+                    <p class="page-subtitle modern-subtitle">
                         Celebrating the strength, courage, and resilience of our warrior community
                     </p>
+                </div>
+                <div class="hero-visual modern-visual">
+                    <div class="floating-elements">
+                        <div class="float-element hope"></div>
+                        <div class="float-element faith"></div>
+                        <div class="float-element strength"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Gallery Section -->
-        <section class="gallery-section">
+        <!-- Page Content -->
+        <section class="page-content modern-content">
             <div class="container">
                 
                 <!-- Gallery Categories -->
@@ -126,7 +145,7 @@
                     <!-- Placeholder Gallery Items -->
                     <div class="gallery-item" data-category="events">
                         <div class="gallery-image-placeholder">
-                            <span class="placeholder-text">🎉<br>Annual Warrior<br>Celebration</span>
+                            <span class="placeholder-text"><span class="icon-celebration" aria-label="Celebration"></span><br>Annual Warrior<br>Celebration</span>
                         </div>
                         <div class="gallery-info">
                             <h3>Annual Warrior Celebration 2024</h3>
@@ -136,7 +155,7 @@
 
                     <div class="gallery-item" data-category="warriors">
                         <div class="gallery-image-placeholder">
-                            <span class="placeholder-text">💪<br>Warrior<br>Spotlight</span>
+                            <span class="placeholder-text"><span class="icon-strength" aria-label="Strength"></span><br>Warrior<br>Spotlight</span>
                         </div>
                         <div class="gallery-info">
                             <h3>Warrior Spotlight: Sarah's Journey</h3>
@@ -146,7 +165,7 @@
 
                     <div class="gallery-item" data-category="community">
                         <div class="gallery-image-placeholder">
-                            <span class="placeholder-text">🤝<br>Support<br>Groups</span>
+                            <span class="placeholder-text"><span class="icon-support" aria-label="Support"></span><br>Support<br>Groups</span>
                         </div>
                         <div class="gallery-info">
                             <h3>Support Group Meetings</h3>
@@ -156,7 +175,7 @@
 
                     <div class="gallery-item" data-category="awareness">
                         <div class="gallery-image-placeholder">
-                            <span class="placeholder-text">🩸<br>Awareness<br>Campaign</span>
+                            <span class="placeholder-text"><span class="icon-awareness" aria-label="Awareness"></span><br>Awareness<br>Campaign</span>
                         </div>
                         <div class="gallery-info">
                             <h3>Sickle Cell Awareness Day</h3>
@@ -166,7 +185,7 @@
 
                     <div class="gallery-item" data-category="events">
                         <div class="gallery-image-placeholder">
-                            <span class="placeholder-text">🏃‍♀️<br>Warrior<br>Walk</span>
+                            <span class="placeholder-text"><span class="icon-walk" aria-label="Walk"></span><br>Warrior<br>Walk</span>
                         </div>
                         <div class="gallery-info">
                             <h3>Warrior Walk for Awareness</h3>
@@ -176,7 +195,7 @@
 
                     <div class="gallery-item" data-category="warriors">
                         <div class="gallery-image-placeholder">
-                            <span class="placeholder-text">⭐<br>Young<br>Warriors</span>
+                            <span class="placeholder-text"><span class="icon-star" aria-label="Star"></span><br>Young<br>Warriors</span>
                         </div>
                         <div class="gallery-info">
                             <h3>Young Warriors Program</h3>
@@ -186,7 +205,7 @@
 
                     <div class="gallery-item" data-category="community">
                         <div class="gallery-image-placeholder">
-                            <span class="placeholder-text">❤️<br>Family<br>Support</span>
+                            <span class="placeholder-text"><span class="icon-heart" aria-label="Heart"></span><br>Family<br>Support</span>
                         </div>
                         <div class="gallery-info">
                             <h3>Family Support Network</h3>
@@ -196,7 +215,7 @@
 
                     <div class="gallery-item" data-category="awareness">
                         <div class="gallery-image-placeholder">
-                            <span class="placeholder-text">🎓<br>Educational<br>Workshops</span>
+                            <span class="placeholder-text"><span class="icon-education" aria-label="Education"></span><br>Educational<br>Workshops</span>
                         </div>
                         <div class="gallery-info">
                             <h3>Educational Workshops</h3>
@@ -219,7 +238,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer" role="contentinfo">
+    <footer class="site-footer modern-footer" role="contentinfo">
         <div class="footer-container">
             <div class="footer-content">
                 <div class="footer-section">
@@ -259,7 +278,7 @@
                     </ul>
                     <div class="contact-info">
                         <p><strong>Direct:</strong> +2347041120734</p>
-                        <p><strong>Email:</strong> contact@wewarriors.org</p>
+                        <p><strong>Email:</strong> wewarriorsng@gmail.com</p>
                     </div>
                 </div>
             </div>
@@ -274,6 +293,7 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="../js/main.js"></script>
     <script src="../js/modern.js"></script>
     
     <script>

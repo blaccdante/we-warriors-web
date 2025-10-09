@@ -19,27 +19,28 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/accessibility.css">
+    <link rel="stylesheet" href="../css/pages.css">
 </head>
-<body>
+<body class="page-body">
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
     
-    <header class="site-header" role="banner">
-        <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <header class="site-header modern-header" role="banner">
+        <nav class="navbar glass-effect" role="navigation" aria-label="Main navigation">
             <div class="nav-container">
                 <div class="logo-container">
-                    <a href="../index.html" class="logo-link" aria-label="We Warriors Home">
+                    <a href="../index.html" class="logo-link modern-logo" aria-label="We Warriors Home">
                         <img src="../images/logo.svg" alt="We Warriors Logo" class="logo">
                         <span class="logo-text">We Warriors</span>
                     </a>
                 </div>
                 
-                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                <button class="mobile-menu-toggle modern-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
                 </button>
                 
-                <ul class="nav-menu" role="menubar">
+                <ul class="nav-menu modern-nav" role="menubar">
                     <li class="nav-item dropdown" role="none">
                         <a href="#" class="nav-link dropdown-toggle active" role="menuitem" aria-haspopup="true">Support</a>
                         <ul class="dropdown-menu">
@@ -68,10 +69,16 @@
                         </ul>
                     </li>
                     <li class="nav-item" role="none">
+                        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                            <span class="sun-icon">☀️</span>
+                            <span class="moon-icon">🌙</span>
+                        </button>
+                    </li>
+                    <li class="nav-item" role="none">
                         <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact</a>
                     </li>
                     <li class="nav-item" role="none">
-                        <a href="../pages/donate.html" class="nav-link cta-button" role="menuitem">Get Involved</a>
+                        <a href="../pages/donate.html" class="nav-link cta-button modern-cta" role="menuitem">Get Involved</a>
                     </li>
                 </ul>
             </div>
@@ -113,7 +120,7 @@
                 <!-- Overview Card -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">🩸</div>
+                        <div class="card-icon blood-icon" role="img" aria-label="Blood cell icon"></div>
                         <h2 class="card-title">What is Sickle Cell Disease?</h2>
                     </div>
                     <div class="card-content">
@@ -149,7 +156,7 @@
                 <!-- Causes Section -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">🧬</div>
+                        <div class="card-icon dna-icon" role="img" aria-label="DNA helix icon"></div>
                         <h2 class="card-title">Causes and Genetics</h2>
                     </div>
                     <div class="card-content">
@@ -158,15 +165,15 @@
                         
                         <div class="info-grid">
                             <div class="info-item">
-                                <h4>🧬 Both Parents Have Sickle Cell Trait</h4>
+                                <h4><span class="dna-icon emoji-icon" role="img" aria-label="DNA icon"></span> Both Parents Have Sickle Cell Trait</h4>
                                 <p>Each child has a 25% chance of having sickle cell disease, 50% chance of having sickle cell trait, and 25% chance of having normal hemoglobin.</p>
                             </div>
                             <div class="info-item">
-                                <h4>⚕️ One Parent Has Disease, One Has Trait</h4>
+                                <h4><span class="medical-icon emoji-icon" role="img" aria-label="Medical icon"></span> One Parent Has Disease, One Has Trait</h4>
                                 <p>Each child has a 50% chance of having sickle cell disease and 50% chance of having sickle cell trait.</p>
                             </div>
                             <div class="info-item">
-                                <h4>👨‍👩‍👧‍👦 Family Planning Considerations</h4>
+                                <h4><span class="family-icon emoji-icon" role="img" aria-label="Family icon"></span> Family Planning Considerations</h4>
                                 <p>Genetic counseling can help families understand their risks and make informed decisions about having children.</p>
                             </div>
                         </div>
@@ -186,7 +193,7 @@
                 <!-- Symptoms Section -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">💔</div>
+                        <div class="card-icon symptoms-icon" role="img" aria-label="Symptoms heart icon"></div>
                         <h2 class="card-title">Signs and Symptoms</h2>
                     </div>
                     <div class="card-content">
@@ -196,27 +203,27 @@
                         
                         <div class="info-grid">
                             <div class="info-item">
-                                <h4>⚡ Pain Crises (Vaso-occlusive Crises)</h4>
+                                <h4><span class="pain-icon emoji-icon" role="img" aria-label="Lightning pain icon"></span> Pain Crises (Vaso-occlusive Crises)</h4>
                                 <p>Sudden, severe episodes of pain that can last hours to days. Pain commonly occurs in the chest, back, arms, and legs.</p>
                             </div>
                             <div class="info-item">
-                                <h4>😴 Fatigue and Anemia</h4>
+                                <h4><span class="fatigue-icon emoji-icon" role="img" aria-label="Tired face icon"></span> Fatigue and Anemia</h4>
                                 <p>Chronic tiredness due to a shortage of healthy red blood cells that carry oxygen throughout the body.</p>
                             </div>
                             <div class="info-item">
-                                <h4>🤒 Frequent Infections</h4>
+                                <h4><span class="infection-icon emoji-icon" role="img" aria-label="Fever face icon"></span> Frequent Infections</h4>
                                 <p>Increased susceptibility to infections due to damage to the spleen, which helps fight infections.</p>
                             </div>
                             <div class="info-item">
-                                <h4>🫁 Acute Chest Syndrome</h4>
+                                <h4><span class="chest-icon emoji-icon" role="img" aria-label="Lungs icon"></span> Acute Chest Syndrome</h4>
                                 <p>A serious complication that causes chest pain, fever, and difficulty breathing.</p>
                             </div>
                             <div class="info-item">
-                                <h4>🦶 Swelling</h4>
+                                <h4><span class="swelling-icon emoji-icon" role="img" aria-label="Foot icon"></span> Swelling</h4>
                                 <p>Painful swelling in hands and feet, often one of the first signs in infants.</p>
                             </div>
                             <div class="info-item">
-                                <h4>👁️ Vision Problems</h4>
+                                <h4><span class="vision-icon emoji-icon" role="img" aria-label="Eye icon"></span> Vision Problems</h4>
                                 <p>Sickled cells can block blood vessels in the eyes, leading to vision problems.</p>
                             </div>
                         </div>
@@ -238,7 +245,7 @@
                 <!-- Treatment Overview -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">⚕️</div>
+                        <div class="card-icon medical-icon" role="img" aria-label="Medical symbol icon"></div>
                         <h2 class="card-title">Treatment and Management</h2>
                     </div>
                     <div class="card-content">
@@ -248,19 +255,19 @@
                         
                         <div class="info-grid">
                             <div class="info-item">
-                                <h4>💊 Medications</h4>
+                                <h4><span class="pill-icon emoji-icon" role="img" aria-label="Pill icon"></span> Medications</h4>
                                 <p>Hydroxyurea, pain medications, antibiotics to prevent infections, and newer medications like voxelotor and crizanlizumab.</p>
                             </div>
                             <div class="info-item">
-                                <h4>🩸 Blood Transfusions</h4>
+                                <h4><span class="blood-icon emoji-icon" role="img" aria-label="Blood drop icon"></span> Blood Transfusions</h4>
                                 <p>Regular or emergency transfusions to treat severe anemia and reduce the risk of stroke and other complications.</p>
                             </div>
                             <div class="info-item">
-                                <h4>🔬 Bone Marrow Transplant</h4>
+                                <h4><span class="research-icon emoji-icon" role="img" aria-label="Research microscope icon"></span> Bone Marrow Transplant</h4>
                                 <p>The only potential cure available today, though it requires a compatible donor and carries significant risks.</p>
                             </div>
                             <div class="info-item">
-                                <h4>🏥 Preventive Care</h4>
+                                <h4><span class="hospital-icon emoji-icon" role="img" aria-label="Hospital icon"></span> Preventive Care</h4>
                                 <p>Regular check-ups, vaccinations, and screening for complications to prevent serious health problems.</p>
                             </div>
                         </div>
@@ -281,7 +288,7 @@
                 <!-- Hope and Future -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">✨</div>
+                        <div class="card-icon star-icon" role="img" aria-label="Sparkles hope icon"></div>
                         <h2 class="card-title">Hope for the Future</h2>
                     </div>
                     <div class="card-content">
@@ -305,7 +312,7 @@
                 <!-- Action Section -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">🤝</div>
+                        <div class="card-icon handshake-icon" role="img" aria-label="Handshake help icon"></div>
                         <h2 class="card-title">How We Can Help</h2>
                     </div>
                     <div class="card-content">
@@ -392,7 +399,7 @@
                         </a>
                     </div>
                     <div class="contact-info">
-                        <p><strong>Email:</strong> contact@wewarriors.org</p>
+                        <p><strong>Email:</strong> wewarriorsng@gmail.com</p>
                         <p><strong>Phone:</strong> 1-800-WARRIOR</p>
                     </div>
                 </div>

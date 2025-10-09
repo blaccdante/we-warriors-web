@@ -1,6 +1,31 @@
 /* We Warriors Website - Main Stylesheet */
 /* From Pain comes Strength • Through Faith we Hope */
 
+/* Performance optimizations */
+* {
+  /* Enable hardware acceleration for smoother animations */
+  will-change: auto;
+}
+
+.journey-step,
+.nav-link,
+.btn,
+.about-card {
+  will-change: transform;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* CSS Custom Properties (Variables) */
 :root {
   /* Journey Colors - Pain to Strength */
@@ -93,6 +118,565 @@
   background: #000000;
 }
 
+/* Dark theme dropdown menu styles */
+:root[data-theme="dark"] .dropdown-menu {
+  background: var(--background-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+:root[data-theme="dark"] .dropdown-menu a {
+  color: var(--text-primary);
+}
+
+:root[data-theme="dark"] .dropdown-menu a:hover,
+:root[data-theme="dark"] .dropdown-menu a.active {
+  background: var(--background-accent);
+  color: var(--hope-color);
+  border-left-color: var(--hope-color);
+}
+
+/* Dark theme page titles and content */
+:root[data-theme="dark"] .page-title,
+:root[data-theme="dark"] .modern-title,
+:root[data-theme="dark"] h1,
+:root[data-theme="dark"] h2,
+:root[data-theme="dark"] h3,
+:root[data-theme="dark"] h4,
+:root[data-theme="dark"] h5,
+:root[data-theme="dark"] h6 {
+  color: var(--text-primary) !important;
+}
+
+:root[data-theme="dark"] .page-subtitle,
+:root[data-theme="dark"] .modern-subtitle,
+:root[data-theme="dark"] .section-subtitle {
+  color: var(--text-secondary) !important;
+}
+
+:root[data-theme="dark"] .page-hero,
+:root[data-theme="dark"] .modern-hero,
+:root[data-theme="dark"] .page-header {
+  background: var(--background-secondary) !important;
+}
+
+:root[data-theme="dark"] .breadcrumb a,
+:root[data-theme="dark"] .modern-breadcrumb a {
+  color: var(--hope-color) !important;
+}
+
+:root[data-theme="dark"] .breadcrumb span,
+:root[data-theme="dark"] .modern-breadcrumb span {
+  color: var(--text-secondary) !important;
+}
+
+:root[data-theme="dark"] .content-card {
+  background: var(--background-secondary) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+:root[data-theme="dark"] .page-content,
+:root[data-theme="dark"] .modern-content {
+  background: var(--background-primary) !important;
+}
+
+/* Comprehensive dark theme text visibility */
+:root[data-theme="dark"] p,
+:root[data-theme="dark"] li,
+:root[data-theme="dark"] span,
+:root[data-theme="dark"] div,
+:root[data-theme="dark"] label,
+:root[data-theme="dark"] .text-content,
+:root[data-theme="dark"] .intro-text,
+:root[data-theme="dark"] .card-description,
+:root[data-theme="dark"] .feature-description {
+  color: var(--text-primary) !important;
+}
+
+/* Dark theme cards and containers */
+:root[data-theme="dark"] .comparison-item,
+:root[data-theme="dark"] .progression-step,
+:root[data-theme="dark"] .feature-card,
+:root[data-theme="dark"] .stats-card,
+:root[data-theme="dark"] .gallery-item {
+  background: var(--background-secondary) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Dark theme buttons and links */
+:root[data-theme="dark"] .btn,
+:root[data-theme="dark"] .button,
+:root[data-theme="dark"] .category-btn {
+  background: var(--background-secondary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+:root[data-theme="dark"] .btn:hover,
+:root[data-theme="dark"] .button:hover,
+:root[data-theme="dark"] .category-btn:hover {
+  background: var(--background-accent) !important;
+  color: var(--hope-color) !important;
+}
+
+/* Dark theme form elements */
+:root[data-theme="dark"] input,
+:root[data-theme="dark"] textarea,
+:root[data-theme="dark"] select {
+  background: var(--background-secondary) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Dark theme tables */
+:root[data-theme="dark"] table,
+:root[data-theme="dark"] th,
+:root[data-theme="dark"] td {
+  background: var(--background-secondary) !important;
+  color: var(--text-primary) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Dark theme special elements */
+:root[data-theme="dark"] .hero-tagline,
+:root[data-theme="dark"] .hero-description {
+  color: var(--text-primary) !important;
+  text-shadow: none !important;
+}
+
+:root[data-theme="dark"] .section-title {
+  color: var(--text-primary) !important;
+}
+
+/* Dark theme navigation fixes */
+:root[data-theme="dark"] .logo-container,
+:root[data-theme="dark"] .nav-menu .nav-item:last-child {
+  background: var(--background-primary) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Dark theme navigation links - CRITICAL FIX */
+:root[data-theme="dark"] .nav-link {
+  color: var(--text-primary) !important;
+  background: transparent !important;
+}
+
+:root[data-theme="dark"] .nav-link:hover,
+:root[data-theme="dark"] .nav-link:focus,
+:root[data-theme="dark"] .nav-link.active {
+  background: var(--background-accent) !important;
+  color: var(--hope-color) !important;
+}
+
+/* Dark theme dropdown toggles */
+:root[data-theme="dark"] .dropdown-toggle {
+  color: var(--text-primary) !important;
+}
+
+:root[data-theme="dark"] .dropdown-toggle:hover {
+  color: var(--hope-color) !important;
+}
+
+/* Dark theme site header */
+:root[data-theme="dark"] .site-header {
+  background: var(--background-primary) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Dark theme navbar */
+:root[data-theme="dark"] .navbar {
+  background: var(--background-primary) !important;
+}
+
+/* Dark theme main content areas */
+:root[data-theme="dark"] main,
+:root[data-theme="dark"] .modern-main {
+  background: var(--background-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Dark theme page sections */
+:root[data-theme="dark"] section {
+  background: var(--background-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Dark theme container */
+:root[data-theme="dark"] .container {
+  background: transparent !important;
+  color: var(--text-primary) !important;
+}
+
+/* Dark theme card headers and titles */
+:root[data-theme="dark"] .card-header,
+:root[data-theme="dark"] .card-title {
+  color: var(--text-primary) !important;
+  background: transparent !important;
+}
+
+/* Dark theme text contrast improvements */
+:root[data-theme="dark"] .page-subtitle,
+:root[data-theme="dark"] .modern-subtitle,
+:root[data-theme="dark"] .section-subtitle,
+:root[data-theme="dark"] .hero-description {
+  color: #B8B8B8 !important;
+  opacity: 0.9 !important;
+}
+
+/* Dark theme floating elements - AGGRESSIVE FIX */
+:root[data-theme="dark"] .float-element,
+:root[data-theme="dark"] .floating-elements .float-element,
+:root[data-theme="dark"] .hero-visual .float-element,
+:root[data-theme="dark"] .modern-visual .float-element {
+  background: #444444 !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Specific colored floating elements */
+:root[data-theme="dark"] .float-element.hope,
+:root[data-theme="dark"] .floating-elements .float-element.hope,
+:root[data-theme="dark"] .hero-visual .float-element.hope,
+:root[data-theme="dark"] .modern-visual .float-element.hope {
+  background: linear-gradient(135deg, #FF6B6B, #FF8E8E) !important;
+  border: 2px solid #FF6B6B !important;
+  box-shadow: 0 4px 20px rgba(255, 107, 107, 0.4) !important;
+}
+
+:root[data-theme="dark"] .float-element.faith,
+:root[data-theme="dark"] .floating-elements .float-element.faith,
+:root[data-theme="dark"] .hero-visual .float-element.faith,
+:root[data-theme="dark"] .modern-visual .float-element.faith {
+  background: linear-gradient(135deg, #FFD700, #FFF200) !important;
+  border: 2px solid #FFD700 !important;
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4) !important;
+}
+
+:root[data-theme="dark"] .float-element.strength,
+:root[data-theme="dark"] .floating-elements .float-element.strength,
+:root[data-theme="dark"] .hero-visual .float-element.strength,
+:root[data-theme="dark"] .modern-visual .float-element.strength {
+  background: linear-gradient(135deg, #FFA500, #FFB84D) !important;
+  border: 2px solid #FFA500 !important;
+  box-shadow: 0 4px 20px rgba(255, 165, 0, 0.4) !important;
+}
+
+/* Dark theme hero and page content improvements */
+:root[data-theme="dark"] .hero-content,
+:root[data-theme="dark"] .page-content {
+  color: var(--text-primary) !important;
+}
+
+/* Dark theme subtle text elements */
+:root[data-theme="dark"] .text-muted,
+:root[data-theme="dark"] .subtitle,
+:root[data-theme="dark"] .description {
+  color: #B8B8B8 !important;
+  opacity: 0.85 !important;
+}
+
+/* DARK THEME JOURNEY STEPS - PRESERVE ORIGINAL BRIGHT GRADIENTS */
+:root[data-theme="dark"] .journey-step {
+  /* Keep original bright colors but ensure text is visible */
+  color: white !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7) !important;
+  background: inherit !important; /* Preserve original gradient backgrounds */
+}
+
+:root[data-theme="dark"] .journey-step.pain {
+  background: radial-gradient(circle, var(--pain-color), var(--pain-light)) !important;
+  color: white !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7) !important;
+}
+
+:root[data-theme="dark"] .journey-step.faith {
+  background: radial-gradient(circle, var(--faith-color), var(--strength-color)) !important;
+  color: var(--pain-color) !important; /* Keep the darker text for faith/strength which are bright yellow/orange */
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8) !important;
+}
+
+:root[data-theme="dark"] .journey-step.hope {
+  background: radial-gradient(circle, var(--hope-color), var(--faith-color)) !important;
+  color: white !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7) !important;
+}
+
+:root[data-theme="dark"] .journey-step.strength {
+  background: radial-gradient(circle, var(--strength-color), var(--faith-color)) !important;
+  color: var(--pain-color) !important; /* Keep the darker text for strength which is bright orange */
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8) !important;
+}
+
+:root[data-theme="dark"] .step-label {
+  color: var(--text-primary) !important;
+  text-shadow: none !important;
+}
+
+/* CATCH-ALL DARK THEME VISIBILITY FIXES */
+:root[data-theme="dark"] * {
+  /* Ensure no text is completely invisible */
+  color: inherit;
+}
+
+:root[data-theme="dark"] *:not(.sun-icon):not(.moon-icon) {
+  /* Prevent any element from being completely black/invisible */
+  background-color: inherit;
+}
+
+/* Force visibility for any remaining invisible elements */
+:root[data-theme="dark"] [style*="background: black"],
+:root[data-theme="dark"] [style*="background:#000"],
+:root[data-theme="dark"] [style*="background-color: black"],
+:root[data-theme="dark"] [style*="background-color:#000"] {
+  background: var(--background-secondary) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Force text visibility */
+:root[data-theme="dark"] [style*="color: black"],
+:root[data-theme="dark"] [style*="color:#000"] {
+  color: var(--text-primary) !important;
+}
+
+/* COMPREHENSIVE DARK THEME ADDITIONS */
+
+/* Dark theme main content areas */
+:root[data-theme="dark"] main,
+:root[data-theme="dark"] .main-content,
+:root[data-theme="dark"] .modern-main {
+  background: var(--background-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Dark theme content cards and sections */
+:root[data-theme="dark"] .content-section,
+:root[data-theme="dark"] .section-content,
+:root[data-theme="dark"] .card-content,
+:root[data-theme="dark"] .service-card,
+:root[data-theme="dark"] .group-card,
+:root[data-theme="dark"] .specialist-card,
+:root[data-theme="dark"] .hospital-groups,
+:root[data-theme="dark"] .online-groups,
+:root[data-theme="dark"] .emergency-grid,
+:root[data-theme="dark"] .emergency-item,
+:root[data-theme="dark"] .benefits-grid,
+:root[data-theme="dark"] .benefit-item {
+  background: var(--background-secondary) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Dark theme navigation fixes */
+:root[data-theme="dark"] .navbar,
+:root[data-theme="dark"] .nav-menu,
+:root[data-theme="dark"] .nav-container {
+  background: var(--background-primary) !important;
+  border-bottom: 1px solid var(--background-secondary) !important;
+}
+
+:root[data-theme="dark"] .nav-link {
+  color: var(--text-primary) !important;
+}
+
+:root[data-theme="dark"] .nav-link:hover {
+  color: var(--hope-color) !important;
+}
+
+/* Dark theme buttons and CTAs */
+:root[data-theme="dark"] .btn-modern,
+:root[data-theme="dark"] .btn-secondary-modern,
+:root[data-theme="dark"] .cta-button,
+:root[data-theme="dark"] .modern-cta,
+:root[data-theme="dark"] .action-buttons a {
+  background: var(--blood-color) !important;
+  color: white !important;
+  border: 2px solid var(--blood-color) !important;
+}
+
+:root[data-theme="dark"] .btn-modern:hover,
+:root[data-theme="dark"] .btn-secondary-modern:hover,
+:root[data-theme="dark"] .cta-button:hover,
+:root[data-theme="dark"] .modern-cta:hover,
+:root[data-theme="dark"] .action-buttons a:hover {
+  background: var(--blood-light) !important;
+  color: white !important;
+  border: 2px solid var(--blood-light) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Dark theme lists and text elements */
+:root[data-theme="dark"] .service-features,
+:root[data-theme="dark"] .service-features li,
+:root[data-theme="dark"] .benefits-grid h3,
+:root[data-theme="dark"] .service-title,
+:root[data-theme="dark"] .service-description,
+:root[data-theme="dark"] .group-card h3,
+:root[data-theme="dark"] .group-card p,
+:root[data-theme="dark"] .specialist-card h5,
+:root[data-theme="dark"] .specialist-card p,
+:root[data-theme="dark"] .emergency-item h3,
+:root[data-theme="dark"] .emergency-item ul,
+:root[data-theme="dark"] .emergency-item li {
+  color: var(--text-primary) !important;
+}
+
+/* Dark theme card headers and icons */
+:root[data-theme="dark"] .card-header,
+:root[data-theme="dark"] .card-title,
+:root[data-theme="dark"] .card-icon,
+:root[data-theme="dark"] .service-icon {
+  color: var(--text-primary) !important;
+  background: transparent !important;
+}
+
+/* Dark theme section titles and headers */
+:root[data-theme="dark"] .section-title,
+:root[data-theme="dark"] .region-section h4,
+:root[data-theme="dark"] .specialists-grid h5,
+:root[data-theme="dark"] .hotline-card h4,
+:root[data-theme="dark"] .contact-card h4,
+:root[data-theme="dark"] .important-note h4,
+:root[data-theme="dark"] .important-reminder h4 {
+  color: var(--hope-color) !important;
+  border-bottom: 2px solid var(--hope-color) !important;
+  padding-bottom: var(--spacing-xs) !important;
+  margin-bottom: var(--spacing-md) !important;
+}
+
+/* Dark theme specialized content */
+:root[data-theme="dark"] .specialists-by-region,
+:root[data-theme="dark"] .region-section,
+:root[data-theme="dark"] .specialists-grid,
+:root[data-theme="dark"] .services-grid,
+:root[data-theme="dark"] .content-grid {
+  background: transparent !important;
+}
+
+/* Dark theme contact and action elements */
+:root[data-theme="dark"] .contact-grid,
+:root[data-theme="dark"] .contact-card,
+:root[data-theme="dark"] .contact-options,
+:root[data-theme="dark"] .action-buttons,
+:root[data-theme="dark"] .hotline-cards,
+:root[data-theme="dark"] .hotline-card {
+  background: var(--background-secondary) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: var(--radius-md) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Dark theme reminder and note boxes */
+:root[data-theme="dark"] .important-note,
+:root[data-theme="dark"] .important-reminder,
+:root[data-theme="dark"] .note-text,
+:root[data-theme="dark"] .reminder-text {
+  background: rgba(255, 215, 0, 0.1) !important;
+  border: 2px solid #FFD700 !important;
+  border-radius: var(--radius-md) !important;
+  color: var(--text-primary) !important;
+  padding: var(--spacing-md) !important;
+}
+
+/* Dark theme body and html overrides */
+:root[data-theme="dark"] body {
+  background-color: var(--background-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Dark theme strong and emphasized text */
+:root[data-theme="dark"] strong,
+:root[data-theme="dark"] b,
+:root[data-theme="dark"] em,
+:root[data-theme="dark"] .emphasis {
+  color: var(--hope-color) !important;
+  font-weight: 600 !important;
+}
+
+/* Dark theme links in content */
+:root[data-theme="dark"] .content-card a,
+:root[data-theme="dark"] .service-card a,
+:root[data-theme="dark"] .group-card a,
+:root[data-theme="dark"] .specialist-card a {
+  color: var(--hope-color) !important;
+  text-decoration: underline !important;
+}
+
+:root[data-theme="dark"] .content-card a:hover,
+:root[data-theme="dark"] .service-card a:hover,
+:root[data-theme="dark"] .group-card a:hover,
+:root[data-theme="dark"] .specialist-card a:hover {
+  color: var(--faith-color) !important;
+  text-decoration: none !important;
+}
+
+/* THEME TOGGLE BUTTON FIXES - SIMPLIFIED */
+/* Make sure toggle is visible and positioned correctly */
+.theme-toggle {
+  background: var(--background-secondary);
+  border: 2px solid var(--text-light);
+  border-radius: 50px;
+  width: 50px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+  margin: 0 var(--spacing-xs);
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.theme-toggle:hover {
+  border-color: var(--faith-color);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Dark theme toggle button styling */
+:root[data-theme="dark"] .theme-toggle {
+  background: var(--background-secondary);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+:root[data-theme="dark"] .theme-toggle:hover {
+  border-color: var(--faith-color);
+  box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+}
+
+/* HOMEPAGE JOURNEY STEPS - Keep original bright appearance in dark mode */
+/* Remove the dull overrides - let the original bright colors show through */
+
+/* Theme toggle icons styling */
+.sun-icon, .moon-icon {
+  font-size: 1rem;
+  transition: var(--transition-normal);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.moon-icon {
+  opacity: 0;
+  transform: rotate(180deg);
+}
+
+/* Dark theme icon transitions */
+:root[data-theme="dark"] .sun-icon {
+  opacity: 0;
+  transform: rotate(-180deg);
+}
+
+:root[data-theme="dark"] .moon-icon {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
 /* Reset and Base Styles */
 * {
   margin: 0;
@@ -134,6 +718,25 @@ body {
   top: 6px;
 }
 
+/* Enhanced focus styles for accessibility */
+*:focus {
+  outline: 2px solid var(--faith-color);
+  outline-offset: 2px;
+}
+
+/* Screen reader only text */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
@@ -142,15 +745,19 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: var(--spacing-sm);
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.5rem; }
-h4 { font-size: 1.25rem; }
-h5 { font-size: 1.125rem; }
-h6 { font-size: 1rem; }
+/* Responsive typography using clamp for better scaling */
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+h3 { font-size: clamp(1.25rem, 3vw, 1.875rem); }
+h4 { font-size: clamp(1.125rem, 2.5vw, 1.5rem); }
+h5 { font-size: clamp(1rem, 2vw, 1.25rem); }
+h6 { font-size: clamp(0.875rem, 1.5vw, 1.125rem); }
 
 p {
   margin-bottom: var(--spacing-sm);
+  line-height: 1.7; /* Improved readability */
+  hyphens: auto; /* Better text wrapping */
+  word-wrap: break-word;
 }
 
 a {
@@ -168,7 +775,7 @@ a:hover, a:focus {
 /* Container and Layout */
 .container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1200px; /* Reduced for better readability */
   margin: 0 auto;
   padding: 0 var(--spacing-md);
 }
@@ -178,6 +785,28 @@ a:hover, a:focus {
 .footer-container {
   width: 100%;
   max-width: 1400px;
+}
+
+/* Content sections with better desktop scaling */
+.content-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Desktop content optimization */
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--spacing-xl);
+  }
+  
+  /* Better paragraph width for readability */
+  .section-description,
+  .card-description,
+  .hero-description {
+    max-width: 65ch; /* Optimal reading width */
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* Section Spacing */
@@ -250,21 +879,23 @@ header ul, header ol, header li {
   flex-wrap: nowrap;
 }
 
-/* SEAMLESS TOP LEFT LOGO POSITIONING */
+/* ABSOLUTE LEFT CORNER LOGO POSITIONING */
 .logo-container {
   display: flex !important;
   align-items: center !important;
   gap: 8px !important;
   margin: 0 !important;
   padding: 8px 12px !important;
-  position: absolute !important;
+  position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   z-index: 9999 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  border-radius: 0 !important;
+  background: var(--background-primary) !important;
+  box-shadow: var(--shadow-sm) !important;
+  border-radius: 0 0 var(--radius-md) 0 !important;
   transition: var(--transition-normal);
+  height: 60px !important;
+  width: 200px !important;
 }
 
 .logo-container .logo {
@@ -324,14 +955,62 @@ header ul, header ol, header li {
   display: flex;
   list-style: none !important;
   list-style-type: none !important;
-  gap: 0;
+  gap: var(--spacing-sm);
   align-items: center;
-  padding: var(--spacing-sm) var(--spacing-md);
-  margin-left: 220px;
-  margin-top: 0;
-  flex: 1;
+  padding: 0;
+  margin: 0;
+  margin-left: 200px;
+  width: calc(100% - 200px);
+  height: 60px;
+  position: relative;
   justify-content: space-between;
-  width: calc(100% - 240px);
+}
+
+/* Main navigation items (Home, Support, Information, Community) */
+.nav-menu .nav-item:nth-child(1),
+.nav-menu .nav-item:nth-child(2),
+.nav-menu .nav-item:nth-child(3),
+.nav-menu .nav-item:nth-child(4) {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Theme toggle centered */
+.nav-menu .nav-item:nth-child(5) {
+  width: 60px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Contact link */
+.nav-menu .nav-item:nth-child(6) {
+  flex: 0 0 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* GET INVOLVED button - fixed position in right corner */
+.nav-menu .nav-item:last-child {
+  position: fixed !important;
+  top: 0 !important;
+  right: 0 !important;
+  width: 200px !important;
+  height: 60px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background: var(--background-primary) !important;
+  box-shadow: var(--shadow-sm) !important;
+  border-radius: 0 0 0 var(--radius-md) !important;
+  z-index: 9998 !important;
 }
 
 .nav-menu li {
@@ -341,10 +1020,7 @@ header ul, header ol, header li {
   padding: 0;
 }
 
-.nav-item {
-  list-style: none !important;
-  list-style-type: none !important;
-}
+/* Nav item styles handled above in .nav-menu .nav-item */
 
 .nav-link {
   font-weight: 500;
@@ -353,25 +1029,36 @@ header ul, header ol, header li {
   transition: var(--transition-fast);
   white-space: nowrap;
   text-align: center;
-  min-width: 120px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--text-primary);
+  width: 100%;
+  max-width: 140px;
 }
 
 .nav-link:hover, .nav-link:focus, .nav-link.active {
   background: var(--background-accent);
   color: var(--blood-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
 }
 
 .nav-link.cta-button {
   background: var(--journey-gradient);
   color: white !important;
   font-weight: 700;
-  padding: var(--spacing-sm) var(--spacing-lg);
+  padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   border: 2px solid var(--faith-color);
-  min-width: 140px;
+  width: 100%;
+  max-width: 140px;
+  height: 40px;
 }
 
 .nav-link.cta-button:hover {
@@ -432,6 +1119,8 @@ header ul, header ol, header li {
   background: var(--background-accent);
   color: var(--blood-color);
   outline: none;
+  padding-left: calc(var(--spacing-md) + 5px);
+  border-left: 3px solid var(--blood-color);
 }
 
 .dropdown-toggle::after {
@@ -445,38 +1134,8 @@ header ul, header ol, header li {
   transform: rotate(180deg);
 }
 
-/* Theme Toggle Button */
-.theme-toggle {
-  background: var(--background-secondary);
-  border: 2px solid var(--text-light);
-  border-radius: 50px;
-  width: 50px;
-  height: 30px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition-normal);
-  position: relative;
-  overflow: hidden;
-  margin: 0 var(--spacing-sm);
-}
-
-.theme-toggle:hover {
-  border-color: var(--faith-color);
-  box-shadow: var(--shadow-sm);
-}
-
-.sun-icon, .moon-icon {
-  font-size: 1rem;
-  transition: var(--transition-normal);
-  position: absolute;
-}
-
-.moon-icon {
-  opacity: 0;
-  transform: rotate(180deg);
-}
+/* Theme Toggle Button - CONSOLIDATED */
+/* This rule is handled above in the THEME TOGGLE BUTTON FIXES section */
 
 /* Dark theme active states */
 :root[data-theme="dark"] .sun-icon {
@@ -683,6 +1342,20 @@ main {
 /* Sections */
 section {
   padding: var(--spacing-xxl) 0;
+  position: relative;
+}
+
+/* Section separators */
+section:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: var(--journey-gradient);
+  border-radius: 2px;
 }
 
 .section-header {
@@ -733,6 +1406,197 @@ section {
 .card-icon {
   font-size: 3rem;
   margin-bottom: var(--spacing-md);
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  /* Better emoji alignment */
+  text-align: center;
+  width: 1em;
+  height: 1em;
+}
+
+/* Emoji fallback styles */
+.emoji-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  /* Fallback for unsupported emojis */
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* CSS-only emoji alternatives */
+.blood-icon::before {
+  content: "🩸";
+  color: var(--blood-color);
+}
+
+.medical-icon::before {
+  content: "⚕️";
+  color: var(--hope-color);
+}
+
+.research-icon::before {
+  content: "🔬";
+  color: var(--faith-color);
+}
+
+/* Contact page icons */
+.phone-icon::before {
+  content: "📞";
+  color: var(--blood-color);
+}
+
+.email-icon::before {
+  content: "✉️";
+  color: var(--hope-color);
+}
+
+.chat-icon::before {
+  content: "💬";
+  color: var(--faith-color);
+}
+
+.building-icon::before {
+  content: "🏢";
+  color: var(--strength-color);
+}
+
+/* Forum category icons */
+.strength-icon::before {
+  content: "💪";
+  color: var(--strength-color);
+}
+
+.family-icon::before {
+  content: "👨‍👩‍👧‍👦";
+  color: var(--hope-color);
+}
+
+.faith-icon::before {
+  content: "🙏";
+  color: var(--faith-color);
+}
+
+.star-icon::before {
+  content: "🌟";
+  color: var(--faith-color);
+}
+
+.education-icon::before {
+  content: "🎓";
+  color: var(--blood-color);
+}
+
+/* About sickle cell page icons */
+.dna-icon::before {
+  content: "🧬";
+  color: var(--faith-color);
+}
+
+.symptoms-icon::before {
+  content: "💔";
+  color: var(--blood-color);
+}
+
+.pain-icon::before {
+  content: "⚡";
+  color: var(--strength-color);
+}
+
+.fatigue-icon::before {
+  content: "😴";
+  color: var(--text-secondary);
+}
+
+.infection-icon::before {
+  content: "🤒";
+  color: var(--hope-color);
+}
+
+.chest-icon::before {
+  content: "🫑";
+  color: var(--blood-color);
+}
+
+.swelling-icon::before {
+  content: "🦶";
+  color: var(--hope-color);
+}
+
+.vision-icon::before {
+  content: "👁️";
+  color: var(--blood-color);
+}
+
+.pill-icon::before {
+  content: "💊";
+  color: var(--hope-color);
+}
+
+.hospital-icon::before {
+  content: "🏥";
+  color: var(--blood-color);
+}
+
+.handshake-icon::before {
+  content: "🤝";
+  color: var(--faith-color);
+}
+
+/* Sickle cell type severity indicators */
+.severe-icon::before {
+  content: "🔴";
+  color: var(--blood-color);
+}
+
+.moderate-icon::before {
+  content: "🟡";
+  color: var(--strength-color);
+}
+
+.variable-icon::before {
+  content: "🟠";
+  color: var(--hope-color);
+}
+
+.rare-icon::before {
+  content: "🔵";
+  color: var(--faith-color);
+}
+
+/* Fallback for older browsers */
+@supports not (content: "🩸") {
+  .blood-icon::before { content: "●"; }
+  .medical-icon::before { content: "+"; }
+  .research-icon::before { content: "◆"; }
+  .phone-icon::before { content: "☎"; }
+  .email-icon::before { content: "✉"; }
+  .chat-icon::before { content: "✱"; }
+  .building-icon::before { content: "■"; }
+  .strength-icon::before { content: "█"; }
+  .family-icon::before { content: "♥"; }
+  .faith-icon::before { content: "†"; }
+  .star-icon::before { content: "★"; }
+  .education-icon::before { content: "▲"; }
+  .dna-icon::before { content: "§"; }
+  .symptoms-icon::before { content: "❤"; }
+  .pain-icon::before { content: "⚡"; }
+  .fatigue-icon::before { content: "○"; }
+  .infection-icon::before { content: "‼"; }
+  .chest-icon::before { content: "◇"; }
+  .swelling-icon::before { content: "◈"; }
+  .vision-icon::before { content: "◎"; }
+  .pill-icon::before { content: "●"; }
+  .hospital-icon::before { content: "⬜"; }
+  .handshake-icon::before { content: "✌"; }
+  .severe-icon::before { content: "●"; }
+  .moderate-icon::before { content: "●"; }
+  .variable-icon::before { content: "●"; }
+  .rare-icon::before { content: "●"; }
 }
 
 .card-title {
@@ -1779,4 +2643,254 @@ h1.modern-title,
 
 .copyright a:hover {
   color: white;
+}
+
+/* Gallery Icons */
+.icon-celebration::before {
+  content: '🎉';
+  font-size: 2rem;
+}
+
+.icon-strength::before {
+  content: '💪';
+  font-size: 2rem;
+}
+
+.icon-support::before {
+  content: '🤝';
+  font-size: 2rem;
+}
+
+.icon-awareness::before {
+  content: '🩸';
+  font-size: 2rem;
+}
+
+.icon-walk::before {
+  content: '🏃‍♀️';
+  font-size: 2rem;
+}
+
+.icon-star::before {
+  content: '⭐';
+  font-size: 2rem;
+}
+
+.icon-heart::before {
+  content: '❤️';
+  font-size: 2rem;
+}
+
+.icon-education::before {
+  content: '🎓';
+  font-size: 2rem;
+}
+
+/* Alternative CSS-only icons for better compatibility */
+@supports not (content: '🎉') {
+  .icon-celebration::before {
+    content: '☆';
+    color: var(--primary-color);
+  }
+  
+  .icon-strength::before {
+    content: '⬆';
+    color: var(--secondary-color);
+  }
+  
+  .icon-support::before {
+    content: '♥';
+    color: var(--accent-color);
+  }
+  
+  .icon-awareness::before {
+    content: '●';
+    color: var(--blood-red);
+  }
+  
+  .icon-walk::before {
+    content: '→';
+    color: var(--primary-color);
+  }
+  
+  .icon-star::before {
+    content: '★';
+    color: var(--faith-color);
+  }
+  
+  .icon-heart::before {
+    content: '♥';
+    color: var(--blood-red);
+  }
+  
+  .icon-education::before {
+    content: '▲';
+    color: var(--secondary-color);
+  }
+}
+
+/* Theme Toggle Icons */
+.icon-sun::before {
+  content: '☀';
+  font-size: 1.25rem;
+}
+
+.icon-moon::before {
+  content: '☾';
+  font-size: 1.25rem;
+}
+
+/* Alternative CSS-only icons for theme toggle */
+@supports not (content: '☀') {
+  .icon-sun::before {
+    content: '○';
+    color: var(--faith-color);
+  }
+  
+  .icon-moon::before {
+    content: '●';
+    color: var(--primary-color);
+  }
+}
+
+/* Blog Post Icons */
+.icon-book::before {
+  content: '📚';
+  font-size: 2rem;
+}
+
+.icon-medical::before {
+  content: '🏥';
+  font-size: 2rem;
+}
+
+.icon-research::before {
+  content: '🔬';
+  font-size: 2rem;
+}
+
+.icon-prayer::before {
+  content: '🙏';
+  font-size: 2rem;
+}
+
+.icon-community::before {
+  content: '🤝';
+  font-size: 2rem;
+}
+
+/* Alternative CSS-only icons for blog posts */
+@supports not (content: '📚') {
+  .icon-book::before {
+    content: '■';
+    color: var(--primary-color);
+  }
+  
+  .icon-medical::before {
+    content: '+';
+    color: var(--blood-red);
+  }
+  
+  .icon-research::before {
+    content: '●';
+    color: var(--secondary-color);
+  }
+  
+  .icon-prayer::before {
+    content: '♥';
+    color: var(--faith-color);
+  }
+  
+  .icon-community::before {
+    content: '◆';
+    color: var(--accent-color);
+  }
+}
+
+/* Event Icons */
+.icon-group::before {
+  content: '👥';
+  font-size: 2rem;
+}
+
+.icon-family::before {
+  content: '👨‍👩‍👧‍👦';
+  font-size: 2rem;
+}
+
+.icon-stethoscope::before {
+  content: '🩺';
+  font-size: 2rem;
+}
+
+.icon-target::before {
+  content: '🎯';
+  font-size: 2rem;
+}
+
+.icon-calendar::before {
+  content: '📅';
+  font-size: 2rem;
+}
+
+/* Alternative CSS-only icons for events */
+@supports not (content: '👥') {
+  .icon-group::before {
+    content: '●';
+    color: var(--primary-color);
+  }
+  
+  .icon-family::before {
+    content: '♥';
+    color: var(--faith-color);
+  }
+  
+  .icon-stethoscope::before {
+    content: '+';
+    color: var(--blood-red);
+  }
+  
+  .icon-target::before {
+    content: '◆';
+    color: var(--secondary-color);
+  }
+  
+  .icon-calendar::before {
+    content: '■';
+    color: var(--accent-color);
+  }
+}
+
+/* Event Detail Icons */
+.icon-clock::before {
+  content: '⏰';
+  font-size: 1.25rem;
+}
+
+.icon-location::before {
+  content: '📍';
+  font-size: 1.25rem;
+}
+
+.icon-money::before {
+  content: '💰';
+  font-size: 1.25rem;
+}
+
+/* Alternative CSS-only icons for event details */
+@supports not (content: '⏰') {
+  .icon-clock::before {
+    content: '◔';
+    color: var(--secondary-color);
+  }
+  
+  .icon-location::before {
+    content: '◆';
+    color: var(--primary-color);
+  }
+  
+  .icon-money::before {
+    content: '$';
+    color: var(--accent-color);
+  }
 }
