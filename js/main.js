@@ -31,18 +31,8 @@ function initMobileMenu() {
         // Update aria-expanded
         mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
         
-        // Animate hamburger lines
-        const hamburgerLines = mobileMenuToggle.querySelectorAll('.hamburger-line');
-        hamburgerLines.forEach((line, index) => {
-            if (navMenu.classList.contains('active')) {
-                if (index === 0) line.style.transform = 'rotate(45deg) translate(5px, 5px)';
-                if (index === 1) line.style.opacity = '0';
-                if (index === 2) line.style.transform = 'rotate(-45deg) translate(7px, -6px)';
-            } else {
-                line.style.transform = '';
-                line.style.opacity = '';
-            }
-        });
+        // Toggle hamburger animation class
+        mobileMenuToggle.classList.toggle('active');
         
         // Focus management
         if (navMenu.classList.contains('active')) {
@@ -54,14 +44,8 @@ function initMobileMenu() {
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
             navMenu.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
             mobileMenuToggle.setAttribute('aria-expanded', 'false');
-            
-            // Reset hamburger animation
-            const hamburgerLines = mobileMenuToggle.querySelectorAll('.hamburger-line');
-            hamburgerLines.forEach(line => {
-                line.style.transform = '';
-                line.style.opacity = '';
-            });
         });
     });
     
@@ -69,13 +53,8 @@ function initMobileMenu() {
     document.addEventListener('click', function(e) {
         if (!mobileMenuToggle.contains(e.target) && !navMenu.contains(e.target)) {
             navMenu.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
             mobileMenuToggle.setAttribute('aria-expanded', 'false');
-            
-            const hamburgerLines = mobileMenuToggle.querySelectorAll('.hamburger-line');
-            hamburgerLines.forEach(line => {
-                line.style.transform = '';
-                line.style.opacity = '';
-            });
         }
     });
     
@@ -83,14 +62,9 @@ function initMobileMenu() {
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && navMenu.classList.contains('active')) {
             navMenu.classList.remove('active');
+            mobileMenuToggle.classList.remove('active');
             mobileMenuToggle.setAttribute('aria-expanded', 'false');
             mobileMenuToggle.focus();
-            
-            const hamburgerLines = mobileMenuToggle.querySelectorAll('.hamburger-line');
-            hamburgerLines.forEach(line => {
-                line.style.transform = '';
-                line.style.opacity = '';
-            });
         }
     });
 }
