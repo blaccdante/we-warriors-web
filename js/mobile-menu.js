@@ -64,7 +64,7 @@ class MobileMenu {
                 <!-- Navigation Links -->
                 <nav class="mobile-menu-nav">
                     <a href="${pathPrefix}index.html" class="mobile-menu-link">Home</a>
-                    <a href="${pathPrefix}support/about-sickle-cell.html" class="mobile-menu-link">About Sickle Cell</a>
+                    <a href="${pathPrefix}support/about-sickle-cell.html" class="mobile-menu-link">Living with Sickle Cell</a>
                     <a href="${pathPrefix}information/what-is-sickle-cell.html" class="mobile-menu-link">What is Sickle Cell</a>
                     <a href="${pathPrefix}information/types.html" class="mobile-menu-link">Types & Symptoms</a>
                     <a href="${pathPrefix}information/diagnosis-treatment.html" class="mobile-menu-link">Diagnosis & Treatment</a>

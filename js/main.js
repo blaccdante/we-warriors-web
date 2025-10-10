@@ -411,8 +411,7 @@ function initThemeToggle() {
     if (!themeToggle) return;
     
     // Check for saved theme preference or default to light
-    const currentTheme = localStorage.getItem('theme') ||
-                        (prefersDark.matches ? 'dark' : 'light');
+    const currentTheme = localStorage.getItem('theme') || 'light';
     
     // Set initial theme
     document.documentElement.setAttribute('data-theme', currentTheme);
