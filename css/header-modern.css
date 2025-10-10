@@ -1,0 +1,228 @@
+/* MODERN HEADER ENHANCEMENTS */
+
+/* Better header spacing and layout */
+.nav-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 2rem !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+}
+
+.nav-menu {
+    display: flex !important;
+    align-items: center !important;
+    gap: 2rem !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Modern dropdown styling */
+.nav-item.dropdown {
+    position: relative !important;
+}
+
+.nav-link.dropdown-toggle {
+    display: flex !important;
+    align-items: center !important;
+    padding: 0.75rem 1rem !important;
+    color: var(--text-color, #2D3748) !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    font-size: 1rem !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+}
+
+.nav-link.dropdown-toggle:hover {
+    background: rgba(229, 62, 62, 0.1) !important;
+    color: #E53E3E !important;
+    text-decoration: none !important;
+    transform: translateY(-1px) !important;
+}
+
+.nav-link.dropdown-toggle::after {
+    content: '▼' !important;
+    margin-left: 0.5rem !important;
+    font-size: 0.75rem !important;
+    transition: transform 0.3s ease !important;
+    color: currentColor !important;
+}
+
+.nav-item.dropdown:hover .dropdown-toggle::after {
+    transform: rotate(180deg) !important;
+}
+
+/* Beautiful dropdown menu */
+.dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    background: white !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 0.75rem 0 !important;
+    margin: 0.5rem 0 0 0 !important;
+    min-width: 220px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-10px) !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    z-index: 1000 !important;
+    list-style: none !important;
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(229, 62, 62, 0.1) !important;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+.dropdown-menu li {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.dropdown-menu a {
+    display: block !important;
+    padding: 0.75rem 1.25rem !important;
+    color: #4A5568 !important;
+    text-decoration: none !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    border-left: 3px solid transparent !important;
+}
+
+.dropdown-menu a:hover {
+    background: rgba(229, 62, 62, 0.05) !important;
+    color: #E53E3E !important;
+    text-decoration: none !important;
+    border-left-color: #E53E3E !important;
+    transform: translateX(2px) !important;
+}
+
+/* Theme toggle styling */
+.theme-toggle {
+    background: rgba(229, 62, 62, 0.1) !important;
+    border: 2px solid rgba(229, 62, 62, 0.2) !important;
+    border-radius: 50% !important;
+    width: 45px !important;
+    height: 45px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    margin: 0 0.5rem !important;
+}
+
+.theme-toggle:hover {
+    background: rgba(229, 62, 62, 0.15) !important;
+    border-color: rgba(229, 62, 62, 0.3) !important;
+    transform: scale(1.05) !important;
+}
+
+/* CTA Button styling */
+.cta-button.modern-cta {
+    background: linear-gradient(135deg, #E53E3E, #C53030) !important;
+    color: white !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 25px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(229, 62, 62, 0.3) !important;
+}
+
+.cta-button.modern-cta:hover {
+    background: linear-gradient(135deg, #C53030, #9C2A2A) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(229, 62, 62, 0.4) !important;
+    text-decoration: none !important;
+    color: white !important;
+}
+
+/* Contact link styling */
+.nav-link:not(.dropdown-toggle):not(.cta-button) {
+    padding: 0.75rem 1rem !important;
+    color: var(--text-color, #2D3748) !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+}
+
+.nav-link:not(.dropdown-toggle):not(.cta-button):hover {
+    background: rgba(229, 62, 62, 0.1) !important;
+    color: #E53E3E !important;
+    text-decoration: none !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Dark theme support */
+[data-theme="dark"] .nav-link.dropdown-toggle,
+[data-theme="dark"] .nav-link:not(.dropdown-toggle):not(.cta-button) {
+    color: #E2E8F0 !important;
+}
+
+[data-theme="dark"] .dropdown-menu {
+    background: #2D3748 !important;
+    border-color: rgba(229, 62, 62, 0.2) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .dropdown-menu a {
+    color: #CBD5E0 !important;
+}
+
+[data-theme="dark"] .dropdown-menu a:hover {
+    background: rgba(229, 62, 62, 0.15) !important;
+    color: #E53E3E !important;
+}
+
+/* Logo styling */
+.logo-link {
+    display: flex !important;
+    align-items: center !important;
+    text-decoration: none !important;
+    transition: transform 0.3s ease !important;
+}
+
+.logo-link:hover {
+    transform: scale(1.02) !important;
+}
+
+.logo {
+    height: 45px !important;
+    width: auto !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .nav-menu {
+        gap: 1.5rem !important;
+    }
+    
+    .nav-container {
+        padding: 0 1.5rem !important;
+    }
+}
+
+@media (min-width: 1025px) {
+    .nav-menu {
+        gap: 2.5rem !important;
+    }
+}

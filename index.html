@@ -30,134 +30,29 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/accessibility.css">
-    <link rel="stylesheet" href="css/pages.css">
-    <link rel="stylesheet" href="css/header-fix.css">
+    <link rel="stylesheet" href="css/mobile-menu.css">
+    <link rel="stylesheet" href="css/header-modern.css">
+    <link rel="stylesheet" href="css/styles.css">
     
-    <!-- CRITICAL MOBILE FIX - Inline CSS -->
-    <style>
-    @media (max-width: 768px) {
-        .mobile-menu-toggle {
-            display: flex !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-            position: fixed !important;
-            top: 10px !important;
-            right: 15px !important;
-            width: 50px !important;
-            height: 50px !important;
-            z-index: 99999 !important;
-            background: rgba(255, 255, 255, 0.95) !important;
-            border: 3px solid #FF6B6B !important;
-            border-radius: 12px !important;
-            justify-content: center !important;
-            align-items: center !important;
-            flex-direction: column !important;
-            gap: 5px !important;
-            cursor: pointer !important;
-            box-shadow: 0 4px 20px rgba(255, 107, 107, 0.5) !important;
-            transform: none !important;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-        
-        .hamburger-line {
-            width: 24px !important;
-            height: 3px !important;
-            background: #FF6B6B !important;
-            display: block !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-            border-radius: 2px !important;
-            transition: all 0.3s ease !important;
-            position: relative !important;
-            margin: 0 !important;
-        }
-        
-        .nav-menu {
-            position: fixed !important;
-            top: 70px !important;
-            left: 0 !important;
-            right: 0 !important;
-            bottom: 0 !important;
-            background: rgba(255, 255, 255, 0.98) !important;
-            backdrop-filter: blur(20px) !important;
-            flex-direction: column !important;
-            justify-content: flex-start !important;
-            padding: 30px 20px !important;
-            gap: 20px !important;
-            transform: translateX(-100%) !important;
-            opacity: 0 !important;
-            visibility: hidden !important;
-            transition: all 0.4s ease !important;
-            z-index: 9998 !important;
-            overflow-y: auto !important;
-        }
-        
-        .nav-menu.active {
-            transform: translateX(0) !important;
-            opacity: 1 !important;
-            visibility: visible !important;
-        }
-        
-        .nav-item {
-            width: 100% !important;
-        }
-        
-        .nav-link {
-            width: 100% !important;
-            padding: 15px 20px !important;
-            font-size: 18px !important;
-            min-height: 50px !important;
-            border-radius: 12px !important;
-            background: rgba(255, 255, 255, 0.8) !important;
-            border: 1px solid rgba(255, 215, 0, 0.3) !important;
-            margin-bottom: 5px !important;
-            text-align: center !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-        }
-        
-        body {
-            padding-top: 70px !important;
-        }
-    }
-    </style>
 </head>
 <body>
     <!-- Skip to main content link for accessibility -->
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
     
     <!-- Header -->
-    <header class="site-header" role="banner">
-        <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <header class="site-header modern-header" role="banner">
+        <nav class="navbar glass-effect" role="navigation" aria-label="Main navigation">
             <div class="nav-container">
                 <!-- Logo -->
                 <div class="logo-container">
-                    <a href="#home" class="logo-link" aria-label="We Warriors Home">
+                    <a href="#home" class="logo-link modern-logo" aria-label="We Warriors Home">
                         <img src="images/logo.svg" alt="We Warriors Logo - From Pain comes Strength Through Faith we Hope" class="logo">
                     </a>
                 </div>
                 
-                <!-- Mobile menu toggle -->
-                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false" style="display: none;">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-                
-                <!-- CRITICAL MOBILE MENU - ALWAYS VISIBLE -->
-                <div class="critical-mobile-menu" style="display: none; position: fixed; top: 10px; right: 15px; z-index: 10000; width: 50px; height: 50px; background: rgba(255, 255, 255, 0.95); border: 3px solid #FF6B6B; border-radius: 10px; cursor: pointer; justify-content: center; align-items: center; flex-direction: column; gap: 4px; box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);" id="criticalMobileToggle">
-                    <div style="width: 22px; height: 3px; background: #FF6B6B; border-radius: 2px;"></div>
-                    <div style="width: 22px; height: 3px; background: #FF6B6B; border-radius: 2px;"></div>
-                    <div style="width: 22px; height: 3px; background: #FF6B6B; border-radius: 2px;"></div>
-                </div>
                 
                 <!-- Navigation Menu -->
-                <ul class="nav-menu" role="menubar">
-                    <li class="nav-item" role="none">
-                        <a href="#home" class="nav-link active" role="menuitem">Home</a>
-                    </li>
+                <ul class="nav-menu modern-nav" role="menubar">
                     <li class="nav-item dropdown" role="none">
                         <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Support</a>
                         <ul class="dropdown-menu">
@@ -196,7 +91,7 @@
                         <a href="pages/contact.html" class="nav-link" role="menuitem">Contact</a>
                     </li>
                     <li class="nav-item" role="none">
-                        <a href="#get-involved" class="nav-link cta-button" role="menuitem">Get Involved</a>
+                        <a href="#get-involved" class="nav-link cta-button modern-cta" role="menuitem">Get Involved</a>
                     </li>
                 </ul>
             </div>
@@ -536,6 +431,8 @@
     <!-- JavaScript -->
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/dropdown-enhance.js"></script>
     
 </body>
 </html>

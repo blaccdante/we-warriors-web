@@ -96,13 +96,21 @@
   transition: all 0.3s ease !important;
   white-space: nowrap !important;
   min-height: 40px !important;
+  background: transparent !important;
+  border: none !important;
 }
 
 .nav-link:hover,
 .nav-link:focus {
-  background: rgba(255, 215, 0, 0.1) !important;
+  background: rgba(255, 107, 107, 0.1) !important;
   color: #FF6B6B !important;
   transform: translateY(-1px) !important;
+}
+
+.nav-link.active {
+  background: rgba(255, 107, 107, 0.15) !important;
+  color: #FF6B6B !important;
+  font-weight: 600 !important;
 }
 
 /* Get Involved Button */
@@ -425,12 +433,19 @@
 
 :root[data-theme="dark"] .nav-link {
   color: #E2E8F0 !important;
+  background: transparent !important;
 }
 
 :root[data-theme="dark"] .nav-link:hover,
 :root[data-theme="dark"] .nav-link:focus {
   background: rgba(255, 215, 0, 0.1) !important;
   color: #FFD700 !important;
+}
+
+:root[data-theme="dark"] .nav-link.active {
+  background: rgba(255, 215, 0, 0.15) !important;
+  color: #FFD700 !important;
+  font-weight: 600 !important;
 }
 
 :root[data-theme="dark"] .dropdown-menu {
@@ -469,6 +484,83 @@
 :root[data-theme="dark"] .theme-toggle:hover {
   background: rgba(255, 215, 0, 0.1) !important;
   border-color: #FFD700 !important;
+}
+
+/* SPECIFIC FIX FOR BLUE NAVIGATION COLORS - EXCLUDE GET INVOLVED BUTTON */
+.nav-link:not(.cta-button),
+.navbar .nav-link:not(.cta-button),
+.site-header .nav-link:not(.cta-button),
+.modern-header .nav-link:not(.cta-button) {
+  color: #2C3E50 !important;
+  background: transparent !important;
+  border: none !important;
+  text-decoration: none !important;
+}
+
+.nav-link:not(.cta-button):hover,
+.nav-link:not(.cta-button):focus,
+.navbar .nav-link:not(.cta-button):hover,
+.site-header .nav-link:not(.cta-button):hover,
+.modern-header .nav-link:not(.cta-button):hover {
+  color: #FF6B6B !important;
+  background: rgba(255, 107, 107, 0.1) !important;
+  text-decoration: none !important;
+}
+
+.nav-link:not(.cta-button).active,
+.navbar .nav-link:not(.cta-button).active,
+.site-header .nav-link:not(.cta-button).active,
+.modern-header .nav-link:not(.cta-button).active {
+  color: #FF6B6B !important;
+  background: rgba(255, 107, 107, 0.15) !important;
+  font-weight: 600 !important;
+}
+
+/* PRESERVE GET INVOLVED BUTTON STYLING */
+.nav-link.cta-button {
+  background: linear-gradient(135deg, #FF6B6B, #FFD700) !important;
+  color: white !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3) !important;
+  border: none !important;
+  padding: 10px 20px !important;
+  border-radius: 25px !important;
+}
+
+.nav-link.cta-button:hover {
+  background: linear-gradient(135deg, #FF5252, #FFC107) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4) !important;
+  color: white !important;
+}
+
+/* Dark mode overrides - EXCLUDE GET INVOLVED BUTTON */
+:root[data-theme="dark"] .nav-link:not(.cta-button),
+:root[data-theme="dark"] .navbar .nav-link:not(.cta-button),
+:root[data-theme="dark"] .site-header .nav-link:not(.cta-button),
+:root[data-theme="dark"] .modern-header .nav-link:not(.cta-button) {
+  color: #E2E8F0 !important;
+  background: transparent !important;
+}
+
+:root[data-theme="dark"] .nav-link:not(.cta-button):hover,
+:root[data-theme="dark"] .nav-link:not(.cta-button):focus,
+:root[data-theme="dark"] .navbar .nav-link:not(.cta-button):hover,
+:root[data-theme="dark"] .site-header .nav-link:not(.cta-button):hover,
+:root[data-theme="dark"] .modern-header .nav-link:not(.cta-button):hover {
+  color: #FFD700 !important;
+  background: rgba(255, 215, 0, 0.1) !important;
+}
+
+:root[data-theme="dark"] .nav-link:not(.cta-button).active,
+:root[data-theme="dark"] .navbar .nav-link:not(.cta-button).active,
+:root[data-theme="dark"] .site-header .nav-link:not(.cta-button).active,
+:root[data-theme="dark"] .modern-header .nav-link:not(.cta-button).active {
+  color: #FFD700 !important;
+  background: rgba(255, 215, 0, 0.15) !important;
+  font-weight: 600 !important;
 }
 
 /* Ensure main content doesn't hide behind fixed header */
@@ -570,5 +662,25 @@ main {
   .mobile-menu-toggle:hover {
     background: rgba(255, 107, 107, 0.2) !important;
     transform: scale(1.05) !important;
+  }
+  
+  /* Mobile menu active state - CRITICAL FOR FUNCTIONALITY */
+  .nav-menu.active {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  /* Hamburger animation when active */
+  .mobile-menu-toggle.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px) !important;
+  }
+  
+  .mobile-menu-toggle.active .hamburger-line:nth-child(2) {
+    opacity: 0 !important;
+  }
+  
+  .mobile-menu-toggle.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px) !important;
   }
 }
