@@ -1,19 +1,19 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Join We Warriors as a volunteer and make a difference in the lives of sickle cell warriors and their families.">
-    <meta name="keywords" content="volunteer, sickle cell support, community service, help warriors">
+    <meta name="description" content="Get involved with We Warriors - Volunteer, donate, advocate, or join our community to support sickle cell warriors">
+    <meta name="keywords" content="get involved, volunteer, donate, advocate, sickle cell support, community, warriors">
     <meta name="author" content="We Warriors Organization">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Volunteer - We Warriors">
-    <meta property="og:description" content="Join We Warriors as a volunteer and make a difference in the lives of sickle cell warriors and their families.">
+    <meta property="og:title" content="Get Involved - We Warriors">
+    <meta property="og:description" content="Join our mission to support sickle cell warriors through volunteering, donations, advocacy, and community involvement">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://wewarriors.org/pages/volunteer.html">
+    <meta property="og:url" content="https://wewarriors.org/pages/get-involved.html">
     
-    <title>Volunteer - We Warriors</title>
+    <title>Get Involved - We Warriors</title>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1964650693892617" crossorigin="anonymous"></script>
     
     <!-- Favicon -->
@@ -27,14 +27,22 @@
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/accessibility.css">
     <link rel="stylesheet" href="../css/universal-header.css">
+    
     <style>
         .page-hero.modern-hero { position: relative; min-height: 70vh; display: flex; align-items: center; overflow: hidden; }
         .hero-background { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; }
         .hero-gradient { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 30%, rgba(255, 248, 240, 0.98) 70%, rgba(255, 255, 255, 0.95) 100%); }
         .hero-pattern { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(196, 30, 58, 0.08) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.05) 0%, transparent 50%); background-size: 300px 300px, 400px 400px, 500px 500px; animation: patternMove 20s ease-in-out infinite; }
         @keyframes patternMove { 0%, 100% { transform: translate(0, 0); } 25% { transform: translate(-10px, -10px); } 50% { transform: translate(10px, 10px); } 75% { transform: translate(-5px, 10px); } }
-        [data-theme="dark"] .hero-gradient { background: linear-gradient(135deg, rgba(30, 30, 30, 0.95) 0%, rgba(45, 45, 45, 0.9) 30%, rgba(60, 60, 60, 0.95) 70%, rgba(30, 30, 30, 0.9) 100%) !important; }
-        [data-theme="dark"] .hero-pattern { background-image: radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.15) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(196, 30, 58, 0.12) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.08) 0%, transparent 50%) !important; }
+        
+        /* EXACT Original Dark Theme Override */
+        :root[data-theme="dark"] .hero-gradient { background: linear-gradient(135deg, rgba(30, 30, 30, 0.95) 0%, rgba(45, 45, 45, 0.9) 30%, rgba(60, 60, 60, 0.95) 70%, rgba(30, 30, 30, 0.9) 100%) !important; }
+        :root[data-theme="dark"] .hero-pattern { background-image: radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.15) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(196, 30, 58, 0.12) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.08) 0%, transparent 50%) !important; }
+        
+        /* Light Theme - Get Involved Background */
+        [data-theme="light"] .hero-background { background-image: url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'); background-size: cover; background-position: center; }
+        [data-theme="light"] .hero-gradient { background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(248, 249, 250, 0.94) 30%, rgba(253, 244, 255, 0.96) 70%, rgba(255, 255, 255, 0.94) 100%); }
+        
         .hero-container { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 2rem; width: 100%; }
         .hero-content { color: #f8fafc; max-width: 800px; }
         [data-theme="light"] .hero-content { color: #0f172a; }
@@ -44,6 +52,22 @@
         [data-theme="light"] .page-subtitle { color: var(--text-primary) !important; }
         .page-content { padding: 4rem 0; background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%); }
         [data-theme="dark"] .page-content { background: linear-gradient(180deg, var(--background-primary) 0%, var(--background-secondary) 100%) !important; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        
+        /* Floating Elements Styling */
+        .hero-visual.modern-visual { position: absolute; top: 50%; right: 5%; transform: translateY(-50%); width: 300px; height: 300px; pointer-events: none; opacity: 0.8; }
+        .floating-elements { position: relative; width: 100%; height: 100%; }
+        .float-element { position: absolute; border-radius: 50%; animation: float 6s ease-in-out infinite; background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(196, 30, 58, 0.15)); }
+        .float-element.volunteer { width: 80px; height: 80px; top: 20%; right: 10%; animation-delay: 0s; background: linear-gradient(135deg, rgba(34, 197, 94, 0.5), rgba(52, 211, 153, 0.3)); box-shadow: 0 4px 20px rgba(34, 197, 94, 0.3); }
+        .float-element.impact { width: 60px; height: 60px; top: 60%; right: 40%; animation-delay: -2s; background: linear-gradient(135deg, rgba(147, 51, 234, 0.4), rgba(168, 85, 247, 0.25)); box-shadow: 0 4px 20px rgba(147, 51, 234, 0.2); }
+        .float-element.change { width: 70px; height: 70px; top: 40%; right: 70%; animation-delay: -4s; background: linear-gradient(135deg, rgba(245, 158, 11, 0.4), rgba(251, 191, 36, 0.25)); box-shadow: 0 4px 20px rgba(245, 158, 11, 0.2); }
+        
+        /* Dark theme enhancement */
+        :root[data-theme="dark"] .float-element.volunteer { background: linear-gradient(135deg, rgba(34, 197, 94, 0.7), rgba(52, 211, 153, 0.5)); box-shadow: 0 4px 25px rgba(34, 197, 94, 0.4); }
+        :root[data-theme="dark"] .float-element.impact { background: linear-gradient(135deg, rgba(147, 51, 234, 0.6), rgba(168, 85, 247, 0.4)); box-shadow: 0 4px 25px rgba(147, 51, 234, 0.3); }
+        :root[data-theme="dark"] .float-element.change { background: linear-gradient(135deg, rgba(245, 158, 11, 0.6), rgba(251, 191, 36, 0.4)); box-shadow: 0 4px 25px rgba(245, 158, 11, 0.3); }
+        
+        @keyframes float { 0%, 100% { transform: translateY(0px) scale(1); opacity: 0.6; } 25% { transform: translateY(-20px) scale(1.05); opacity: 0.8; } 50% { transform: translateY(-10px) scale(0.95); opacity: 0.7; } 75% { transform: translateY(-15px) scale(1.02); opacity: 0.9; } }
         
         /* Modern Horizontal Breadcrumb Styling */
         .breadcrumb { margin-bottom: 2rem; }
@@ -56,10 +80,40 @@
         [data-theme="light"] .breadcrumb a { color: rgba(30, 41, 59, 0.7); }
         [data-theme="light"] .breadcrumb a:hover { color: #991b1b; }
         
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        @media (max-width: 768px) { .hero-container { padding: 3rem 1.5rem; } .hero-visual.modern-visual { display: none; } }
+        
+        /* Content styling */
+        .content-card { background: #ffffff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); margin-bottom: 3rem; overflow: hidden; border: 1px solid rgba(0, 0, 0, 0.05); }
+        [data-theme="dark"] .content-card { background: var(--card-background) !important; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important; border: 1px solid var(--border-primary) !important; }
+        .section-title { font-size: 2.5rem; font-weight: 700; color: var(--blood-color); margin-bottom: 2rem; text-align: center; }
+        [data-theme="dark"] .section-title { color: var(--text-primary) !important; }
+        .section-text { font-size: 1.1rem; line-height: 1.7; color: #555; text-align: center; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+        [data-theme="dark"] .section-text { color: var(--text-secondary) !important; }
+        
+        .ways-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0; }
+        .way-card { background: #ffffff; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); border: 1px solid rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .way-card:hover { transform: translateY(-8px); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); }
+        [data-theme="dark"] .way-card { background: var(--card-background) !important; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important; border: 1px solid var(--border-primary) !important; }
+        [data-theme="dark"] .way-card:hover { box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4) !important; }
+        
+        .way-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .way-title { font-size: 1.5rem; font-weight: 700; color: var(--blood-color); margin-bottom: 1rem; }
+        [data-theme="dark"] .way-title { color: var(--text-primary) !important; }
+        .way-description { color: #666; line-height: 1.6; margin-bottom: 1.5rem; }
+        [data-theme="dark"] .way-description { color: var(--text-secondary) !important; }
+        .way-action { display: inline-block; background: var(--blood-color); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: background 0.3s ease; }
+        .way-action:hover { background: var(--blood-light); color: white; }
+        
+        .impact-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 3rem 0; }
+        .stat-card { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 2rem; border-radius: 16px; text-align: center; border-left: 4px solid var(--blood-color); }
+        [data-theme="dark"] .stat-card { background: linear-gradient(135deg, var(--background-secondary) 0%, var(--background-tertiary) 100%) !important; border-left-color: var(--blood-light) !important; }
+        .stat-number { font-size: 3rem; font-weight: 800; color: var(--blood-color); line-height: 1; }
+        [data-theme="dark"] .stat-number { color: var(--blood-light) !important; }
+        .stat-label { font-size: 1rem; font-weight: 600; color: #666; margin-top: 0.5rem; }
+        [data-theme="dark"] .stat-label { color: var(--text-secondary) !important; }
     </style>
 </head>
-<body class="page-body volunteer-page">
+<body class="page-body">
     <!-- Skip to main content -->
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
     
@@ -134,7 +188,7 @@
                 </div>
                 
                 <div class="nav-item">
-                    <a href="get-involved.html" class="nav-link" role="menuitem">Get Involved</a>
+                    <a href="get-involved.html" class="cta-button active" role="menuitem">Get Involved</a>
                 </div>
                 
                 <!-- Mobile Only Links -->
@@ -200,7 +254,7 @@
             <div class="header-actions">
                 <!-- Theme Toggle (Desktop) -->
                 <button class="theme-toggle" aria-label="Toggle dark mode" aria-describedby="theme-status">
-                    <span class="theme-icon">☀</span>
+                    <span class="theme-icon">â˜€</span>
                     <span class="sr-only" id="theme-status">Current theme: light mode</span>
                 </button>
                 
@@ -228,14 +282,18 @@
                     <nav class="breadcrumb modern-breadcrumb" aria-label="Breadcrumb">
                         <ol>
                             <li><a href="../index.html">Home</a></li>
-                            <li><a href="get-involved.html">Get Involved</a></li>
-                            <li><span aria-current="page">Volunteer</span></li>
+                            <li><span aria-current="page">Get Involved</span></li>
                         </ol>
                     </nav>
-                    <h1 class="page-title modern-title">Volunteer with We Warriors</h1>
-                    <p class="page-subtitle modern-subtitle">
-                        Join our mission to support sickle cell warriors and build a stronger community
-                    </p>
+                    <h1 class="page-title modern-title">Get Involved</h1>
+                    <p class="page-subtitle modern-subtitle">Join our mission to support sickle cell warriors and build a stronger community</p>
+                </div>
+                <div class="hero-visual modern-visual">
+                    <div class="floating-elements">
+                        <div class="float-element volunteer"></div>
+                        <div class="float-element impact"></div>
+                        <div class="float-element change"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -243,14 +301,8 @@
         <!-- Page Content -->
         <section class="page-content modern-content">
             <div class="container">
-                <!-- Why Volunteer Section -->
-                <section class="why-volunteer-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Why Volunteer?</h2>
-                    <p class="section-subtitle">Make a meaningful impact in the lives of sickle cell warriors</p>
-                </div>
                 
+                <!-- Impact Stats -->
                 <div class="impact-stats">
                     <div class="stat-card">
                         <div class="stat-number">1,000+</div>
@@ -269,336 +321,110 @@
                         <div class="stat-label">Hearts Touched</div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Volunteer Opportunities Section -->
-        <section class="opportunities-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Volunteer Opportunities</h2>
-                    <p class="section-subtitle">Find the perfect way to contribute your time and talents</p>
+                <h2 class="section-title">Ways to Make a Difference</h2>
+                <p class="section-text">
+                    There are many meaningful ways to support the sickle cell warrior community. 
+                    Whether you have time, resources, or skills to share, your contribution makes a real impact.
+                </p>
+
+                <div class="ways-grid">
+                    <div class="way-card">
+                        <div class="way-icon">ðŸ¤</div>
+                        <h3 class="way-title">Volunteer Your Time</h3>
+                        <p class="way-description">
+                            Join our team of dedicated volunteers to provide direct support, organize events, 
+                            help with education, or assist with digital outreach and communications.
+                        </p>
+                        <a href="volunteer.html" class="way-action">Learn About Volunteering</a>
+                    </div>
+
+                    <div class="way-card">
+                        <div class="way-icon">ðŸ’</div>
+                        <h3 class="way-title">Make a Donation</h3>
+                        <p class="way-description">
+                            Your financial support helps fund research, support services, emergency assistance, 
+                            and advocacy efforts that directly benefit warriors and their families.
+                        </p>
+                        <a href="donate.html" class="way-action">Donate Now</a>
+                    </div>
+
+                    <div class="way-card">
+                        <div class="way-icon">ðŸ“¢</div>
+                        <h3 class="way-title">Become an Advocate</h3>
+                        <p class="way-description">
+                            Use your voice to raise awareness, influence policy, and help create systemic 
+                            change that improves healthcare access and treatment for sickle cell disease.
+                        </p>
+                        <a href="advocacy.html" class="way-action">Start Advocating</a>
+                    </div>
+
+                    <div class="way-card">
+                        <div class="way-icon">ðŸŒŸ</div>
+                        <h3 class="way-title">Share Your Story</h3>
+                        <p class="way-description">
+                            Your experiences as a warrior or supporter can inspire others and help break 
+                            stigma while building understanding in the wider community.
+                        </p>
+                        <a href="../community/blog.html" class="way-action">Share Your Story</a>
+                    </div>
+
+                    <div class="way-card">
+                        <div class="way-icon">ðŸ‘¥</div>
+                        <h3 class="way-title">Join the Community</h3>
+                        <p class="way-description">
+                            Connect with other warriors, families, and supporters through our forums, 
+                            support groups, and community events to build lasting connections.
+                        </p>
+                        <a href="../community/forum.html" class="way-action">Join Community</a>
+                    </div>
+
+                    <div class="way-card">
+                        <div class="way-icon">ðŸŽ“</div>
+                        <h3 class="way-title">Spread Awareness</h3>
+                        <p class="way-description">
+                            Help educate your networks about sickle cell disease through social media, 
+                            community presentations, or simply sharing accurate information.
+                        </p>
+                        <a href="../information/what-is-sickle-cell.html" class="way-action">Learn & Share</a>
+                    </div>
+
+                    <div class="way-card">
+                        <div class="way-icon">ðŸ¢</div>
+                        <h3 class="way-title">Corporate Partnership</h3>
+                        <p class="way-description">
+                            Partner with us through corporate sponsorships, employee engagement programs, 
+                            or workplace awareness initiatives to expand our impact.
+                        </p>
+                        <a href="contact.html" class="way-action">Partner With Us</a>
+                    </div>
+
+                    <div class="way-card">
+                        <div class="way-icon">ðŸ”¬</div>
+                        <h3 class="way-title">Support Research</h3>
+                        <p class="way-description">
+                            Contribute to cutting-edge research initiatives working toward better treatments, 
+                            pain management, and ultimately a cure for sickle cell disease.
+                        </p>
+                        <a href="../information/research.html" class="way-action">Support Research</a>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <div style="padding: 3rem; text-align: center;">
+                        <h2 class="section-title">Ready to Get Started?</h2>
+                        <p class="section-text">
+                            Every contribution, no matter the size, makes a meaningful difference in the lives 
+                            of sickle cell warriors and their families. Choose the way that feels right for you.
+                        </p>
+                        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                            <a href="contact.html" class="way-action">Contact Us</a>
+                            <a href="volunteer.html" class="way-action">Volunteer Today</a>
+                            <a href="donate.html" class="way-action">Make a Donation</a>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="opportunities-grid">
-                    <div class="opportunity-card">
-                        <div class="card-icon">🤝</div>
-                        <h3 class="card-title">Peer Support</h3>
-                        <p class="card-description">
-                            Provide emotional support and encouragement to warriors and families 
-                            through one-on-one mentoring and group sessions.
-                        </p>
-                        <ul class="card-requirements">
-                            <li>Compassionate and empathetic</li>
-                            <li>Good listening skills</li>
-                            <li>Training provided</li>
-                        </ul>
-                        <div class="card-commitment">Commitment: 4 hours/month</div>
-                    </div>
-
-                    <div class="opportunity-card">
-                        <div class="card-icon">📚</div>
-                        <h3 class="card-title">Education & Outreach</h3>
-                        <p class="card-description">
-                            Help educate communities Living with Sickle Cell disease through 
-                            presentations, workshops, and awareness campaigns.
-                        </p>
-                        <ul class="card-requirements">
-                            <li>Public speaking experience preferred</li>
-                            <li>Passion for education</li>
-                            <li>Materials provided</li>
-                        </ul>
-                        <div class="card-commitment">Commitment: 6 hours/month</div>
-                    </div>
-
-                    <div class="opportunity-card">
-                        <div class="card-icon">🎉</div>
-                        <h3 class="card-title">Event Support</h3>
-                        <p class="card-description">
-                            Help organize and run community events, fundraisers, 
-                            and awareness campaigns that bring warriors together.
-                        </p>
-                        <ul class="card-requirements">
-                            <li>Event planning experience helpful</li>
-                            <li>Team player</li>
-                            <li>Flexible schedule</li>
-                        </ul>
-                        <div class="card-commitment">Commitment: Variable</div>
-                    </div>
-
-                    <div class="opportunity-card">
-                        <div class="card-icon">💻</div>
-                        <h3 class="card-title">Digital Support</h3>
-                        <p class="card-description">
-                            Assist with website updates, social media management, 
-                            and digital communications to expand our reach.
-                        </p>
-                        <ul class="card-requirements">
-                            <li>Basic tech skills</li>
-                            <li>Social media familiarity</li>
-                            <li>Creative mindset</li>
-                        </ul>
-                        <div class="card-commitment">Commitment: 3 hours/week</div>
-                    </div>
-
-                    <div class="opportunity-card">
-                        <div class="card-icon">🏥</div>
-                        <h3 class="card-title">Medical Support</h3>
-                        <p class="card-description">
-                            Healthcare professionals can volunteer their expertise 
-                            for medical advice, screenings, and educational content.
-                        </p>
-                        <ul class="card-requirements">
-                            <li>Medical background required</li>
-                            <li>Current license/certification</li>
-                            <li>Sickle cell knowledge preferred</li>
-                        </ul>
-                        <div class="card-commitment">Commitment: 4 hours/month</div>
-                    </div>
-
-                    <div class="opportunity-card">
-                        <div class="card-icon">🎨</div>
-                        <h3 class="card-title">Creative Services</h3>
-                        <p class="card-description">
-                            Use your creative talents for graphic design, photography, 
-                            videography, and content creation for our campaigns.
-                        </p>
-                        <ul class="card-requirements">
-                            <li>Portfolio of work</li>
-                            <li>Design software skills</li>
-                            <li>Creative vision</li>
-                        </ul>
-                        <div class="card-commitment">Commitment: 5 hours/month</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Volunteer Benefits Section -->
-        <section class="benefits-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Volunteer Benefits</h2>
-                    <p class="section-subtitle">What you'll gain from volunteering with us</p>
-                </div>
-                
-                <div class="benefits-grid">
-                    <div class="benefit-item">
-                        <div class="benefit-icon">❤️</div>
-                        <h3>Personal Fulfillment</h3>
-                        <p>Make a direct, meaningful impact in the lives of warriors and their families.</p>
-                    </div>
-                    
-                    <div class="benefit-item">
-                        <div class="benefit-icon">🌟</div>
-                        <h3>Skill Development</h3>
-                        <p>Develop new skills in healthcare, education, event planning, and communication.</p>
-                    </div>
-                    
-                    <div class="benefit-item">
-                        <div class="benefit-icon">🤝</div>
-                        <h3>Community Connection</h3>
-                        <p>Build lasting relationships with like-minded individuals passionate about making a difference.</p>
-                    </div>
-                    
-                    <div class="benefit-item">
-                        <div class="benefit-icon">🎓</div>
-                        <h3>Training & Education</h3>
-                        <p>Receive comprehensive training Living with Sickle Cell disease and volunteer best practices.</p>
-                    </div>
-                    
-                    <div class="benefit-item">
-                        <div class="benefit-icon">🏆</div>
-                        <h3>Recognition</h3>
-                        <p>Be recognized for your contributions through volunteer appreciation events and awards.</p>
-                    </div>
-                    
-                    <div class="benefit-item">
-                        <div class="benefit-icon">⚖️</div>
-                        <h3>Flexible Commitment</h3>
-                        <p>Choose volunteer opportunities that fit your schedule and availability.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Application Form Section -->
-        <section class="application-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Apply to Volunteer</h2>
-                    <p class="section-subtitle">Ready to join our team? Fill out the form below</p>
-                </div>
-                
-                <div class="application-form-container">
-                    <form class="volunteer-form" id="volunteer-form">
-                        <div class="form-section">
-                            <h3>Personal Information</h3>
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="first-name">First Name *</label>
-                                    <input type="text" id="first-name" name="first-name" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="last-name">Last Name *</label>
-                                    <input type="text" id="last-name" name="last-name" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="email">Email Address *</label>
-                                    <input type="email" id="email" name="email" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone">Phone Number</label>
-                                    <input type="tel" id="phone" name="phone">
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="address">Address</label>
-                                <textarea id="address" name="address" rows="3"></textarea>
-                            </div>
-                        </div>
-                        
-                        <div class="form-section">
-                            <h3>Volunteer Interests</h3>
-                            <div class="form-group">
-                                <label>Which volunteer opportunities interest you? (Select all that apply)</label>
-                                <div class="checkbox-group">
-                                    <label class="checkbox-label">
-                                        <input type="checkbox" name="opportunities" value="peer-support">
-                                        <span class="checkmark"></span>
-                                        Peer Support
-                                    </label>
-                                    <label class="checkbox-label">
-                                        <input type="checkbox" name="opportunities" value="education">
-                                        <span class="checkmark"></span>
-                                        Education & Outreach
-                                    </label>
-                                    <label class="checkbox-label">
-                                        <input type="checkbox" name="opportunities" value="events">
-                                        <span class="checkmark"></span>
-                                        Event Support
-                                    </label>
-                                    <label class="checkbox-label">
-                                        <input type="checkbox" name="opportunities" value="digital">
-                                        <span class="checkmark"></span>
-                                        Digital Support
-                                    </label>
-                                    <label class="checkbox-label">
-                                        <input type="checkbox" name="opportunities" value="medical">
-                                        <span class="checkmark"></span>
-                                        Medical Support
-                                    </label>
-                                    <label class="checkbox-label">
-                                        <input type="checkbox" name="opportunities" value="creative">
-                                        <span class="checkmark"></span>
-                                        Creative Services
-                                    </label>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="availability">Availability</label>
-                                <select id="availability" name="availability">
-                                    <option value="">Select your availability</option>
-                                    <option value="weekdays">Weekdays</option>
-                                    <option value="weekends">Weekends</option>
-                                    <option value="evenings">Evenings</option>
-                                    <option value="flexible">Flexible</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="experience">Relevant Experience</label>
-                                <textarea id="experience" name="experience" rows="4" placeholder="Tell us about any relevant experience, skills, or qualifications..."></textarea>
-                            </div>
-                        </div>
-                        
-                        <div class="form-section">
-                            <h3>Additional Information</h3>
-                            <div class="form-group">
-                                <label for="motivation">Why do you want to volunteer with We Warriors?</label>
-                                <textarea id="motivation" name="motivation" rows="4" placeholder="Share what motivates you to volunteer with our organization..."></textarea>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="connection">Connection to Sickle Cell Disease (Optional)</label>
-                                <textarea id="connection" name="connection" rows="3" placeholder="Do you have any personal or professional connection to sickle cell disease?"></textarea>
-                            </div>
-                        </div>
-                        
-                        <div class="form-section">
-                            <div class="form-group">
-                                <label class="checkbox-label agreement-label">
-                                    <input type="checkbox" name="agreement" required>
-                                    <span class="checkmark"></span>
-                                    I agree to undergo a background check if selected for volunteer positions involving direct contact with vulnerable populations. *
-                                </label>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label class="checkbox-label agreement-label">
-                                    <input type="checkbox" name="newsletter">
-                                    <span class="checkmark"></span>
-                                    I would like to receive updates about volunteer opportunities and We Warriors events.
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-primary">Submit Application</button>
-                            <button type="reset" class="btn btn-secondary">Clear Form</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- Next Steps Section -->
-        <section class="next-steps-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">What Happens Next?</h2>
-                </div>
-                
-                <div class="steps-timeline">
-                    <div class="timeline-step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h3>Application Review</h3>
-                            <p>We'll review your application within 5-7 business days.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h3>Interview</h3>
-                            <p>If selected, we'll schedule a brief interview to learn more about you.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h3>Training</h3>
-                            <p>Complete our volunteer training program tailored to your chosen role.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h3>Start Volunteering</h3>
-                            <p>Begin making a difference in the lives of sickle cell warriors!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
             </div>
         </section>
         
@@ -612,7 +438,7 @@
                     <div class="footer-logo">
                         <img src="../images/logo.svg" alt="We Warriors Logo" class="footer-logo-img">
                         <h3 class="footer-brand">We Warriors</h3>
-                        <p class="footer-tagline">From Pain comes Strength • Through Faith we Hope</p>
+                        <p class="footer-tagline">From Pain comes Strength â€¢ Through Faith we Hope</p>
                     </div>
                     <p class="footer-mission">Supporting people afflicted with sickle cell disease and educating others to drive the last generation of people with sickle cell.</p>
                 </div>
@@ -643,7 +469,7 @@
                         <li><a href="../community/forum.html">Forum</a></li>
                         <li><a href="../community/blog.html">Blog</a></li>
                         <li><a href="../community/events.html">Events</a></li>
-                        <li><a href="../pages/newsletter.html">Newsletter</a></li>
+                        <li><a href="../community/gallery.html">Gallery</a></li>
                     </ul>
                 </div>
                 
@@ -681,11 +507,11 @@
             
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
-                    <p class="copyright">© 2025 We Warriors Organization. All rights reserved.</p>
+                    <p class="copyright">Â© 2025 We Warriors Organization. All rights reserved.</p>
                     <div class="footer-links-bottom">
-                        <a href="../pages/privacy.html">Privacy Policy</a>
-                        <a href="../pages/terms.html">Terms of Service</a>
-                        <a href="../pages/faq.html">FAQ</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                        <a href="faq.html">FAQ</a>
                     </div>
                 </div>
             </div>
@@ -696,11 +522,7 @@
     <script src="../js/animations.js"></script>
     <script src="../js/universal-header.js"></script>
     <script src="../js/main.js"></script>
-    <script src="../js/mobile-menu.js"></script>
-    <script src="../js/modern.js"></script>
-    <script src="../js/pages.js"></script>
-    
-    <script src="../js/warriorbot.js"></script>
+<script src="../js/warriorbot.js"></script>
 
 </body>
 </html>

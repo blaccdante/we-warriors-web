@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -26,77 +26,1108 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/accessibility.css">
-    <link rel="stylesheet" href="../css/mobile-menu.css">
-    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <!-- Universal header should load last to override other styles -->
+    <link rel="stylesheet" href="../css/universal-header.css">
+    
+    <!-- Complete Modern Dual-Theme System -->
+    <style>
+        /* Perfect Dual-Theme Hero System */
+        .page-hero.modern-hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        /* Hero Background Layers */
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+        
+        .hero-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.98) 0%, 
+                rgba(248, 249, 250, 0.95) 30%, 
+                rgba(255, 248, 240, 0.98) 70%, 
+                rgba(255, 255, 255, 0.95) 100%);
+        }
+        
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(196, 30, 58, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.05) 0%, transparent 50%);
+            background-size: 300px 300px, 400px 400px, 500px 500px;
+            animation: patternMove 20s ease-in-out infinite;
+        }
+        
+        @keyframes patternMove {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(-10px, -10px); }
+            50% { transform: translate(10px, 10px); }
+            75% { transform: translate(-5px, 10px); }
+        }
+        
+        /* ORIGINAL BEAUTIFUL DARK MODE - RESTORED FROM COMMUNITY EVENTS */
+        [data-theme="dark"] .hero-gradient {
+            background: linear-gradient(135deg, 
+                rgba(30, 30, 30, 0.95) 0%, 
+                rgba(45, 45, 45, 0.9) 30%, 
+                rgba(60, 60, 60, 0.95) 70%, 
+                rgba(30, 30, 30, 0.9) 100%) !important;
+        }
+        
+        [data-theme="dark"] .hero-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(196, 30, 58, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.08) 0%, transparent 50%) !important;
+        }
+        
+        /* Light Theme - Medical Types Background */
+        [data-theme="light"] .hero-background {
+            background-image: url('https://images.unsplash.com/photo-1576671081837-49000212a370?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        [data-theme="light"] .hero-gradient {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.96) 0%, 
+                rgba(248, 249, 250, 0.94) 30%, 
+                rgba(254, 242, 242, 0.96) 70%, 
+                rgba(255, 255, 255, 0.94) 100%);
+        }
+        
+        /* Content Styling */
+        .hero-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+        
+        .hero-content {
+            color: #f8fafc;
+            max-width: 800px;
+        }
+        
+        [data-theme="light"] .hero-content {
+            color: #0f172a;
+        }
+        
+        .breadcrumb {
+            margin-bottom: 2rem;
+        }
+        
+        .breadcrumb ol {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb li::after {
+            content: '/';
+            margin: 0 0.5rem;
+            color: rgba(248, 250, 252, 0.5);
+        }
+        
+        [data-theme="light"] .breadcrumb li::after {
+            color: rgba(30, 41, 59, 0.4);
+        }
+        
+        .breadcrumb li:last-child::after {
+            display: none;
+        }
+        
+        .breadcrumb a {
+            color: rgba(248, 250, 252, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: #e2e8f0;
+        }
+        
+        [data-theme="light"] .breadcrumb a {
+            color: var(--blood-color) !important;
+        }
+        
+        [data-theme="light"] .breadcrumb a:hover {
+            color: var(--blood-light) !important;
+        }
+        
+        [data-theme="light"] .breadcrumb [aria-current="page"] {
+            color: var(--text-primary) !important;
+        }
+        
+        .page-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin: 0 0 1.5rem 0;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: #f1f5f9;
+            text-shadow: 0 2px 8px rgba(15, 23, 42, 0.4);
+        }
+        
+        [data-theme="light"] .page-title {
+            color: var(--blood-color) !important;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+            font-weight: 700 !important;
+            opacity: 1 !important;
+        }
+        
+        .page-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            margin: 0;
+            color: rgba(226, 232, 240, 0.9);
+            font-weight: 400;
+            line-height: 1.6;
+        }
+        
+        [data-theme="light"] .page-subtitle {
+            color: var(--text-primary) !important;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5) !important;
+            font-weight: 500 !important;
+            opacity: 1 !important;
+        }
+        
+        /* Page Content */
+        .page-content {
+            padding: 4rem 0;
+            background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+        }
+        
+        [data-theme="dark"] .page-content {
+            background: linear-gradient(180deg, var(--background-primary) 0%, var(--background-secondary) 100%) !important;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Modern Card System */
+        .content-card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 3rem;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        [data-theme="dark"] .content-card {
+            background: var(--card-background) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+            border: 1px solid var(--border-primary) !important;
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        [data-theme="dark"] .card-header {
+            background: linear-gradient(135deg, var(--background-secondary) 0%, var(--background-tertiary) 100%) !important;
+            border-bottom: 1px solid var(--border-primary) !important;
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        [data-theme="dark"] .card-icon {
+            background: var(--background-primary) !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+        }
+        
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0;
+            color: var(--blood-color);
+            letter-spacing: -0.01em;
+        }
+        
+        [data-theme="dark"] .card-title {
+            color: var(--text-primary) !important;
+        }
+        
+        .card-content {
+            padding: 2.5rem;
+        }
+        
+        /* Types Grid */
+        .types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .type-item {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--blood-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .type-item:hover {
+            transform: translateY(-4px);
+        }
+        
+        [data-theme="dark"] .type-item {
+            background: var(--background-tertiary) !important;
+            border-left-color: var(--blood-light) !important;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-container {
+                padding: 3rem 1.5rem;
+            }
+            
+            .types-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Medical Illustration */
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .medical-illustration {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .blood-cell {
+            width: 140px;
+            height: 140px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            overflow: hidden;
+        }
+        
+        .blood-cell::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: inherit;
+            border-radius: inherit;
+            z-index: -1;
+            filter: blur(8px);
+            opacity: 0.6;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        .blood-cell:hover {
+            transform: scale(1.15) rotateY(15deg);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+        }
+        
+        .normal-cell {
+            background: linear-gradient(135deg, 
+                #ff6b6b 0%, 
+                #ee5a52 25%,
+                #ff4757 50%,
+                #e74c3c 75%,
+                #dc2626 100%);
+            animation: pulse-normal 4s ease-in-out infinite;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            position: relative;
+        }
+        
+        .normal-cell::after {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 20%;
+            width: 60%;
+            height: 60%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: shine 3s ease-in-out infinite;
+        }
+        
+        .sickle-cell {
+            background: linear-gradient(135deg, 
+                #b91c1c 0%, 
+                #dc2626 25%,
+                #ef4444 50%,
+                #f87171 75%,
+                #991b1b 100%);
+            border-radius: 60% 10% 60% 10%;
+            animation: pulse-sickle 4s ease-in-out infinite;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            transform: rotate(-15deg);
+            position: relative;
+        }
+        
+        .sickle-cell::after {
+            content: '';
+            position: absolute;
+            top: 15%;
+            left: 15%;
+            width: 70%;
+            height: 70%;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+            border-radius: 50% 5% 50% 5%;
+            animation: sickle-shimmer 3s ease-in-out infinite;
+        }
+        
+        /* Light theme blood cells */
+        [data-theme="light"] .normal-cell {
+            background: linear-gradient(135deg, 
+                #ef4444 0%, 
+                #f87171 25%,
+                #fca5a5 50%,
+                #ef4444 75%,
+                #dc2626 100%);
+            border: 3px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 12px 40px rgba(239, 68, 68, 0.3);
+        }
+        
+        [data-theme="light"] .sickle-cell {
+            background: linear-gradient(135deg, 
+                #dc2626 0%, 
+                #ef4444 25%,
+                #f87171 50%,
+                #fca5a5 75%,
+                #b91c1c 100%);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 12px 40px rgba(220, 38, 38, 0.3);
+        }
+        
+        [data-theme="light"] .blood-cell:hover {
+            box-shadow: 0 20px 60px rgba(220, 38, 38, 0.2);
+        }
+        
+        @keyframes pulse-normal {
+            0%, 100% { 
+                box-shadow: 0 12px 40px rgba(239, 68, 68, 0.4),
+                            0 0 0 0 rgba(239, 68, 68, 0.6),
+                            0 0 20px rgba(239, 68, 68, 0.3);
+                transform: scale(1) rotate(0deg);
+            }
+            25% {
+                transform: scale(1.02) rotate(1deg);
+            }
+            50% { 
+                box-shadow: 0 16px 50px rgba(239, 68, 68, 0.6),
+                            0 0 0 12px rgba(239, 68, 68, 0.2),
+                            0 0 30px rgba(239, 68, 68, 0.4);
+                transform: scale(1.05) rotate(2deg);
+            }
+            75% {
+                transform: scale(1.02) rotate(1deg);
+            }
+        }
+        
+        @keyframes pulse-sickle {
+            0%, 100% { 
+                box-shadow: 0 12px 40px rgba(220, 38, 38, 0.4),
+                            0 0 0 0 rgba(220, 38, 38, 0.6),
+                            0 0 20px rgba(220, 38, 38, 0.3);
+                transform: scale(1) rotate(-15deg);
+            }
+            25% {
+                transform: scale(1.02) rotate(-13deg);
+            }
+            50% { 
+                box-shadow: 0 16px 50px rgba(220, 38, 38, 0.6),
+                            0 0 0 12px rgba(220, 38, 38, 0.2),
+                            0 0 30px rgba(220, 38, 38, 0.4);
+                transform: scale(1.05) rotate(-12deg);
+            }
+            75% {
+                transform: scale(1.02) rotate(-13deg);
+            }
+        }
+        
+        @keyframes glow {
+            0% {
+                opacity: 0.4;
+                filter: blur(8px);
+            }
+            100% {
+                opacity: 0.8;
+                filter: blur(12px);
+            }
+        }
+        
+        @keyframes shine {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(1) rotate(0deg);
+            }
+            50% {
+                opacity: 0.7;
+                transform: scale(1.1) rotate(5deg);
+            }
+        }
+        
+        @keyframes sickle-shimmer {
+            0%, 100% {
+                opacity: 0.1;
+                transform: scale(1) rotate(0deg);
+            }
+            50% {
+                opacity: 0.3;
+                transform: scale(1.05) rotate(2deg);
+            }
+        }
+        
+        .cell-label {
+            color: white !important;
+            font-weight: 600 !important;
+            font-size: 0.9rem !important;
+            text-shadow: none !important;
+            -webkit-text-stroke: none !important;
+            text-stroke: none !important;
+            outline: none !important;
+            background: transparent !important;
+            text-decoration: none !important;
+            border: none !important;
+            -webkit-text-fill-color: white !important;
+            -webkit-background-clip: initial !important;
+            background-clip: initial !important;
+            box-shadow: none !important;
+        }
+        
+        .cell-label::before,
+        .cell-label::after {
+            display: none !important;
+        }
+        
+        [data-theme="light"] .cell-label {
+            color: white !important;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+            -webkit-text-stroke: none !important;
+            text-stroke: none !important;
+            outline: none !important;
+            -webkit-text-fill-color: white !important;
+        }
+        
+        /* Modern content section */
+        .page-content.modern-content {
+            padding: 4rem 0;
+            background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+        }
+        
+        [data-theme="dark"] .page-content.modern-content {
+            background: linear-gradient(180deg, var(--background-primary) 0%, var(--background-secondary) 100%) !important;
+        }
+        
+        .content-section {
+            margin-bottom: 3rem;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        [data-theme="dark"] .section-title {
+            color: var(--text-primary) !important;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+            border-radius: 2px;
+        }
+        
+        .section-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-left: 1rem;
+        }
+        
+        [data-theme="dark"] .section-text {
+            color: var(--text-secondary) !important;
+        }
+        
+        /* Beautiful type cards grid */
+        .types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
+        }
+        
+        .type-card {
+            position: relative;
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 
+                0 4px 6px rgba(0, 0, 0, 0.05),
+                0 10px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            overflow: hidden;
+        }
+        
+        [data-theme="dark"] .type-card {
+            background: var(--card-background) !important;
+            box-shadow: 
+                0 4px 6px rgba(0, 0, 0, 0.2),
+                0 10px 20px rgba(0, 0, 0, 0.3) !important;
+        }
+        
+        .type-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--card-color, #ccc);
+        }
+        
+        .type-card.major {
+            --card-color: linear-gradient(90deg, #d32f2f 0%, #f44336 100%);
+        }
+        
+        .type-card.moderate {
+            --card-color: linear-gradient(90deg, #ff9800 0%, #ffc107 100%);
+        }
+        
+        .type-card.variable {
+            --card-color: linear-gradient(90deg, #9c27b0 0%, #e91e63 100%);
+        }
+        
+        .type-card.rare {
+            --card-color: linear-gradient(90deg, #4caf50 0%, #8bc34a 100%);
+        }
+        
+        .type-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+                0 8px 12px rgba(0, 0, 0, 0.1),
+                0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .type-header {
+            margin-bottom: 1.5rem;
+        }
+        
+        .type-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .type-icon.severe-icon {
+            background: linear-gradient(135deg, #d32f2f 0%, #f44336 100%);
+        }
+        
+        .type-icon.moderate-icon {
+            background: linear-gradient(135deg, #ff9800 0%, #ffc107 100%);
+        }
+        
+        .type-icon.variable-icon {
+            background: linear-gradient(135deg, #9c27b0 0%, #e91e63 100%);
+        }
+        
+        .type-icon.rare-icon {
+            background: linear-gradient(135deg, #4caf50 0%, #8bc34a 100%);
+        }
+        
+        .type-title {
+            color: #1a1a1a;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 0 0.5rem 0;
+            line-height: 1.3;
+        }
+        
+        .severity-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 25px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .severity-badge.severe {
+            background: linear-gradient(135deg, rgba(211, 47, 47, 0.15) 0%, rgba(244, 67, 54, 0.2) 100%);
+            color: #c62828;
+            border: 1px solid rgba(211, 47, 47, 0.3);
+        }
+        
+        .severity-badge.moderate {
+            background: linear-gradient(135deg, rgba(255, 152, 0, 0.15) 0%, rgba(255, 193, 7, 0.2) 100%);
+            color: #e65100;
+            border: 1px solid rgba(255, 152, 0, 0.3);
+        }
+        
+        .severity-badge.variable {
+            background: linear-gradient(135deg, rgba(156, 39, 176, 0.15) 0%, rgba(233, 30, 99, 0.2) 100%);
+            color: #7b1fa2;
+            border: 1px solid rgba(156, 39, 176, 0.3);
+        }
+        
+        .severity-badge.rare {
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.15) 0%, rgba(139, 195, 74, 0.2) 100%);
+            color: #2e7d32;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+        }
+        
+        .type-description {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .type-details h4 {
+            color: #333;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+        
+        .type-details ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .type-details li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        .type-details li::before {
+            content: 'â€¢';
+            position: absolute;
+            left: 0;
+            color: var(--card-color, #666);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        /* Comparison and other sections */
+        .comparison-table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .comparison-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid;
+        }
+        
+        .comparison-card.trait {
+            border-left-color: #4caf50;
+        }
+        
+        .comparison-card.disease {
+            border-left-color: #f44336;
+        }
+        
+        .comparison-card h3 {
+            color: #1a1a1a;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Inheritance scenarios */
+        .inheritance-scenarios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .scenario {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border: 1px solid #f0f0f0;
+        }
+        
+        .scenario h4 {
+            color: #d32f2f;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Testing options */
+        .testing-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .testing-option {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border-left: 3px solid #2196f3;
+        }
+        
+        .testing-option h4 {
+            color: #1a1a1a;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-container {
+                gap: 2.5rem;
+                padding: 0 1.5rem;
+            }
+            
+            .medical-illustration {
+                gap: 2rem;
+            }
+            
+            .blood-cell {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .types-grid {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-hero.modern-hero {
+                min-height: 60vh;
+            }
+            
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+                padding: 3rem 1.5rem;
+            }
+            
+            .breadcrumb {
+                text-align: left;
+                margin-bottom: 1.5rem;
+            }
+            
+            .medical-illustration {
+                gap: 1.5rem;
+                justify-content: center;
+            }
+            
+            .blood-cell {
+                width: 110px;
+                height: 110px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .types-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin: 2rem 0;
+            }
+            
+            .type-card {
+                padding: 1.5rem;
+            }
+            
+            .comparison-table {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .inheritance-scenarios,
+            .testing-options {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .page-hero.modern-hero {
+                min-height: 50vh;
+            }
+            
+            .hero-container {
+                padding: 2rem 1rem;
+                gap: 2rem;
+            }
+            
+            .breadcrumb {
+                font-size: 0.85rem;
+                margin-bottom: 1rem;
+            }
+            
+            .medical-illustration {
+                gap: 1rem;
+            }
+            
+            .blood-cell {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .cell-label {
+                font-size: 0.8rem;
+            }
+            
+            .types-grid {
+                gap: 1rem;
+            }
+            
+            .type-card {
+                padding: 1.25rem;
+            }
+        }
+    </style>
 </head>
 <body class="page-body">
     <!-- Skip to main content -->
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
     
-    <!-- Header -->
-    <header class="site-header modern-header" role="banner">
-        <nav class="navbar glass-effect" role="navigation" aria-label="Main navigation">
-            <div class="nav-container">
-                <!-- Logo -->
-                <div class="logo-container">
-                    <a href="../index.html" class="logo-link modern-logo" aria-label="We Warriors Home">
-                        <img src="../images/logo.svg" alt="We Warriors Logo" class="logo"></a>
+    <!-- Universal Header -->
+    <header class="universal-header" role="banner">
+        <div class="header-container">
+            <!-- Logo -->
+            <a href="../index.html" class="header-logo" aria-label="We Warriors Home">
+                <img src="../images/logo.svg" alt="We Warriors Logo" class="logo-img">
+                <span class="logo-text">We Warriors</span>
+            </a>
+            
+            <!-- Navigation Menu -->
+            <nav class="header-nav" role="navigation" aria-label="Main navigation">
+                <!-- Desktop Dropdowns -->
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Support</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="../support/about-sickle-cell.html" class="dropdown-link" role="menuitem">Living with Sickle Cell</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../support/support-groups.html" class="dropdown-link" role="menuitem">Support Groups</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../support/counseling.html" class="dropdown-link" role="menuitem">Counseling Services</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../support/resources.html" class="dropdown-link" role="menuitem">Resources</a>
+                        </li>
+                    </ul>
                 </div>
                 
-                <!-- Navigation Menu -->
-                <ul class="nav-menu modern-nav" role="menubar">
-                    <li class="nav-item" role="none">
-                        <a href="../index.html" class="nav-link" role="menuitem">Home</a>
-                    </li>
-                    <li class="nav-item dropdown" role="none">
-                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Support</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="../support/about-sickle-cell.html">Living with Sickle Cell</a></li>
-                            <li><a href="../support/support-groups.html">Support Groups</a></li>
-                            <li><a href="../support/counseling.html">Counseling Services</a></li>
-                            <li><a href="../support/resources.html">Resources</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown active" role="none">
-                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Information</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="what-is-sickle-cell.html">What is Sickle Cell</a></li>
-                            <li><a href="types.html" class="active">Types of Sickle Cell</a></li>
-                            <li><a href="diagnosis-treatment.html">Diagnosis & Treatment</a></li>
-                            <li><a href="research.html">Research & Trials</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown" role="none">
-                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Community</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="../community/forum.html">Forum</a></li>
-                            <li><a href="../community/blog.html">Blog</a></li>
-                            <li><a href="../community/events.html">Events</a></li>
-                            <li><a href="../community/gallery.html">Gallery</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" aria-describedby="theme-status">
-                            <span class="sun-icon" aria-hidden="true">☀</span>
-                            <span class="moon-icon" aria-hidden="true">☾</span>
-                            <span class="sr-only" id="theme-status">Current theme: light mode</span>
-                        </button>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact</a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a href="../pages/donate.html" class="nav-link cta-button modern-cta" role="menuitem">Donate</a>
-                    </li>
-                </ul>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Information</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="what-is-sickle-cell.html" class="dropdown-link" role="menuitem">What is Sickle Cell</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="types.html" class="dropdown-link" role="menuitem">Types of Sickle Cell</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="diagnosis-treatment.html" class="dropdown-link" role="menuitem">Diagnosis & Treatment</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="research.html" class="dropdown-link" role="menuitem">Research & Trials</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Community</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="../community/forum.html" class="dropdown-link" role="menuitem">Forum</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../community/blog.html" class="dropdown-link" role="menuitem">Blog</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../community/events.html" class="dropdown-link" role="menuitem">Events</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../community/gallery.html" class="dropdown-link" role="menuitem">Gallery</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact</a>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="#get-involved" class="cta-button" role="menuitem">Get Involved</a>
+                </div>
+                
+                <!-- Mobile Only Links -->
+                <!-- Theme Toggle First -->
+                <div class="nav-item mobile-nav-item mobile-theme-item">
+                    <div class="mobile-theme-toggle">
+                        <span>Dark Mode</span>
+                        <div class="mobile-theme-switch" id="mobileThemeSwitch">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item">
+                    <a href="../index.html" class="nav-link" role="menuitem">Home</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../support/about-sickle-cell.html" class="nav-link" role="menuitem">Living with Sickle Cell</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="what-is-sickle-cell.html" class="nav-link" role="menuitem">What is Sickle Cell</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="types.html" class="nav-link" role="menuitem">Types & Symptoms</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="diagnosis-treatment.html" class="nav-link" role="menuitem">Diagnosis & Treatment</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../support/support-groups.html" class="nav-link" role="menuitem">Support Groups</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../support/resources.html" class="nav-link" role="menuitem">Resources</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../support/counseling.html" class="nav-link" role="menuitem">Counseling</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../community/events.html" class="nav-link" role="menuitem">Events</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../community/blog.html" class="nav-link" role="menuitem">Blog</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="research.html" class="nav-link" role="menuitem">Research</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../pages/advocacy.html" class="nav-link" role="menuitem">Advocacy</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact Us</a>
+                </div>
+                
+                <!-- Action Buttons Last -->
+                <div class="nav-item mobile-nav-item mobile-action-item">
+                    <a href="../pages/donate.html" class="mobile-action-btn mobile-donate-btn">Donate Now</a>
+                </div>
+                <div class="nav-item mobile-nav-item mobile-action-item">
+                    <a href="#get-involved" class="mobile-action-btn mobile-get-involved-btn">Get Involved</a>
+                </div>
+            </nav>
+            
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- Theme Toggle (Desktop) -->
+                <button class="theme-toggle" aria-label="Toggle dark mode" aria-describedby="theme-status">
+                    <span class="theme-icon">â˜€</span>
+                    <span class="sr-only" id="theme-status">Current theme: light mode</span>
+                </button>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
             </div>
-        </nav>
+        </div>
     </header>
 
     <!-- Main Content -->
     <main id="main-content" role="main" class="modern-main">
         
-        <!-- Hero Section -->
+        <!-- Beautiful Medical Hero Section -->
         <section class="page-hero modern-hero">
             <div class="hero-background">
                 <div class="hero-gradient"></div>
@@ -104,21 +1135,26 @@
             </div>
             <div class="hero-container">
                 <div class="hero-content">
-                    <nav class="breadcrumb modern-breadcrumb" aria-label="Breadcrumb">
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
                         <ol>
                             <li><a href="../index.html">Home</a></li>
                             <li><a href="../index.html#information">Information</a></li>
                             <li><span aria-current="page">Types of Sickle Cell</span></li>
                         </ol>
                     </nav>
-                    <h1 class="page-title modern-title">Types of Sickle Cell Disease</h1>
-                    <p class="page-subtitle modern-subtitle">Understanding the different forms and their unique characteristics</p>
+                    <div class="hero-text">
+                        <h1 class="page-title">Types of Sickle Cell Disease</h1>
+                        <p class="page-subtitle">Understanding the different forms and their unique characteristics</p>
+                    </div>
                 </div>
-                <div class="hero-visual modern-visual">
-                    <div class="floating-elements">
-                        <div class="float-element hope"></div>
-                        <div class="float-element faith"></div>
-                        <div class="float-element strength"></div>
+                <div class="hero-visual">
+                    <div class="medical-illustration">
+                        <div class="blood-cell normal-cell">
+                            <div class="cell-label">Normal</div>
+                        </div>
+                        <div class="blood-cell sickle-cell">
+                            <div class="cell-label">Sickled</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -202,7 +1238,7 @@
                             <div class="type-card variable">
                                 <div class="type-header">
                                     <div class="type-icon variable-icon" role="img" aria-label="Variable severity indicator"></div>
-                                    <h3 class="type-title">HbS β-thalassemia</h3>
+                                    <h3 class="type-title">HbS Î²-thalassemia</h3>
                                     <span class="severity-badge variable">Variable Severity</span>
                                 </div>
                                 <div class="type-content">
@@ -213,8 +1249,8 @@
                                     <div class="type-details">
                                         <h4>Two Subtypes:</h4>
                                         <ul>
-                                            <li><strong>HbS β0-thalassemia:</strong> More severe, similar to HbSS</li>
-                                            <li><strong>HbS β+-thalassemia:</strong> Milder, with some normal hemoglobin</li>
+                                            <li><strong>HbS Î²0-thalassemia:</strong> More severe, similar to HbSS</li>
+                                            <li><strong>HbS Î²+-thalassemia:</strong> Milder, with some normal hemoglobin</li>
                                         </ul>
                                         <h4>Symptoms:</h4>
                                         <ul>
@@ -351,7 +1387,7 @@
                                 </div>
                                 <div class="legend-item">
                                     <span class="legend-color variable"></span>
-                                    <span>Variable (β-thal)</span>
+                                    <span>Variable (Î²-thal)</span>
                                 </div>
                                 <div class="legend-item">
                                     <span class="legend-color rare"></span>
@@ -390,7 +1426,7 @@
                     <div class="footer-logo">
                         <img src="../images/logo.svg" alt="We Warriors Logo" class="footer-logo-img">
                         <h3 class="footer-brand">We Warriors</h3>
-                        <p class="footer-tagline">From Pain comes Strength • Through Faith we Hope</p>
+                        <p class="footer-tagline">From Pain comes Strength â€¢ Through Faith we Hope</p>
                     </div>
                     <p class="footer-mission">Supporting people afflicted with sickle cell disease and educating others to drive the last generation of people with sickle cell.</p>
                 </div>
@@ -458,7 +1494,7 @@
             
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
-                    <p class="copyright">© 2025 We Warriors Organization. All rights reserved.</p>
+                    <p class="copyright">Â© 2025 We Warriors Organization. All rights reserved.</p>
                     <div class="footer-links-bottom">
                         <a href="../pages/privacy.html">Privacy Policy</a>
                         <a href="../pages/terms.html">Terms of Service</a>
@@ -471,9 +1507,10 @@
 
     <!-- JavaScript -->
     <script src="../js/main.js"></script>
-    <script src="../js/mobile-menu.js"></script>
-    <script src="../js/modern.js"></script>
-    
-    <script src="../js/pages.js"></script>
+    <script src="../js/animations.js"></script>
+    <script src="../js/universal-header.js"></script>
+<script src="../js/warriorbot.js"></script>
+
 </body>
 </html>
+

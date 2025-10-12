@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,63 +16,757 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/accessibility.css">
-    <link rel="stylesheet" href="../css/mobile-menu.css">
-    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/universal-header.css">
+    
+    <!-- Modern Dual-Theme Hero System -->
+    <style>
+        /* Perfect Dual-Theme Hero System */
+        .page-hero.modern-hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        /* Dark Theme - Original Beautiful Gradient */
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+        
+        .hero-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.98) 0%, 
+                rgba(248, 249, 250, 0.95) 30%, 
+                rgba(255, 248, 240, 0.98) 70%, 
+                rgba(255, 255, 255, 0.95) 100%);
+        }
+        
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(196, 30, 58, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.05) 0%, transparent 50%);
+            background-size: 300px 300px, 400px 400px, 500px 500px;
+            animation: patternMove 20s ease-in-out infinite;
+        }
+        
+        @keyframes patternMove {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(-10px, -10px); }
+            50% { transform: translate(10px, 10px); }
+            75% { transform: translate(-5px, 10px); }
+        }
+        
+        /* Dark Theme Override */
+        [data-theme="dark"] .hero-gradient {
+            background: linear-gradient(135deg, 
+                rgba(30, 30, 30, 0.95) 0%, 
+                rgba(45, 45, 45, 0.9) 30%, 
+                rgba(60, 60, 60, 0.95) 70%, 
+                rgba(30, 30, 30, 0.9) 100%) !important;
+        }
+        
+        [data-theme="dark"] .hero-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(196, 30, 58, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.08) 0%, transparent 50%) !important;
+        }
+        
+        /* Light Theme - Medical Background Image */
+        [data-theme="light"] .hero-background {
+            background-image: url('https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        [data-theme="light"] .hero-gradient {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.96) 0%, 
+                rgba(248, 249, 250, 0.94) 30%, 
+                rgba(255, 248, 240, 0.96) 70%, 
+                rgba(255, 255, 255, 0.94) 100%);
+        }
+        
+        /* Content Styling */
+        .hero-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+        
+        .hero-content {
+            color: #f8fafc;
+            max-width: 800px;
+        }
+        
+        [data-theme="light"] .hero-content {
+            color: #0f172a;
+        }
+        
+        .breadcrumb {
+            margin-bottom: 2rem;
+        }
+        
+        .breadcrumb ol {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb li::after {
+            content: '/';
+            margin: 0 0.5rem;
+            color: rgba(248, 250, 252, 0.5);
+        }
+        
+        [data-theme="light"] .breadcrumb li::after {
+            color: rgba(30, 41, 59, 0.4);
+        }
+        
+        .breadcrumb li:last-child::after {
+            display: none;
+        }
+        
+        .breadcrumb a {
+            color: rgba(248, 250, 252, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: #e2e8f0;
+        }
+        
+        [data-theme="light"] .breadcrumb a {
+            color: var(--blood-color) !important;
+        }
+        
+        [data-theme="light"] .breadcrumb a:hover {
+            color: var(--blood-light) !important;
+        }
+        
+        [data-theme="light"] .breadcrumb [aria-current="page"] {
+            color: var(--text-primary) !important;
+        }
+        
+        .page-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin: 0 0 1.5rem 0;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: #f1f5f9;
+            text-shadow: 0 2px 8px rgba(15, 23, 42, 0.4);
+        }
+        
+        [data-theme="light"] .page-title {
+            color: var(--blood-color) !important;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+            font-weight: 700 !important;
+            opacity: 1 !important;
+        }
+        
+        .page-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            margin: 0;
+            color: rgba(226, 232, 240, 0.9);
+            font-weight: 400;
+            line-height: 1.6;
+        }
+        
+        [data-theme="light"] .page-subtitle {
+            color: var(--text-primary) !important;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5) !important;
+            font-weight: 500 !important;
+            opacity: 1 !important;
+        }
+        
+        /* Medical Equipment Illustration */
+        .hero-visual {
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 300px;
+            height: 300px;
+            pointer-events: none;
+        }
+        
+        .floating-elements {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .float-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .float-element.hope {
+            width: 60px;
+            height: 60px;
+            top: 20%;
+            left: 20%;
+            animation: float-hope 6s ease-in-out infinite;
+            background: rgba(59, 130, 246, 0.2);
+        }
+        
+        .float-element.faith {
+            width: 40px;
+            height: 40px;
+            top: 60%;
+            right: 30%;
+            animation: float-faith 8s ease-in-out infinite;
+            background: rgba(139, 0, 0, 0.2);
+        }
+        
+        .float-element.strength {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 40%;
+            animation: float-strength 10s ease-in-out infinite;
+            background: rgba(16, 185, 129, 0.2);
+        }
+        
+        [data-theme="light"] .float-element {
+            background: rgba(0, 0, 0, 0.05);
+        }
+        
+        [data-theme="light"] .float-element.hope {
+            background: rgba(59, 130, 246, 0.1);
+        }
+        
+        [data-theme="light"] .float-element.faith {
+            background: rgba(139, 0, 0, 0.1);
+        }
+        
+        [data-theme="light"] .float-element.strength {
+            background: rgba(16, 185, 129, 0.1);
+        }
+        
+        @keyframes float-hope {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        @keyframes float-faith {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(-180deg); }
+        }
+        
+        @keyframes float-strength {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-25px) rotate(90deg); }
+        }
+        
+        /* Modern Page Content */
+        .page-content {
+            padding: 4rem 0;
+            background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+        }
+        
+        [data-theme="dark"] .page-content {
+            background: linear-gradient(180deg, var(--background-primary) 0%, var(--background-secondary) 100%) !important;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Modern Card Styling */
+        .content-card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 3rem;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        [data-theme="dark"] .content-card {
+            background: var(--card-background) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+            border: 1px solid var(--border-primary) !important;
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        [data-theme="dark"] .card-header {
+            background: linear-gradient(135deg, var(--background-secondary) 0%, var(--background-tertiary) 100%) !important;
+            border-bottom: 1px solid var(--border-primary) !important;
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        [data-theme="dark"] .card-icon {
+            background: var(--background-primary) !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+        }
+        
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0;
+            color: var(--blood-color);
+            letter-spacing: -0.01em;
+        }
+        
+        [data-theme="dark"] .card-title {
+            color: var(--text-primary) !important;
+        }
+        
+        .card-content {
+            padding: 2.5rem;
+        }
+        
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #475569;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        [data-theme="dark"] .intro-text {
+            color: var(--text-secondary) !important;
+        }
+        
+        .card-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 2.5rem 0 1.5rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--blood-color);
+        }
+        
+        .card-content h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 2rem 0 1rem 0;
+        }
+        
+        .card-content h5 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 1.5rem 0 0.75rem 0;
+        }
+        
+        /* Diagnosis Specific Styles */
+        .testing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .test-item {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--blood-color);
+        }
+        
+        [data-theme="dark"] .test-item {
+            background: var(--background-tertiary) !important;
+            border-left-color: var(--blood-light) !important;
+        }
+        
+        .test-item h4 {
+            margin-top: 0;
+            color: var(--blood-color);
+        }
+        
+        [data-theme="dark"] .test-item h4 {
+            color: var(--blood-light) !important;
+        }
+        
+        .test-item p {
+            margin: 0.5rem 0;
+            color: var(--text-secondary);
+        }
+        
+        .test-item ul {
+            margin: 1rem 0 0 0;
+            padding-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+        
+        .prenatal-section {
+            background: #f1f5f9;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+        
+        [data-theme="dark"] .prenatal-section {
+            background: var(--background-secondary) !important;
+        }
+        
+        .option-details {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .option {
+            background: #ffffff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--blood-color);
+        }
+        
+        [data-theme="dark"] .option {
+            background: var(--background-primary) !important;
+            border-left-color: var(--blood-light) !important;
+        }
+        
+        .genetic-counseling {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid #93c5fd;
+        }
+        
+        [data-theme="dark"] .genetic-counseling {
+            background: linear-gradient(135deg, var(--background-secondary) 0%, var(--background-tertiary) 100%) !important;
+            border-color: var(--border-primary) !important;
+        }
+        
+        /* Treatment Specific Styles */
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .goal-item {
+            background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 100%);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #fdba74;
+        }
+        
+        [data-theme="dark"] .goal-item {
+            background: linear-gradient(135deg, var(--background-tertiary) 0%, var(--background-secondary) 100%) !important;
+            border-color: var(--border-primary) !important;
+        }
+        
+        .goal-item h4 {
+            margin: 0 0 0.5rem 0;
+            color: var(--blood-color);
+            font-size: 1.1rem;
+        }
+        
+        [data-theme="dark"] .goal-item h4 {
+            color: var(--blood-light) !important;
+        }
+        
+        .goal-item p {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        
+        .medication-section {
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        [data-theme="dark"] .medication-section {
+            border-color: var(--border-primary) !important;
+        }
+        
+        .medication-details {
+            margin-top: 1rem;
+        }
+        
+        .benefits-risks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .benefits, .considerations {
+            background: #f9fafb;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        [data-theme="dark"] .benefits,
+        [data-theme="dark"] .considerations {
+            background: var(--background-secondary) !important;
+        }
+        
+        .benefits {
+            border-left: 4px solid #10b981;
+        }
+        
+        .considerations {
+            border-left: 4px solid #f59e0b;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-visual {
+                width: 250px;
+                height: 250px;
+                right: 1.5rem;
+            }
+            
+            .testing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .goals-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-hero.modern-hero {
+                min-height: 60vh;
+                text-align: center;
+            }
+            
+            .hero-container {
+                padding: 3rem 1.5rem;
+            }
+            
+            .hero-visual {
+                display: none;
+            }
+            
+            .breadcrumb {
+                text-align: left;
+                margin-bottom: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .page-hero.modern-hero {
+                min-height: 50vh;
+            }
+            
+            .hero-container {
+                padding: 2rem 1rem;
+            }
+            
+            .breadcrumb {
+                font-size: 0.85rem;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
 </head>
 <body class="page-body">
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
     
-    <header class="site-header modern-header" role="banner">
-        <nav class="navbar glass-effect" role="navigation" aria-label="Main navigation">
-            <div class="nav-container">
-                <div class="logo-container">
-                    <a href="../index.html" class="logo-link modern-logo" aria-label="We Warriors Home">
-                        <img src="../images/logo.svg" alt="We Warriors Logo" class="logo"></a>
+    <!-- Universal Header -->
+    <header class="universal-header" role="banner">
+        <div class="header-container">
+            <!-- Logo -->
+            <a href="../index.html" class="header-logo" aria-label="We Warriors Home">
+                <img src="../images/logo.svg" alt="We Warriors Logo" class="logo-img">
+                <span class="logo-text">We Warriors</span>
+            </a>
+            
+            <!-- Navigation Menu -->
+            <nav class="header-nav" role="navigation" aria-label="Main navigation">
+                <!-- Desktop Dropdowns -->
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Support</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="../support/about-sickle-cell.html" class="dropdown-link" role="menuitem">Living with Sickle Cell</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../support/support-groups.html" class="dropdown-link" role="menuitem">Support Groups</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../support/counseling.html" class="dropdown-link" role="menuitem">Counseling Services</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../support/resources.html" class="dropdown-link" role="menuitem">Resources</a>
+                        </li>
+                    </ul>
                 </div>
                 
-                <ul class="nav-menu modern-nav" role="menubar">
-                    <li class="nav-item dropdown" role="none">
-                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Support</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="../support/about-sickle-cell.html">Living with Sickle Cell</a></li>
-                            <li><a href="../support/support-groups.html">Support Groups</a></li>
-                            <li><a href="../support/counseling.html">Counseling Services</a></li>
-                            <li><a href="../support/resources.html">Resources</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown active" role="none">
-                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Information</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="what-is-sickle-cell.html">What is Sickle Cell</a></li>
-                            <li><a href="types.html">Types of Sickle Cell</a></li>
-                            <li><a href="diagnosis-treatment.html" class="active">Diagnosis & Treatment</a></li>
-                            <li><a href="research.html">Research & Trials</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown" role="none">
-                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Community</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="../community/forum.html">Forum</a></li>
-                            <li><a href="../community/blog.html">Blog</a></li>
-                            <li><a href="../community/events.html">Events</a></li>
-                            <li><a href="../community/gallery.html">Gallery</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                            <span class="sun-icon">☀️</span>
-                            <span class="moon-icon">🌙</span>
-                        </button>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact</a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a href="../pages/donate.html" class="nav-link cta-button modern-cta" role="menuitem">Get Involved</a>
-                    </li>
-                </ul>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Information</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="what-is-sickle-cell.html" class="dropdown-link" role="menuitem">What is Sickle Cell</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="types.html" class="dropdown-link" role="menuitem">Types of Sickle Cell</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="diagnosis-treatment.html" class="dropdown-link" role="menuitem">Diagnosis & Treatment</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="research.html" class="dropdown-link" role="menuitem">Research & Trials</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Community</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="../community/forum.html" class="dropdown-link" role="menuitem">Forum</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../community/blog.html" class="dropdown-link" role="menuitem">Blog</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../community/events.html" class="dropdown-link" role="menuitem">Events</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../community/gallery.html" class="dropdown-link" role="menuitem">Gallery</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact</a>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="#get-involved" class="cta-button" role="menuitem">Get Involved</a>
+                </div>
+                
+                <!-- Mobile Only Links -->
+                <!-- Theme Toggle First -->
+                <div class="nav-item mobile-nav-item mobile-theme-item">
+                    <div class="mobile-theme-toggle">
+                        <span>Dark Mode</span>
+                        <div class="mobile-theme-switch" id="mobileThemeSwitch">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item">
+                    <a href="../index.html" class="nav-link" role="menuitem">Home</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../support/about-sickle-cell.html" class="nav-link" role="menuitem">Living with Sickle Cell</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="what-is-sickle-cell.html" class="nav-link" role="menuitem">What is Sickle Cell</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="types.html" class="nav-link" role="menuitem">Types & Symptoms</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="diagnosis-treatment.html" class="nav-link" role="menuitem">Diagnosis & Treatment</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../support/support-groups.html" class="nav-link" role="menuitem">Support Groups</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../support/resources.html" class="nav-link" role="menuitem">Resources</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../support/counseling.html" class="nav-link" role="menuitem">Counseling</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../community/events.html" class="nav-link" role="menuitem">Events</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../community/blog.html" class="nav-link" role="menuitem">Blog</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="research.html" class="nav-link" role="menuitem">Research</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../pages/advocacy.html" class="nav-link" role="menuitem">Advocacy</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact Us</a>
+                </div>
+                
+                <!-- Action Buttons Last -->
+                <div class="nav-item mobile-nav-item mobile-action-item">
+                    <a href="../pages/donate.html" class="mobile-action-btn mobile-donate-btn">Donate Now</a>
+                </div>
+                <div class="nav-item mobile-nav-item mobile-action-item">
+                    <a href="#get-involved" class="mobile-action-btn mobile-get-involved-btn">Get Involved</a>
+                </div>
+            </nav>
+            
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- Theme Toggle (Desktop) -->
+                <button class="theme-toggle" aria-label="Toggle dark mode" aria-describedby="theme-status">
+                    <span class="theme-icon">â˜€</span>
+                    <span class="sr-only" id="theme-status">Current theme: light mode</span>
+                </button>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
             </div>
-        </nav>
+        </div>
     </header>
 
     <main id="main-content" role="main" class="modern-main">
@@ -88,11 +782,11 @@
                         <ol>
                             <li><a href="../index.html">Home</a></li>
                             <li><a href="../index.html#information">Information</a></li>
-                            <li><span aria-current="page">Treatment Options</span></li>
+                            <li><span aria-current="page">Diagnosis & Treatment</span></li>
                         </ol>
                     </nav>
-                    <h1 class="page-title modern-title">Treatment Options for Sickle Cell Disease</h1>
-                    <p class="page-subtitle modern-subtitle">Comprehensive medical treatments, therapies, and management strategies for better health outcomes</p>
+                    <h1 class="page-title modern-title">Diagnosis & Treatment</h1>
+                    <p class="page-subtitle modern-subtitle">Understanding the diagnosis process and comprehensive treatment options for sickle cell disease</p>
                 </div>
                 <div class="hero-visual modern-visual">
                     <div class="floating-elements">
@@ -107,10 +801,109 @@
         <section class="page-content modern-content">
             <div class="container">
                 
+                <!-- Diagnosis Section -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">ðŸ”¬</div>
+                        <h2 class="card-title">Diagnosis of Sickle Cell Disease</h2>
+                    </div>
+                    <div class="card-content">
+                        <p class="intro-text">Early and accurate diagnosis of sickle cell disease is crucial for proper management and prevention of complications. Several screening and diagnostic tests are available at different life stages.</p>
+                        
+                        <h3>Newborn Screening</h3>
+                        <div class="diagnosis-section">
+                            <div class="diagnosis-method">
+                                <h4>ðŸ¼ Universal Newborn Screening</h4>
+                                <div class="method-details">
+                                    <p><strong>When:</strong> Within first 24-48 hours of birth</p>
+                                    <p><strong>Method:</strong> Heel prick blood test (part of routine newborn screening panel)</p>
+                                    <div class="screening-benefits">
+                                        <h5>âœ… Benefits of Early Detection</h5>
+                                        <ul>
+                                            <li>Immediate preventive care can begin</li>
+                                            <li>Reduces risk of serious infections</li>
+                                            <li>Parents receive education and support</li>
+                                            <li>Medical team can monitor for complications</li>
+                                            <li>Prophylactic penicillin can be started</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3>Confirmatory Testing</h3>
+                        <div class="testing-grid">
+                            <div class="test-item">
+                                <h4>ðŸ§¬ Hemoglobin Electrophoresis</h4>
+                                <p><strong>Gold Standard:</strong> Separates different types of hemoglobin</p>
+                                <ul>
+                                    <li>Identifies HbS, HbA, HbF levels</li>
+                                    <li>Confirms sickle cell disease or trait</li>
+                                    <li>Used for definitive diagnosis</li>
+                                </ul>
+                            </div>
+                            <div class="test-item">
+                                <h4>ðŸ”¬ High-Performance Liquid Chromatography (HPLC)</h4>
+                                <p><strong>Advanced Method:</strong> Precise hemoglobin analysis</p>
+                                <ul>
+                                    <li>Highly accurate quantification</li>
+                                    <li>Can detect variant hemoglobins</li>
+                                    <li>Preferred in many laboratories</li>
+                                </ul>
+                            </div>
+                            <div class="test-item">
+                                <h4>ðŸ§ª DNA Testing</h4>
+                                <p><strong>Genetic Analysis:</strong> Direct gene sequencing</p>
+                                <ul>
+                                    <li>Identifies specific mutations</li>
+                                    <li>Useful for complex cases</li>
+                                    <li>Family planning guidance</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h3>Prenatal Diagnosis</h3>
+                        <div class="prenatal-section">
+                            <div class="prenatal-options">
+                                <h4>ðŸ¤° Available Options</h4>
+                                <div class="option-details">
+                                    <div class="option">
+                                        <h5>Chorionic Villus Sampling (CVS)</h5>
+                                        <p><strong>Timing:</strong> 10-13 weeks of pregnancy</p>
+                                        <p>Samples placental tissue for genetic analysis</p>
+                                    </div>
+                                    <div class="option">
+                                        <h5>Amniocentesis</h5>
+                                        <p><strong>Timing:</strong> 15-20 weeks of pregnancy</p>
+                                        <p>Samples amniotic fluid for fetal genetic testing</p>
+                                    </div>
+                                    <div class="option">
+                                        <h5>Preimplantation Genetic Diagnosis (PGD)</h5>
+                                        <p><strong>With IVF:</strong> Before embryo implantation</p>
+                                        <p>Tests embryos before pregnancy begins</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="genetic-counseling">
+                            <h4>ðŸ§¬ Genetic Counseling</h4>
+                            <p>Essential for families with sickle cell disease or trait:</p>
+                            <ul>
+                                <li>Understanding inheritance patterns</li>
+                                <li>Risk assessment for future pregnancies</li>
+                                <li>Decision support for family planning</li>
+                                <li>Connecting with support resources</li>
+                                <li>Discussion of all available options</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
                 <!-- Treatment Overview -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">⚕️</div>
+                        <div class="card-icon">âš•ï¸</div>
                         <h2 class="card-title">Treatment Approach Overview</h2>
                     </div>
                     <div class="card-content">
@@ -119,19 +912,19 @@
                         <h3>Treatment Goals</h3>
                         <div class="goals-grid">
                             <div class="goal-item">
-                                <h4>🎯 Prevent Pain Crises</h4>
+                                <h4>ðŸŽ¯ Prevent Pain Crises</h4>
                                 <p>Reduce frequency and severity of vaso-occlusive episodes</p>
                             </div>
                             <div class="goal-item">
-                                <h4>🛡️ Prevent Complications</h4>
+                                <h4>ðŸ›¡ï¸ Prevent Complications</h4>
                                 <p>Avoid organ damage, stroke, and infections</p>
                             </div>
                             <div class="goal-item">
-                                <h4>📈 Improve Quality of Life</h4>
+                                <h4>ðŸ“ˆ Improve Quality of Life</h4>
                                 <p>Enable normal activities and development</p>
                             </div>
                             <div class="goal-item">
-                                <h4>💊 Disease Modification</h4>
+                                <h4>ðŸ’Š Disease Modification</h4>
                                 <p>Address underlying cellular and genetic causes</p>
                             </div>
                         </div>
@@ -141,20 +934,20 @@
                 <!-- FDA Approved Medications -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">💊</div>
+                        <div class="card-icon">ðŸ’Š</div>
                         <h2 class="card-title">FDA-Approved Medications</h2>
                     </div>
                     <div class="card-content">
                         <h3>Disease-Modifying Therapies</h3>
                         
                         <div class="medication-section">
-                            <h4>🏆 Hydroxyurea (Droxia, Siklos)</h4>
+                            <h4>ðŸ† Hydroxyurea (Droxia, Siklos)</h4>
                             <div class="medication-details">
                                 <p><strong>Approved:</strong> 1998 (adults), 2017 (pediatric)</p>
                                 <p><strong>Mechanism:</strong> Increases fetal hemoglobin production, reduces sickling</p>
                                 <div class="benefits-risks">
                                     <div class="benefits">
-                                        <h5>✅ Benefits</h5>
+                                        <h5>âœ… Benefits</h5>
                                         <ul>
                                             <li>Reduces pain crises by 50%</li>
                                             <li>Decreases acute chest syndrome</li>
@@ -164,7 +957,7 @@
                                         </ul>
                                     </div>
                                     <div class="considerations">
-                                        <h5>⚠️ Considerations</h5>
+                                        <h5>âš ï¸ Considerations</h5>
                                         <ul>
                                             <li>Regular blood monitoring required</li>
                                             <li>May lower blood counts initially</li>
@@ -177,13 +970,13 @@
                         </div>
 
                         <div class="medication-section">
-                            <h4>🆕 Voxelotor (Oxbryta)</h4>
+                            <h4>ðŸ†• Voxelotor (Oxbryta)</h4>
                             <div class="medication-details">
                                 <p><strong>Approved:</strong> 2019</p>
                                 <p><strong>Mechanism:</strong> Increases oxygen affinity of hemoglobin, prevents sickling</p>
                                 <div class="benefits-risks">
                                     <div class="benefits">
-                                        <h5>✅ Benefits</h5>
+                                        <h5>âœ… Benefits</h5>
                                         <ul>
                                             <li>Increases hemoglobin levels</li>
                                             <li>Reduces hemolysis (cell breakdown)</li>
@@ -192,7 +985,7 @@
                                         </ul>
                                     </div>
                                     <div class="considerations">
-                                        <h5>⚠️ Considerations</h5>
+                                        <h5>âš ï¸ Considerations</h5>
                                         <ul>
                                             <li>Newer medication with ongoing studies</li>
                                             <li>May cause headache, nausea</li>
@@ -204,13 +997,13 @@
                         </div>
 
                         <div class="medication-section">
-                            <h4>🩸 Crizanlizumab (Adakveo)</h4>
+                            <h4>ðŸ©¸ Crizanlizumab (Adakveo)</h4>
                             <div class="medication-details">
                                 <p><strong>Approved:</strong> 2019</p>
                                 <p><strong>Mechanism:</strong> Prevents blood cells from sticking to blood vessel walls</p>
                                 <div class="benefits-risks">
                                     <div class="benefits">
-                                        <h5>✅ Benefits</h5>
+                                        <h5>âœ… Benefits</h5>
                                         <ul>
                                             <li>Reduces pain crises frequency</li>
                                             <li>Monthly IV infusion</li>
@@ -219,7 +1012,7 @@
                                         </ul>
                                     </div>
                                     <div class="considerations">
-                                        <h5>⚠️ Considerations</h5>
+                                        <h5>âš ï¸ Considerations</h5>
                                         <ul>
                                             <li>Requires monthly clinic visits</li>
                                             <li>Infusion reactions possible</li>
@@ -231,13 +1024,13 @@
                         </div>
 
                         <div class="medication-section">
-                            <h4>🔄 L-glutamine (Endari)</h4>
+                            <h4>ðŸ”„ L-glutamine (Endari)</h4>
                             <div class="medication-details">
                                 <p><strong>Approved:</strong> 2017</p>
                                 <p><strong>Mechanism:</strong> Reduces oxidative stress in red blood cells</p>
                                 <div class="benefits-risks">
                                     <div class="benefits">
-                                        <h5>✅ Benefits</h5>
+                                        <h5>âœ… Benefits</h5>
                                         <ul>
                                             <li>Reduces pain crises and hospitalizations</li>
                                             <li>Oral powder supplement</li>
@@ -246,7 +1039,7 @@
                                         </ul>
                                     </div>
                                     <div class="considerations">
-                                        <h5>⚠️ Considerations</h5>
+                                        <h5>âš ï¸ Considerations</h5>
                                         <ul>
                                             <li>Must be taken twice daily</li>
                                             <li>Taste may be challenging</li>
@@ -262,7 +1055,7 @@
                 <!-- Blood Transfusions -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">🩸</div>
+                        <div class="card-icon">ðŸ©¸</div>
                         <h2 class="card-title">Blood Transfusion Therapy</h2>
                     </div>
                     <div class="card-content">
@@ -270,7 +1063,7 @@
                         
                         <div class="transfusion-types">
                             <div class="transfusion-type">
-                                <h4>🚨 Emergency Transfusions</h4>
+                                <h4>ðŸš¨ Emergency Transfusions</h4>
                                 <p><strong>Used for:</strong></p>
                                 <ul>
                                     <li>Severe anemia (hemoglobin &lt; 5-6 g/dL)</li>
@@ -282,7 +1075,7 @@
                             </div>
                             
                             <div class="transfusion-type">
-                                <h4>📅 Chronic Transfusion Programs</h4>
+                                <h4>ðŸ“… Chronic Transfusion Programs</h4>
                                 <p><strong>Used for:</strong></p>
                                 <ul>
                                     <li>Stroke prevention in children</li>
@@ -299,7 +1092,7 @@
                         <h3>Benefits and Risks</h3>
                         <div class="benefits-risks">
                             <div class="benefits">
-                                <h5>✅ Benefits</h5>
+                                <h5>âœ… Benefits</h5>
                                 <ul>
                                     <li>Rapidly improves oxygen delivery</li>
                                     <li>Prevents stroke in high-risk children</li>
@@ -309,7 +1102,7 @@
                                 </ul>
                             </div>
                             <div class="considerations">
-                                <h5>⚠️ Risks and Considerations</h5>
+                                <h5>âš ï¸ Risks and Considerations</h5>
                                 <ul>
                                     <li>Iron overload requiring chelation</li>
                                     <li>Alloimmunization (antibody formation)</li>
@@ -333,7 +1126,7 @@
                 <!-- Gene and Cellular Therapies -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">🧬</div>
+                        <div class="card-icon">ðŸ§¬</div>
                         <h2 class="card-title">Gene and Cellular Therapies</h2>
                     </div>
                     <div class="card-content">
@@ -344,7 +1137,7 @@
                             <div class="transplant-types">
                                 <h4>Types of Transplants</h4>
                                 <div class="transplant-type">
-                                    <h5>👨‍👩‍👧‍👦 Matched Sibling Donor (MSD)</h5>
+                                    <h5>ðŸ‘¨â€ðŸ‘©â€ðŸ‘§â€ðŸ‘¦ Matched Sibling Donor (MSD)</h5>
                                     <ul>
                                         <li>95%+ cure rate</li>
                                         <li>Lowest risk of complications</li>
@@ -354,7 +1147,7 @@
                                 </div>
                                 
                                 <div class="transplant-type">
-                                    <h5>🏥 Matched Unrelated Donor (MUD)</h5>
+                                    <h5>ðŸ¥ Matched Unrelated Donor (MUD)</h5>
                                     <ul>
                                         <li>85-90% cure rate</li>
                                         <li>Higher risk than sibling transplant</li>
@@ -364,7 +1157,7 @@
                                 </div>
                                 
                                 <div class="transplant-type">
-                                    <h5>🔬 Haploidentical Transplant</h5>
+                                    <h5>ðŸ”¬ Haploidentical Transplant</h5>
                                     <ul>
                                         <li>Uses half-matched family member</li>
                                         <li>Parents or siblings as donors</li>
@@ -419,7 +1212,7 @@
                         
                         <div class="gene-therapies">
                             <div class="therapy-item">
-                                <h4>🧬 Gene Addition Therapy</h4>
+                                <h4>ðŸ§¬ Gene Addition Therapy</h4>
                                 <p>Adding normal beta-globin genes to patient's stem cells</p>
                                 <ul>
                                     <li><strong>LentiGlobin (Zynteglo):</strong> Approved in Europe</li>
@@ -429,7 +1222,7 @@
                             </div>
                             
                             <div class="therapy-item">
-                                <h4>✂️ Gene Editing (CRISPR)</h4>
+                                <h4>âœ‚ï¸ Gene Editing (CRISPR)</h4>
                                 <p>Precisely editing the sickle cell gene</p>
                                 <ul>
                                     <li><strong>CTX001:</strong> Leading clinical trial</li>
@@ -439,7 +1232,7 @@
                             </div>
                             
                             <div class="therapy-item">
-                                <h4>🔄 Base Editing</h4>
+                                <h4>ðŸ”„ Base Editing</h4>
                                 <p>Converting sickle mutation back to normal</p>
                                 <ul>
                                     <li>More precise than traditional gene editing</li>
@@ -454,7 +1247,7 @@
                 <!-- Pain Management -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">💊</div>
+                        <div class="card-icon">ðŸ’Š</div>
                         <h2 class="card-title">Pain Management Strategies</h2>
                     </div>
                     <div class="card-content">
@@ -463,7 +1256,7 @@
                         
                         <div class="pain-management-grid">
                             <div class="management-category">
-                                <h4>🏥 Hospital Treatment</h4>
+                                <h4>ðŸ¥ Hospital Treatment</h4>
                                 <ul>
                                     <li><strong>IV Opioids:</strong> Morphine, hydromorphone, fentanyl</li>
                                     <li><strong>NSAIDs:</strong> Ketorolac for anti-inflammatory effect</li>
@@ -474,7 +1267,7 @@
                             </div>
                             
                             <div class="management-category">
-                                <h4>🏠 Home Management</h4>
+                                <h4>ðŸ  Home Management</h4>
                                 <ul>
                                     <li><strong>Oral Opioids:</strong> Prescribed for breakthrough pain</li>
                                     <li><strong>Over-the-Counter:</strong> Acetaminophen, ibuprofen</li>
@@ -499,7 +1292,7 @@
                         <h3>Pain Prevention Strategies</h3>
                         <div class="prevention-strategies">
                             <div class="strategy-category">
-                                <h4>🌡️ Avoid Triggers</h4>
+                                <h4>ðŸŒ¡ï¸ Avoid Triggers</h4>
                                 <ul>
                                     <li>Extreme temperatures (hot or cold)</li>
                                     <li>Dehydration</li>
@@ -511,7 +1304,7 @@
                             </div>
                             
                             <div class="strategy-category">
-                                <h4>💪 Lifestyle Modifications</h4>
+                                <h4>ðŸ’ª Lifestyle Modifications</h4>
                                 <ul>
                                     <li>Regular, gentle exercise</li>
                                     <li>Adequate sleep (8-9 hours)</li>
@@ -528,7 +1321,7 @@
                 <!-- Preventive Care -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">🛡️</div>
+                        <div class="card-icon">ðŸ›¡ï¸</div>
                         <h2 class="card-title">Preventive Care and Monitoring</h2>
                     </div>
                     <div class="card-content">
@@ -537,7 +1330,7 @@
                         
                         <div class="prevention-grid">
                             <div class="prevention-category">
-                                <h4>💉 Vaccinations</h4>
+                                <h4>ðŸ’‰ Vaccinations</h4>
                                 <ul>
                                     <li><strong>Pneumococcal:</strong> PCV13 and PPSV23</li>
                                     <li><strong>Meningococcal:</strong> All types (A, B, C, W, Y)</li>
@@ -549,7 +1342,7 @@
                             </div>
                             
                             <div class="prevention-category">
-                                <h4>💊 Prophylactic Antibiotics</h4>
+                                <h4>ðŸ’Š Prophylactic Antibiotics</h4>
                                 <ul>
                                     <li><strong>Penicillin:</strong> Daily from 2 months to 5 years</li>
                                     <li><strong>Continuation:</strong> May extend beyond age 5</li>
@@ -561,7 +1354,7 @@
 
                         <h3>Regular Monitoring and Screening</h3>
                         <div class="monitoring-schedule">
-                            <h4>📅 Routine Laboratory Tests</h4>
+                            <h4>ðŸ“… Routine Laboratory Tests</h4>
                             <div class="test-schedule">
                                 <div class="test-frequency">
                                     <h5>Every 3-4 Months</h5>
@@ -599,7 +1392,7 @@
                         <h3>Organ-Specific Monitoring</h3>
                         <div class="organ-monitoring">
                             <div class="organ-system">
-                                <h4>🧠 Brain Health</h4>
+                                <h4>ðŸ§  Brain Health</h4>
                                 <ul>
                                     <li>Stroke screening with TCD ultrasound</li>
                                     <li>MRI for silent strokes</li>
@@ -609,7 +1402,7 @@
                             </div>
                             
                             <div class="organ-system">
-                                <h4>🫁 Lung Health</h4>
+                                <h4>ðŸ« Lung Health</h4>
                                 <ul>
                                     <li>Pulmonary function tests</li>
                                     <li>Screening for pulmonary hypertension</li>
@@ -619,7 +1412,7 @@
                             </div>
                             
                             <div class="organ-system">
-                                <h4>🫘 Kidney Health</h4>
+                                <h4>ðŸ«˜ Kidney Health</h4>
                                 <ul>
                                     <li>Annual urine protein screening</li>
                                     <li>Blood pressure monitoring</li>
@@ -634,7 +1427,7 @@
                 <!-- Complementary Therapies -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">🌿</div>
+                        <div class="card-icon">ðŸŒ¿</div>
                         <h2 class="card-title">Complementary and Alternative Therapies</h2>
                     </div>
                     <div class="card-content">
@@ -643,7 +1436,7 @@
                         
                         <div class="complementary-grid">
                             <div class="therapy-category">
-                                <h4>🧘‍♀️ Mind-Body Therapies</h4>
+                                <h4>ðŸ§˜â€â™€ï¸ Mind-Body Therapies</h4>
                                 <ul>
                                     <li><strong>Meditation:</strong> Reduces stress and pain perception</li>
                                     <li><strong>Deep breathing:</strong> Promotes relaxation during crises</li>
@@ -654,7 +1447,7 @@
                             </div>
                             
                             <div class="therapy-category">
-                                <h4>💆‍♀️ Physical Therapies</h4>
+                                <h4>ðŸ’†â€â™€ï¸ Physical Therapies</h4>
                                 <ul>
                                     <li><strong>Massage therapy:</strong> Improves circulation, reduces muscle tension</li>
                                     <li><strong>Acupuncture:</strong> May help with pain management</li>
@@ -665,7 +1458,7 @@
                             </div>
                             
                             <div class="therapy-category">
-                                <h4>🌱 Nutritional Approaches</h4>
+                                <h4>ðŸŒ± Nutritional Approaches</h4>
                                 <ul>
                                     <li><strong>Folic acid supplementation:</strong> Supports red blood cell production</li>
                                     <li><strong>Antioxidant-rich diet:</strong> May reduce oxidative stress</li>
@@ -677,7 +1470,7 @@
                         </div>
 
                         <div class="important-note">
-                            <h4>⚠️ Important Considerations</h4>
+                            <h4>âš ï¸ Important Considerations</h4>
                             <ul>
                                 <li>Always discuss complementary therapies with your healthcare team</li>
                                 <li>Some herbal supplements can interact with medications</li>
@@ -692,7 +1485,7 @@
                 <!-- Future Treatments -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">🔬</div>
+                        <div class="card-icon">ðŸ”¬</div>
                         <h2 class="card-title">Emerging Treatments and Future Directions</h2>
                     </div>
                     <div class="card-content">
@@ -700,7 +1493,7 @@
                         
                         <div class="emerging-treatments">
                             <div class="treatment-category">
-                                <h4>🧬 Advanced Gene Therapies</h4>
+                                <h4>ðŸ§¬ Advanced Gene Therapies</h4>
                                 <ul>
                                     <li><strong>Prime editing:</strong> More precise gene correction techniques</li>
                                     <li><strong>In vivo gene editing:</strong> Direct gene editing without cell extraction</li>
@@ -710,7 +1503,7 @@
                             </div>
                             
                             <div class="treatment-category">
-                                <h4>💊 Novel Drug Targets</h4>
+                                <h4>ðŸ’Š Novel Drug Targets</h4>
                                 <ul>
                                     <li><strong>Anti-sickling agents:</strong> New compounds preventing cell deformation</li>
                                     <li><strong>Anti-adhesion therapies:</strong> Preventing cell sticking to vessel walls</li>
@@ -720,7 +1513,7 @@
                             </div>
                             
                             <div class="treatment-category">
-                                <h4>🔬 Regenerative Medicine</h4>
+                                <h4>ðŸ”¬ Regenerative Medicine</h4>
                                 <ul>
                                     <li><strong>Induced pluripotent stem cells (iPSCs):</strong> Creating healthy cells from patient samples</li>
                                     <li><strong>Tissue engineering:</strong> Growing replacement organs</li>
@@ -762,7 +1555,7 @@
                 <!-- Action Section -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">🤝</div>
+                        <div class="card-icon">ðŸ¤</div>
                         <h2 class="card-title">Take Action for Better Treatment</h2>
                     </div>
                     <div class="card-content">
@@ -776,7 +1569,7 @@
                         </div>
 
                         <div class="treatment-tips">
-                            <h4>💡 Key Treatment Tips</h4>
+                            <h4>ðŸ’¡ Key Treatment Tips</h4>
                             <ul>
                                 <li>Work with a specialized sickle cell center when possible</li>
                                 <li>Take medications as prescribed, even when feeling well</li>
@@ -802,7 +1595,7 @@
                     <div class="footer-logo">
                         <img src="../images/logo.svg" alt="We Warriors Logo" class="footer-logo-img">
                         <h3 class="footer-brand">We Warriors</h3>
-                        <p class="footer-tagline">From Pain comes Strength • Through Faith we Hope</p>
+                        <p class="footer-tagline">From Pain comes Strength â€¢ Through Faith we Hope</p>
                     </div>
                     <p class="footer-mission">Supporting people afflicted with sickle cell disease and educating others to drive the last generation of people with sickle cell.</p>
                 </div>
@@ -860,7 +1653,7 @@
             
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
-                    <p class="copyright">© 2025 We Warriors Organization. All rights reserved.</p>
+                    <p class="copyright">Â© 2025 We Warriors Organization. All rights reserved.</p>
                     <div class="footer-links-bottom">
                         <a href="../pages/privacy.html">Privacy Policy</a>
                         <a href="../pages/terms.html">Terms of Service</a>
@@ -875,5 +1668,11 @@
     <script src="../js/mobile-menu.js"></script>
     <script src="../js/modern.js"></script>
     <script src="../js/pages.js"></script>
+    <!-- Universal header scripts -->
+    <script src="../js/animations.js"></script>
+    <script src="../js/universal-header.js"></script>
+<script src="../js/warriorbot.js"></script>
+
 </body>
 </html>
+

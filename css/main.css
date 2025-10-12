@@ -3187,3 +3187,114 @@ h1.modern-title,
     color: var(--accent-color);
   }
 }
+
+/* Featured Resources Section */
+.featured-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+:root[data-theme="dark"] .featured-section {
+  background: linear-gradient(135deg, var(--background-secondary) 0%, var(--background-accent) 100%);
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.featured-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, var(--blood-color) 0%, var(--hope-color) 100%);
+}
+
+.featured-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+:root[data-theme="dark"] .featured-card {
+  background: var(--background-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+:root[data-theme="dark"] .featured-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.featured-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.featured-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--blood-color);
+  margin-bottom: 1rem;
+}
+
+:root[data-theme="dark"] .featured-title {
+  color: var(--text-primary);
+}
+
+.featured-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+:root[data-theme="dark"] .featured-description {
+  color: var(--text-secondary);
+}
+
+.featured-link {
+  display: inline-block;
+  background: var(--blood-color);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.featured-link:hover {
+  background: var(--blood-light);
+  transform: translateY(-2px);
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .featured-card {
+    padding: 1.5rem;
+  }
+}

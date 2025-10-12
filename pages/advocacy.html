@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,7 +19,58 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/mobile-menu.css">
-    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/universal-header.css">
+    <style>
+        .page-hero.modern-hero { position: relative; min-height: 70vh; display: flex; align-items: center; overflow: hidden; }
+        .hero-background { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; }
+        .hero-gradient { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 30%, rgba(255, 248, 240, 0.98) 70%, rgba(255, 255, 255, 0.95) 100%); }
+        .hero-pattern { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(196, 30, 58, 0.08) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.05) 0%, transparent 50%); background-size: 300px 300px, 400px 400px, 500px 500px; animation: patternMove 20s ease-in-out infinite; }
+        @keyframes patternMove { 0%, 100% { transform: translate(0, 0); } 25% { transform: translate(-10px, -10px); } 50% { transform: translate(10px, 10px); } 75% { transform: translate(-5px, 10px); } }
+        [data-theme="dark"] .hero-gradient { background: linear-gradient(135deg, rgba(30, 30, 30, 0.95) 0%, rgba(45, 45, 45, 0.9) 30%, rgba(60, 60, 60, 0.95) 70%, rgba(30, 30, 30, 0.9) 100%) !important; }
+        [data-theme="dark"] .hero-pattern { background-image: radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.15) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(196, 30, 58, 0.12) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.08) 0%, transparent 50%) !important; }
+        [data-theme="light"] .hero-background { background-image: url('https://images.unsplash.com/photo-1529007196863-d4796fdf9ddd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'); background-size: cover; background-position: center; }
+        [data-theme="light"] .hero-gradient { background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(248, 249, 250, 0.94) 30%, rgba(237, 233, 254, 0.96) 70%, rgba(255, 255, 255, 0.94) 100%); }
+        .hero-container { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 2rem; width: 100%; }
+        .hero-content { color: #f8fafc; max-width: 800px; }
+        [data-theme="light"] .hero-content { color: #0f172a; }
+        .page-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin: 0 0 1.5rem 0; line-height: 1.1; color: #f1f5f9; }
+        [data-theme="light"] .page-title { color: var(--blood-color) !important; }
+        .page-subtitle { font-size: clamp(1.1rem, 2.5vw, 1.4rem); margin: 0; color: rgba(226, 232, 240, 0.9); line-height: 1.6; }
+        [data-theme="light"] .page-subtitle { color: var(--text-primary) !important; }
+        .page-content { padding: 4rem 0; background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%); }
+        [data-theme="dark"] .page-content { background: linear-gradient(180deg, var(--background-primary) 0%, var(--background-secondary) 100%) !important; }
+        
+        /* Modern Horizontal Breadcrumb Styling */
+        .breadcrumb { margin-bottom: 2rem; }
+        .breadcrumb ol { display: flex; align-items: center; gap: 0.5rem; list-style: none; padding: 0; margin: 0; font-size: 0.9rem; }
+        .breadcrumb li::after { content: '/'; margin: 0 0.5rem; color: rgba(248, 250, 252, 0.5); }
+        [data-theme="light"] .breadcrumb li::after { color: rgba(30, 41, 59, 0.4); }
+        .breadcrumb li:last-child::after { display: none; }
+        .breadcrumb a { color: rgba(248, 250, 252, 0.8); text-decoration: none; transition: color 0.3s ease; }
+        .breadcrumb a:hover { color: #e2e8f0; }
+        [data-theme="light"] .breadcrumb a { color: rgba(30, 41, 59, 0.7); }
+        [data-theme="light"] .breadcrumb a:hover { color: #991b1b; }
+        
+        /* Container and Content Styles */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        
+        @media (max-width: 768px) { .hero-container { padding: 3rem 1.5rem; } }
+        /* Modern Horizontal Breadcrumb Styling */
+        .breadcrumb { margin-bottom: 2rem; }
+        .breadcrumb ol { display: flex; align-items: center; gap: 0.5rem; list-style: none; padding: 0; margin: 0; font-size: 0.9rem; }
+        .breadcrumb li::after { content: '/'; margin: 0 0.5rem; color: rgba(248, 250, 252, 0.5); }
+        [data-theme="light"] .breadcrumb li::after { color: rgba(30, 41, 59, 0.4); }
+        .breadcrumb li:last-child::after { display: none; }
+        .breadcrumb a { color: rgba(248, 250, 252, 0.8); text-decoration: none; transition: color 0.3s ease; }
+        .breadcrumb a:hover { color: #e2e8f0; }
+        [data-theme="light"] .breadcrumb a { color: rgba(30, 41, 59, 0.7); }
+        [data-theme="light"] .breadcrumb a:hover { color: #991b1b; }
+        
+        /* Container and Content Styles */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        
+        @media (max-width: 768px) { .hero-container { padding: 3rem 1.5rem; } }
+    </style>
     <link rel="stylesheet" href="../css/mobile-menu.css">
     <link rel="stylesheet" href="../css/accessibility.css">
     <link rel="stylesheet" href="../css/mobile-menu.css">
@@ -28,77 +79,176 @@
     <!-- Skip to main content link for accessibility -->
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
     
-    <!-- Header -->
-    <header class="site-header" role="banner">
-        <nav class="navbar" role="navigation" aria-label="Main navigation">
-            <div class="nav-container">
-                <!-- Logo -->
-                <div class="logo-container">
-                    <a href="../index.html" class="logo-link" aria-label="We Warriors Home">
-                        <img src="../images/logo.svg" alt="We Warriors Logo" class="logo"></a>
+    <!-- Universal Header -->
+    <header class="universal-header" role="banner">
+        <div class="header-container">
+            <!-- Logo -->
+            <a href="../index.html" class="header-logo" aria-label="We Warriors Home">
+                <img src="../images/logo.svg" alt="We Warriors Logo" class="logo-img">
+                <span class="logo-text">We Warriors</span>
+            </a>
+            
+            <!-- Navigation Menu -->
+            <nav class="header-nav" role="navigation" aria-label="Main navigation">
+                <!-- Desktop Dropdowns -->
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Support</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="../support/about-sickle-cell.html" class="dropdown-link" role="menuitem">Living with Sickle Cell</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../support/support-groups.html" class="dropdown-link" role="menuitem">Support Groups</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../support/counseling.html" class="dropdown-link" role="menuitem">Counseling Services</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../support/resources.html" class="dropdown-link" role="menuitem">Resources</a>
+                        </li>
+                    </ul>
                 </div>
                 
-                <!-- Mobile menu toggle -->
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Information</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="../information/what-is-sickle-cell.html" class="dropdown-link" role="menuitem">What is Sickle Cell</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../information/types.html" class="dropdown-link" role="menuitem">Types of Sickle Cell</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../information/diagnosis-treatment.html" class="dropdown-link" role="menuitem">Diagnosis & Treatment</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../information/research.html" class="dropdown-link" role="menuitem">Research & Trials</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Community</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="../community/forum.html" class="dropdown-link" role="menuitem">Forum</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../community/blog.html" class="dropdown-link" role="menuitem">Blog</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../community/events.html" class="dropdown-link" role="menuitem">Events</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../community/gallery.html" class="dropdown-link" role="menuitem">Gallery</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact</a>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="#get-involved" class="cta-button" role="menuitem">Get Involved</a>
+                </div>
+                
+                <!-- Mobile Only Links -->
+                <!-- Theme Toggle First -->
+                <div class="nav-item mobile-nav-item mobile-theme-item">
+                    <div class="mobile-theme-toggle">
+                        <span>Dark Mode</span>
+                        <div class="mobile-theme-switch" id="mobileThemeSwitch">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item">
+                    <a href="../index.html" class="nav-link" role="menuitem">Home</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../support/about-sickle-cell.html" class="nav-link" role="menuitem">Living with Sickle Cell</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../information/what-is-sickle-cell.html" class="nav-link" role="menuitem">What is Sickle Cell</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../information/types.html" class="nav-link" role="menuitem">Types & Symptoms</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../information/diagnosis-treatment.html" class="nav-link" role="menuitem">Diagnosis & Treatment</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../support/support-groups.html" class="nav-link" role="menuitem">Support Groups</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../support/resources.html" class="nav-link" role="menuitem">Resources</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../support/counseling.html" class="nav-link" role="menuitem">Counseling</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../community/events.html" class="nav-link" role="menuitem">Events</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../community/blog.html" class="nav-link" role="menuitem">Blog</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../information/research.html" class="nav-link" role="menuitem">Research</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../pages/advocacy.html" class="nav-link" role="menuitem">Advocacy</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact Us</a>
+                </div>
+                
+                <!-- Action Buttons Last -->
+                <div class="nav-item mobile-nav-item mobile-action-item">
+                    <a href="../pages/donate.html" class="mobile-action-btn mobile-donate-btn">Donate Now</a>
+                </div>
+                <div class="nav-item mobile-nav-item mobile-action-item">
+                    <a href="#get-involved" class="mobile-action-btn mobile-get-involved-btn">Get Involved</a>
+                </div>
+            </nav>
+            
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- Theme Toggle (Desktop) -->
+                <button class="theme-toggle" aria-label="Toggle dark mode" aria-describedby="theme-status">
+                    <span class="theme-icon">â˜€</span>
+                    <span class="sr-only" id="theme-status">Current theme: light mode</span>
                 </button>
                 
-                <!-- Navigation Menu -->
-                <ul class="nav-menu" role="menubar">
-                    <li class="nav-item" role="none">
-                        <a href="../index.html" class="nav-link" role="menuitem">Home</a>
-                    </li>
-                    <li class="nav-item dropdown" role="none">
-                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Support</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="../support/about-sickle-cell.html">Living with Sickle Cell</a></li>
-                            <li><a href="../support/support-groups.html">Support Groups</a></li>
-                            <li><a href="../support/counseling.html">Counseling Services</a></li>
-                            <li><a href="../support/resources.html">Resources</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown" role="none">
-                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Information</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="../information/what-is-sickle-cell.html">What is Sickle Cell</a></li>
-                            <li><a href="../information/types.html">Types of Sickle Cell</a></li>
-                            <li><a href="../information/diagnosis-treatment.html">Diagnosis & Treatment</a></li>
-                            <li><a href="../information/research.html">Research & Trials</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown" role="none">
-                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Community</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="../community/forum.html">Forum</a></li>
-                            <li><a href="../community/blog.html">Blog</a></li>
-                            <li><a href="../community/events.html">Events</a></li>
-                            <li><a href="../community/gallery.html">Gallery</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                            <span class="sun-icon">☀️</span>
-                            <span class="moon-icon">🌙</span>
-                        </button>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a href="contact.html" class="nav-link" role="menuitem">Contact</a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a href="../index.html#get-involved" class="nav-link cta-button active" role="menuitem">Get Involved</a>
-                    </li>
-                </ul>
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
             </div>
-        </nav>
+        </div>
     </header>
 
     <!-- Main Content -->
     <main id="main-content" role="main">
         
         <!-- Hero Section -->
-        <section class="page-hero">
+        <section class="page-hero modern-hero">
+            <div class="hero-background">
+                <div class="hero-gradient"></div>
+                <div class="hero-pattern"></div>
+            </div>
             <div class="hero-container">
                 <div class="hero-content">
-                    <h1 class="hero-title">Advocate for Change</h1>
-                    <p class="hero-description">
+                    <nav class="breadcrumb modern-breadcrumb" aria-label="Breadcrumb">
+                        <ol>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><span aria-current="page">Advocacy</span></li>
+                        </ol>
+                    </nav>
+                    <h1 class="page-title modern-title">Advocate for Change</h1>
+                    <p class="page-subtitle modern-subtitle">
                         Join us in fighting for better policies, increased funding, and greater awareness for sickle cell disease
                     </p>
                 </div>
@@ -115,28 +265,28 @@
                 
                 <div class="advocacy-stats">
                     <div class="stat-item">
-                        <div class="stat-icon">🌍</div>
+                        <div class="stat-icon">ðŸŒ</div>
                         <div class="stat-content">
                             <h3>300,000+</h3>
                             <p>Babies born with sickle cell worldwide each year</p>
                         </div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-icon">💰</div>
+                        <div class="stat-icon">ðŸ’°</div>
                         <div class="stat-content">
                             <h3>$1.1 Billion</h3>
                             <p>Annual healthcare costs for sickle cell in the US</p>
                         </div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-icon">â±ï¸</div>
                         <div class="stat-content">
                             <h3>54 Years</h3>
                             <p>Average life expectancy with sickle cell disease</p>
                         </div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-icon">🔬</div>
+                        <div class="stat-icon">ðŸ”¬</div>
                         <div class="stat-content">
                             <h3>Under-funded</h3>
                             <p>Research receives far less funding than comparable diseases</p>
@@ -157,7 +307,7 @@
                 <div class="campaigns-grid">
                     <div class="campaign-card urgent">
                         <div class="campaign-status">URGENT</div>
-                        <div class="campaign-icon">🏛️</div>
+                        <div class="campaign-icon">ðŸ›ï¸</div>
                         <h3 class="campaign-title">Sickle Cell Treatment Act</h3>
                         <p class="campaign-description">
                             Support legislation to improve access to comprehensive sickle cell care 
@@ -176,7 +326,7 @@
                     </div>
 
                     <div class="campaign-card">
-                        <div class="campaign-icon">💉</div>
+                        <div class="campaign-icon">ðŸ’‰</div>
                         <h3 class="campaign-title">Newborn Screening Expansion</h3>
                         <p class="campaign-description">
                             Advocate for universal newborn screening for sickle cell disease 
@@ -195,7 +345,7 @@
                     </div>
 
                     <div class="campaign-card">
-                        <div class="campaign-icon">🎓</div>
+                        <div class="campaign-icon">ðŸŽ“</div>
                         <h3 class="campaign-title">School Awareness Initiative</h3>
                         <p class="campaign-description">
                             Push for mandatory sickle cell education in schools and 
@@ -226,7 +376,7 @@
                 
                 <div class="advocacy-methods">
                     <div class="method-card">
-                        <div class="method-icon">📧</div>
+                        <div class="method-icon">ðŸ“§</div>
                         <h3 class="method-title">Contact Representatives</h3>
                         <p class="method-description">
                             Email, call, or meet with your local, state, and federal representatives 
@@ -242,7 +392,7 @@
                     </div>
 
                     <div class="method-card">
-                        <div class="method-icon">📢</div>
+                        <div class="method-icon">ðŸ“¢</div>
                         <h3 class="method-title">Raise Public Awareness</h3>
                         <p class="method-description">
                             Use social media, community events, and personal networks 
@@ -258,7 +408,7 @@
                     </div>
 
                     <div class="method-card">
-                        <div class="method-icon">🗳️</div>
+                        <div class="method-icon">ðŸ—³ï¸</div>
                         <h3 class="method-title">Vote & Engage</h3>
                         <p class="method-description">
                             Vote for candidates who support sickle cell research and healthcare, 
@@ -274,7 +424,7 @@
                     </div>
 
                     <div class="method-card">
-                        <div class="method-icon">🤝</div>
+                        <div class="method-icon">ðŸ¤</div>
                         <h3 class="method-title">Build Coalitions</h3>
                         <p class="method-description">
                             Work with other health organizations, patient groups, 
@@ -302,7 +452,7 @@
                 
                 <div class="priorities-list">
                     <div class="priority-item">
-                        <div class="priority-icon">🏥</div>
+                        <div class="priority-icon">ðŸ¥</div>
                         <div class="priority-content">
                             <h3>Healthcare Access</h3>
                             <p>Ensure all sickle cell warriors have access to comprehensive, specialized care regardless of location or insurance status.</p>
@@ -315,7 +465,7 @@
                     </div>
 
                     <div class="priority-item">
-                        <div class="priority-icon">🔬</div>
+                        <div class="priority-icon">ðŸ”¬</div>
                         <div class="priority-content">
                             <h3>Research Funding</h3>
                             <p>Increase federal funding for sickle cell research to match the disease burden and accelerate cure development.</p>
@@ -328,7 +478,7 @@
                     </div>
 
                     <div class="priority-item">
-                        <div class="priority-icon">👶</div>
+                        <div class="priority-icon">ðŸ‘¶</div>
                         <div class="priority-content">
                             <h3>Prevention & Early Detection</h3>
                             <p>Implement comprehensive screening and prevention programs to reduce new cases and improve early intervention.</p>
@@ -341,7 +491,7 @@
                     </div>
 
                     <div class="priority-item">
-                        <div class="priority-icon">🎯</div>
+                        <div class="priority-icon">ðŸŽ¯</div>
                         <div class="priority-content">
                             <h3>Health Disparities</h3>
                             <p>Address racial and socioeconomic disparities in sickle cell care and outcomes through targeted interventions.</p>
@@ -426,7 +576,7 @@
                 <div class="footer-section">
                     <div class="footer-logo">
                         <img src="../images/logo.svg" alt="We Warriors Logo" class="footer-logo-img">
-                        <p class="footer-tagline">From Pain comes Strength • Through Faith we Hope</p>
+                        <p class="footer-tagline">From Pain comes Strength â€¢ Through Faith we Hope</p>
                     </div>
                 </div>
                 
@@ -467,7 +617,7 @@
             
             <div class="footer-bottom">
                 <p class="copyright">
-                    © 2025 We Warriors Organization. All rights reserved. 
+                    Â© 2025 We Warriors Organization. All rights reserved. 
                     <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
                 </p>
             </div>
@@ -475,9 +625,15 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="../js/animations.js"></script>
+    <script src="../js/universal-header.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/mobile-menu.js"></script>
     <script src="../js/modern.js"></script>
     
+<script src="../js/warriorbot.js"></script>
+
+    
 </body>
 </html>
+

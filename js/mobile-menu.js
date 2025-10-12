@@ -35,10 +35,14 @@ class MobileMenu {
     }
 
     createMobileMenu() {
+        // DISABLED: Using HTML-based mobile menu instead of JS-generated one
         // Check if mobile menu already exists
         if (document.getElementById('mobileMenuContainer')) {
             return;
         }
+        
+        // Skip creation since we're using HTML-based menu
+        return;
 
         // Detect current directory to create proper relative paths
         const pathPrefix = this.getPathPrefix();

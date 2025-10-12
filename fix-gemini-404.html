@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix Gemini 404 Error</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; max-width: 800px; margin: 0 auto; }
+        .test-section { background: #f5f5f5; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        .success { background: #d4edda; border: 1px solid #c3e6cb; }
+        .error { background: #f8d7da; border: 1px solid #f5c6cb; }
+        .info { background: #d1ecf1; border: 1px solid #bee5eb; }
+        button { padding: 10px 20px; margin: 5px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .response { background: white; padding: 15px; border-radius: 5px; margin: 10px 0; white-space: pre-wrap; border: 1px solid #ddd; }
+        h3 { color: #dc3545; }
+    </style>
+</head>
+<body>
+    <h1>🔧 Fix Gemini 404 Error</h1>
+    <p>Let's diagnose and fix the Gemini API issue step by step.</p>
+
+    <div class="test-section">
+        <h3>🔍 Step 1: Test Different Gemini Endpoints</h3>
+        <p>Let's try different API endpoints to see which one works:</p>
+        <button onclick="testEndpoint1()">Test Endpoint 1 (models list)</button>
+        <button onclick="testEndpoint2()">Test Endpoint 2 (direct generation)</button>
+        <button onclick="testEndpoint3()">Test Endpoint 3 (alternative)</button>
+        <div id="endpoint-results"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>🔑 Step 2: Validate API Key</h3>
+        <p>Your API Key: <code>AIzaSyAnXiZuOwuH22tmB-wJ126P8GGlcHXeIfg</code></p>
+        <button onclick="validateKey()">Validate API Key</button>
+        <div id="key-results"></div>
+    </div>
+
+    <div class="test-section">
+        <h3>🧪 Step 3: Test Simple Request</h3>
+        <button onclick="testSimpleRequest()">Test Simple AI Request</button>
+        <div id="simple-results"></div>
+    </div>
+
+    <div class="test-section info" id="working-solution" style="display: none;">
+        <h3>✅ Working Solution Found!</h3>
+        <p>Great! I found a working configuration. Here's your WarriorBot with working AI:</p>
+        <button onclick="openWorkingBot()" style="background: #28a745;">🤖 Open Working WarriorBot</button>
+    </div>
+
+    <script>
+        const API_KEY = 'AIzaSyAnXiZuOwuH22tmB-wJ126P8GGlcHXeIfg';
+        let workingEndpoint = null;
+        
+        async function testEndpoint1() {
+            const resultsDiv = document.getElementById('endpoint-results');
+            resultsDiv.innerHTML = '<div class="response">🔄 Testing models endpoint...</div>';
+            
+            try {
+                const response = await fetch(
+                    `https://generativelanguage.googleapis.com/v1beta/models?key=${API_KEY}`
+                );
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    resultsDiv.innerHTML = `<div class="response success">✅ Models endpoint works!
+                    
+Available models: ${data.models.slice(0, 3).map(m => m.name).join(', ')}</div>`;
+                } else {
+                    throw new Error(`${response.status}: ${response.statusText}`);
+                }
+            } catch (error) {
+                resultsDiv.innerHTML = `<div class="response error">❌ Models endpoint failed: ${error.message}</div>`;
+            }
+        }
+        
+        async function testEndpoint2() {
+            const resultsDiv = document.getElementById('endpoint-results');
+            resultsDiv.innerHTML += '<div class="response">🔄 Testing generation endpoint...</div>';
+            
+            try {
+                const response = await fetch(
+                    `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`,
+                    {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            contents: [{ parts: [{ text: 'Hello, respond with just "Working!"' }] }]
+                        })
+                    }
+                );
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+                    resultsDiv.innerHTML += `<div class="response success">✅ Generation endpoint works!
+                    
+Response: ${text}</div>`;
+                    workingEndpoint = 'gemini-1.5-flash';
+                    document.getElementById('working-solution').style.display = 'block';
+                } else {
+                    throw new Error(`${response.status}: ${response.statusText}`);
+                }
+            } catch (error) {
+                resultsDiv.innerHTML += `<div class="response error">❌ Generation endpoint failed: ${error.message}</div>`;
+            }
+        }
+        
+        async function testEndpoint3() {
+            const resultsDiv = document.getElementById('endpoint-results');
+            resultsDiv.innerHTML += '<div class="response">🔄 Testing alternative endpoint...</div>';
+            
+            try {
+                const response = await fetch(
+                    `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${API_KEY}`,
+                    {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            contents: [{ parts: [{ text: 'Hello, respond with just "Alternative working!"' }] }]
+                        })
+                    }
+                );
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+                    resultsDiv.innerHTML += `<div class="response success">✅ Alternative endpoint works!
+                    
+Response: ${text}</div>`;
+                    workingEndpoint = 'gemini-pro';
+                    document.getElementById('working-solution').style.display = 'block';
+                } else {
+                    throw new Error(`${response.status}: ${response.statusText}`);
+                }
+            } catch (error) {
+                resultsDiv.innerHTML += `<div class="response error">❌ Alternative endpoint failed: ${error.message}</div>`;
+            }
+        }
+        
+        async function validateKey() {
+            const resultsDiv = document.getElementById('key-results');
+            resultsDiv.innerHTML = '<div class="response">🔄 Validating API key...</div>';
+            
+            // Try the simplest possible request
+            try {
+                const response = await fetch(
+                    `https://generativelanguage.googleapis.com/v1beta/models?key=${API_KEY}`
+                );
+                
+                const text = await response.text();
+                
+                if (response.ok) {
+                    resultsDiv.innerHTML = '<div class="response success">✅ API key is valid!</div>';
+                } else if (response.status === 403) {
+                    resultsDiv.innerHTML = '<div class="response error">❌ API key is invalid or doesn\'t have permission</div>';
+                } else if (response.status === 404) {
+                    resultsDiv.innerHTML = '<div class="response error">❌ API endpoint not found - may need different URL</div>';
+                } else {
+                    resultsDiv.innerHTML = `<div class="response error">❌ API error: ${response.status}
+                    
+Response: ${text}</div>`;
+                }
+            } catch (error) {
+                resultsDiv.innerHTML = `<div class="response error">❌ Network error: ${error.message}</div>`;
+            }
+        }
+        
+        async function testSimpleRequest() {
+            const resultsDiv = document.getElementById('simple-results');
+            resultsDiv.innerHTML = '<div class="response">🔄 Testing simple AI request...</div>';
+            
+            // Let's try a very basic request to see what happens
+            try {
+                console.log('Testing with API key:', API_KEY);
+                
+                const response = await fetch(
+                    `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`,
+                    {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            contents: [{
+                                parts: [{
+                                    text: 'Say "Hello warrior!" in an encouraging way.'
+                                }]
+                            }],
+                            generationConfig: {
+                                maxOutputTokens: 100,
+                                temperature: 0.7
+                            }
+                        })
+                    }
+                );
+                
+                console.log('Response status:', response.status);
+                const data = await response.json();
+                console.log('Response data:', data);
+                
+                if (response.ok && data.candidates) {
+                    const aiResponse = data.candidates[0]?.content?.parts?.[0]?.text;
+                    resultsDiv.innerHTML = `<div class="response success">✅ AI Request Success!
+                    
+AI Response: "${aiResponse}"</div>`;
+                    workingEndpoint = 'gemini-1.5-flash';
+                    document.getElementById('working-solution').style.display = 'block';
+                } else {
+                    resultsDiv.innerHTML = `<div class="response error">❌ AI Request Failed
+                    
+Status: ${response.status}
+Data: ${JSON.stringify(data, null, 2)}</div>`;
+                }
+                
+            } catch (error) {
+                resultsDiv.innerHTML = `<div class="response error">❌ Request Error: ${error.message}
+                
+This might be a CORS issue or network problem.</div>`;
+            }
+        }
+        
+        function openWorkingBot() {
+            // Create a working WarriorBot with the correct endpoint
+            const workingBot = `<!DOCTYPE html>
+<html>
+<head>
+    <title>Working WarriorBot with AI</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: 0 auto; }
+        .chat { background: #f9f9f9; padding: 20px; border-radius: 10px; margin: 20px 0; }
+        button { padding: 10px 20px; margin: 5px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .response { background: white; padding: 15px; border-radius: 5px; margin: 10px 0; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <h1>🤖 Working WarriorBot with AI!</h1>
+    <div class="chat">
+        <button onclick="testAI('I need encouragement')">💪 Encouragement</button>
+        <button onclick="testAI('Tell me about hydroxyurea')">💊 Hydroxyurea</button>
+        <button onclick="testAI('I feel sad')">💜 Support</button>
+        <div id="response" class="response">Click a button to test the working AI!</div>
+    </div>
+    <script>
+        async function testAI(message) {
+            document.getElementById('response').textContent = '🤖 Thinking...';
+            try {
+                const response = await fetch(
+                    'https://generativelanguage.googleapis.com/v1beta/models/${workingEndpoint || 'gemini-1.5-flash'}:generateContent?key=${API_KEY}',
+                    {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            contents: [{ parts: [{ text: \`You are WarriorBot for sickle cell warriors. Be encouraging and helpful. User says: "\${message}"\` }] }],
+                            generationConfig: { maxOutputTokens: 400, temperature: 0.7 }
+                        })
+                    }
+                );
+                const data = await response.json();
+                const aiResponse = data.candidates?.[0]?.content?.parts?.[0]?.text;
+                document.getElementById('response').textContent = aiResponse || 'No response';
+            } catch (error) {
+                document.getElementById('response').textContent = 'Error: ' + error.message;
+            }
+        }
+    </script>
+</body>
+</html>`;
+            
+            const newWindow = window.open();
+            newWindow.document.write(workingBot);
+            newWindow.document.close();
+        }
+        
+        // Auto-run tests
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                testEndpoint1();
+                setTimeout(validateKey, 1000);
+                setTimeout(testSimpleRequest, 2000);
+            }, 500);
+        });
+    </script>
+</body>
+</html>

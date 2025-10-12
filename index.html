@@ -31,72 +31,188 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/accessibility.css">
-    <link rel="stylesheet" href="css/mobile-menu.css">
-    <link rel="stylesheet" href="css/header-modern.css">
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Universal header should load last to override other styles -->
+    <link rel="stylesheet" href="css/universal-header.css">
     
 </head>
 <body>
     <!-- Skip to main content link for accessibility -->
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
     
-    <!-- Header -->
-    <header class="site-header modern-header" role="banner">
-        <nav class="navbar glass-effect" role="navigation" aria-label="Main navigation">
-            <div class="nav-container">
-                <!-- Logo -->
-                <div class="logo-container">
-                    <a href="#home" class="logo-link modern-logo" aria-label="We Warriors Home">
-                        <img src="images/logo.svg" alt="We Warriors Logo - From Pain comes Strength Through Faith we Hope" class="logo">
-                    </a>
+    <!-- Universal Header -->
+    <header class="universal-header" role="banner">
+        <div class="header-container">
+            <!-- Logo -->
+            <a href="#home" class="header-logo" aria-label="We Warriors Home">
+                <img src="images/logo.svg" alt="We Warriors Logo" class="logo-img">
+                <span class="logo-text">We Warriors</span>
+            </a>
+            
+            <!-- Navigation Menu -->
+            <nav class="header-nav" role="navigation" aria-label="Main navigation">
+                <!-- Desktop Dropdowns -->
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Support</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="support/about-sickle-cell.html" class="dropdown-link" role="menuitem">Living with Sickle Cell</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="support/support-groups.html" class="dropdown-link" role="menuitem">Support Groups</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="support/counseling.html" class="dropdown-link" role="menuitem">Counseling Services</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="support/resources.html" class="dropdown-link" role="menuitem">Resources</a>
+                        </li>
+                    </ul>
                 </div>
                 
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Information</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="information/what-is-sickle-cell.html" class="dropdown-link" role="menuitem">What is Sickle Cell</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="information/types.html" class="dropdown-link" role="menuitem">Types of Sickle Cell</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="information/diagnosis-treatment.html" class="dropdown-link" role="menuitem">Diagnosis & Treatment</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="information/research.html" class="dropdown-link" role="menuitem">Research & Trials</a>
+                        </li>
+                    </ul>
+                </div>
                 
-                <!-- Navigation Menu -->
-                <ul class="nav-menu modern-nav" role="menubar">
-                    <li class="nav-item dropdown" role="none">
-                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Support</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="support/about-sickle-cell.html">Living with Sickle Cell</a></li>
-                            <li><a href="support/support-groups.html">Support Groups</a></li>
-                            <li><a href="support/counseling.html">Counseling Services</a></li>
-                            <li><a href="support/resources.html">Resources</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown" role="none">
-                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Information</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="information/what-is-sickle-cell.html">What is Sickle Cell</a></li>
-                            <li><a href="information/types.html">Types of Sickle Cell</a></li>
-                            <li><a href="information/diagnosis-treatment.html">Diagnosis & Treatment</a></li>
-                            <li><a href="information/research.html">Research & Trials</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown" role="none">
-                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Community</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="community/forum.html">Forum</a></li>
-                            <li><a href="community/blog.html">Blog</a></li>
-                            <li><a href="community/events.html">Events</a></li>
-                            <li><a href="community/gallery.html">Gallery</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" aria-describedby="theme-status">
-                            <span class="sun-icon" aria-hidden="true">☀</span>
-                            <span class="moon-icon" aria-hidden="true">☾</span>
-                            <span class="sr-only" id="theme-status">Current theme: light mode</span>
-                        </button>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a href="pages/contact.html" class="nav-link" role="menuitem">Contact</a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a href="#get-involved" class="nav-link cta-button modern-cta" role="menuitem">Get Involved</a>
-                    </li>
-                </ul>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Community</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="community/forum.html" class="dropdown-link" role="menuitem">Forum</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="community/warrior-stories.html" class="dropdown-link" role="menuitem">Warrior Stories</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="community/blog.html" class="dropdown-link" role="menuitem">Blog</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="community/events.html" class="dropdown-link" role="menuitem">Events</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="community/gallery.html" class="dropdown-link" role="menuitem">Gallery</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Professionals</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="professionals/healthcare-providers.html" class="dropdown-link" role="menuitem">Healthcare Providers</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="professionals/researchers.html" class="dropdown-link" role="menuitem">Researchers</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="professionals/educators.html" class="dropdown-link" role="menuitem">Educators</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="pages/contact.html" class="nav-link" role="menuitem">Contact</a>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="#get-involved" class="cta-button" role="menuitem">Get Involved</a>
+                </div>
+                
+                <!-- Mobile Only Links -->
+                <!-- Theme Toggle First -->
+                <div class="nav-item mobile-nav-item mobile-theme-item">
+                    <div class="mobile-theme-toggle">
+                        <span>Dark Mode</span>
+                        <div class="mobile-theme-switch" id="mobileThemeSwitch">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item">
+                    <a href="index.html" class="nav-link" role="menuitem">Home</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="support/about-sickle-cell.html" class="nav-link" role="menuitem">Living with Sickle Cell</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="information/what-is-sickle-cell.html" class="nav-link" role="menuitem">What is Sickle Cell</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="information/types.html" class="nav-link" role="menuitem">Types & Symptoms</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="information/diagnosis-treatment.html" class="nav-link" role="menuitem">Diagnosis & Treatment</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="support/support-groups.html" class="nav-link" role="menuitem">Support Groups</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="support/resources.html" class="nav-link" role="menuitem">Resources</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="support/counseling.html" class="nav-link" role="menuitem">Counseling</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="community/events.html" class="nav-link" role="menuitem">Events</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="community/blog.html" class="nav-link" role="menuitem">Blog</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="information/research.html" class="nav-link" role="menuitem">Research</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="community/warrior-stories.html" class="nav-link" role="menuitem">Warrior Stories</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="professionals/healthcare-providers.html" class="nav-link" role="menuitem">Healthcare Providers</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="pages/advocacy.html" class="nav-link" role="menuitem">Advocacy</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="pages/contact.html" class="nav-link" role="menuitem">Contact Us</a>
+                </div>
+                
+                <!-- Action Buttons Last -->
+                <div class="nav-item mobile-nav-item mobile-action-item">
+                    <a href="pages/donate.html" class="mobile-action-btn mobile-donate-btn">Donate Now</a>
+                </div>
+                <div class="nav-item mobile-nav-item mobile-action-item">
+                    <a href="#get-involved" class="mobile-action-btn mobile-get-involved-btn">Get Involved</a>
+                </div>
+            </nav>
+            
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- Theme Toggle (Desktop) -->
+                <button class="theme-toggle" aria-label="Toggle dark mode" aria-describedby="theme-status">
+                    <span class="theme-icon">☀</span>
+                    <span class="sr-only" id="theme-status">Current theme: light mode</span>
+                </button>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
             </div>
-        </nav>
+        </div>
     </header>
 
     <!-- Main Content -->
@@ -223,6 +339,45 @@
                             <li><a href="support/about-sickle-cell.html">Caregiver Support</a></li>
                         </ul>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Resources Section -->
+        <section id="featured-resources" class="featured-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Explore Our Community</h2>
+                    <p class="section-subtitle">Discover inspiring stories, cutting-edge research, and professional resources</p>
+                </div>
+                
+                <div class="featured-grid">
+                    <article class="featured-card research-card">
+                        <div class="featured-icon">🔬</div>
+                        <h3 class="featured-title">Research & Clinical Trials</h3>
+                        <p class="featured-description">
+                            Stay updated on breakthrough research, gene therapy advances, and clinical trial opportunities that could change your life.
+                        </p>
+                        <a href="information/research.html" class="featured-link">Explore Research</a>
+                    </article>
+                    
+                    <article class="featured-card stories-card">
+                        <div class="featured-icon">👥</div>
+                        <h3 class="featured-title">Warrior Stories</h3>
+                        <p class="featured-description">
+                            Read inspiring journeys from warriors around the world who've turned pain into purpose and challenges into triumphs.
+                        </p>
+                        <a href="community/warrior-stories.html" class="featured-link">Read Stories</a>
+                    </article>
+                    
+                    <article class="featured-card professionals-card">
+                        <div class="featured-icon">🏥</div>
+                        <h3 class="featured-title">Healthcare Provider Hub</h3>
+                        <p class="featured-description">
+                            Professional resources, CME courses, and clinical tools for healthcare providers treating sickle cell disease.
+                        </p>
+                        <a href="professionals/healthcare-providers.html" class="featured-link">Access Resources</a>
+                    </article>
                 </div>
             </div>
         </section>
@@ -432,8 +587,10 @@
     <!-- JavaScript -->
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
-    <script src="js/mobile-menu.js"></script>
-    <script src="js/dropdown-enhance.js"></script>
-    
+    <script src="js/universal-header.js"></script>
+    <script src="js/warriorbot-gemini.js"></script>
+    <script src="js/warriorbot-ai.js"></script>
+    <script src="warriorbot-direct-ai.js"></script>
+    <script src="js/warriorbot.js"></script>
 </body>
 </html>

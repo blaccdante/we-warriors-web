@@ -14,70 +14,723 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/mobile-menu.css">
     <link rel="stylesheet" href="../css/responsive.css">
-    <link rel="stylesheet" href="../css/mobile-menu.css">
     <link rel="stylesheet" href="../css/accessibility.css">
-    <link rel="stylesheet" href="../css/mobile-menu.css">
-    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/universal-header.css">
+    
+    <!-- Modern Dual-Theme Research System -->
+    <style>
+        /* Perfect Dual-Theme Hero System */
+        .page-hero.modern-hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        /* Hero Background Layers */
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+        }
+        
+        .hero-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.98) 0%, 
+                rgba(248, 249, 250, 0.95) 30%, 
+                rgba(255, 248, 240, 0.98) 70%, 
+                rgba(255, 255, 255, 0.95) 100%);
+        }
+        
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(196, 30, 58, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.05) 0%, transparent 50%);
+            background-size: 300px 300px, 400px 400px, 500px 500px;
+            animation: patternMove 20s ease-in-out infinite;
+        }
+        
+        @keyframes patternMove {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(-10px, -10px); }
+            50% { transform: translate(10px, 10px); }
+            75% { transform: translate(-5px, 10px); }
+        }
+        
+        /* EXACT Original Dark Theme Override */
+        [data-theme="dark"] .hero-gradient {
+            background: linear-gradient(135deg, 
+                rgba(30, 30, 30, 0.95) 0%, 
+                rgba(45, 45, 45, 0.9) 30%, 
+                rgba(60, 60, 60, 0.95) 70%, 
+                rgba(30, 30, 30, 0.9) 100%) !important;
+        }
+        
+        [data-theme="dark"] .hero-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(196, 30, 58, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.08) 0%, transparent 50%) !important;
+        }
+        
+        /* Light Theme - Research Laboratory Background */
+        [data-theme="light"] .hero-background {
+            background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        [data-theme="light"] .hero-gradient {
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.96) 0%, 
+                rgba(248, 249, 250, 0.94) 30%, 
+                rgba(239, 246, 255, 0.96) 70%, 
+                rgba(255, 255, 255, 0.94) 100%);
+        }
+        
+        /* Content Styling */
+        .hero-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+        
+        .hero-content {
+            color: #f8fafc;
+            max-width: 800px;
+        }
+        
+        [data-theme="light"] .hero-content {
+            color: #0f172a;
+        }
+        
+        .breadcrumb {
+            margin-bottom: 2rem;
+        }
+        
+        .breadcrumb ol {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb li::after {
+            content: '/';
+            margin: 0 0.5rem;
+            color: rgba(248, 250, 252, 0.5);
+        }
+        
+        [data-theme="light"] .breadcrumb li::after {
+            color: rgba(30, 41, 59, 0.4);
+        }
+        
+        .breadcrumb li:last-child::after {
+            display: none;
+        }
+        
+        .breadcrumb a {
+            color: rgba(248, 250, 252, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: #e2e8f0;
+        }
+        
+        [data-theme="light"] .breadcrumb a {
+            color: var(--blood-color) !important;
+        }
+        
+        [data-theme="light"] .breadcrumb a:hover {
+            color: var(--blood-light) !important;
+        }
+        
+        [data-theme="light"] .breadcrumb [aria-current="page"] {
+            color: var(--text-primary) !important;
+        }
+        
+        .page-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin: 0 0 1.5rem 0;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: #f1f5f9;
+            text-shadow: 0 2px 8px rgba(15, 23, 42, 0.4);
+        }
+        
+        [data-theme="light"] .page-title {
+            color: var(--blood-color) !important;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+            font-weight: 700 !important;
+            opacity: 1 !important;
+        }
+        
+        .page-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            margin: 0;
+            color: rgba(226, 232, 240, 0.9);
+            font-weight: 400;
+            line-height: 1.6;
+        }
+        
+        [data-theme="light"] .page-subtitle {
+            color: var(--text-primary) !important;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5) !important;
+            font-weight: 500 !important;
+            opacity: 1 !important;
+        }
+        
+        /* Research Visual Elements */
+        .hero-visual {
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 300px;
+            height: 300px;
+            pointer-events: none;
+        }
+        
+        .floating-elements {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .float-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .float-element.hope {
+            width: 60px;
+            height: 60px;
+            top: 20%;
+            left: 20%;
+            animation: float-hope 8s ease-in-out infinite;
+            background: rgba(59, 130, 246, 0.2);
+        }
+        
+        .float-element.faith {
+            width: 40px;
+            height: 40px;
+            top: 60%;
+            right: 30%;
+            animation: float-faith 10s ease-in-out infinite;
+            background: rgba(16, 185, 129, 0.2);
+        }
+        
+        .float-element.strength {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 40%;
+            animation: float-strength 12s ease-in-out infinite;
+            background: rgba(139, 0, 0, 0.2);
+        }
+        
+        [data-theme="light"] .float-element {
+            background: rgba(0, 0, 0, 0.05);
+        }
+        
+        [data-theme="light"] .float-element.hope {
+            background: rgba(59, 130, 246, 0.1);
+        }
+        
+        [data-theme="light"] .float-element.faith {
+            background: rgba(16, 185, 129, 0.1);
+        }
+        
+        [data-theme="light"] .float-element.strength {
+            background: rgba(139, 0, 0, 0.1);
+        }
+        
+        @keyframes float-hope {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-25px) rotate(180deg); }
+        }
+        
+        @keyframes float-faith {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(-180deg); }
+        }
+        
+        @keyframes float-strength {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(90deg); }
+        }
+        
+        /* Modern Page Content */
+        .page-content {
+            padding: 4rem 0;
+            background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+        }
+        
+        [data-theme="dark"] .page-content {
+            background: linear-gradient(180deg, var(--background-primary) 0%, var(--background-secondary) 100%) !important;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Modern Card Styling */
+        .content-card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 3rem;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        [data-theme="dark"] .content-card {
+            background: var(--card-background) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+            border: 1px solid var(--border-primary) !important;
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        [data-theme="dark"] .card-header {
+            background: linear-gradient(135deg, var(--background-secondary) 0%, var(--background-tertiary) 100%) !important;
+            border-bottom: 1px solid var(--border-primary) !important;
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        [data-theme="dark"] .card-icon {
+            background: var(--background-primary) !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+        }
+        
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0;
+            color: var(--blood-color);
+            letter-spacing: -0.01em;
+        }
+        
+        [data-theme="dark"] .card-title {
+            color: var(--text-primary) !important;
+        }
+        
+        .card-content {
+            padding: 2.5rem;
+        }
+        
+        .intro-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #475569;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        [data-theme="dark"] .intro-text {
+            color: var(--text-secondary) !important;
+        }
+        
+        .card-content h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 2.5rem 0 1.5rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--blood-color);
+        }
+        
+        /* Research-Specific Styles */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .research-item {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--blood-color);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        [data-theme="dark"] .research-item {
+            background: var(--background-tertiary) !important;
+            border-left-color: var(--blood-light) !important;
+        }
+        
+        .research-status {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .research-status.breakthrough {
+            background: #dcfce7;
+            color: #166534;
+        }
+        
+        .research-status.ongoing {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        
+        .research-status.phase-3 {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        
+        [data-theme="dark"] .research-status.breakthrough {
+            background: rgba(16, 185, 129, 0.2) !important;
+            color: #10b981 !important;
+        }
+        
+        [data-theme="dark"] .research-status.ongoing {
+            background: rgba(245, 158, 11, 0.2) !important;
+            color: #f59e0b !important;
+        }
+        
+        [data-theme="dark"] .research-status.phase-3 {
+            background: rgba(59, 130, 246, 0.2) !important;
+            color: #3b82f6 !important;
+        }
+        
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 2rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--blood-color);
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            left: 1rem;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background: var(--blood-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .clinical-trial {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border: 1px solid #93c5fd;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+        
+        [data-theme="dark"] .clinical-trial {
+            background: linear-gradient(135deg, var(--background-secondary) 0%, var(--background-tertiary) 100%) !important;
+            border-color: var(--border-primary) !important;
+        }
+        
+        .trial-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .trial-meta span {
+            background: rgba(59, 130, 246, 0.1);
+            color: #1e40af;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+        }
+        
+        [data-theme="dark"] .trial-meta span {
+            background: rgba(59, 130, 246, 0.2) !important;
+            color: #3b82f6 !important;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-visual {
+                width: 250px;
+                height: 250px;
+                right: 1.5rem;
+            }
+            
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-hero.modern-hero {
+                min-height: 60vh;
+                text-align: center;
+            }
+            
+            .hero-container {
+                padding: 3rem 1.5rem;
+            }
+            
+            .hero-visual {
+                display: none;
+            }
+            
+            .breadcrumb {
+                text-align: left;
+                margin-bottom: 1.5rem;
+            }
+            
+            .timeline-item {
+                padding-left: 4rem;
+            }
+            
+            .trial-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .page-hero.modern-hero {
+                min-height: 50vh;
+            }
+            
+            .hero-container {
+                padding: 2rem 1rem;
+            }
+            
+            .breadcrumb {
+                font-size: 0.85rem;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
 </head>
 <body class="page-body">
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
     
-    <header class="site-header modern-header" role="banner">
-        <nav class="navbar glass-effect" role="navigation" aria-label="Main navigation">
-            <div class="nav-container">
-                <div class="logo-container">
-                    <a href="../index.html" class="logo-link modern-logo" aria-label="We Warriors Home">
-                        <img src="../images/logo.svg" alt="We Warriors Logo" class="logo"></a>
+    <!-- Universal Header -->
+    <header class="universal-header" role="banner">
+        <div class="header-container">
+            <!-- Logo -->
+            <a href="../index.html" class="header-logo" aria-label="We Warriors Home">
+                <img src="../images/logo.svg" alt="We Warriors Logo" class="logo-img">
+                <span class="logo-text">We Warriors</span>
+            </a>
+            
+            <!-- Navigation Menu -->
+            <nav class="header-nav" role="navigation" aria-label="Main navigation">
+                <!-- Desktop Dropdowns -->
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Support</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="../support/about-sickle-cell.html" class="dropdown-link" role="menuitem">Living with Sickle Cell</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../support/support-groups.html" class="dropdown-link" role="menuitem">Support Groups</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../support/counseling.html" class="dropdown-link" role="menuitem">Counseling Services</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../support/resources.html" class="dropdown-link" role="menuitem">Resources</a>
+                        </li>
+                    </ul>
                 </div>
                 
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Information</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="what-is-sickle-cell.html" class="dropdown-link" role="menuitem">What is Sickle Cell</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="types.html" class="dropdown-link" role="menuitem">Types of Sickle Cell</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="diagnosis-treatment.html" class="dropdown-link" role="menuitem">Diagnosis & Treatment</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="research.html" class="dropdown-link" role="menuitem">Research & Trials</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Community</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="../community/forum.html" class="dropdown-link" role="menuitem">Forum</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../community/blog.html" class="dropdown-link" role="menuitem">Blog</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../community/events.html" class="dropdown-link" role="menuitem">Events</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../community/gallery.html" class="dropdown-link" role="menuitem">Gallery</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact</a>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="#get-involved" class="cta-button" role="menuitem">Get Involved</a>
+                </div>
+                
+                <!-- Mobile Only Links -->
+                <!-- Theme Toggle First -->
+                <div class="nav-item mobile-nav-item mobile-theme-item">
+                    <div class="mobile-theme-toggle">
+                        <span>Dark Mode</span>
+                        <div class="mobile-theme-switch" id="mobileThemeSwitch">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item">
+                    <a href="../index.html" class="nav-link" role="menuitem">Home</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../support/about-sickle-cell.html" class="nav-link" role="menuitem">Living with Sickle Cell</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="what-is-sickle-cell.html" class="nav-link" role="menuitem">What is Sickle Cell</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="types.html" class="nav-link" role="menuitem">Types & Symptoms</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="diagnosis-treatment.html" class="nav-link" role="menuitem">Diagnosis & Treatment</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../support/support-groups.html" class="nav-link" role="menuitem">Support Groups</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../support/resources.html" class="nav-link" role="menuitem">Resources</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../support/counseling.html" class="nav-link" role="menuitem">Counseling</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../community/events.html" class="nav-link" role="menuitem">Events</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../community/blog.html" class="nav-link" role="menuitem">Blog</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="research.html" class="nav-link" role="menuitem">Research</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../pages/advocacy.html" class="nav-link" role="menuitem">Advocacy</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact Us</a>
+                </div>
+                
+                <!-- Action Buttons Last -->
+                <div class="nav-item mobile-nav-item mobile-action-item">
+                    <a href="../pages/donate.html" class="mobile-action-btn mobile-donate-btn">Donate Now</a>
+                </div>
+                <div class="nav-item mobile-nav-item mobile-action-item">
+                    <a href="#get-involved" class="mobile-action-btn mobile-get-involved-btn">Get Involved</a>
+                </div>
+            </nav>
+            
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- Theme Toggle (Desktop) -->
+                <button class="theme-toggle" aria-label="Toggle dark mode" aria-describedby="theme-status">
+                    <span class="theme-icon">☀</span>
+                    <span class="sr-only" id="theme-status">Current theme: light mode</span>
                 </button>
                 
-                <ul class="nav-menu modern-nav" role="menubar">
-                    <li class="nav-item dropdown" role="none">
-                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Support</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="../support/about-sickle-cell.html">Living with Sickle Cell</a></li>
-                            <li><a href="../support/support-groups.html">Support Groups</a></li>
-                            <li><a href="../support/counseling.html">Counseling Services</a></li>
-                            <li><a href="../support/resources.html">Resources</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown" role="none">
-                        <a href="#" class="nav-link dropdown-toggle active" role="menuitem" aria-haspopup="true">Information</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="what-is-sickle-cell.html">What is Sickle Cell</a></li>
-                            <li><a href="types.html">Types of Sickle Cell</a></li>
-                            <li><a href="diagnosis-treatment.html">Diagnosis & Treatment</a></li>
-                            <li><a href="research.html" class="active">Research & Trials</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown" role="none">
-                        <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Community</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="../community/forum.html">Forum</a></li>
-                            <li><a href="../community/blog.html">Blog</a></li>
-                            <li><a href="../community/events.html">Events</a></li>
-                            <li><a href="../community/gallery.html">Gallery</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" aria-describedby="theme-status">
-                            <span class="sun-icon" aria-hidden="true">☀</span>
-                            <span class="moon-icon" aria-hidden="true">☾</span>
-                            <span class="sr-only" id="theme-status">Current theme: light mode</span>
-                        </button>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact</a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a href="../pages/donate.html" class="nav-link cta-button modern-cta" role="menuitem">Get Involved</a>
-                    </li>
-                </ul>
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
             </div>
-        </nav>
+        </div>
     </header>
 
     <main id="main-content" role="main" class="modern-main">
@@ -117,13 +770,263 @@
                 <!-- Research Overview -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">🔬</div>
-                        <h2 class="card-title">The Path to a Cure: Current Research Landscape</h2>
+                        <div class="card-icon">🎆</div>
+                        <h2 class="card-title">Revolutionary Breakthroughs in Sickle Cell Research</h2>
                     </div>
                     <div class="card-content">
                         <p class="intro-text">We are living in the most exciting time in sickle cell disease research history. Revolutionary advances in gene therapy, precision medicine, and cellular engineering are bringing us closer than ever to a cure. Multiple treatment approaches are showing unprecedented success rates in clinical trials.</p>
                         
-                        <div class="research-stats">
+                        <h3>Major Research Breakthroughs</h3>
+                        <div class="research-grid">
+                            <div class="research-item">
+                                <div class="research-status breakthrough">Breakthrough</div>
+                                <h4>🧬 CRISPR Gene Editing</h4>
+                                <p><strong>Status:</strong> FDA approved (Casgevy/Lyfgenia)</p>
+                                <p>Revolutionary one-time gene therapy treatment that edits patients' own bone marrow cells to produce healthy hemoglobin. Clinical trials show 95%+ success in eliminating vaso-occlusive crises.</p>
+                                <ul>
+                                    <li>First FDA-approved gene editing treatment</li>
+                                    <li>Functional cure for many patients</li>
+                                    <li>Currently available at select centers</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="research-item">
+                                <div class="research-status phase-3">Phase III</div>
+                                <h4>💉 Gene Therapy Advances</h4>
+                                <p><strong>Multiple Programs:</strong> Bluebird Bio, Vertex, Others</p>
+                                <p>Various approaches to modify patients' stem cells to produce functional hemoglobin, offering potential cures through single treatments.</p>
+                                <ul>
+                                    <li>LentiGlobin gene therapy showing promising results</li>
+                                    <li>Multiple companies advancing programs</li>
+                                    <li>Focus on safety and long-term efficacy</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="research-item">
+                                <div class="research-status ongoing">Ongoing</div>
+                                <h4>📊 Novel Drug Therapies</h4>
+                                <p><strong>Pipeline:</strong> 50+ investigational drugs</p>
+                                <p>New medications targeting different aspects of sickle cell disease, from hemoglobin modification to anti-inflammatory approaches.</p>
+                                <ul>
+                                    <li>P-selectin inhibitors reducing crisis frequency</li>
+                                    <li>Hemoglobin oxygen affinity modulators</li>
+                                    <li>Anti-sickling agents and pain management</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="research-item">
+                                <div class="research-status breakthrough">Major Progress</div>
+                                <h4>🥼 Fetal Hemoglobin Induction</h4>
+                                <p><strong>Approach:</strong> Reactivating healthy hemoglobin production</p>
+                                <p>Research into naturally reactivating fetal hemoglobin (HbF) production, which doesn't sickle, offering a potential cure pathway.</p>
+                                <ul>
+                                    <li>BCL11A gene targeting showing promise</li>
+                                    <li>Epigenetic approaches to HbF induction</li>
+                                    <li>Combination therapies enhancing effectiveness</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gene Therapy Deep Dive -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">🧬</div>
+                        <h2 class="card-title">Gene Therapy: The Path to a Cure</h2>
+                    </div>
+                    <div class="card-content">
+                        <p class="intro-text">Gene therapy represents the most promising approach to curing sickle cell disease. By correcting the genetic defect that causes the condition, these treatments offer the potential for a one-time cure.</p>
+                        
+                        <h3>FDA-Approved Gene Therapies</h3>
+                        
+                        <div class="clinical-trial">
+                            <h4>🏆 Casgevy (CTX001) - CRISPR Gene Editing</h4>
+                            <p><strong>Developer:</strong> Vertex Pharmaceuticals & CRISPR Therapeutics</p>
+                            <p><strong>Approval:</strong> FDA approved December 2023</p>
+                            <p><strong>Mechanism:</strong> Uses CRISPR-Cas9 to edit the BCL11A gene in patients' bone marrow cells, reactivating fetal hemoglobin production.</p>
+                            
+                            <div class="trial-meta">
+                                <span>95% Crisis-Free Rate</span>
+                                <span>One-Time Treatment</span>
+                                <span>Available Now</span>
+                                <span>Ages 12+</span>
+                            </div>
+                            
+                            <h5>Treatment Process:</h5>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-marker">1</div>
+                                    <h6>Screening & Preparation</h6>
+                                    <p>Comprehensive medical evaluation and pre-treatment conditioning</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker">2</div>
+                                    <h6>Cell Collection</h6>
+                                    <p>Bone marrow stem cells are collected from the patient</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker">3</div>
+                                    <h6>Gene Editing</h6>
+                                    <p>Cells are edited using CRISPR technology in the laboratory</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker">4</div>
+                                    <h6>Cell Infusion</h6>
+                                    <p>Edited cells are infused back into the patient</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker">5</div>
+                                    <h6>Recovery & Monitoring</h6>
+                                    <p>Long-term monitoring to ensure treatment success</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="clinical-trial">
+                            <h4>🥼 Lyfgenia - Gene Addition Therapy</h4>
+                            <p><strong>Developer:</strong> bluebird bio (LentiGlobin)</p>
+                            <p><strong>Status:</strong> Previously approved, currently reassessing program</p>
+                            <p><strong>Mechanism:</strong> Adds a modified beta-globin gene to patient cells using a lentiviral vector.</p>
+                            
+                            <div class="trial-meta">
+                                <span>Gene Addition Approach</span>
+                                <span>Lentiviral Vector</span>
+                                <span>Program Evolution</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Clinical Trials -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">📊</div>
+                        <h2 class="card-title">Current Clinical Trials</h2>
+                    </div>
+                    <div class="card-content">
+                        <p class="intro-text">Numerous clinical trials are currently enrolling patients, testing everything from novel medications to advanced cellular therapies. Participating in clinical trials provides access to cutting-edge treatments while advancing research for the entire sickle cell community.</p>
+                        
+                        <h3>Active Trial Categories</h3>
+                        
+                        <div class="clinical-trial">
+                            <h4>💉 Next-Generation Gene Therapies</h4>
+                            <p>Multiple companies are developing improved gene therapy approaches with enhanced safety profiles and efficiency.</p>
+                            <div class="trial-meta">
+                                <span>Phase I/II Trials</span>
+                                <span>Multiple Centers</span>
+                                <span>Ages 12-65</span>
+                                <span>Actively Recruiting</span>
+                            </div>
+                        </div>
+                        
+                        <div class="clinical-trial">
+                            <h4>📊 Novel Pharmaceutical Approaches</h4>
+                            <p>New drugs targeting inflammation, pain management, and hemoglobin function are showing promising results.</p>
+                            <div class="trial-meta">
+                                <span>Phase II/III Trials</span>
+                                <span>Oral Medications</span>
+                                <span>All Ages</span>
+                                <span>Global Studies</span>
+                            </div>
+                        </div>
+                        
+                        <div class="clinical-trial">
+                            <h4>🥼 Combination Therapies</h4>
+                            <p>Studies combining multiple treatment approaches to maximize benefits and minimize side effects.</p>
+                            <div class="trial-meta">
+                                <span>Phase I/II Trials</span>
+                                <span>Combination Protocols</span>
+                                <span>Selected Centers</span>
+                                <span>Screening Required</span>
+                            </div>
+                        </div>
+                        
+                        <h3>How to Find and Join Clinical Trials</h3>
+                        <div class="research-item">
+                            <h4>🔍 Finding the Right Trial</h4>
+                            <ul>
+                                <li><strong>ClinicalTrials.gov:</strong> Official U.S. database of clinical studies</li>
+                                <li><strong>Sickle Cell Organizations:</strong> ASH, SCDAA provide trial information</li>
+                                <li><strong>Research Centers:</strong> Major medical centers often have dedicated programs</li>
+                                <li><strong>Your Healthcare Team:</strong> Specialists can recommend appropriate trials</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="research-item">
+                            <h4>✅ Benefits of Trial Participation</h4>
+                            <ul>
+                                <li>Access to cutting-edge treatments before general availability</li>
+                                <li>Close monitoring by leading specialists</li>
+                                <li>Contributing to research that helps the entire community</li>
+                                <li>Often no cost for experimental treatments</li>
+                                <li>Potential for significant health improvements</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Future Directions -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">🔮</div>
+                        <h2 class="card-title">Future Directions & Hope</h2>
+                    </div>
+                    <div class="card-content">
+                        <p class="intro-text">The future of sickle cell treatment is incredibly bright. With multiple curative therapies either approved or in late-stage development, we are moving from managing sickle cell disease to curing it.</p>
+                        
+                        <h3>What's Coming Next</h3>
+                        
+                        <div class="research-grid">
+                            <div class="research-item">
+                                <h4>🌍 Global Access Initiatives</h4>
+                                <p>Efforts to make gene therapies accessible worldwide, including in Africa where sickle cell disease is most prevalent.</p>
+                                <ul>
+                                    <li>WHO global initiative programs</li>
+                                    <li>Reduced-cost treatment development</li>
+                                    <li>Local capacity building projects</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="research-item">
+                                <h4>💰 Cost Reduction Strategies</h4>
+                                <p>Research into making curative treatments more affordable and accessible to all patients.</p>
+                                <ul>
+                                    <li>Simplified gene therapy protocols</li>
+                                    <li>Point-of-care treatment options</li>
+                                    <li>Insurance coverage advocacy</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="research-item">
+                                <h4>👶 Pediatric Applications</h4>
+                                <p>Expanding curative treatments to younger patients for maximum benefit and prevention of complications.</p>
+                                <ul>
+                                    <li>Age-appropriate dosing studies</li>
+                                    <li>Long-term safety in children</li>
+                                    <li>Early intervention strategies</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="research-item">
+                                <h4>🤖 Precision Medicine</h4>
+                                <p>Tailoring treatments to individual genetic profiles and disease characteristics.</p>
+                                <ul>
+                                    <li>Personalized gene therapy approaches</li>
+                                    <li>Biomarker-guided treatment selection</li>
+                                    <li>AI-assisted treatment optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="genetic-counseling">
+                            <h4>🎆 A Message of Hope</h4>
+                            <p>For the first time in history, we can say with confidence that cures for sickle cell disease exist and are available. While challenges remain in access and cost, the scientific breakthroughs have been achieved. The future holds the promise of transforming sickle cell disease from a life-limiting condition to a treatable and curable one.</p>
+                            
+                            <p><strong>The research community is committed to ensuring that everyone affected by sickle cell disease has access to these life-changing treatments.</strong></p>
+                        </div>
+                    </div>
+                </div>
                             <div class="stats-grid">
                                 <div class="stat-item">
                                     <span class="stat-number">200+</span>
@@ -919,7 +1822,10 @@
     <script src="../js/main.js"></script>
     <script src="../js/mobile-menu.js"></script>
     <script src="../js/modern.js"></script>
-    
     <script src="../js/pages.js"></script>
-</body>
+    <!-- Universal header scripts -->
+    <script src="../js/animations.js"></script>
+    <script src="../js/universal-header.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/warriorbot.js"></script>
 </html>

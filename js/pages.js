@@ -105,15 +105,111 @@ function initContactForm() {
 
 // Donation form functionality
 function initDonationForm() {
-    // Initialize donation amount selection, payment processing, etc.
-    const donationAmounts = document.querySelectorAll('.donation-amount');
+    // Initialize donation amount selection
+    const amountButtons = document.querySelectorAll('.amount-btn');
+    const customAmountInput = document.querySelector('.custom-amount-input');
+    const summaryAmount = document.querySelector('.summary-amount');
+    const summaryTotal = document.querySelector('.summary-total');
+    const donationTabs = document.querySelectorAll('.donation-tab');
     
-    donationAmounts.forEach(amount => {
-        amount.addEventListener('click', function() {
-            donationAmounts.forEach(a => a.classList.remove('selected'));
-            this.classList.add('selected');
+    // Amount button selection
+    amountButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Remove active from all buttons
+            amountButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active to clicked button
+            this.classList.add('active');
+            
+            // Clear custom amount input
+            if (customAmountInput) {
+                customAmountInput.value = '';
+            }
+            
+            // Update summary
+            const amount = parseInt(this.dataset.amount);
+            updateDonationSummary(amount);
         });
     });
+    
+    // Custom amount input
+    if (customAmountInput) {
+        customAmountInput.addEventListener('input', function() {
+            // Remove active from all preset buttons
+            amountButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Update summary
+            const amount = parseFloat(this.value) || 0;
+            updateDonationSummary(amount);
+        });
+        
+        customAmountInput.addEventListener('focus', function() {
+            // Remove active from all preset buttons when focusing custom input
+            amountButtons.forEach(btn => btn.classList.remove('active'));
+        });
+    }
+    
+    // Donation type tabs
+    donationTabs.forEach(tab => {
+        tab.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Remove active from all tabs
+            donationTabs.forEach(t => t.classList.remove('active'));
+            
+            // Add active to clicked tab
+            this.classList.add('active');
+            
+            // Update form based on donation type
+            const donationType = this.dataset.type;
+            updateDonationForm(donationType);
+        });
+    });
+    
+    // Initialize with default values
+    updateDonationSummary(100); // Default to $100
+}
+
+// Update donation summary
+function updateDonationSummary(amount) {
+    const summaryAmount = document.querySelector('.summary-amount');
+    const summaryTotal = document.querySelector('.summary-total');
+    
+    if (summaryAmount && summaryTotal) {
+        const processingFee = Math.round((amount * 0.033 + 0.30) * 100) / 100; // 3.3% + $0.30
+        const total = amount + processingFee;
+        
+        summaryAmount.textContent = `$${amount.toFixed(2)}`;
+        summaryTotal.textContent = `$${total.toFixed(2)}`;
+        
+        // Update processing fee display
+        const processingFeeElement = document.querySelector('.summary-row:not(.total) span:last-child');
+        if (processingFeeElement) {
+            processingFeeElement.textContent = `$${processingFee.toFixed(2)}`;
+        }
+    }
+}
+
+// Update donation form based on type
+function updateDonationForm(donationType) {
+    // This can be expanded to show/hide different form sections
+    // based on the donation type (monthly, one-time, memorial)
+    console.log(`Donation type selected: ${donationType}`);
+    
+    // You can add specific logic here for different donation types
+    switch(donationType) {
+        case 'monthly':
+            // Show monthly-specific options
+            break;
+        case 'one-time':
+            // Show one-time specific options
+            break;
+        case 'memorial':
+            // Show memorial/honor specific options
+            break;
+    }
 }
 
 // Form handlers for all pages
