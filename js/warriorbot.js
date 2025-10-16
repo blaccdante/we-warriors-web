@@ -164,7 +164,7 @@ class WarriorBot {
                 position: fixed;
                 bottom: 20px;
                 right: 20px;
-                z-index: 10000;
+                z-index: 99999;
                 font-family: 'Inter', sans-serif;
             }
 
@@ -408,19 +408,43 @@ class WarriorBot {
             }
 
             .close-btn {
-                background: none;
-                border: none;
+                background: rgba(255, 255, 255, 0.1);
+                border: 2px solid rgba(255, 255, 255, 0.3);
+                font-size: 20px;
                 color: white;
-                font-size: 24px;
                 cursor: pointer;
-                margin-left: auto;
-                padding: 5px;
+                padding: 8px;
                 border-radius: 50%;
-                transition: background 0.3s ease;
+                transition: all 0.3s ease;
+                width: 36px;
+                height: 36px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                z-index: 10;
             }
 
             .close-btn:hover {
-                background: rgba(255, 255, 255, 0.2);
+                background: rgba(255, 255, 255, 0.25);
+                border-color: rgba(255, 255, 255, 0.5);
+                transform: scale(1.1);
+            }
+            
+            /* Enhanced close button for mobile */
+            @media (max-width: 768px) {
+                .close-btn {
+                    background: rgba(255, 255, 255, 0.15) !important;
+                    border: 2px solid rgba(255, 255, 255, 0.4) !important;
+                    font-size: 18px !important;
+                    width: 32px !important;
+                    height: 32px !important;
+                }
+                
+                .close-btn:hover {
+                    background: rgba(255, 255, 255, 0.3) !important;
+                    border-color: rgba(255, 255, 255, 0.6) !important;
+                }
             }
 
             .chat-messages {
@@ -693,11 +717,16 @@ class WarriorBot {
             /* Responsive */
             @media (max-width: 480px) {
                 .warriorbot-chat {
-                    width: 90vw;
-                    height: 60vh;
-                    right: 5vw;
-                    bottom: 80px;
-                    max-height: 500px;
+                    width: 85vw;
+                    height: 55vh;
+                    right: 7.5vw;
+                    bottom: 85px;
+                    max-height: 450px;
+                }
+                
+                /* Hide WarriorBot when mobile menu is open */
+                body.mobile-menu-open #warriorbot-container {
+                    display: none !important;
                 }
                 
                 #warriorbot-container {
@@ -746,10 +775,15 @@ class WarriorBot {
             /* Tablet and small desktop */
             @media (max-width: 768px) and (min-width: 481px) {
                 .warriorbot-chat {
-                    width: 360px;
-                    height: 500px;
-                    right: 10px;
-                    bottom: 75px;
+                    width: 340px;
+                    height: 480px;
+                    right: 15px;
+                    bottom: 80px;
+                }
+                
+                /* Hide WarriorBot when mobile menu is open */
+                body.mobile-menu-open #warriorbot-container {
+                    display: none !important;
                 }
                 
                 .quick-btn {

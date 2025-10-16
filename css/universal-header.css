@@ -701,7 +701,7 @@ body.mobile-menu-open {
             width: 320px !important;
             max-width: 85vw !important;
             height: 100vh !important;
-            /* FORCE SOLID WHITE - OVERRIDE EVERYTHING */
+            /* Light mode: FORCE SOLID WHITE */
             background: #ffffff !important;
             background-color: #ffffff !important;
             background-image: none !important;
@@ -721,12 +721,49 @@ body.mobile-menu-open {
             /* Don't block touch events on main page */
             pointer-events: none !important;
         }
+        
     
         /* Show mobile menu when active */
         .header-nav.active {
             transform: translateX(0) !important;
             /* Re-enable pointer events when menu is open */
             pointer-events: all !important;
+        }
+        
+        /* NUCLEAR OVERRIDE: Dark mode mobile menu - match homepage styling */
+        html[data-theme="dark"] body .universal-header .header-nav,
+        [data-theme="dark"] .universal-header .header-nav,
+        [data-theme="dark"] .header-nav {
+            background: linear-gradient(140deg, #0a0a0f 0%, #0f1115 30%, #111827 70%, #1f2937 100%) !important;
+            background-color: #0a0a0f !important;
+            background-image: linear-gradient(140deg, #0a0a0f 0%, #0f1115 30%, #111827 70%, #1f2937 100%) !important;
+            backdrop-filter: blur(20px) saturate(120%) !important;
+            -webkit-backdrop-filter: blur(20px) saturate(120%) !important;
+            color: rgba(255, 255, 255, 0.95) !important;
+            border-left: 2px solid rgba(255, 107, 107, 0.3) !important;
+            box-shadow: -15px 0 50px rgba(0, 0, 0, 0.9) !important;
+        }
+        
+        /* NUCLEAR OVERRIDE: Dark mode mobile nav links */
+        html[data-theme="dark"] body .universal-header .header-nav .nav-item .nav-link,
+        [data-theme="dark"] .universal-header .header-nav .nav-item .nav-link,
+        [data-theme="dark"] .header-nav .nav-item .nav-link {
+            color: rgba(255, 255, 255, 0.9) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        }
+        
+        /* NUCLEAR OVERRIDE: Dark mode mobile category toggles */
+        html[data-theme="dark"] body .universal-header .header-nav .mobile-category-toggle,
+        [data-theme="dark"] .universal-header .header-nav .mobile-category-toggle,
+        [data-theme="dark"] .header-nav .mobile-category-toggle {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+        
+        /* NUCLEAR OVERRIDE: Dark mode mobile submenu links */
+        html[data-theme="dark"] body .universal-header .header-nav .mobile-submenu-link,
+        [data-theme="dark"] .universal-header .header-nav .mobile-submenu-link,
+        [data-theme="dark"] .header-nav .mobile-submenu-link {
+            color: rgba(255, 255, 255, 0.8) !important;
         }
     
     .header-container {
@@ -792,22 +829,34 @@ body.mobile-menu-open {
         display: block;
         width: 100%;
         padding: 1rem 1.5rem;
-        color: white;
+        /* Light mode: dark text */
+        color: #1f2937 !important;
         font-size: 1rem;
         font-weight: 500;
         text-align: left;
         text-decoration: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
         background: transparent;
         border-radius: 8px;
         transition: all 0.3s ease;
         margin-bottom: 0.25rem;
     }
     
+    /* Dark mode nav links */
+    [data-theme="dark"] .nav-item .nav-link {
+        color: rgba(255, 255, 255, 0.9) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+    
     .nav-item .nav-link:hover {
-        color: var(--primary-color);
-        background: rgba(255, 255, 255, 0.1);
+        color: var(--primary-color) !important;
+        background: rgba(0, 0, 0, 0.05) !important;
         transform: translateX(5px);
+    }
+    
+    [data-theme="dark"] .nav-item .nav-link:hover {
+        color: var(--primary-color) !important;
+        background: rgba(255, 255, 255, 0.1) !important;
     }
     
     /* Hide dropdown functionality on mobile */
