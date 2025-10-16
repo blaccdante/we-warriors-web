@@ -993,6 +993,96 @@ html[data-theme="dark"] .theme-toggle,
     }
 }
 
+/* LIGHT MODE FOOTER VISIBILITY FIX */
+[data-theme="light"] .site-footer,
+[data-theme="light"] .modern-footer {
+    /* Enhanced dark footer for light mode visibility */
+    background: linear-gradient(135deg, #2c1810 0%, #1a0d08 100%) !important;
+    color: #ffffff !important;
+    border-top: 2px solid rgba(139, 69, 19, 0.8) !important;
+    box-shadow: 
+        0 -15px 40px rgba(139, 69, 19, 0.4),
+        0 -5px 20px rgba(0, 0, 0, 0.6),
+        inset 0 2px 0 rgba(255, 165, 0, 0.2) !important;
+}
+
+[data-theme="light"] .footer-tagline {
+    color: #ffa500 !important;
+    font-weight: 500 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-theme="light"] .footer-title {
+    color: #ff8c42 !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="light"] .footer-brand {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6) !important;
+}
+
+[data-theme="light"] .footer-mission {
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="light"] .footer-links a {
+    color: rgba(255, 255, 255, 0.85) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="light"] .footer-links a:hover {
+    color: #ffa500 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 165, 0, 0.6) !important;
+}
+
+[data-theme="light"] .contact-info p {
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="light"] .contact-info strong {
+    color: #ff8c42 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="light"] .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.3) !important;
+    background: rgba(0, 0, 0, 0.2) !important;
+}
+
+[data-theme="light"] .copyright {
+    color: rgba(255, 255, 255, 0.8) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="light"] .footer-links-bottom a {
+    color: rgba(255, 255, 255, 0.8) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="light"] .footer-links-bottom a:hover {
+    color: #ffa500 !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 8px rgba(255, 165, 0, 0.5) !important;
+}
+
+[data-theme="light"] .social-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px !important;
+}
+
+[data-theme="light"] .social-link:hover {
+    color: #ffa500 !important;
+    background: rgba(255, 165, 0, 0.2) !important;
+    border-color: rgba(255, 165, 0, 0.5) !important;
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
 /* Performance optimizations */
 /* Reduce animations when theme switching is in progress */
 [data-theme-switching] * {

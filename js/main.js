@@ -82,7 +82,8 @@ function initSmoothScrolling() {
                 e.preventDefault();
                 
                 // Calculate offset for fixed header
-                const headerHeight = document.querySelector('.site-header').offsetHeight;
+                const header = document.querySelector('.universal-header');
+                const headerHeight = header ? header.offsetHeight : 80; // fallback height
                 const targetPosition = target.offsetTop - headerHeight - 20;
                 
                 // Smooth scroll

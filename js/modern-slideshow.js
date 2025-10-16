@@ -566,51 +566,59 @@ class ModernSlideshow {
     }
 }
 
-// Initialize slideshow when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
+// Fast slideshow initialization with performance optimizations
+function initializeSlideshow() {
     const slideshowContainer = document.querySelector('.hero-slideshow');
+    if (!slideshowContainer) return;
     
-    if (slideshowContainer) {
-        // Create slideshow with options
-        window.heroSlideshow = new ModernSlideshow(slideshowContainer, {
-            autoPlay: true,
-            autoPlayInterval: 6000,
-            pauseOnHover: true,
-            enableTouch: true,
-            enableKeyboard: true,
-            showProgress: true,
-            showArrows: true,
-            showDots: true,
-            loop: true
+    // Detect device capabilities for optimization
+    const isMobile = window.innerWidth <= 768;
+    const isSlowDevice = navigator.hardwareConcurrency < 4 || navigator.deviceMemory < 4;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    // Performance-optimized options
+    const options = {
+        autoPlay: !isSlowDevice && !prefersReducedMotion,
+        autoPlayInterval: isMobile ? 8000 : 6000, // Slower on mobile for better UX
+        transitionDuration: prefersReducedMotion ? 200 : (isMobile ? 500 : 800),
+        pauseOnHover: !isMobile,
+        enableTouch: isMobile,
+        enableKeyboard: false, // Disable for performance
+        showProgress: !isSlowDevice,
+        showArrows: !isMobile || !isSlowDevice,
+        showDots: true,
+        loop: true
+    };
+    
+    // Create slideshow
+    window.heroSlideshow = new ModernSlideshow(slideshowContainer, options);
+    
+    // Immediate dark mode fix
+    if (document.documentElement.getAttribute('data-theme') === 'dark') {
+        requestAnimationFrame(() => {
+            window.heroSlideshow.fixDarkModeVisibility();
         });
-
-        // Force visibility of images/videos in dark mode immediately
-        if (document.documentElement.getAttribute('data-theme') === 'dark') {
-            const slides = slideshowContainer.querySelectorAll('.slide');
-            const images = slideshowContainer.querySelectorAll('.slide-image, .slide-video');
-            
-            slides.forEach(slide => {
-                slide.style.opacity = '1';
-                slide.style.visibility = 'visible';
-                slide.style.display = 'flex';
-            });
-            
-            images.forEach(img => {
-                img.style.opacity = '1';
-                img.style.visibility = 'visible';
-                img.style.display = 'block';
-            });
-            
-            // Force active slide to be visible
-            const activeSlide = slideshowContainer.querySelector('.slide.active');
-            if (activeSlide) {
-                activeSlide.style.opacity = '1';
-                activeSlide.style.visibility = 'visible';
-                activeSlide.style.zIndex = '10';
-            }
-        }
     }
-});
+    
+    console.log('Slideshow initialized with performance optimizations:', {
+        isMobile, isSlowDevice, prefersReducedMotion
+    });
+}
+
+// Use the most efficient initialization method
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeSlideshow);
+} else if (document.readyState === 'interactive') {
+    // DOM ready but resources still loading
+    if (window.requestIdleCallback) {
+        requestIdleCallback(initializeSlideshow);
+    } else {
+        setTimeout(initializeSlideshow, 1);
+    }
+} else {
+    // Everything is ready
+    initializeSlideshow();
+}
 
 // Export for module usage
 if (typeof module !== 'undefined' && module.exports) {

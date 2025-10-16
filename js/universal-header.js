@@ -348,20 +348,59 @@ class UniversalHeader {
      * Theme toggle functionality
      */
     setupThemeToggle() {
+        // Desktop theme toggle with improved touch handling
         if (this.themeToggle) {
+            // Prevent double-tap zoom on mobile
+            this.themeToggle.style.touchAction = 'manipulation';
+            
+            // Add both click and touchend for better mobile support
             this.themeToggle.addEventListener('click', (e) => {
                 e.preventDefault();
-                this.toggleTheme();
+                e.stopPropagation();
+                this.handleThemeToggle();
+            });
+            
+            this.themeToggle.addEventListener('touchend', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.handleThemeToggle();
             });
         }
         
-        // Mobile theme toggle
+        // Mobile theme toggle with enhanced touch support
         if (this.mobileThemeToggle) {
+            this.mobileThemeToggle.style.touchAction = 'manipulation';
+            
             this.mobileThemeToggle.addEventListener('click', (e) => {
                 e.preventDefault();
-                this.toggleTheme();
+                e.stopPropagation();
+                this.handleThemeToggle();
+            });
+            
+            this.mobileThemeToggle.addEventListener('touchend', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.handleThemeToggle();
             });
         }
+    }
+    
+    handleThemeToggle() {
+        // Prevent rapid consecutive calls
+        if (this.isTogglingTheme) return;
+        this.isTogglingTheme = true;
+        
+        // Add haptic feedback on supported devices
+        if (navigator.vibrate) {
+            navigator.vibrate(10);
+        }
+        
+        this.toggleTheme();
+        
+        // Reset toggle lock after animation
+        setTimeout(() => {
+            this.isTogglingTheme = false;
+        }, 300);
     }
     
     toggleTheme() {

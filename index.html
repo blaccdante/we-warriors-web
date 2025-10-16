@@ -19,8 +19,9 @@
     <meta name="twitter:description" content="From Pain comes Strength • Through Faith we Hope">
     
     <title>We Warriors - Sickle Cell Support & Education</title>
-    <!-- Immediate mobile scroll fix -->
+    <!-- Immediate mobile optimizations -->
     <script src="js/mobile-scroll-fix.js"></script>
+    <script src="js/mobile-performance-fix.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1964650693892617" crossorigin="anonymous"></script>
     
     <!-- Favicon -->
@@ -29,18 +30,31 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Stylesheets -->
+    <!-- Critical CSS - Load first -->
     <link rel="stylesheet" href="css/mobile-scroll-fix.css">
+    <link rel="stylesheet" href="css/mobile-menu-fix.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/accessibility.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- Modern components -->
-    <link rel="stylesheet" href="css/modern-slideshow.css">
-    <link rel="stylesheet" href="css/modern-homepage.css">
-    <link rel="stylesheet" href="css/theme-optimization.css">
-    <!-- Universal header MUST load LAST to override conflicting mobile menu styles -->
-    <link rel="stylesheet" href="css/universal-header.css?v=7">
+    <link rel="stylesheet" href="css/universal-header.css?v=9">
+    
+    <!-- Defer non-critical CSS -->
+    <link rel="stylesheet" href="css/responsive.css" media="print" onload="this.media='all'; this.onload=null;">
+    <link rel="stylesheet" href="css/accessibility.css" media="print" onload="this.media='all'; this.onload=null;">
+    <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'; this.onload=null;">
+    
+    <!-- Modern components - Load after critical -->
+    <link rel="stylesheet" href="css/modern-slideshow.css" media="print" onload="this.media='all'; this.onload=null;">
+    <link rel="stylesheet" href="css/modern-homepage.css" media="print" onload="this.media='all'; this.onload=null;">
+    <link rel="stylesheet" href="css/theme-optimization.css" media="print" onload="this.media='all'; this.onload=null;">
+    
+    <!-- Fallback for browsers that don't support onload -->
+    <noscript>
+        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/accessibility.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/modern-slideshow.css">
+        <link rel="stylesheet" href="css/modern-homepage.css">
+        <link rel="stylesheet" href="css/theme-optimization.css">
+    </noscript>
     
 </head>
 <body>
@@ -596,7 +610,7 @@
                     <div class="contact-info">
                         <p><strong>Direct:</strong> +2347041120734</p>
                         <p><strong>Email:</strong> wewarriorsng@gmail.com</p>
-                        <p><strong>Hours:</strong> Mon-Fri 9AM-5PM</p>
+                        <p><strong>Hours:</strong> Mon-Sun 9AM-5PM</p>
                     </div>
                 </div>
             </div>
@@ -614,19 +628,23 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script src="js/main.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/universal-header.js?v=2"></script>
-    <!-- Modern Components -->
-    <script src="js/performance-monitor.js"></script>
-    <script src="js/component-library.js"></script>
-    <script src="js/modern-slideshow.js"></script>
-    <script src="js/modern-interactions.js"></script>
-    <!-- WarriorBot -->
-    <script src="js/warriorbot-gemini.js"></script>
-    <script src="js/warriorbot-ai.js"></script>
-    <script src="warriorbot-direct-ai.js"></script>
-    <script src="js/warriorbot.js"></script>
+    <!-- Critical JavaScript - Load immediately -->
+    <script src="js/universal-header.js?v=3"></script>
+    
+    <!-- Defer non-critical JavaScript for better loading -->
+    <script defer src="js/main.js"></script>
+    <script defer src="js/animations.js"></script>
+    
+    <!-- Modern Components - Load after page -->
+    <script defer src="js/performance-monitor.js"></script>
+    <script defer src="js/component-library.js"></script>
+    <script defer src="js/modern-slideshow.js"></script>
+    <script defer src="js/modern-interactions.js"></script>
+    
+    <!-- WarriorBot - Load last as it's heaviest -->
+    <script defer src="js/warriorbot-gemini.js"></script>
+    <script defer src="js/warriorbot-ai.js"></script>
+    <script defer src="warriorbot-direct-ai.js"></script>
+    <script defer src="js/warriorbot.js"></script>
 </body>
 </html>
