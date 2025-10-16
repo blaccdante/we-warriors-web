@@ -1,0 +1,52 @@
+/* Mobile Scroll Fix - Critical CSS for immediate mobile scrolling */
+
+/* Ensure body can always scroll on mobile */
+@media (max-width: 768px) {
+    html, body {
+        -webkit-overflow-scrolling: touch;
+        overflow-x: hidden;
+        overflow-y: auto !important;
+        touch-action: pan-y;
+        height: auto;
+        position: relative !important;
+    }
+    
+    /* Prevent any elements from blocking scroll on initial load */
+    * {
+        touch-action: inherit;
+    }
+    
+    /* Ensure main content is scrollable immediately */
+    main {
+        touch-action: pan-y;
+        overflow-y: visible;
+        position: relative;
+    }
+    
+    /* Hero section should not block scrolling */
+    .hero-slideshow {
+        touch-action: pan-y;
+        overflow: visible;
+    }
+    
+    /* Prevent mobile menu from blocking page scroll when closed */
+    .header-nav:not(.active) {
+        pointer-events: none !important;
+    }
+    
+    /* Fix for immediate scrolling after page load */
+    body.loading {
+        overflow-y: auto !important;
+        touch-action: pan-y !important;
+    }
+}
+
+/* Critical fix for iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    @media (max-width: 768px) {
+        body {
+            -webkit-overflow-scrolling: touch;
+            overflow-y: auto !important;
+        }
+    }
+}

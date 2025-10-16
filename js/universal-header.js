@@ -142,8 +142,9 @@ class UniversalHeader {
             // Show menu and overlay immediately
             this.nav.classList.add('active');
             this.mobileToggle.classList.add('active');
-            this.body.classList.add('mobile-menu-open');
-            this.body.style.overflow = 'hidden';
+        this.body.classList.add('mobile-menu-open');
+        // Don't completely block scrolling, just add the class for styling
+        // this.body.style.overflow = 'hidden';
             
             // Force overlay visibility
             setTimeout(() => {
@@ -177,6 +178,9 @@ class UniversalHeader {
             this.mobileToggle.classList.remove('active');
             this.body.classList.remove('mobile-menu-open');
             this.body.style.overflow = '';
+            // Ensure page can scroll after closing menu
+            document.documentElement.style.overflowY = 'auto';
+            this.body.style.overflowY = 'auto';
             
             // Close all mobile dropdowns
             if (this.dropdowns) {

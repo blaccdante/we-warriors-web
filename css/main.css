@@ -977,6 +977,27 @@ body:not([data-theme="dark"]) .site-header .nav-menu .nav-item .nav-link.active,
   box-sizing: border-box;
 }
 
+/* Mobile scroll optimization */
+@media (max-width: 768px) {
+  html {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+  }
+  
+  body {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+    /* Ensure immediate scrolling ability */
+    touch-action: pan-y;
+  }
+  
+  /* Prevent any initial scroll blocking */
+  main {
+    touch-action: pan-y;
+    overflow-y: visible;
+  }
+}
+
 html {
   font-size: 16px;
   scroll-behavior: smooth;

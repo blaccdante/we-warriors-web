@@ -105,8 +105,8 @@ class ModernSlideshow {
                 ]
             },
             {
-                type: 'video',
-                src: 'assets/images/hero/AdobeStock_541873788.mov.mp4',
+                type: 'image',
+                src: 'assets/images/hero/AdobeStock_791905348.jpeg',
                 title: 'Join the Movement',
                 subtitle: 'Together We Are Stronger',
                 description: 'Be part of the global movement to end sickle cell disease. Your voice, your story, and your support can make a difference in millions of lives.',
@@ -117,26 +117,15 @@ class ModernSlideshow {
             },
             {
                 type: 'image',
-                src: 'assets/images/hero/AdobeStock_791905348.jpeg',
+                src: 'assets/images/hero/AdobeStock_857158545.jpeg',
                 title: 'Healthcare Professionals',
                 subtitle: 'Resources & Continuing Education',
                 description: 'Access the latest clinical guidelines, CME courses, and professional resources to provide exceptional care for sickle cell patients.',
                 actions: [
-                    { text: 'Professional Hub', href: 'professionals/healthcare-providers.html', class: 'slide-btn-primary' },
-                    { text: 'CME Courses', href: 'professionals/healthcare-providers.html#cme', class: 'slide-btn-secondary' }
+                    { text: 'Professional Hub', href: 'professionals/partnerships.html', class: 'slide-btn-primary' },
+                    { text: 'Learn More', href: 'professionals/partnerships.html#resources', class: 'slide-btn-secondary' }
                 ]
             },
-            {
-                type: 'image',
-                src: 'assets/images/hero/AdobeStock_857158545.jpeg',
-                title: 'Support Network',
-                subtitle: 'Never Walk Alone',
-                description: 'Connect with support groups, counseling services, and a caring community that understands your journey and stands with you through every challenge.',
-                actions: [
-                    { text: 'Find Support', href: 'support/support-groups.html', class: 'slide-btn-primary' },
-                    { text: 'Counseling', href: 'support/counseling.html', class: 'slide-btn-secondary' }
-                ]
-            }
         ];
 
         return slideData.map((slide, index) => {
@@ -144,46 +133,28 @@ class ModernSlideshow {
                 `<a href="${action.href}" class="slide-btn ${action.class}">${action.text}</a>`
             ).join('');
 
-            if (slide.type === 'video') {
-                return `
-                    <div class="slide" data-index="${index}">
-                        <video class="slide-video" muted loop playsinline preload="metadata">
-                            <source src="${slide.src}" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="slide-content">
-                            <h1 class="slide-title">${slide.title}</h1>
-                            <p class="slide-subtitle">${slide.subtitle}</p>
-                            <p class="slide-description">${slide.description}</p>
-                            <div class="slide-actions">
-                                ${actionsHTML}
-                            </div>
+            // All slides are now image slides
+            return `
+                <div class="slide" data-index="${index}">
+                    <img class="slide-image" src="${slide.src}" alt="${slide.title}" style="
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        z-index: 1;
+                    ">
+                    <div class="slide-content">
+                        <h1 class="slide-title">${slide.title}</h1>
+                        <p class="slide-subtitle">${slide.subtitle}</p>
+                        <p class="slide-description">${slide.description}</p>
+                        <div class="slide-actions">
+                            ${actionsHTML}
                         </div>
                     </div>
-                `;
-            } else {
-                return `
-                    <div class="slide" data-index="${index}">
-                        <img class="slide-image" src="${slide.src}" alt="${slide.title}" style="
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                            z-index: 1;
-                        ">
-                        <div class="slide-content">
-                            <h1 class="slide-title">${slide.title}</h1>
-                            <p class="slide-subtitle">${slide.subtitle}</p>
-                            <p class="slide-description">${slide.description}</p>
-                            <div class="slide-actions">
-                                ${actionsHTML}
-                            </div>
-                        </div>
-                    </div>
-                `;
-            }
+                </div>
+            `;
         }).join('');
     }
 
@@ -203,7 +174,7 @@ class ModernSlideshow {
     }
 
     createDots() {
-        const totalSlides = 6; // Based on our slide data
+        const totalSlides = 5; // Updated after removing video slide
         return `
             <div class="slideshow-nav">
                 ${Array.from({length: totalSlides}, (_, i) => 
@@ -234,11 +205,11 @@ class ModernSlideshow {
             dot.addEventListener('click', () => this.goToSlide(index));
         });
 
-        // Touch/swipe support
+        // Touch/swipe support - Don't prevent default to allow scrolling
         if (this.options.enableTouch) {
-            this.container.addEventListener('touchstart', (e) => this.handleTouchStart(e));
-            this.container.addEventListener('touchend', (e) => this.handleTouchEnd(e));
-            this.container.addEventListener('touchmove', (e) => e.preventDefault());
+            this.container.addEventListener('touchstart', (e) => this.handleTouchStart(e), { passive: true });
+            this.container.addEventListener('touchend', (e) => this.handleTouchEnd(e), { passive: true });
+            this.container.addEventListener('touchmove', (e) => this.handleTouchMove(e), { passive: true });
         }
 
         // Keyboard navigation
@@ -289,19 +260,36 @@ class ModernSlideshow {
 
     handleTouchStart(e) {
         this.touchStartX = e.changedTouches[0].screenX;
+        this.touchStartY = e.changedTouches[0].screenY;
     }
 
     handleTouchEnd(e) {
         this.touchEndX = e.changedTouches[0].screenX;
+        this.touchEndY = e.changedTouches[0].screenY;
         this.handleSwipe();
+    }
+    
+    handleTouchMove(e) {
+        // Only prevent default for horizontal swipes, allow vertical scrolling
+        const currentX = e.changedTouches[0].screenX;
+        const currentY = e.changedTouches[0].screenY;
+        const diffX = Math.abs(currentX - this.touchStartX);
+        const diffY = Math.abs(currentY - this.touchStartY);
+        
+        // If horizontal movement is greater, it's a swipe
+        if (diffX > diffY && diffX > 10) {
+            e.preventDefault();
+        }
     }
 
     handleSwipe() {
         const swipeThreshold = 50;
-        const diff = this.touchStartX - this.touchEndX;
-
-        if (Math.abs(diff) > swipeThreshold) {
-            if (diff > 0) {
+        const diffX = this.touchStartX - this.touchEndX;
+        const diffY = this.touchStartY - this.touchEndY;
+        
+        // Only swipe if horizontal movement is greater than vertical
+        if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > Math.abs(diffY)) {
+            if (diffX > 0) {
                 this.nextSlide();
             } else {
                 this.prevSlide();
