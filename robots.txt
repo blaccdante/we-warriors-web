@@ -1,0 +1,37 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://wewarriors.org/sitemap.xml
+
+# Block access to admin/config files
+Disallow: /js/
+Disallow: /css/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /templates/
+Disallow: /backup/
+Disallow: /*-backup.html
+
+# Allow important resources
+Allow: /css/main.css
+Allow: /css/responsive.css
+Allow: /js/main.js
+Allow: /images/
+
+# Crawl delay (optional - 1 second)
+Crawl-delay: 1
+
+# Block specific bots if needed (uncomment if required)
+# User-agent: BadBot
+# Disallow: /
+
+# Allow Google, Bing, Yahoo
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
