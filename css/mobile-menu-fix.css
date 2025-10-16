@@ -17,12 +17,19 @@
         visibility: visible !important;
     }
     
-    /* Dark mode only */
+    /* Dark mode only - Pure Black Glassmorphism */
     html[data-theme="dark"] body .universal-header .header-nav,
     html[data-theme="dark"] body .universal-header .header-nav.active {
-        background: linear-gradient(140deg, #0a0a0f 0%, #0f1115 30%, #111827 70%, #1f2937 100%) !important;
-        backdrop-filter: blur(20px) saturate(120%) !important;
-        -webkit-backdrop-filter: blur(20px) saturate(120%) !important;
+        background: rgba(0, 0, 0, 0.85) !important;
+        background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(10, 10, 10, 0.8) 100%) !important;
+        backdrop-filter: blur(25px) saturate(180%) brightness(1.1) !important;
+        -webkit-backdrop-filter: blur(25px) saturate(180%) brightness(1.1) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-left: 2px solid rgba(255, 255, 255, 0.15) !important;
+        box-shadow: 
+            -25px 0 60px rgba(0, 0, 0, 0.6),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1),
+            0 0 0 1px rgba(255, 255, 255, 0.05) !important;
     }
     
     /* Mobile theme toggle - better visibility in light mode */

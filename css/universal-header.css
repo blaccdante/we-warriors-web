@@ -730,18 +730,22 @@ body.mobile-menu-open {
             pointer-events: all !important;
         }
         
-        /* NUCLEAR OVERRIDE: Dark mode mobile menu - match homepage styling */
+        /* NUCLEAR OVERRIDE: Pure Black Glassmorphism Mobile Menu */
         html[data-theme="dark"] body .universal-header .header-nav,
         [data-theme="dark"] .universal-header .header-nav,
         [data-theme="dark"] .header-nav {
-            background: linear-gradient(140deg, #0a0a0f 0%, #0f1115 30%, #111827 70%, #1f2937 100%) !important;
-            background-color: #0a0a0f !important;
-            background-image: linear-gradient(140deg, #0a0a0f 0%, #0f1115 30%, #111827 70%, #1f2937 100%) !important;
-            backdrop-filter: blur(20px) saturate(120%) !important;
-            -webkit-backdrop-filter: blur(20px) saturate(120%) !important;
+            background: rgba(0, 0, 0, 0.85) !important;
+            background-color: rgba(0, 0, 0, 0.85) !important;
+            background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(10, 10, 10, 0.8) 100%) !important;
+            backdrop-filter: blur(25px) saturate(180%) brightness(1.1) !important;
+            -webkit-backdrop-filter: blur(25px) saturate(180%) brightness(1.1) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-left: 2px solid rgba(255, 255, 255, 0.15) !important;
             color: rgba(255, 255, 255, 0.95) !important;
-            border-left: 2px solid rgba(255, 107, 107, 0.3) !important;
-            box-shadow: -15px 0 50px rgba(0, 0, 0, 0.9) !important;
+            box-shadow: 
+                -25px 0 60px rgba(0, 0, 0, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                0 0 0 1px rgba(255, 255, 255, 0.05) !important;
         }
         
         /* NUCLEAR OVERRIDE: Dark mode mobile nav links */
@@ -752,6 +756,14 @@ body.mobile-menu-open {
             border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
         }
         
+        /* NUCLEAR OVERRIDE: Dark mode mobile nav link hover */
+        html[data-theme="dark"] body .universal-header .header-nav .nav-item .nav-link:hover,
+        [data-theme="dark"] .universal-header .header-nav .nav-item .nav-link:hover,
+        [data-theme="dark"] .header-nav .nav-item .nav-link:hover {
+            color: var(--primary-color) !important;
+            background: rgba(255, 255, 255, 0.1) !important;
+        }
+        
         /* NUCLEAR OVERRIDE: Dark mode mobile category toggles */
         html[data-theme="dark"] body .universal-header .header-nav .mobile-category-toggle,
         [data-theme="dark"] .universal-header .header-nav .mobile-category-toggle,
@@ -759,11 +771,28 @@ body.mobile-menu-open {
             color: rgba(255, 255, 255, 0.9) !important;
         }
         
+        /* NUCLEAR OVERRIDE: Dark mode mobile category toggle hover */
+        html[data-theme="dark"] body .universal-header .header-nav .mobile-category-toggle:hover,
+        [data-theme="dark"] .universal-header .header-nav .mobile-category-toggle:hover,
+        [data-theme="dark"] .header-nav .mobile-category-toggle:hover {
+            color: var(--primary-color) !important;
+            background: rgba(255, 255, 255, 0.08) !important;
+        }
+        
         /* NUCLEAR OVERRIDE: Dark mode mobile submenu links */
         html[data-theme="dark"] body .universal-header .header-nav .mobile-submenu-link,
         [data-theme="dark"] .universal-header .header-nav .mobile-submenu-link,
         [data-theme="dark"] .header-nav .mobile-submenu-link {
             color: rgba(255, 255, 255, 0.8) !important;
+        }
+        
+        /* NUCLEAR OVERRIDE: Dark mode mobile submenu link hover */
+        html[data-theme="dark"] body .universal-header .header-nav .mobile-submenu-link:hover,
+        [data-theme="dark"] .universal-header .header-nav .mobile-submenu-link:hover,
+        [data-theme="dark"] .header-nav .mobile-submenu-link:hover {
+            color: var(--primary-color) !important;
+            background: rgba(255, 255, 255, 0.08) !important;
+            border-left-color: var(--primary-color) !important;
         }
     
     .header-container {

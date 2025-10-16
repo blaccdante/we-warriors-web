@@ -276,6 +276,8 @@ class WarriorBot {
                 display: none;
                 width: 380px;
                 height: 600px;
+                max-width: 95vw;
+                max-height: 80vh;
                 background: white;
                 border-radius: 20px;
                 box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
@@ -714,19 +716,57 @@ class WarriorBot {
                 40% { transform: scale(1.2); opacity: 1; }
             }
 
-            /* Responsive */
+            /* Responsive - Strict mobile constraints */
             @media (max-width: 480px) {
                 .warriorbot-chat {
-                    width: 85vw;
-                    height: 55vh;
-                    right: 7.5vw;
-                    bottom: 85px;
-                    max-height: 450px;
+                    width: 82vw !important;
+                    height: 50vh !important;
+                    min-height: 300px !important;
+                    max-height: 400px !important;
+                    right: 9vw !important;
+                    bottom: 90px !important;
+                    left: 9vw !important;
+                    position: fixed !important;
+                    overflow: hidden !important;
+                }
+                
+                /* Prevent chat expansion */
+                .chat-messages {
+                    max-height: calc(50vh - 140px) !important;
+                    overflow-y: auto !important;
+                    overflow-x: hidden !important;
                 }
                 
                 /* Hide WarriorBot when mobile menu is open */
                 body.mobile-menu-open #warriorbot-container {
                     display: none !important;
+                }
+                
+                /* Prevent viewport issues */
+                #warriorbot-container {
+                    max-width: 100vw !important;
+                    max-height: 100vh !important;
+                    overflow: hidden !important;
+                }
+                
+                /* Force chat window constraints */
+                .warriorbot-chat.show {
+                    display: block !important;
+                    width: 82vw !important;
+                    height: 50vh !important;
+                    max-height: 400px !important;
+                }
+                
+                /* Prevent body scroll issues */
+                body.warriorbot-open {
+                    overflow-x: hidden !important;
+                }
+                
+                /* Message area strict bounds */
+                .message {
+                    max-width: 100% !important;
+                    word-wrap: break-word !important;
+                    overflow-wrap: break-word !important;
                 }
                 
                 #warriorbot-container {
@@ -772,13 +812,21 @@ class WarriorBot {
                 }
             }
             
-            /* Tablet and small desktop */
+            /* Tablet and small desktop - Controlled sizing */
             @media (max-width: 768px) and (min-width: 481px) {
                 .warriorbot-chat {
-                    width: 340px;
-                    height: 480px;
-                    right: 15px;
-                    bottom: 80px;
+                    width: 320px !important;
+                    height: 450px !important;
+                    max-height: 60vh !important;
+                    right: 20px !important;
+                    bottom: 85px !important;
+                    position: fixed !important;
+                    overflow: hidden !important;
+                }
+                
+                .chat-messages {
+                    max-height: calc(60vh - 140px) !important;
+                    overflow-y: auto !important;
                 }
                 
                 /* Hide WarriorBot when mobile menu is open */
@@ -833,10 +881,11 @@ class WarriorBot {
         } else {
             container.classList.add('warriorbot-open');
             container.classList.remove('warriorbot-closed');
+            document.body.classList.add('warriorbot-open');
             this.isOpen = true;
             notification.style.display = 'none';
             
-            // Focus input
+            // Focus input after animation
             setTimeout(() => {
                 document.getElementById('chat-input').focus();
             }, 300);
@@ -847,6 +896,7 @@ class WarriorBot {
         const container = document.getElementById('warriorbot-container');
         container.classList.remove('warriorbot-open');
         container.classList.add('warriorbot-closed');
+        document.body.classList.remove('warriorbot-open');
         this.isOpen = false;
     }
 
