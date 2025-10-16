@@ -1,0 +1,88 @@
+<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradients for the sickle cell shapes -->
+    <linearGradient id="cellGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#dc143c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b0000;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="cellGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff4757;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#c44569;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b0000;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="cellGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffa502;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ff6348;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc143c;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="cellGradient4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ffa502;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff6348;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Text gradient -->
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b0000;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#dc143c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffa500;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Drop shadow filter -->
+    <filter id="dropshadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background subtle pattern -->
+  <rect width="400" height="200" fill="url(#bgGradient)" opacity="0.1"/>
+  
+  <!-- Sickle cell chain design -->
+  <!-- Cell 1 - Far left -->
+  <ellipse cx="60" cy="120" rx="25" ry="45" fill="url(#cellGradient1)" transform="rotate(-15 60 120)" opacity="0.9"/>
+  <ellipse cx="55" cy="115" rx="18" ry="35" fill="url(#cellGradient1)" transform="rotate(-15 55 115)" opacity="0.7"/>
+  
+  <!-- Cell 2 -->
+  <ellipse cx="120" cy="110" rx="30" ry="50" fill="url(#cellGradient2)" transform="rotate(10 120 110)" opacity="0.9"/>
+  <ellipse cx="115" cy="105" rx="22" ry="38" fill="url(#cellGradient2)" transform="rotate(10 115 105)" opacity="0.7"/>
+  
+  <!-- Cell 3 - Center -->
+  <ellipse cx="180" cy="125" rx="35" ry="55" fill="url(#cellGradient3)" transform="rotate(-5 180 125)" opacity="0.9"/>
+  <ellipse cx="175" cy="120" rx="25" ry="42" fill="url(#cellGradient3)" transform="rotate(-5 175 120)" opacity="0.7"/>
+  
+  <!-- Cell 4 -->
+  <ellipse cx="240" cy="115" rx="32" ry="52" fill="url(#cellGradient2)" transform="rotate(20 240 115)" opacity="0.9"/>
+  <ellipse cx="235" cy="110" rx="23" ry="40" fill="url(#cellGradient2)" transform="rotate(20 235 110)" opacity="0.7"/>
+  
+  <!-- Cell 5 - Far right -->
+  <ellipse cx="300" cy="130" rx="28" ry="48" fill="url(#cellGradient4)" transform="rotate(-10 300 130)" opacity="0.9"/>
+  <ellipse cx="295" cy="125" rx="20" ry="36" fill="url(#cellGradient4)" transform="rotate(-10 295 125)" opacity="0.7"/>
+  
+  <!-- Connecting flow lines -->
+  <path d="M 85 120 Q 100 105 120 110" stroke="url(#cellGradient1)" stroke-width="3" fill="none" opacity="0.6"/>
+  <path d="M 150 110 Q 165 125 180 125" stroke="url(#cellGradient2)" stroke-width="3" fill="none" opacity="0.6"/>
+  <path d="M 215 125 Q 225 115 240 115" stroke="url(#cellGradient3)" stroke-width="3" fill="none" opacity="0.6"/>
+  <path d="M 272 115 Q 285 130 300 130" stroke="url(#cellGradient2)" stroke-width="3" fill="none" opacity="0.6"/>
+  
+  <!-- Main title "We" -->
+  <text x="50" y="70" font-family="'Playfair Display', serif" font-size="48" font-weight="600" 
+        fill="url(#textGradient)" filter="url(#dropshadow)">We</text>
+  
+  <!-- Main title "WARRIORS" -->
+  <text x="60" y="180" font-family="'Playfair Display', serif" font-size="42" font-weight="700" 
+        fill="url(#textGradient)" filter="url(#dropshadow)" letter-spacing="2px">WARRIORS</text>
+  
+  <!-- Decorative elements -->
+  <!-- Small accent cells -->
+  <circle cx="30" cy="90" r="8" fill="url(#cellGradient1)" opacity="0.6"/>
+  <circle cx="45" cy="75" r="6" fill="url(#cellGradient4)" opacity="0.5"/>
+  <circle cx="330" cy="90" r="10" fill="url(#cellGradient4)" opacity="0.6"/>
+  <circle cx="350" cy="110" r="7" fill="url(#cellGradient1)" opacity="0.5"/>
+  
+  <!-- Subtle strength symbol -->
+  <path d="M 320 60 L 330 45 L 340 60 L 335 65 L 325 65 Z" fill="url(#cellGradient4)" opacity="0.4"/>
+</svg>
