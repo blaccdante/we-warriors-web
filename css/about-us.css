@@ -1,0 +1,668 @@
+/* About Us Page Styles */
+
+/* Hero Section */
+.hero-about {
+    background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+    padding: 120px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 30% 20%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(255, 107, 107, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+    color: #1a202c;
+    text-shadow: 
+        2px 2px 4px rgba(255, 255, 255, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.6),
+        1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    text-shadow: 
+        1px 1px 2px rgba(255, 255, 255, 0.8),
+        0 0 15px rgba(255, 255, 255, 0.5),
+        1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: #2d3748;
+    font-style: italic;
+    font-weight: 600;
+    text-shadow: 
+        1px 1px 2px rgba(255, 255, 255, 0.8),
+        0 0 10px rgba(255, 255, 255, 0.4),
+        1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Founder Story Section */
+.founder-story-section {
+    padding: 80px 0;
+    background: var(--bg-primary);
+}
+
+.founder-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.founder-intro {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.founder-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+}
+
+.founder-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border-color);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    font-family: 'Playfair Display', serif;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 0.5rem;
+}
+
+.founder-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-placeholder {
+    width: 300px;
+    height: 400px;
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    border: 2px dashed var(--border-color);
+    font-style: italic;
+}
+
+.founder-photo {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.founder-photo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+}
+
+/* Mission & Vision Section */
+.mission-vision-section {
+    padding: 80px 0;
+    background: var(--bg-secondary);
+}
+
+.mission-vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mission-card,
+.vision-card {
+    text-align: center;
+    padding: 3rem 2rem;
+    position: relative;
+}
+
+.card-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.mission-card h3,
+.vision-card h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.mission-card p,
+.vision-card p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+/* Technology Section */
+.technology-section {
+    padding: 80px 0;
+    background: var(--bg-primary);
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.tech-card {
+    text-align: center;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+}
+
+.tech-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.tech-card h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.tech-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Impact Section */
+.impact-section {
+    padding: 80px 0;
+    background: var(--bg-secondary);
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.impact-card {
+    padding: 2rem;
+}
+
+.impact-card h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.impact-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.impact-card li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.impact-card li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.impact-card li:last-child {
+    border-bottom: none;
+}
+
+/* Values Section */
+.values-section {
+    padding: 80px 0;
+    background: var(--bg-primary);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.value-item {
+    text-align: center;
+    padding: 2rem;
+    background: var(--bg-secondary);
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.value-item h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.value-item p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--accent-color), #D2691E);
+    color: white;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-buttons .btn {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 180px;
+}
+
+.btn-modern-primary {
+    background: white;
+    color: var(--accent-color);
+    border: 2px solid white;
+}
+
+.btn-modern-primary:hover {
+    background: transparent;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-modern-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-modern-secondary:hover {
+    background: white;
+    color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .founder-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .mission-vision-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .founder-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-about {
+        padding: 100px 0 60px;
+    }
+    
+    .founder-story-section,
+    .mission-vision-section,
+    .technology-section,
+    .impact-section,
+    .values-section,
+    .cta-section {
+        padding: 60px 0;
+    }
+    
+    .founder-stats {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* COMPREHENSIVE DARK MODE STYLES */
+
+/* Dark Mode Hero */
+[data-theme="dark"] .hero-about {
+    background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+}
+
+[data-theme="dark"] .hero-about::before {
+    background: 
+        radial-gradient(circle at 30% 20%, rgba(255, 107, 107, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+}
+
+[data-theme="dark"] .hero-title {
+    color: var(--text-primary);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .hero-subtitle {
+    color: var(--accent-color);
+}
+
+[data-theme="dark"] .hero-description {
+    color: var(--text-secondary);
+}
+
+/* Dark Mode Sections */
+[data-theme="dark"] .founder-story-section {
+    background: var(--bg-primary);
+}
+
+[data-theme="dark"] .mission-vision-section {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .technology-section {
+    background: var(--bg-primary);
+}
+
+[data-theme="dark"] .impact-section {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .values-section {
+    background: var(--bg-primary);
+}
+
+/* Dark Mode Text Colors */
+[data-theme="dark"] .section-title {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .section-subtitle {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .founder-intro {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .founder-text p {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .stat-number {
+    color: var(--accent-color);
+}
+
+[data-theme="dark"] .stat-label {
+    color: var(--text-muted);
+}
+
+/* Dark Mode Cards */
+[data-theme="dark"] .mission-card,
+[data-theme="dark"] .vision-card {
+    background: var(--bg-glass) !important;
+    backdrop-filter: var(--backdrop-blur) !important;
+    -webkit-backdrop-filter: var(--backdrop-blur) !important;
+    border: 1px solid var(--border-glass) !important;
+    box-shadow: var(--shadow-glass) !important;
+}
+
+[data-theme="dark"] .mission-card h3,
+[data-theme="dark"] .vision-card h3 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .mission-card p,
+[data-theme="dark"] .vision-card p {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .tech-card {
+    background: var(--bg-glass) !important;
+    backdrop-filter: var(--backdrop-blur) !important;
+    -webkit-backdrop-filter: var(--backdrop-blur) !important;
+    border: 1px solid var(--border-glass) !important;
+    box-shadow: var(--shadow-glass) !important;
+}
+
+[data-theme="dark"] .tech-card h4 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .tech-card p {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .impact-card {
+    background: var(--bg-glass) !important;
+    backdrop-filter: var(--backdrop-blur) !important;
+    -webkit-backdrop-filter: var(--backdrop-blur) !important;
+    border: 1px solid var(--border-glass) !important;
+    box-shadow: var(--shadow-glass) !important;
+}
+
+[data-theme="dark"] .impact-card h4 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .impact-card li {
+    color: var(--text-secondary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .impact-card li:before {
+    color: var(--accent-color);
+}
+
+[data-theme="dark"] .value-item {
+    background: var(--bg-tertiary) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .value-item:hover {
+    background: var(--bg-glass) !important;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4) !important;
+    transform: translateY(-3px);
+}
+
+[data-theme="dark"] .value-item h4 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .value-item p {
+    color: var(--text-secondary);
+}
+
+/* Dark Mode Image Placeholder & Founder Photo */
+[data-theme="dark"] .image-placeholder {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .founder-photo {
+    border-color: var(--border-color);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .founder-photo:hover {
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.6);
+}
+
+/* Dark Mode Founder Stats Border */
+[data-theme="dark"] .founder-stats {
+    border-color: var(--border-color);
+}
+
+/* Dark Mode CTA Section */
+[data-theme="dark"] .cta-section {
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary)) !important;
+}
+
+/* Dark Mode Button Adjustments */
+[data-theme="dark"] .btn-modern-primary {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 2px solid var(--accent-color);
+}
+
+[data-theme="dark"] .btn-modern-primary:hover {
+    background: var(--accent-color);
+    color: white;
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+}
+
+[data-theme="dark"] .btn-modern-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--text-primary);
+}
+
+[data-theme="dark"] .btn-modern-secondary:hover {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    box-shadow: 0 8px 25px rgba(240, 246, 252, 0.2);
+}

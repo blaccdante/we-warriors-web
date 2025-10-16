@@ -115,10 +115,21 @@
         display: none;
     }
     
-    /* Hide specific desktop nav items from mobile */
+    /* Mobile view: Hide desktop dropdowns and show mobile items */
     @media (max-width: 768px) {
-        .nav-item:nth-child(4) { /* This targets the Contact nav item */
+        /* Hide desktop dropdown navigation */
+        .nav-item.dropdown {
             display: none !important;
+        }
+        
+        /* Hide desktop single nav items */
+        .nav-item:not(.mobile-nav-item) {
+            display: none !important;
+        }
+        
+        /* Show mobile nav items */
+        .nav-item.mobile-nav-item {
+            display: block !important;
         }
     }
 
@@ -197,14 +208,14 @@
     position: absolute;
     top: calc(100% + 0.75rem);
     left: 0;
-    background: var(--dropdown-bg);
+    background: #ffffff;
     border-radius: 20px;
     padding: 1rem 0;
     min-width: 280px;
     box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.08),
-        0 8px 16px rgba(0, 0, 0, 0.04),
-        0 0 0 1px rgba(255, 255, 255, 0.1);
+        0 20px 40px rgba(0, 0, 0, 0.15),
+        0 8px 16px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(255, 107, 107, 0.1);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-15px) scale(0.92);
@@ -212,7 +223,7 @@
     z-index: 1002;
     list-style: none;
     margin: 0;
-    backdrop-filter: blur(30px) saturate(180%);
+    backdrop-filter: none;
     border: 1px solid rgba(255, 107, 107, 0.08);
     overflow: hidden;
 }
@@ -226,7 +237,7 @@
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--dropdown-bg);
+    border-bottom: 8px solid #ffffff;
 }
 
 .nav-item:hover .dropdown-menu {
@@ -479,7 +490,7 @@ body.mobile-menu-open {
 }
 
 [data-theme="dark"] .dropdown-menu::before {
-    border-bottom-color: #2D3748;
+    border-bottom-color: #1a1a1a;
 }
 
 [data-theme="dark"] .nav-link:hover {
@@ -535,6 +546,134 @@ body.mobile-menu-open {
 }
 
 @media (max-width: 768px) {
+    /* NUCLEAR MOBILE MENU RESET - FORCE IDENTICAL STYLING */
+    .mobile-nav-item,
+    [data-theme="dark"] .mobile-nav-item,
+    [data-theme="light"] .mobile-nav-item {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: none !important;
+    }
+    
+    .mobile-nav-item .nav-link {
+        display: block !important;
+        width: 100% !important;
+        padding: 12px 16px !important;
+        margin: 0 0 4px 0 !important;
+        /* Light mode: dark text for good visibility */
+        color: #111827 !important;
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        text-align: left !important;
+        text-decoration: none !important;
+        background: transparent !important;
+        border: none !important;
+        border-radius: 8px !important;
+        position: relative !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Dark mode text colors */
+    [data-theme="dark"] .mobile-nav-item .nav-link {
+        color: rgba(255, 255, 255, 0.95) !important;
+    }
+    
+    /* FORCE CATEGORY STYLING */
+    .mobile-category,
+    [data-theme="dark"] .mobile-category,
+    [data-theme="light"] .mobile-category {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 0 8px 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: none !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    /* FORCE CATEGORY TOGGLE STYLING */
+    .mobile-category-toggle {
+        display: block !important;
+        width: 100% !important;
+        padding: 12px 40px 12px 16px !important;
+        margin: 0 !important;
+        /* Light mode: dark text */
+        color: #111827 !important;
+        font-size: 16px !important;
+        font-weight: 400 !important;
+        text-align: left !important;
+        text-decoration: none !important;
+        background: transparent !important;
+        border: none !important;
+        border-radius: 8px !important;
+        position: relative !important;
+        box-sizing: border-box !important;
+        cursor: pointer !important;
+    }
+    
+    /* Dark mode category toggle */
+    [data-theme="dark"] .mobile-category-toggle {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+    
+    /* FORCE SUBMENU STYLING */
+    .mobile-submenu,
+    [data-theme="dark"] .mobile-submenu,
+    [data-theme="light"] .mobile-submenu {
+        display: none !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 8px 0 !important;
+        /* Light default: soft inner panel */
+        background: rgba(255, 255, 255, 0.08) !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    }
+    
+    .mobile-category.active .mobile-submenu,
+    [data-theme="dark"] .mobile-category.active .mobile-submenu,
+    [data-theme="light"] .mobile-category.active .mobile-submenu {
+        display: block !important;
+    }
+    
+    /* FORCE SUBMENU LINK STYLING */
+    .mobile-submenu-link {
+        display: block !important;
+        width: 100% !important;
+        padding: 8px 32px !important;
+        margin: 0 !important;
+        /* Light mode: dark text */
+        color: #4b5563 !important;
+        font-size: 14px !important;
+        font-weight: 300 !important;
+        text-align: left !important;
+        text-decoration: none !important;
+        background: transparent !important;
+        border: none !important;
+        border-left: 3px solid transparent !important;
+        transition: all 0.3s ease !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Dark mode submenu links */
+    [data-theme="dark"] .mobile-submenu-link {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+    
+    /* Hover states */
+    .mobile-submenu-link:hover {
+        background: rgba(0, 0, 0, 0.05) !important;
+        border-left-color: var(--primary-color) !important;
+        color: var(--primary-color) !important;
+    }
+    
+    [data-theme="dark"] .mobile-submenu-link:hover {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-left-color: var(--primary-color) !important;
+        color: white !important;
+    }
     :root {
         --header-height: 70px;
     }
@@ -547,16 +686,21 @@ body.mobile-menu-open {
         width: 320px !important;
         max-width: 85vw !important;
         height: 100vh !important;
-        background: linear-gradient(145deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+        /* Light mode: light background with good contrast */
+        background: linear-gradient(145deg, #e2e8f0 0%, #cbd5e1 50%, #94a3b8 100%) !important; /* slate-200 -> slate-300 -> slate-400 */
         transform: translateX(100%) !important;
         transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
         z-index: 999999 !important;
         display: flex !important;
         flex-direction: column !important;
         padding: 4rem 2rem 2rem 2rem !important;
-        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.4) !important;
+        box-shadow: -10px 0 40px rgba(2, 6, 23, 0.5) !important; /* slate shadow */
         overflow-y: auto !important;
-        backdrop-filter: blur(20px) !important;
+        backdrop-filter: blur(20px) saturate(140%) !important;
+        border-left: 1px solid rgba(255, 255, 255, 0.15) !important;
+        /* Force complete opacity */
+        opacity: 1 !important;
+        visibility: visible !important;
     }
     
     /* Show mobile menu when active */
@@ -583,28 +727,6 @@ body.mobile-menu-open {
         font-size: 1.25rem;
     }
     
-    /* Mobile Navigation - Slide from right */
-    .header-nav {
-        position: fixed !important;
-        top: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-        width: 300px !important;
-        max-width: 80vw !important;
-        background: rgba(30, 41, 59, 0.95) !important;
-        backdrop-filter: blur(15px) !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-start !important;
-        align-items: flex-start !important;
-        padding: 2rem 1.5rem !important;
-        gap: 0 !important;
-        z-index: 999999 !important;
-        overflow-y: auto !important;
-        transform: translateX(100%) !important;
-        transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
-        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3) !important;
-    }
     
     .header-nav.active {
         transform: translateX(0) !important;
@@ -676,54 +798,225 @@ body.mobile-menu-open {
         display: none !important;
     }
     
-    /* Clean and simple mobile nav items */
+    /* Clean and simple mobile nav items - COMPACT */
     .mobile-nav-item {
         display: block !important;
         width: 100% !important;
-        margin-bottom: 0.25rem !important;
+        margin-bottom: 0.15rem !important;
+    }
+    
+    /* Ensure mobile categories are visible - CLEAN STYLING */
+    .mobile-nav-item.mobile-category {
+        display: block !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        margin-bottom: 0.3rem !important;
+        border-radius: 8px !important;
+    }
+    
+    /* Mobile category toggle styling - CONSISTENT WITH LIGHT MODE */
+    .mobile-category-toggle {
+        position: relative !important;
+        padding-right: 2.5rem !important;
+        text-align: left !important;
+        justify-content: flex-start !important;
+        display: flex !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+    
+    /* Mobile category arrows - Base positioning for ALL themes */
+    .mobile-category-toggle::after,
+    [data-theme="dark"] .mobile-category-toggle::after,
+    [data-theme="light"] .mobile-category-toggle::after {
+        content: '▼' !important;
+        position: absolute !important;
+        right: 1rem !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        font-size: 0.9rem !important;
+        transition: transform 0.3s ease, color 0.3s ease !important;
+        font-weight: normal !important;
+        z-index: 10 !important;
+        /* Light mode color */
+        color: #6b7280 !important;
+    }
+    
+    /* NUCLEAR OPTION - Dark mode arrows with maximum specificity */
+    html[data-theme="dark"] body .universal-header .header-nav .mobile-nav-item.mobile-category .mobile-category-toggle::after,
+    html[data-theme="dark"] .universal-header .header-nav .mobile-category-toggle::after,
+    [data-theme="dark"] .mobile-category-toggle::after {
+        content: '▼' !important;
+        position: absolute !important;
+        right: 1rem !important;
+        left: auto !important;
+        top: 50% !important;
+        bottom: auto !important;
+        transform: translateY(-50%) !important;
+        font-size: 0.9rem !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+        font-weight: normal !important;
+        z-index: 1000 !important;
+        display: inline-block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: center !important;
+        width: auto !important;
+        height: auto !important;
+        line-height: 1 !important;
+        background: transparent !important;
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        outline: none !important;
+    }
+    
+    /* Active/expanded arrows - ALL themes get same rotation */
+    .mobile-category.active .mobile-category-toggle::after,
+    [data-theme="dark"] .mobile-category.active .mobile-category-toggle::after,
+    [data-theme="light"] .mobile-category.active .mobile-category-toggle::after {
+        transform: translateY(-50%) rotate(180deg) !important;
+    }
+    
+    /* Active colors - Light mode */
+    .mobile-category.active .mobile-category-toggle::after {
+        color: var(--primary-color) !important; /* Red accent when expanded */
+    }
+    
+    /* Active colors - Dark mode */
+    [data-theme="dark"] .mobile-category.active .mobile-category-toggle::after {
+        color: #FFD700 !important; /* Gold accent in dark mode */
+    }
+    
+    /* Mobile submenu styling - CRITICAL - FORCE VISIBILITY */
+    .mobile-submenu {
+        display: none !important;
+        background: rgba(0, 0, 0, 0.2) !important;
+        padding: 0.5rem 0 !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-left: 2px solid var(--primary-color) !important;
+        margin-left: 1rem !important;
+    }
+    
+    .mobile-category.active .mobile-submenu {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .mobile-submenu-link {
+        display: block !important;
+        padding: 0.6rem 1.5rem !important;
+        /* Light mode: dark gray text */
+        color: #4b5563 !important;
+        text-decoration: none !important;
+        font-size: 0.9rem !important;
+        transition: all 0.3s ease !important;
+        border-left: 3px solid transparent !important;
+        text-align: left !important;
+        margin-bottom: 0.1rem !important;
+    }
+    
+    [data-theme="dark"] .mobile-submenu-link {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+    
+    .mobile-submenu-link:hover {
+        background: rgba(0, 0, 0, 0.05) !important;
+        border-left-color: var(--primary-color) !important;
+        padding-left: 1.75rem !important;
+        color: var(--primary-color) !important;
+    }
+    
+    [data-theme="dark"] .mobile-submenu-link:hover {
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-left-color: var(--primary-color) !important;
+        padding-left: 1.75rem !important;
+        color: white !important;
     }
     
     .mobile-nav-item .nav-link {
-        display: block !important;
+        display: flex !important;
         width: 100% !important;
-        padding: 1rem 1.5rem !important;
-        color: rgba(255, 255, 255, 0.9) !important;
+        padding: 0.75rem 1rem !important;
+        /* Light mode: dark text */
+        color: #111827 !important;
         font-size: 1rem !important;
         font-weight: 400 !important;
         text-align: left !important;
-        border-radius: 12px !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        border-radius: 8px !important;
         transition: all 0.2s ease !important;
         background: transparent !important;
         border: none !important;
         text-decoration: none !important;
         position: relative !important;
+        margin-bottom: 0.25rem !important;
+    }
+    
+    /* Dark mode nav link colors */
+    [data-theme="dark"] .mobile-nav-item .nav-link {
+        color: rgba(255, 255, 255, 0.9) !important;
     }
     
     .mobile-nav-item .nav-link:hover {
+        /* Light mode hover */
+        background: rgba(0, 0, 0, 0.05) !important;
+        color: var(--primary-color) !important;
+        transform: translateX(4px) !important;
+    }
+    
+    [data-theme="dark"] .mobile-nav-item .nav-link:hover {
         background: rgba(255, 255, 255, 0.08) !important;
         color: white !important;
         transform: translateX(4px) !important;
     }
     
-    /* Remove any active state from mobile nav items */
+    /* Remove any active state from mobile nav items - Light Mode */
     .mobile-nav-item .nav-link.active,
     .mobile-nav-item .nav-link:active,
     .mobile-nav-item .nav-link:focus {
+        background: transparent !important;
+        color: #111827 !important;
+        transform: none !important;
+    }
+    
+    /* Dark mode active states */
+    [data-theme="dark"] .mobile-nav-item .nav-link.active,
+    [data-theme="dark"] .mobile-nav-item .nav-link:active,
+    [data-theme="dark"] .mobile-nav-item .nav-link:focus {
         background: transparent !important;
         color: rgba(255, 255, 255, 0.9) !important;
         transform: none !important;
     }
     
-    /* Specifically override Home link highlighting */
+    /* Home link styling - Light Mode */
     .mobile-nav-item:first-child .nav-link,
     .mobile-nav-item a[href="index.html"],
     .mobile-nav-item a[href="#home"] {
         background: transparent !important;
+        color: #111827 !important;
+    }
+    
+    /* Dark mode home link */
+    [data-theme="dark"] .mobile-nav-item:first-child .nav-link,
+    [data-theme="dark"] .mobile-nav-item a[href="index.html"],
+    [data-theme="dark"] .mobile-nav-item a[href="#home"] {
+        background: transparent !important;
         color: rgba(255, 255, 255, 0.9) !important;
     }
     
-    /* Ensure no special styling for first mobile nav item */
+    /* First nav item hover - Light Mode */
     .mobile-nav-item:first-child .nav-link:hover {
+        background: rgba(0, 0, 0, 0.05) !important;
+        color: var(--primary-color) !important;
+    }
+    
+    /* Dark mode first nav item hover */
+    [data-theme="dark"] .mobile-nav-item:first-child .nav-link:hover {
         background: rgba(255, 107, 107, 0.15) !important;
         color: white !important;
     }
@@ -757,9 +1050,15 @@ body.mobile-menu-open {
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
-        color: rgba(255, 255, 255, 0.9) !important;
+        /* Light mode: dark text for visibility */
+        color: #111827 !important;
         font-size: 1rem !important;
         font-weight: 400 !important;
+    }
+    
+    /* Dark mode theme toggle */
+    [data-theme="dark"] .mobile-theme-toggle {
+        color: rgba(255, 255, 255, 0.9) !important;
     }
     
     .mobile-theme-switch {
@@ -864,30 +1163,45 @@ body.mobile-menu-open {
     .mobile-donate-btn {
         background: linear-gradient(135deg, var(--primary-color), #C53030) !important;
         color: white !important;
-        box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3) !important;
+        box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4) !important;
         border: none !important;
+        font-weight: 600 !important;
     }
     
     .mobile-donate-btn:hover {
         background: linear-gradient(135deg, #C53030, #A02828) !important;
         transform: translateY(-3px) !important;
-        box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4) !important;
+        box-shadow: 0 6px 25px rgba(255, 107, 107, 0.5) !important;
         color: white !important;
     }
     
     .mobile-get-involved-btn {
-        background: rgba(255, 255, 255, 0.1) !important;
+        /* Light mode: semi-transparent white glass effect on blue */
+        background: rgba(255, 255, 255, 0.15) !important;
         color: white !important;
-        border: 2px solid rgba(255, 255, 255, 0.3) !important;
+        border: 2px solid rgba(255, 255, 255, 0.35) !important;
         backdrop-filter: blur(10px) !important;
+        font-weight: 500 !important;
     }
     
     .mobile-get-involved-btn:hover {
-        background: rgba(255, 255, 255, 0.2) !important;
-        border-color: rgba(255, 255, 255, 0.6) !important;
+        background: rgba(255, 255, 255, 0.25) !important;
+        border-color: rgba(255, 255, 255, 0.65) !important;
         color: white !important;
         transform: translateY(-3px) !important;
-        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1) !important;
+        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15) !important;
+    }
+    
+    /* Dark mode action button overrides */
+    [data-theme="dark"] .mobile-get-involved-btn {
+        background: rgba(255, 255, 255, 0.08) !important;
+        border-color: rgba(255, 255, 255, 0.2) !important;
+    }
+    
+    [data-theme="dark"] .mobile-get-involved-btn:hover {
+        background: rgba(255, 255, 255, 0.15) !important;
+        border-color: rgba(255, 255, 255, 0.4) !important;
+        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.08) !important;
     }
     
     /* Header Actions - Mobile only hamburger */
@@ -901,9 +1215,11 @@ body.mobile-menu-open {
         box-shadow: none !important;
     }
     
-    /* Hide theme toggle on mobile, show hamburger */
+    /* Hide desktop theme toggle on mobile - FORCE HIDE */
     .theme-toggle {
-        display: none;
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
     }
     
     /* Mobile Menu Toggle - Minimal clean button */
@@ -960,21 +1276,55 @@ body.mobile-menu-open {
         transform-origin: center !important;
     }
     
-    /* Clean dark theme adaptations */
+    /* Dark theme mobile menu styling */
     [data-theme="dark"] .header-nav {
-        background: linear-gradient(145deg, #0a0a0a 0%, #1a1a1a 100%) !important;
+        /* Dark mode: solid beautiful black gradient */
+        background: linear-gradient(140deg, #0a0a0f 0%, #0f1115 30%, #111827 70%, #1f2937 100%) !important;
+        backdrop-filter: blur(20px) saturate(120%) !important;
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8) !important;
+        border-left: 1px solid rgba(255, 255, 255, 0.08) !important;
+    }
+
+    /* Dark mode submenu surface */
+    [data-theme="dark"] .mobile-submenu {
+        background: rgba(255, 255, 255, 0.04) !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
     }
     
-    [data-theme="dark"] .mobile-nav-item .nav-link:hover {
-        background: rgba(255, 215, 0, 0.08) !important;
+    /* Ensure mobile menu items are visible and styled correctly in dark mode */
+    [data-theme="dark"] .mobile-nav-item .nav-link,
+    [data-theme="dark"] .mobile-category-toggle {
+        color: rgba(255, 255, 255, 0.9) !important;
+    }
+    
+    [data-theme="dark"] .mobile-nav-item .nav-link:hover,
+    [data-theme="dark"] .mobile-category-toggle:hover {
         color: var(--gold-accent) !important;
+        background: rgba(255, 215, 0, 0.1) !important;
+    }
+    
+    [data-theme="dark"] .mobile-submenu-link {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+    
+    [data-theme="dark"] .mobile-submenu-link:hover {
+        color: var(--gold-accent) !important;
+        background: rgba(255, 215, 0, 0.1) !important;
     }
     
     [data-theme="dark"] .mobile-theme-switch.active {
         background: var(--gold-accent) !important;
     }
     
-    /* Dark theme */
+    [data-theme="dark"] .mobile-theme-toggle {
+        color: var(--text-light) !important;
+    }
+    
+    /* Dark mode - NO OVERRIDES, uses exact same mobile layout as light mode */
+    
+    /* Mobile action buttons - use same styling in both light and dark mode */
+    
+    /* Desktop theme toggle in dark mode */
     [data-theme="dark"] .theme-toggle {
         color: var(--text-light);
         background: rgba(255, 215, 0, 0.1);
@@ -982,8 +1332,11 @@ body.mobile-menu-open {
     }
     
     [data-theme="dark"] .mobile-menu-toggle {
-        background: rgba(255, 215, 0, 0.1);
-        border-color: rgba(255, 215, 0, 0.6);
+        background: rgba(255, 215, 0, 0.1) !important;
+        border: 1px solid rgba(255, 215, 0, 0.6) !important;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
     
     [data-theme="dark"] .mobile-menu-toggle:hover {
@@ -992,9 +1345,11 @@ body.mobile-menu-open {
     }
     
     [data-theme="dark"] .hamburger-line {
-        background: var(--gold-accent);
+        background: var(--gold-accent) !important;
+        box-shadow: 0 0 3px rgba(255, 215, 0, 0.5) !important;
     }
 }
+
 
 @media (max-width: 480px) {
     :root {
@@ -1096,12 +1451,23 @@ body.mobile-menu-open {
     border-radius: 12px !important;
 }
 
-/* Force dropdown visibility */
+/* Force dropdown visibility and solid background */
 .universal-header .nav-item:hover .dropdown-menu {
     opacity: 1 !important;
     visibility: visible !important;
     display: block !important;
     transform: translateY(0) scale(1) !important;
+}
+
+/* Override theme optimization - Force solid dropdown backgrounds */
+.universal-header .dropdown-menu {
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+}
+
+[data-theme="dark"] .universal-header .dropdown-menu {
+    background: #1a1a1a !important;
+    backdrop-filter: none !important;
 }
 
 /* Global link override for entire header */

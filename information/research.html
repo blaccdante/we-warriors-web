@@ -5,581 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Latest sickle cell disease research breakthroughs, clinical trials, gene therapy advances, and future treatment developments">
     <meta name="keywords" content="sickle cell research, gene therapy, clinical trials, CRISPR, cure research, medical breakthroughs">
-    <meta name="author" content="We Warriors Organization">
     
     <title>Latest Research & Clinical Trials - We Warriors</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1964650693892617" crossorigin="anonymous"></script>
     
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/accessibility.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/modern-slideshow.css">
+    <link rel="stylesheet" href="../css/modern-homepage.css">
+    <link rel="stylesheet" href="../css/theme-optimization.css">
     <link rel="stylesheet" href="../css/universal-header.css">
-    
-    <!-- Modern Dual-Theme Research System -->
-    <style>
-        /* Perfect Dual-Theme Hero System */
-        .page-hero.modern-hero {
-            position: relative;
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-        }
-        
-        /* Hero Background Layers */
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 1;
-        }
-        
-        .hero-gradient {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, 
-                rgba(255, 255, 255, 0.98) 0%, 
-                rgba(248, 249, 250, 0.95) 30%, 
-                rgba(255, 248, 240, 0.98) 70%, 
-                rgba(255, 255, 255, 0.95) 100%);
-        }
-        
-        .hero-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(196, 30, 58, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.05) 0%, transparent 50%);
-            background-size: 300px 300px, 400px 400px, 500px 500px;
-            animation: patternMove 20s ease-in-out infinite;
-        }
-        
-        @keyframes patternMove {
-            0%, 100% { transform: translate(0, 0); }
-            25% { transform: translate(-10px, -10px); }
-            50% { transform: translate(10px, 10px); }
-            75% { transform: translate(-5px, 10px); }
-        }
-        
-        /* EXACT Original Dark Theme Override */
-        [data-theme="dark"] .hero-gradient {
-            background: linear-gradient(135deg, 
-                rgba(30, 30, 30, 0.95) 0%, 
-                rgba(45, 45, 45, 0.9) 30%, 
-                rgba(60, 60, 60, 0.95) 70%, 
-                rgba(30, 30, 30, 0.9) 100%) !important;
-        }
-        
-        [data-theme="dark"] .hero-pattern {
-            background-image: 
-                radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(196, 30, 58, 0.12) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.08) 0%, transparent 50%) !important;
-        }
-        
-        /* Light Theme - Research Laboratory Background */
-        [data-theme="light"] .hero-background {
-            background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        
-        [data-theme="light"] .hero-gradient {
-            background: linear-gradient(135deg, 
-                rgba(255, 255, 255, 0.96) 0%, 
-                rgba(248, 249, 250, 0.94) 30%, 
-                rgba(239, 246, 255, 0.96) 70%, 
-                rgba(255, 255, 255, 0.94) 100%);
-        }
-        
-        /* Content Styling */
-        .hero-container {
-            position: relative;
-            z-index: 2;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            width: 100%;
-        }
-        
-        .hero-content {
-            color: #f8fafc;
-            max-width: 800px;
-        }
-        
-        [data-theme="light"] .hero-content {
-            color: #0f172a;
-        }
-        
-        .breadcrumb {
-            margin-bottom: 2rem;
-        }
-        
-        .breadcrumb ol {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            font-size: 0.9rem;
-        }
-        
-        .breadcrumb li::after {
-            content: '/';
-            margin: 0 0.5rem;
-            color: rgba(248, 250, 252, 0.5);
-        }
-        
-        [data-theme="light"] .breadcrumb li::after {
-            color: rgba(30, 41, 59, 0.4);
-        }
-        
-        .breadcrumb li:last-child::after {
-            display: none;
-        }
-        
-        .breadcrumb a {
-            color: rgba(248, 250, 252, 0.8);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .breadcrumb a:hover {
-            color: #e2e8f0;
-        }
-        
-        [data-theme="light"] .breadcrumb a {
-            color: var(--blood-color) !important;
-        }
-        
-        [data-theme="light"] .breadcrumb a:hover {
-            color: var(--blood-light) !important;
-        }
-        
-        [data-theme="light"] .breadcrumb [aria-current="page"] {
-            color: var(--text-primary) !important;
-        }
-        
-        .page-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            margin: 0 0 1.5rem 0;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-            color: #f1f5f9;
-            text-shadow: 0 2px 8px rgba(15, 23, 42, 0.4);
-        }
-        
-        [data-theme="light"] .page-title {
-            color: var(--blood-color) !important;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
-            font-weight: 700 !important;
-            opacity: 1 !important;
-        }
-        
-        .page-subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-            margin: 0;
-            color: rgba(226, 232, 240, 0.9);
-            font-weight: 400;
-            line-height: 1.6;
-        }
-        
-        [data-theme="light"] .page-subtitle {
-            color: var(--text-primary) !important;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5) !important;
-            font-weight: 500 !important;
-            opacity: 1 !important;
-        }
-        
-        /* Research Visual Elements */
-        .hero-visual {
-            position: absolute;
-            right: 2rem;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 300px;
-            height: 300px;
-            pointer-events: none;
-        }
-        
-        .floating-elements {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .float-element {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-        
-        .float-element.hope {
-            width: 60px;
-            height: 60px;
-            top: 20%;
-            left: 20%;
-            animation: float-hope 8s ease-in-out infinite;
-            background: rgba(59, 130, 246, 0.2);
-        }
-        
-        .float-element.faith {
-            width: 40px;
-            height: 40px;
-            top: 60%;
-            right: 30%;
-            animation: float-faith 10s ease-in-out infinite;
-            background: rgba(16, 185, 129, 0.2);
-        }
-        
-        .float-element.strength {
-            width: 80px;
-            height: 80px;
-            bottom: 20%;
-            left: 40%;
-            animation: float-strength 12s ease-in-out infinite;
-            background: rgba(139, 0, 0, 0.2);
-        }
-        
-        [data-theme="light"] .float-element {
-            background: rgba(0, 0, 0, 0.05);
-        }
-        
-        [data-theme="light"] .float-element.hope {
-            background: rgba(59, 130, 246, 0.1);
-        }
-        
-        [data-theme="light"] .float-element.faith {
-            background: rgba(16, 185, 129, 0.1);
-        }
-        
-        [data-theme="light"] .float-element.strength {
-            background: rgba(139, 0, 0, 0.1);
-        }
-        
-        @keyframes float-hope {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-25px) rotate(180deg); }
-        }
-        
-        @keyframes float-faith {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(-180deg); }
-        }
-        
-        @keyframes float-strength {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-30px) rotate(90deg); }
-        }
-        
-        /* Modern Page Content */
-        .page-content {
-            padding: 4rem 0;
-            background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
-        }
-        
-        [data-theme="dark"] .page-content {
-            background: linear-gradient(180deg, var(--background-primary) 0%, var(--background-secondary) 100%) !important;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        /* Modern Card Styling */
-        .content-card {
-            background: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            margin-bottom: 3rem;
-            overflow: hidden;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-        
-        [data-theme="dark"] .content-card {
-            background: var(--card-background) !important;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
-            border: 1px solid var(--border-primary) !important;
-        }
-        
-        .card-header {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            padding: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        
-        [data-theme="dark"] .card-header {
-            background: linear-gradient(135deg, var(--background-secondary) 0%, var(--background-tertiary) 100%) !important;
-            border-bottom: 1px solid var(--border-primary) !important;
-        }
-        
-        .card-icon {
-            font-size: 2.5rem;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        [data-theme="dark"] .card-icon {
-            background: var(--background-primary) !important;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
-        }
-        
-        .card-title {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin: 0;
-            color: var(--blood-color);
-            letter-spacing: -0.01em;
-        }
-        
-        [data-theme="dark"] .card-title {
-            color: var(--text-primary) !important;
-        }
-        
-        .card-content {
-            padding: 2.5rem;
-        }
-        
-        .intro-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #475569;
-            margin-bottom: 2rem;
-            font-weight: 400;
-        }
-        
-        [data-theme="dark"] .intro-text {
-            color: var(--text-secondary) !important;
-        }
-        
-        .card-content h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin: 2.5rem 0 1.5rem 0;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--blood-color);
-        }
-        
-        /* Research-Specific Styles */
-        .research-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .research-item {
-            background: #f8fafc;
-            padding: 2rem;
-            border-radius: 12px;
-            border-left: 4px solid var(--blood-color);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        [data-theme="dark"] .research-item {
-            background: var(--background-tertiary) !important;
-            border-left-color: var(--blood-light) !important;
-        }
-        
-        .research-status {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-        
-        .research-status.breakthrough {
-            background: #dcfce7;
-            color: #166534;
-        }
-        
-        .research-status.ongoing {
-            background: #fef3c7;
-            color: #92400e;
-        }
-        
-        .research-status.phase-3 {
-            background: #dbeafe;
-            color: #1e40af;
-        }
-        
-        [data-theme="dark"] .research-status.breakthrough {
-            background: rgba(16, 185, 129, 0.2) !important;
-            color: #10b981 !important;
-        }
-        
-        [data-theme="dark"] .research-status.ongoing {
-            background: rgba(245, 158, 11, 0.2) !important;
-            color: #f59e0b !important;
-        }
-        
-        [data-theme="dark"] .research-status.phase-3 {
-            background: rgba(59, 130, 246, 0.2) !important;
-            color: #3b82f6 !important;
-        }
-        
-        .timeline {
-            position: relative;
-            margin: 2rem 0;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 2rem;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--blood-color);
-        }
-        
-        .timeline-item {
-            position: relative;
-            padding-left: 5rem;
-            margin-bottom: 3rem;
-        }
-        
-        .timeline-marker {
-            position: absolute;
-            left: 1rem;
-            top: 0;
-            width: 2rem;
-            height: 2rem;
-            background: var(--blood-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-        
-        .clinical-trial {
-            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-            border: 1px solid #93c5fd;
-            padding: 2rem;
-            border-radius: 12px;
-            margin: 1.5rem 0;
-        }
-        
-        [data-theme="dark"] .clinical-trial {
-            background: linear-gradient(135deg, var(--background-secondary) 0%, var(--background-tertiary) 100%) !important;
-            border-color: var(--border-primary) !important;
-        }
-        
-        .trial-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1rem;
-            font-size: 0.9rem;
-        }
-        
-        .trial-meta span {
-            background: rgba(59, 130, 246, 0.1);
-            color: #1e40af;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-        }
-        
-        [data-theme="dark"] .trial-meta span {
-            background: rgba(59, 130, 246, 0.2) !important;
-            color: #3b82f6 !important;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .hero-visual {
-                width: 250px;
-                height: 250px;
-                right: 1.5rem;
-            }
-            
-            .research-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .page-hero.modern-hero {
-                min-height: 60vh;
-                text-align: center;
-            }
-            
-            .hero-container {
-                padding: 3rem 1.5rem;
-            }
-            
-            .hero-visual {
-                display: none;
-            }
-            
-            .breadcrumb {
-                text-align: left;
-                margin-bottom: 1.5rem;
-            }
-            
-            .timeline-item {
-                padding-left: 4rem;
-            }
-            
-            .trial-meta {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .page-hero.modern-hero {
-                min-height: 50vh;
-            }
-            
-            .hero-container {
-                padding: 2rem 1rem;
-            }
-            
-            .breadcrumb {
-                font-size: 0.85rem;
-                margin-bottom: 1rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../css/information.css">
 </head>
-<body class="page-body">
+<body>
+    <!-- Skip to main content link for accessibility -->
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
     
     <!-- Universal Header -->
@@ -637,6 +84,9 @@
                             <a href="../community/forum.html" class="dropdown-link" role="menuitem">Forum</a>
                         </li>
                         <li class="dropdown-item" role="none">
+                            <a href="../community/warrior-stories.html" class="dropdown-link" role="menuitem">Warrior Stories</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
                             <a href="../community/blog.html" class="dropdown-link" role="menuitem">Blog</a>
                         </li>
                         <li class="dropdown-item" role="none">
@@ -648,8 +98,23 @@
                     </ul>
                 </div>
                 
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Professionals</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="../professionals/partnerships.html" class="dropdown-link" role="menuitem">Partnerships</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../professionals/researchers.html" class="dropdown-link" role="menuitem">Researchers</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../professionals/educators.html" class="dropdown-link" role="menuitem">Educators</a>
+                        </li>
+                    </ul>
+                </div>
+                
                 <div class="nav-item">
-                    <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact</a>
+                    <a href="../pages/about-us.html" class="nav-link" role="menuitem">About Us</a>
                 </div>
                 
                 <div class="nav-item">
@@ -669,41 +134,50 @@
                 <div class="nav-item mobile-nav-item">
                     <a href="../index.html" class="nav-link" role="menuitem">Home</a>
                 </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../support/about-sickle-cell.html" class="nav-link" role="menuitem">Living with Sickle Cell</a>
+                
+                <!-- Mobile Main Categories -->
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Support</a>
+                    <div class="mobile-submenu">
+                        <a href="../support/about-sickle-cell.html" class="mobile-submenu-link">Living with Sickle Cell</a>
+                        <a href="../support/support-groups.html" class="mobile-submenu-link">Support Groups</a>
+                        <a href="../support/counseling.html" class="mobile-submenu-link">Counseling Services</a>
+                        <a href="../support/resources.html" class="mobile-submenu-link">Resources</a>
+                    </div>
                 </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="what-is-sickle-cell.html" class="nav-link" role="menuitem">What is Sickle Cell</a>
+                
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Information</a>
+                    <div class="mobile-submenu">
+                        <a href="what-is-sickle-cell.html" class="mobile-submenu-link">What is Sickle Cell</a>
+                        <a href="types.html" class="mobile-submenu-link">Types of Sickle Cell</a>
+                        <a href="diagnosis-treatment.html" class="mobile-submenu-link">Diagnosis & Treatment</a>
+                        <a href="research.html" class="mobile-submenu-link">Research & Trials</a>
+                    </div>
                 </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="types.html" class="nav-link" role="menuitem">Types & Symptoms</a>
+                
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Community</a>
+                    <div class="mobile-submenu">
+                        <a href="../community/forum.html" class="mobile-submenu-link">Forum</a>
+                        <a href="../community/warrior-stories.html" class="mobile-submenu-link">Warrior Stories</a>
+                        <a href="../community/blog.html" class="mobile-submenu-link">Blog</a>
+                        <a href="../community/events.html" class="mobile-submenu-link">Events</a>
+                        <a href="../community/gallery.html" class="mobile-submenu-link">Gallery</a>
+                    </div>
                 </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="diagnosis-treatment.html" class="nav-link" role="menuitem">Diagnosis & Treatment</a>
+                
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Professionals</a>
+                    <div class="mobile-submenu">
+                        <a href="../professionals/partnerships.html" class="mobile-submenu-link">Partnerships</a>
+                        <a href="../professionals/researchers.html" class="mobile-submenu-link">Researchers</a>
+                        <a href="../professionals/educators.html" class="mobile-submenu-link">Educators</a>
+                    </div>
                 </div>
+                
                 <div class="nav-item mobile-nav-item">
-                    <a href="../support/support-groups.html" class="nav-link" role="menuitem">Support Groups</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../support/resources.html" class="nav-link" role="menuitem">Resources</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../support/counseling.html" class="nav-link" role="menuitem">Counseling</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../community/events.html" class="nav-link" role="menuitem">Events</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../community/blog.html" class="nav-link" role="menuitem">Blog</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="research.html" class="nav-link" role="menuitem">Research</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../pages/advocacy.html" class="nav-link" role="menuitem">Advocacy</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact Us</a>
+                    <a href="../pages/about-us.html" class="nav-link" role="menuitem">About Us</a>
                 </div>
                 
                 <!-- Action Buttons Last -->
@@ -713,76 +187,54 @@
                 <div class="nav-item mobile-nav-item mobile-action-item">
                     <a href="#get-involved" class="mobile-action-btn mobile-get-involved-btn">Get Involved</a>
                 </div>
+                
+                <!-- Desktop Theme Toggle -->
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
             </nav>
             
-            <!-- Header Actions -->
-            <div class="header-actions">
-                <!-- Theme Toggle (Desktop) -->
-                <button class="theme-toggle" aria-label="Toggle dark mode" aria-describedby="theme-status">
-                    <span class="theme-icon">☀</span>
-                    <span class="sr-only" id="theme-status">Current theme: light mode</span>
-                </button>
-                
-                <!-- Mobile Menu Toggle -->
-                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
         </div>
     </header>
 
-    <main id="main-content" role="main" class="modern-main">
-        
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
         <!-- Hero Section -->
-        <section class="page-hero modern-hero">
-            <div class="hero-background">
-                <div class="hero-gradient"></div>
-                <div class="hero-pattern"></div>
-            </div>
-            <div class="hero-container">
+        <section class="hero-information">
+            <div class="container">
                 <div class="hero-content">
-                    <nav class="breadcrumb modern-breadcrumb" aria-label="Breadcrumb">
-                        <ol>
-                            <li><a href="../index.html">Home</a></li>
-                            <li><a href="../index.html#information">Information</a></li>
-                            <li><span aria-current="page">Research & Trials</span></li>
-                        </ol>
-                    </nav>
-                    <h1 class="page-title modern-title">Latest Research & Clinical Trials</h1>
-                    <p class="page-subtitle modern-subtitle">Revolutionary breakthroughs bringing us closer to a cure</p>
-                </div>
-                <div class="hero-visual modern-visual">
-                    <div class="floating-elements">
-                        <div class="float-element hope"></div>
-                        <div class="float-element faith"></div>
-                        <div class="float-element strength"></div>
-                    </div>
+                    <h1 class="hero-title">Latest Research & Clinical Trials</h1>
+                    <p class="hero-subtitle">Stay updated on groundbreaking research, clinical trials, and promising treatments for sickle cell disease</p>
                 </div>
             </div>
         </section>
 
         <!-- Page Content -->
-        <section class="page-content modern-content">
+        <section class="page-content">
             <div class="container">
                 
-                <!-- Research Overview -->
+                <!-- Research Overview Card -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">🎆</div>
-                        <h2 class="card-title">Revolutionary Breakthroughs in Sickle Cell Research</h2>
+                        <div class="card-icon">🧬</div>
+                        <h2 class="card-title">Revolutionary Research Breakthroughs</h2>
                     </div>
                     <div class="card-content">
-                        <p class="intro-text">We are living in the most exciting time in sickle cell disease research history. Revolutionary advances in gene therapy, precision medicine, and cellular engineering are bringing us closer than ever to a cure. Multiple treatment approaches are showing unprecedented success rates in clinical trials.</p>
+                        <p class="intro-text">
+                            We are living in the most exciting era in sickle cell disease research history. Revolutionary advances in gene therapy, precision medicine, and cellular engineering are bringing us closer than ever to a cure. Multiple treatment approaches are showing unprecedented success rates in clinical trials.
+                        </p>
                         
-                        <h3>Major Research Breakthroughs</h3>
-                        <div class="research-grid">
-                            <div class="research-item">
-                                <div class="research-status breakthrough">Breakthrough</div>
-                                <h4>🧬 CRISPR Gene Editing</h4>
-                                <p><strong>Status:</strong> FDA approved (Casgevy/Lyfgenia)</p>
-                                <p>Revolutionary one-time gene therapy treatment that edits patients' own bone marrow cells to produce healthy hemoglobin. Clinical trials show 95%+ success in eliminating vaso-occlusive crises.</p>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <h3>🧬 Gene Therapy Revolution</h3>
+                                <p><strong>CRISPR Gene Editing:</strong> FDA-approved treatments like Casgevy show 95%+ success in eliminating vaso-occlusive crises. One-time gene therapy treatments that edit patients' own bone marrow cells to produce healthy hemoglobin.</p>
                                 <ul>
                                     <li>First FDA-approved gene editing treatment</li>
                                     <li>Functional cure for many patients</li>
@@ -790,39 +242,23 @@
                                 </ul>
                             </div>
                             
-                            <div class="research-item">
-                                <div class="research-status phase-3">Phase III</div>
-                                <h4>💉 Gene Therapy Advances</h4>
-                                <p><strong>Multiple Programs:</strong> Bluebird Bio, Vertex, Others</p>
-                                <p>Various approaches to modify patients' stem cells to produce functional hemoglobin, offering potential cures through single treatments.</p>
-                                <ul>
-                                    <li>LentiGlobin gene therapy showing promising results</li>
-                                    <li>Multiple companies advancing programs</li>
-                                    <li>Focus on safety and long-term efficacy</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="research-item">
-                                <div class="research-status ongoing">Ongoing</div>
-                                <h4>📊 Novel Drug Therapies</h4>
-                                <p><strong>Pipeline:</strong> 50+ investigational drugs</p>
-                                <p>New medications targeting different aspects of sickle cell disease, from hemoglobin modification to anti-inflammatory approaches.</p>
+                            <div class="info-item">
+                                <h3>💊 Novel Drug Therapies</h3>
+                                <p><strong>50+ Investigational Drugs:</strong> New medications targeting different aspects of sickle cell disease, from hemoglobin modification to anti-inflammatory approaches.</p>
                                 <ul>
                                     <li>P-selectin inhibitors reducing crisis frequency</li>
                                     <li>Hemoglobin oxygen affinity modulators</li>
-                                    <li>Anti-sickling agents and pain management</li>
+                                    <li>Anti-sickling agents and combination therapies</li>
                                 </ul>
                             </div>
                             
-                            <div class="research-item">
-                                <div class="research-status breakthrough">Major Progress</div>
-                                <h4>🥼 Fetal Hemoglobin Induction</h4>
-                                <p><strong>Approach:</strong> Reactivating healthy hemoglobin production</p>
-                                <p>Research into naturally reactivating fetal hemoglobin (HbF) production, which doesn't sickle, offering a potential cure pathway.</p>
+                            <div class="info-item">
+                                <h3>🔬 Clinical Trials</h3>
+                                <p><strong>200+ Active Trials:</strong> Numerous clinical trials are currently enrolling patients worldwide, testing cutting-edge treatments and providing access to experimental therapies.</p>
                                 <ul>
-                                    <li>BCL11A gene targeting showing promise</li>
-                                    <li>Epigenetic approaches to HbF induction</li>
-                                    <li>Combination therapies enhancing effectiveness</li>
+                                    <li>Multiple gene therapy approaches in Phase 2/3</li>
+                                    <li>Next-generation CRISPR and base editing</li>
+                                    <li>Novel oral medications and combination therapies</li>
                                 </ul>
                             </div>
                         </div>
@@ -832,917 +268,145 @@
                 <!-- Gene Therapy Deep Dive -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">🧬</div>
+                        <div class="card-icon">🏆</div>
                         <h2 class="card-title">Gene Therapy: The Path to a Cure</h2>
                     </div>
                     <div class="card-content">
-                        <p class="intro-text">Gene therapy represents the most promising approach to curing sickle cell disease. By correcting the genetic defect that causes the condition, these treatments offer the potential for a one-time cure.</p>
+                        <p class="intro-text">
+                            Gene therapy represents the most promising approach to curing sickle cell disease. By correcting the genetic defect that causes the condition, these treatments offer the potential for a one-time cure.
+                        </p>
                         
-                        <h3>FDA-Approved Gene Therapies</h3>
-                        
-                        <div class="clinical-trial">
-                            <h4>🏆 Casgevy (CTX001) - CRISPR Gene Editing</h4>
-                            <p><strong>Developer:</strong> Vertex Pharmaceuticals & CRISPR Therapeutics</p>
-                            <p><strong>Approval:</strong> FDA approved December 2023</p>
-                            <p><strong>Mechanism:</strong> Uses CRISPR-Cas9 to edit the BCL11A gene in patients' bone marrow cells, reactivating fetal hemoglobin production.</p>
-                            
-                            <div class="trial-meta">
-                                <span>95% Crisis-Free Rate</span>
-                                <span>One-Time Treatment</span>
-                                <span>Available Now</span>
-                                <span>Ages 12+</span>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <h3>🏆 Casgevy (CTX001) - FDA Approved</h3>
+                                <p><strong>Developer:</strong> Vertex Pharmaceuticals & CRISPR Therapeutics</p>
+                                <p><strong>Mechanism:</strong> Uses CRISPR-Cas9 to edit the BCL11A gene, reactivating fetal hemoglobin production</p>
+                                <ul>
+                                    <li><strong>95% Crisis-Free Rate:</strong> Outstanding success in clinical trials</li>
+                                    <li><strong>One-Time Treatment:</strong> Single procedure for potential lifelong cure</li>
+                                    <li><strong>Available Now:</strong> Approved and available at specialized centers</li>
+                                </ul>
                             </div>
                             
-                            <h5>Treatment Process:</h5>
-                            <div class="timeline">
-                                <div class="timeline-item">
-                                    <div class="timeline-marker">1</div>
-                                    <h6>Screening & Preparation</h6>
-                                    <p>Comprehensive medical evaluation and pre-treatment conditioning</p>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-marker">2</div>
-                                    <h6>Cell Collection</h6>
-                                    <p>Bone marrow stem cells are collected from the patient</p>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-marker">3</div>
-                                    <h6>Gene Editing</h6>
-                                    <p>Cells are edited using CRISPR technology in the laboratory</p>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-marker">4</div>
-                                    <h6>Cell Infusion</h6>
-                                    <p>Edited cells are infused back into the patient</p>
-                                </div>
-                                <div class="timeline-item">
-                                    <div class="timeline-marker">5</div>
-                                    <h6>Recovery & Monitoring</h6>
-                                    <p>Long-term monitoring to ensure treatment success</p>
-                                </div>
+                            <div class="info-item">
+                                <h3>🔄 Base Editing (BE-101)</h3>
+                                <p><strong>Developer:</strong> Beam Therapeutics</p>
+                                <p><strong>Approach:</strong> Direct correction of the sickle cell mutation with unprecedented precision</p>
+                                <ul>
+                                    <li>More precise than traditional CRISPR</li>
+                                    <li>Directly fixes the disease-causing mutation</li>
+                                    <li>Lower risk of off-target effects</li>
+                                </ul>
                             </div>
-                        </div>
-                        
-                        <div class="clinical-trial">
-                            <h4>🥼 Lyfgenia - Gene Addition Therapy</h4>
-                            <p><strong>Developer:</strong> bluebird bio (LentiGlobin)</p>
-                            <p><strong>Status:</strong> Previously approved, currently reassessing program</p>
-                            <p><strong>Mechanism:</strong> Adds a modified beta-globin gene to patient cells using a lentiviral vector.</p>
                             
-                            <div class="trial-meta">
-                                <span>Gene Addition Approach</span>
-                                <span>Lentiviral Vector</span>
-                                <span>Program Evolution</span>
+                            <div class="info-item">
+                                <h3>🌟 Next-Generation Approaches</h3>
+                                <p><strong>In Development:</strong> Advanced gene editing technologies that could make treatment even more accessible</p>
+                                <ul>
+                                    <li><strong>In Vivo Gene Editing:</strong> Direct treatment without cell extraction</li>
+                                    <li><strong>Prime Editing:</strong> Ultra-precise genetic corrections</li>
+                                    <li><strong>Epigenome Editing:</strong> Reversible gene activation approaches</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Clinical Trials -->
+                <!-- Clinical Trials Information -->
                 <div class="content-card">
                     <div class="card-header">
                         <div class="card-icon">📊</div>
-                        <h2 class="card-title">Current Clinical Trials</h2>
+                        <h2 class="card-title">Active Clinical Trials & How to Participate</h2>
                     </div>
                     <div class="card-content">
-                        <p class="intro-text">Numerous clinical trials are currently enrolling patients, testing everything from novel medications to advanced cellular therapies. Participating in clinical trials provides access to cutting-edge treatments while advancing research for the entire sickle cell community.</p>
+                        <p class="intro-text">
+                            Participating in clinical trials provides access to cutting-edge treatments while advancing research for the entire sickle cell community. Here's what you need to know about finding and joining trials.
+                        </p>
                         
-                        <h3>Active Trial Categories</h3>
-                        
-                        <div class="clinical-trial">
-                            <h4>💉 Next-Generation Gene Therapies</h4>
-                            <p>Multiple companies are developing improved gene therapy approaches with enhanced safety profiles and efficiency.</p>
-                            <div class="trial-meta">
-                                <span>Phase I/II Trials</span>
-                                <span>Multiple Centers</span>
-                                <span>Ages 12-65</span>
-                                <span>Actively Recruiting</span>
-                            </div>
-                        </div>
-                        
-                        <div class="clinical-trial">
-                            <h4>📊 Novel Pharmaceutical Approaches</h4>
-                            <p>New drugs targeting inflammation, pain management, and hemoglobin function are showing promising results.</p>
-                            <div class="trial-meta">
-                                <span>Phase II/III Trials</span>
-                                <span>Oral Medications</span>
-                                <span>All Ages</span>
-                                <span>Global Studies</span>
-                            </div>
-                        </div>
-                        
-                        <div class="clinical-trial">
-                            <h4>🥼 Combination Therapies</h4>
-                            <p>Studies combining multiple treatment approaches to maximize benefits and minimize side effects.</p>
-                            <div class="trial-meta">
-                                <span>Phase I/II Trials</span>
-                                <span>Combination Protocols</span>
-                                <span>Selected Centers</span>
-                                <span>Screening Required</span>
-                            </div>
-                        </div>
-                        
-                        <h3>How to Find and Join Clinical Trials</h3>
-                        <div class="research-item">
-                            <h4>🔍 Finding the Right Trial</h4>
-                            <ul>
-                                <li><strong>ClinicalTrials.gov:</strong> Official U.S. database of clinical studies</li>
-                                <li><strong>Sickle Cell Organizations:</strong> ASH, SCDAA provide trial information</li>
-                                <li><strong>Research Centers:</strong> Major medical centers often have dedicated programs</li>
-                                <li><strong>Your Healthcare Team:</strong> Specialists can recommend appropriate trials</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="research-item">
-                            <h4>✅ Benefits of Trial Participation</h4>
-                            <ul>
-                                <li>Access to cutting-edge treatments before general availability</li>
-                                <li>Close monitoring by leading specialists</li>
-                                <li>Contributing to research that helps the entire community</li>
-                                <li>Often no cost for experimental treatments</li>
-                                <li>Potential for significant health improvements</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Future Directions -->
-                <div class="content-card">
-                    <div class="card-header">
-                        <div class="card-icon">🔮</div>
-                        <h2 class="card-title">Future Directions & Hope</h2>
-                    </div>
-                    <div class="card-content">
-                        <p class="intro-text">The future of sickle cell treatment is incredibly bright. With multiple curative therapies either approved or in late-stage development, we are moving from managing sickle cell disease to curing it.</p>
-                        
-                        <h3>What's Coming Next</h3>
-                        
-                        <div class="research-grid">
-                            <div class="research-item">
-                                <h4>🌍 Global Access Initiatives</h4>
-                                <p>Efforts to make gene therapies accessible worldwide, including in Africa where sickle cell disease is most prevalent.</p>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <h3>🌐 Online Resources</h3>
                                 <ul>
-                                    <li>WHO global initiative programs</li>
-                                    <li>Reduced-cost treatment development</li>
-                                    <li>Local capacity building projects</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="research-item">
-                                <h4>💰 Cost Reduction Strategies</h4>
-                                <p>Research into making curative treatments more affordable and accessible to all patients.</p>
-                                <ul>
-                                    <li>Simplified gene therapy protocols</li>
-                                    <li>Point-of-care treatment options</li>
-                                    <li>Insurance coverage advocacy</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="research-item">
-                                <h4>👶 Pediatric Applications</h4>
-                                <p>Expanding curative treatments to younger patients for maximum benefit and prevention of complications.</p>
-                                <ul>
-                                    <li>Age-appropriate dosing studies</li>
-                                    <li>Long-term safety in children</li>
-                                    <li>Early intervention strategies</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="research-item">
-                                <h4>🤖 Precision Medicine</h4>
-                                <p>Tailoring treatments to individual genetic profiles and disease characteristics.</p>
-                                <ul>
-                                    <li>Personalized gene therapy approaches</li>
-                                    <li>Biomarker-guided treatment selection</li>
-                                    <li>AI-assisted treatment optimization</li>
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        <div class="genetic-counseling">
-                            <h4>🎆 A Message of Hope</h4>
-                            <p>For the first time in history, we can say with confidence that cures for sickle cell disease exist and are available. While challenges remain in access and cost, the scientific breakthroughs have been achieved. The future holds the promise of transforming sickle cell disease from a life-limiting condition to a treatable and curable one.</p>
-                            
-                            <p><strong>The research community is committed to ensuring that everyone affected by sickle cell disease has access to these life-changing treatments.</strong></p>
-                        </div>
-                    </div>
-                </div>
-                            <div class="stats-grid">
-                                <div class="stat-item">
-                                    <span class="stat-number">200+</span>
-                                    <div class="stat-label">Active clinical trials worldwide</div>
-                                </div>
-                                <div class="stat-item">
-                                    <span class="stat-number">95%+</span>
-                                    <div class="stat-label">Success rate in recent gene therapy trials</div>
-                                </div>
-                                <div class="stat-item">
-                                    <span class="stat-number">$2.3B</span>
-                                    <div class="stat-label">Annual research investment globally</div>
-                                </div>
-                                <div class="stat-item">
-                                    <span class="stat-number">10+</span>
-                                    <div class="stat-label">Gene therapy approaches in development</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3>Major Research Breakthroughs in 2023-2025</h3>
-                        <div class="breakthrough-timeline">
-                            <div class="breakthrough-item">
-                                <span class="breakthrough-date">2023</span>
-                                <div class="breakthrough-content">
-                                    <h4>🧬 CRISPR Gene Therapy Success</h4>
-                                    <p>CTX001 shows 95%+ success in eliminating pain crises in Phase 3 trials</p>
-                                </div>
-                            </div>
-                            <div class="breakthrough-item">
-                                <span class="breakthrough-date">2024</span>
-                                <div class="breakthrough-content">
-                                    <h4>💊 New Drug Approvals</h4>
-                                    <p>Multiple new medications approved, including novel anti-sickling agents</p>
-                                </div>
-                            </div>
-                            <div class="breakthrough-item">
-                                <span class="breakthrough-date">2024</span>
-                                <div class="breakthrough-content">
-                                    <h4>🔄 Base Editing Advances</h4>
-                                    <p>First successful direct correction of sickle cell mutation in patients</p>
-                                </div>
-                            </div>
-                            <div class="breakthrough-item">
-                                <span class="breakthrough-date">2025</span>
-                                <div class="breakthrough-content">
-                                    <h4>🌟 In Vivo Gene Editing</h4>
-                                    <p>Clinical trials begin for direct gene editing without cell extraction</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gene Therapy Revolution -->
-                <div class="content-card">
-                    <div class="card-header">
-                        <div class="card-icon">🧬</div>
-                        <h2 class="card-title">Gene Therapy Revolution</h2>
-                    </div>
-                    <div class="card-content">
-                        <h3>Leading Gene Therapy Approaches</h3>
-                        
-                        <div class="gene-therapy-approaches">
-                            <div class="therapy-approach">
-                                <h4>✂️ CRISPR-Cas9 Gene Editing (CTX001)</h4>
-                                <div class="approach-details">
-                                    <p><strong>Developer:</strong> Vertex Pharmaceuticals & CRISPR Therapeutics</p>
-                                    <p><strong>Approach:</strong> Edits BCL11A gene to increase fetal hemoglobin production</p>
-                                    <p><strong>Status:</strong> Phase 3 trials, seeking FDA approval</p>
-                                    
-                                    <div class="trial-results">
-                                        <h5>🎯 Trial Results</h5>
-                                        <ul>
-                                            <li><strong>46 patients treated</strong> across multiple studies</li>
-                                            <li><strong>95%+ success rate</strong> in eliminating vaso-occlusive crises</li>
-                                            <li><strong>Average follow-up:</strong> 3+ years with sustained benefits</li>
-                                            <li><strong>Side effects:</strong> Minimal, mainly from conditioning chemotherapy</li>
-                                            <li><strong>Quality of life:</strong> Dramatic improvements in all measures</li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="patient-stories">
-                                        <h5>👥 Patient Outcomes</h5>
-                                        <div class="outcome-item">
-                                            <p><strong>Victoria Gray (First patient):</strong> Over 4 years crisis-free, returned to full-time work, traveling internationally</p>
-                                        </div>
-                                        <div class="outcome-item">
-                                            <p><strong>Jimi Olaghere:</strong> Eliminated need for monthly transfusions, no pain crises since treatment</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="therapy-approach">
-                                <h4>🔄 Base Editing (BE-101)</h4>
-                                <div class="approach-details">
-                                    <p><strong>Developer:</strong> Beam Therapeutics</p>
-                                    <p><strong>Approach:</strong> Direct correction of the sickle cell mutation (A→T to A→A)</p>
-                                    <p><strong>Status:</strong> Phase 1/2 trials ongoing</p>
-                                    
-                                    <div class="advantages">
-                                        <h5>✨ Advantages of Base Editing</h5>
-                                        <ul>
-                                            <li>More precise than traditional CRISPR</li>
-                                            <li>Directly fixes the disease-causing mutation</li>
-                                            <li>Potentially more durable than HbF induction</li>
-                                            <li>Lower risk of off-target effects</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="therapy-approach">
-                                <h4>🧬 LentiGlobin Gene Addition (bb1111)</h4>
-                                <div class="approach-details">
-                                    <p><strong>Developer:</strong> bluebird bio</p>
-                                    <p><strong>Approach:</strong> Adds functional beta-globin genes using lentiviral vector</p>
-                                    <p><strong>Status:</strong> Approved in Europe as Zynteglo, seeking US approval</p>
-                                    
-                                    <div class="trial-results">
-                                        <h5>📊 Clinical Results</h5>
-                                        <ul>
-                                            <li><strong>HbAT87Q production:</strong> Anti-sickling hemoglobin variant</li>
-                                            <li><strong>Pain crisis reduction:</strong> 90%+ reduction in most patients</li>
-                                            <li><strong>Transfusion independence:</strong> Achieved in majority of patients</li>
-                                            <li><strong>Long-term safety:</strong> 5+ year follow-up shows sustained benefits</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3>Next-Generation Gene Therapies</h3>
-                        <div class="next-gen-therapies">
-                            <div class="therapy-item">
-                                <h4>🎯 Prime Editing</h4>
-                                <p>Ultra-precise gene editing that can make specific insertions, deletions, and replacements without double-strand breaks. Early preclinical studies show promise for sickle cell correction.</p>
-                            </div>
-                            
-                            <div class="therapy-item">
-                                <h4>💉 In Vivo Gene Editing</h4>
-                                <p>Direct delivery of gene editing tools to bone marrow without extracting patient cells. Could make gene therapy much more accessible and less expensive.</p>
-                            </div>
-                            
-                            <div class="therapy-item">
-                                <h4>🌟 Epigenome Editing</h4>
-                                <p>Activating beneficial genes like fetal hemoglobin without changing the underlying DNA sequence. Potentially reversible and highly specific.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Novel Drug Development -->
-                <div class="content-card">
-                    <div class="card-header">
-                        <div class="card-icon">💊</div>
-                        <h2 class="card-title">Novel Drug Development</h2>
-                    </div>
-                    <div class="card-content">
-                        <h3>Breakthrough Medications in Development</h3>
-                        
-                        <div class="drug-development">
-                            <div class="drug-category">
-                                <h4>🛡️ Anti-Sickling Agents</h4>
-                                <div class="drug-list">
-                                    <div class="drug-item">
-                                        <h5>GBT021601 (Pfizer/Global Blood Therapeutics)</h5>
-                                        <p><strong>Mechanism:</strong> Next-generation hemoglobin modifier, more potent than voxelotor</p>
-                                        <p><strong>Status:</strong> Phase 2 trials showing superior hemoglobin increases</p>
-                                        <ul>
-                                            <li>Once-daily oral dosing</li>
-                                            <li>Better tissue penetration</li>
-                                            <li>Potential for combination therapy</li>
-                                        </ul>
-                                    </div>
-                                    
-                                    <div class="drug-item">
-                                        <h5>IMR-687 (Imara Inc.)</h5>
-                                        <p><strong>Mechanism:</strong> PDE9 inhibitor that reduces sickling and inflammation</p>
-                                        <p><strong>Status:</strong> Phase 2 trials ongoing</p>
-                                        <ul>
-                                            <li>Dual anti-sickling and anti-inflammatory effects</li>
-                                            <li>Potential cardiovascular benefits</li>
-                                            <li>Oral administration</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="drug-category">
-                                <h4>🩸 Anti-Adhesion Therapies</h4>
-                                <div class="drug-list">
-                                    <div class="drug-item">
-                                        <h5>Rivipansel (GMI-1070)</h5>
-                                        <p><strong>Mechanism:</strong> Pan-selectin antagonist preventing cell adhesion</p>
-                                        <p><strong>Status:</strong> Phase 3 trials completed, analyzing results</p>
-                                        <ul>
-                                            <li>Reduces length of vaso-occlusive crises</li>
-                                            <li>Intravenous administration during crises</li>
-                                            <li>May reduce opioid requirements</li>
-                                        </ul>
-                                    </div>
-                                    
-                                    <div class="drug-item">
-                                        <h5>Sevuparin (Dilafor)</h5>
-                                        <p><strong>Mechanism:</strong> Heparan sulfate mimetic with anti-adhesive properties</p>
-                                        <p><strong>Status:</strong> Phase 2 trials in development</p>
-                                        <ul>
-                                            <li>Multiple mechanisms of action</li>
-                                            <li>Anti-inflammatory properties</li>
-                                            <li>Subcutaneous administration</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="drug-category">
-                                <h4>🔬 Fetal Hemoglobin Inducers</h4>
-                                <div class="drug-list">
-                                    <div class="drug-item">
-                                        <h5>FTX-6058 (Fulcrum Therapeutics)</h5>
-                                        <p><strong>Mechanism:</strong> BET protein inhibitor that strongly induces fetal hemoglobin</p>
-                                        <p><strong>Status:</strong> Phase 1/2 trials ongoing</p>
-                                        <ul>
-                                            <li>Oral administration</li>
-                                            <li>Potentially more potent than hydroxyurea</li>
-                                            <li>May work in hydroxyurea non-responders</li>
-                                        </ul>
-                                    </div>
-                                    
-                                    <div class="drug-item">
-                                        <h5>Mitapivat (AG-348)</h5>
-                                        <p><strong>Mechanism:</strong> Pyruvate kinase activator improving red cell energy</p>
-                                        <p><strong>Status:</strong> Phase 2 trials in sickle cell disease</p>
-                                        <ul>
-                                            <li>Already approved for PK deficiency</li>
-                                            <li>Improves red cell survival</li>
-                                            <li>May reduce hemolysis</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3>Combination Therapy Approaches</h3>
-                        <p>Researchers are increasingly exploring combination therapies that target multiple aspects of sickle cell disease:</p>
-                        <div class="combination-approaches">
-                            <div class="combination-item">
-                                <h4>💊 + 🩸 Drug Combinations</h4>
-                                <p>Voxelotor + Crizanlizumab trials showing additive benefits with different mechanisms</p>
-                            </div>
-                            <div class="combination-item">
-                                <h4>🧬 + 💊 Gene Therapy + Drugs</h4>
-                                <p>Using medications to enhance gene therapy outcomes and reduce conditioning intensity</p>
-                            </div>
-                            <div class="combination-item">
-                                <h4>🔄 Multi-Target Approaches</h4>
-                                <p>Single drugs targeting multiple pathways simultaneously (anti-sickling + anti-inflammatory)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Regenerative Medicine -->
-                <div class="content-card">
-                    <div class="card-header">
-                        <div class="card-icon">🔬</div>
-                        <h2 class="card-title">Regenerative Medicine & Advanced Therapies</h2>
-                    </div>
-                    <div class="card-content">
-                        <h3>Induced Pluripotent Stem Cells (iPSCs)</h3>
-                        <p>Revolutionary approach creating unlimited supplies of healthy blood cells from patients' own skin cells.</p>
-                        
-                        <div class="ipsc-research">
-                            <div class="research-area">
-                                <h4>🧪 Disease-Corrected iPSCs</h4>
-                                <p>Process:</p>
-                                <ol>
-                                    <li>Take skin cells from sickle cell patients</li>
-                                    <li>Reprogram cells back to stem cell state</li>
-                                    <li>Use gene editing to correct the sickle cell mutation</li>
-                                    <li>Differentiate corrected iPSCs into healthy blood cells</li>
-                                    <li>Transplant corrected cells back to patient</li>
-                                </ol>
-                                
-                                <div class="advantages">
-                                    <h5>✨ Advantages</h5>
-                                    <ul>
-                                        <li>No risk of immune rejection (autologous)</li>
-                                        <li>Unlimited cell supply</li>
-                                        <li>Can be quality-controlled before transplant</li>
-                                        <li>Potentially applicable to all patients</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="research-area">
-                                <h4>🏭 Manufacturing Advances</h4>
-                                <p>Major progress in scaling up iPSC production:</p>
-                                <ul>
-                                    <li><strong>Automated systems:</strong> Reducing cost and improving consistency</li>
-                                    <li><strong>Bioreactor technology:</strong> Large-scale cell production</li>
-                                    <li><strong>Quality control:</strong> Ensuring safety and efficacy</li>
-                                    <li><strong>Regulatory pathways:</strong> FDA guidance for iPSC therapies</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <h3>Tissue Engineering and Organ Replacement</h3>
-                        <div class="tissue-engineering">
-                            <div class="engineering-area">
-                                <h4>🫀 Bioartificial Organs</h4>
-                                <p>Research into growing replacement organs for sickle cell complications:</p>
-                                <ul>
-                                    <li><strong>Bioartificial spleen:</strong> Replacing damaged spleen function</li>
-                                    <li><strong>Liver support systems:</strong> For sickle cell liver disease</li>
-                                    <li><strong>Kidney organoids:</strong> Treating sickle cell nephropathy</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="engineering-area">
-                                <h4>🩸 Artificial Blood Products</h4>
-                                <p>Advanced oxygen carriers and red blood cell substitutes:</p>
-                                <ul>
-                                    <li><strong>Hemoglobin-based carriers:</strong> Modified hemoglobin solutions</li>
-                                    <li><strong>Perfluorocarbon emulsions:</strong> Oxygen-carrying fluids</li>
-                                    <li><strong>Artificial red blood cells:</strong> Synthetic cell-like carriers</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <h3>Cell Reprogramming Research</h3>
-                        <p>Direct conversion of other cell types to healthy blood cells without going through stem cell stage:</p>
-                        <div class="reprogramming-research">
-                            <div class="reprogramming-item">
-                                <h4>🔄 Direct Reprogramming</h4>
-                                <p>Converting fibroblasts directly to hematopoietic stem cells using transcription factors</p>
-                            </div>
-                            <div class="reprogramming-item">
-                                <h4>🧬 Transdifferentiation</h4>
-                                <p>Converting one mature cell type to another without dedifferentiation</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Clinical Trials Landscape -->
-                <div class="content-card">
-                    <div class="card-header">
-                        <div class="card-icon">🏥</div>
-                        <h2 class="card-title">Active Clinical Trials Landscape</h2>
-                    </div>
-                    <div class="card-content">
-                        <h3>Major Ongoing Trials</h3>
-                        
-                        <div class="trials-by-phase">
-                            <div class="trial-phase">
-                                <h4>🔬 Phase 3 Trials (Near Approval)</h4>
-                                <div class="trial-list">
-                                    <div class="trial-item">
-                                        <h5>CTX001 Gene Therapy</h5>
-                                        <p><strong>ClinicalTrials.gov:</strong> NCT03745287, NCT04208529</p>
-                                        <p><strong>Enrollment:</strong> 75 patients across multiple sites</p>
-                                        <p><strong>Primary Endpoint:</strong> Freedom from vaso-occlusive crises</p>
-                                        <p><strong>Status:</strong> Enrollment complete, follow-up ongoing</p>
-                                    </div>
-                                    
-                                    <div class="trial-item">
-                                        <h5>Crizanlizumab in Pediatrics</h5>
-                                        <p><strong>ClinicalTrials.gov:</strong> NCT03474965</p>
-                                        <p><strong>Age Range:</strong> 6-17 years</p>
-                                        <p><strong>Enrollment:</strong> 120 patients</p>
-                                        <p><strong>Status:</strong> Completed, results pending</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="trial-phase">
-                                <h4>🧪 Phase 2 Trials (Promising Results)</h4>
-                                <div class="trial-list">
-                                    <div class="trial-item">
-                                        <h5>Base Editing (BE-101)</h5>
-                                        <p><strong>Developer:</strong> Beam Therapeutics</p>
-                                        <p><strong>Enrollment:</strong> First patients dosed 2023</p>
-                                        <p><strong>Innovation:</strong> First base editing trial in humans</p>
-                                    </div>
-                                    
-                                    <div class="trial-item">
-                                        <h5>FTX-6058 (Fetal Hemoglobin Inducer)</h5>
-                                        <p><strong>Developer:</strong> Fulcrum Therapeutics</p>
-                                        <p><strong>Enrollment:</strong> 30 patients</p>
-                                        <p><strong>Route:</strong> Oral daily dosing</p>
-                                    </div>
-                                    
-                                    <div class="trial-item">
-                                        <h5>IMR-687 (PDE9 Inhibitor)</h5>
-                                        <p><strong>Developer:</strong> Imara Inc.</p>
-                                        <p><strong>Mechanism:</strong> Anti-sickling + anti-inflammatory</p>
-                                        <p><strong>Status:</strong> Dose escalation phase</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="trial-phase">
-                                <h4>🔬 Phase 1 Trials (Early Stage)</h4>
-                                <div class="trial-list">
-                                    <div class="trial-item">
-                                        <h5>Multiple Gene Therapy Approaches</h5>
-                                        <ul>
-                                            <li><strong>STRIDE-SCD01:</strong> Alternative CRISPR approach</li>
-                                            <li><strong>HSC-SCD-001:</strong> Improved lentiviral gene therapy</li>
-                                            <li><strong>SCD-GT01:</strong> Next-generation base editing</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3>How to Find and Join Clinical Trials</h3>
-                        <div class="trial-resources">
-                            <div class="resource-category">
-                                <h4>🌐 Online Resources</h4>
-                                <ul>
-                                    <li><strong>ClinicalTrials.gov:</strong> Official US database of clinical studies</li>
+                                    <li><strong>ClinicalTrials.gov:</strong> Official U.S. database of clinical studies</li>
                                     <li><strong>NHLBI Clinical Trials:</strong> National Heart, Lung, and Blood Institute studies</li>
-                                    <li><strong>Sickle Cell Disease Association:</strong> Trial matching services</li>
-                                    <li><strong>Patient advocacy organizations:</strong> Trial notifications and support</li>
+                                    <li><strong>Patient Organizations:</strong> SCDAA and other groups provide trial matching</li>
                                 </ul>
                             </div>
                             
-                            <div class="resource-category">
-                                <h4>🏥 Medical Centers</h4>
+                            <div class="info-item">
+                                <h3>🏥 Medical Centers</h3>
                                 <ul>
                                     <li><strong>Comprehensive Sickle Cell Centers:</strong> Often have active research programs</li>
                                     <li><strong>Academic Medical Centers:</strong> Leading research institutions</li>
                                     <li><strong>Children's Hospitals:</strong> Pediatric research studies</li>
-                                    <li><strong>Cancer Centers:</strong> Gene therapy and transplant trials</li>
                                 </ul>
                             </div>
-                        </div>
-
-                        <h3>Participating in Clinical Trials</h3>
-                        <div class="participation-guide">
-                            <div class="guide-section">
-                                <h4>✅ Benefits of Participation</h4>
+                            
+                            <div class="info-item">
+                                <h3>✅ Benefits of Participation</h3>
                                 <ul>
                                     <li>Access to cutting-edge treatments before general availability</li>
-                                    <li>Close medical monitoring and care</li>
-                                    <li>Contributing to medical advances for future patients</li>
-                                    <li>Potential for significant health improvements</li>
-                                    <li>Often no cost for investigational treatments</li>
+                                    <li>Close medical monitoring by leading specialists</li>
+                                    <li>Contributing to research that helps future patients</li>
+                                    <li>Often no cost for experimental treatments</li>
                                 </ul>
-                            </div>
-                            
-                            <div class="guide-section">
-                                <h4>⚠️ Important Considerations</h4>
-                                <ul>
-                                    <li>Experimental treatments may have unknown risks</li>
-                                    <li>Not all participants will receive active treatment (some may get placebo)</li>
-                                    <li>Frequent monitoring visits required</li>
-                                    <li>Strict eligibility criteria</li>
-                                    <li>Time commitment can be substantial</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="guide-section">
-                                <h4>📋 Trial Process</h4>
-                                <ol>
-                                    <li><strong>Screening:</strong> Determine eligibility through tests and medical history</li>
-                                    <li><strong>Informed Consent:</strong> Detailed discussion of risks and benefits</li>
-                                    <li><strong>Baseline Assessment:</strong> Complete medical evaluation before treatment</li>
-                                    <li><strong>Treatment Period:</strong> Receiving investigational therapy with monitoring</li>
-                                    <li><strong>Follow-up:</strong> Long-term monitoring for safety and efficacy</li>
-                                </ol>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Global Research Initiatives -->
-                <div class="content-card">
-                    <div class="card-header">
-                        <div class="card-icon">🌍</div>
-                        <h2 class="card-title">Global Research Initiatives</h2>
-                    </div>
-                    <div class="card-content">
-                        <h3>International Collaboration</h3>
-                        <p>Sickle cell disease research has become a truly global endeavor, with major initiatives spanning multiple continents:</p>
-                        
-                        <div class="global-initiatives">
-                            <div class="initiative">
-                                <h4>🇺🇸 United States</h4>
-                                <div class="initiative-details">
-                                    <p><strong>NIH Cure Sickle Cell Initiative:</strong> $200M+ investment over 10 years</p>
-                                    <ul>
-                                        <li>NHLBI leading gene therapy development</li>
-                                        <li>CDC surveillance and population studies</li>
-                                        <li>NIMHD health disparities research</li>
-                                        <li>Multiple NIH institutes collaborating</li>
-                                    </ul>
-                                    
-                                    <p><strong>Key Research Centers:</strong></p>
-                                    <ul>
-                                        <li>NIH Clinical Center (Bethesda, MD)</li>
-                                        <li>Boston Children's Hospital / Dana-Farber</li>
-                                        <li>St. Jude Children's Research Hospital</li>
-                                        <li>Children's Hospital of Philadelphia</li>
-                                        <li>University of California San Francisco</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="initiative">
-                                <h4>🇬🇧 United Kingdom</h4>
-                                <div class="initiative-details">
-                                    <p><strong>NHS England Gene Therapy Program:</strong> World-leading access to gene therapy</p>
-                                    <ul>
-                                        <li>First country to offer gene therapy through national health system</li>
-                                        <li>Guy's and St Thomas' Hospital leading trials</li>
-                                        <li>King's College London research programs</li>
-                                        <li>UCLH gene therapy center</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="initiative">
-                                <h4>🇫🇷 France</h4>
-                                <div class="initiative-details">
-                                    <p><strong>French Sickle Cell Research Network:</strong> Leading European research</p>
-                                    <ul>
-                                        <li>Necker Children's Hospital gene therapy program</li>
-                                        <li>INSERM research institutes</li>
-                                        <li>Large patient cohorts for studies</li>
-                                        <li>Advanced cellular therapy development</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="initiative">
-                                <h4>🌍 Sub-Saharan Africa</h4>
-                                <div class="initiative-details">
-                                    <p><strong>African Sickle Cell Research Initiative:</strong> Addressing the global burden</p>
-                                    <ul>
-                                        <li>Nigeria: Largest patient population, multiple research centers</li>
-                                        <li>Ghana: Strong research infrastructure, international partnerships</li>
-                                        <li>Kenya: Population genetics and epidemiology studies</li>
-                                        <li>Tanzania: Rural health delivery research</li>
-                                    </ul>
-                                    
-                                    <p><strong>Key Partnerships:</strong></p>
-                                    <ul>
-                                        <li>NIH-Africa partnerships</li>
-                                        <li>Wellcome Trust funding</li>
-                                        <li>Gates Foundation initiatives</li>
-                                        <li>Academic medical center collaborations</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3>International Research Priorities</h3>
-                        <div class="research-priorities">
-                            <div class="priority-area">
-                                <h4>🎯 Accessible Gene Therapy</h4>
-                                <p>Developing gene therapy approaches that can be delivered globally, including in low-resource settings</p>
-                            </div>
-                            
-                            <div class="priority-area">
-                                <h4>💊 Affordable Medications</h4>
-                                <p>Creating cost-effective treatments that can be manufactured and distributed worldwide</p>
-                            </div>
-                            
-                            <div class="priority-area">
-                                <h4>🏥 Healthcare Delivery</h4>
-                                <p>Research on how to effectively deliver advanced treatments in diverse healthcare systems</p>
-                            </div>
-                            
-                            <div class="priority-area">
-                                <h4>📊 Population Genetics</h4>
-                                <p>Understanding genetic modifiers and variations across different populations</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                
                 <!-- Future Outlook -->
                 <div class="content-card">
                     <div class="card-header">
                         <div class="card-icon">🔮</div>
-                        <h2 class="card-title">Future Outlook: The Path to Eradication</h2>
+                        <h2 class="card-title">The Future: A World Without Sickle Cell Disease</h2>
                     </div>
                     <div class="card-content">
-                        <h3>2025-2030 Research Predictions</h3>
+                        <p class="intro-text">
+                            The future of sickle cell treatment is incredibly bright. With multiple curative therapies either approved or in late-stage development, we are moving from managing sickle cell disease to curing it.
+                        </p>
                         
-                        <div class="future-timeline">
-                            <div class="future-milestone">
-                                <span class="milestone-year">2025-2026</span>
-                                <div class="milestone-content">
-                                    <h4>🏆 First Gene Therapy Approvals</h4>
-                                    <p>CTX001 and other leading gene therapies expected to receive FDA approval, making cure accessible to more patients</p>
-                                </div>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <h3>🎯 Multiple Cure Options</h3>
+                                <p>By 2030, patients will have multiple curative options including gene therapy, advanced gene editing, and potentially in vivo treatments accessible worldwide.</p>
                             </div>
                             
-                            <div class="future-milestone">
-                                <span class="milestone-year">2026-2027</span>
-                                <div class="milestone-content">
-                                    <h4>💊 Next-Generation Drugs</h4>
-                                    <p>Multiple new oral medications approved, offering patients more treatment options with improved efficacy</p>
-                                </div>
+                            <div class="info-item">
+                                <h3>🌍 Global Access Initiatives</h3>
+                                <p>International efforts are focused on making gene therapies accessible worldwide, including in Africa where sickle cell disease is most prevalent.</p>
                             </div>
                             
-                            <div class="future-milestone">
-                                <span class="milestone-year">2027-2028</span>
-                                <div class="milestone-content">
-                                    <h4>🌐 Global Access Programs</h4>
-                                    <p>International initiatives begin delivering advanced treatments to patients in Africa and other high-burden regions</p>
-                                </div>
-                            </div>
-                            
-                            <div class="future-milestone">
-                                <span class="milestone-year">2028-2030</span>
-                                <div class="milestone-content">
-                                    <h4>🔬 In Vivo Gene Editing</h4>
-                                    <p>First successful in vivo gene editing treatments eliminate need for cell extraction, making gene therapy much more accessible</p>
-                                </div>
+                            <div class="info-item">
+                                <h3>💰 Cost Reduction</h3>
+                                <p>Research into simplified protocols, point-of-care treatments, and cost-effective approaches to make cures accessible to all patients.</p>
                             </div>
                         </div>
-
-                        <h3>The Vision: A World Without Sickle Cell Disease</h3>
-                        <div class="eradication-vision">
-                            <div class="vision-component">
-                                <h4>🎯 Multiple Cure Options</h4>
-                                <p>By 2030, patients will have multiple curative options including gene therapy, advanced gene editing, and potentially in vivo treatments</p>
-                            </div>
-                            
-                            <div class="vision-component">
-                                <h4>🌍 Global Accessibility</h4>
-                                <p>Research focused on making cures available worldwide, including simplified delivery methods and cost-effective approaches</p>
-                            </div>
-                            
-                            <div class="vision-component">
-                                <h4>🔬 Prevention Strategies</h4>
-                                <p>Advanced genetic counseling, preimplantation genetic diagnosis, and potentially in utero treatments for prevention</p>
-                            </div>
-                            
-                            <div class="vision-component">
-                                <h4>📚 Knowledge Translation</h4>
-                                <p>Research advances rapidly translated into clinical practice and community health programs globally</p>
-                            </div>
-                        </div>
-
-                        <h3>How You Can Support Research</h3>
-                        <div class="support-research">
-                            <div class="support-category">
-                                <h4>🤝 Participate in Studies</h4>
-                                <ul>
-                                    <li>Join clinical trials if eligible</li>
-                                    <li>Participate in observational studies</li>
-                                    <li>Contribute to patient registries</li>
-                                    <li>Share your health data for research</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="support-category">
-                                <h4>💰 Support Funding</h4>
-                                <ul>
-                                    <li>Donate to research organizations</li>
-                                    <li>Advocate for government research funding</li>
-                                    <li>Support pharmaceutical research</li>
-                                    <li>Contribute to patient advocacy groups</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="support-category">
-                                <h4>📢 Raise Awareness</h4>
-                                <ul>
-                                    <li>Share research breakthroughs</li>
-                                    <li>Educate your community</li>
-                                    <li>Connect families with research opportunities</li>
-                                    <li>Advocate for research priorities</li>
-                                </ul>
-                            </div>
+                        
+                        <div class="hope-message">
+                            <h3>✨ A Message of Hope</h3>
+                            <p>"For the first time in history, we can say with confidence that cures for sickle cell disease exist and are available. While challenges remain in access and cost, the scientific breakthroughs have been achieved. The future holds the promise of transforming sickle cell disease from a life-limiting condition to a treatable and curable one."</p>
+                            <p class="attribution">- Leading sickle cell researchers worldwide</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Action Section -->
-                <div class="content-card">
-                    <div class="card-header">
-                        <div class="card-icon">🚀</div>
-                        <h2 class="card-title">Join the Research Revolution</h2>
-                    </div>
-                    <div class="card-content">
-                        <p>We are living through the most exciting time in sickle cell disease research. Revolutionary treatments are becoming reality, and a cure is within reach. Stay informed, get involved, and be part of the movement toward the last generation of people with sickle cell disease.</p>
-                        
-                        <div class="action-buttons">
-                            <a href="diagnosis-treatment.html" class="btn-modern">Current Treatments</a>
-                            <a href="what-is-sickle-cell.html" class="btn-modern">Learn About SCD</a>
-                            <a href="../support/resources.html" class="btn-modern">Find Clinical Trials</a>
-                            <a href="../community/forum.html" class="btn-secondary-modern">Connect with Researchers</a>
-                        </div>
-
-                        <div class="research-hope">
-                            <h4>✨ A Message of Hope</h4>
-                            <p class="hope-message">"Every day brings us closer to a world where no child will suffer from sickle cell disease. The breakthroughs happening now in gene therapy, drug development, and regenerative medicine are not just improving lives - they are pointing toward complete cures. We stand at the threshold of eliminating this disease forever."</p>
-                            <p class="attribution">- Leading researchers worldwide</p>
-                        </div>
+                <!-- Call to Action -->
+                <div class="cta-section">
+                    <h2>Stay Connected with Research</h2>
+                    <p>Join our community to stay updated on the latest research breakthroughs, clinical trial opportunities, and treatment advances.</p>
+                    <div class="cta-buttons">
+                        <a href="diagnosis-treatment.html" class="btn">Current Treatments</a>
+                        <a href="../support/resources.html" class="btn">Find Clinical Trials</a>
+                        <a href="../community/forum.html" class="btn">Join Discussion</a>
                     </div>
                 </div>
-
             </div>
         </section>
         
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer modern-footer" role="contentinfo">
         <div class="footer-container">
             <div class="footer-content">
@@ -1756,16 +420,6 @@
                 </div>
                 
                 <div class="footer-section">
-                    <h4 class="footer-title">Information</h4>
-                    <ul class="footer-links">
-                        <li><a href="what-is-sickle-cell.html">What is Sickle Cell</a></li>
-                        <li><a href="types.html">Types</a></li>
-                        <li><a href="diagnosis-treatment.html">Treatment</a></li>
-                        <li><a href="research.html">Research</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
                     <h4 class="footer-title">Support</h4>
                     <ul class="footer-links">
                         <li><a href="../support/about-sickle-cell.html">Living with Sickle Cell</a></li>
@@ -1776,25 +430,45 @@
                 </div>
                 
                 <div class="footer-section">
+                    <h4 class="footer-title">Information</h4>
+                    <ul class="footer-links">
+                        <li><a href="what-is-sickle-cell.html">What is Sickle Cell</a></li>
+                        <li><a href="types.html">Types</a></li>
+                        <li><a href="diagnosis-treatment.html">Treatment</a></li>
+                        <li><a href="research.html">Research</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Community</h4>
+                    <ul class="footer-links">
+                        <li><a href="../community/forum.html">Forum</a></li>
+                        <li><a href="../community/blog.html">Blog</a></li>
+                        <li><a href="../community/events.html">Events</a></li>
+                        <li><a href="../pages/newsletter.html">Newsletter</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
                     <h4 class="footer-title">Connect</h4>
                     <div class="social-links">
                         <a href="#" class="social-link facebook" aria-label="Facebook">
-                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                             </svg>
                         </a>
                         <a href="#" class="social-link twitter" aria-label="Twitter">
-                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
                             </svg>
                         </a>
                         <a href="#" class="social-link instagram" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                             </svg>
                         </a>
                         <a href="#" class="social-link linkedin" aria-label="LinkedIn">
-                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                             </svg>
                         </a>
@@ -1819,13 +493,13 @@
         </div>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <!-- JavaScript -->
+    <script src="../js/theme-toggle.js"></script>
     <script src="../js/mobile-menu.js"></script>
-    <script src="../js/modern.js"></script>
-    <script src="../js/pages.js"></script>
-    <!-- Universal header scripts -->
-    <script src="../js/animations.js"></script>
     <script src="../js/universal-header.js"></script>
     <script src="../js/main.js"></script>
+    <script src="../js/animations.js"></script>
     <script src="../js/warriorbot.js"></script>
+
+</body>
 </html>

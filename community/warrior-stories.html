@@ -3,155 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Real stories from sickle cell warriors around the world - journeys of strength, hope, and triumph over adversity">
-    <meta name="keywords" content="sickle cell stories, warrior journeys, patient experiences, inspiration, hope, triumph, community">
-    <meta name="author" content="We Warriors Organization">
+    <meta name="description" content="Read inspiring stories from sickle cell warriors who have overcome challenges and achieved their dreams">
+    <meta name="keywords" content="sickle cell stories, warrior inspiration, success stories, overcoming challenges, sickle cell heroes">
     
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Warrior Stories - We Warriors">
-    <meta property="og:description" content="Inspiring stories of courage, strength, and hope from sickle cell warriors worldwide">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://wewarriors.org/community/warrior-stories.html">
-    
-    <title>Warrior Stories - We Warriors</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1964650693892617" crossorigin="anonymous"></script>
+    <title>Warrior Stories - Inspiring Journeys of Strength - We Warriors</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/accessibility.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/modern-slideshow.css">
+    <link rel="stylesheet" href="../css/modern-homepage.css">
+    <link rel="stylesheet" href="../css/theme-optimization.css">
     <link rel="stylesheet" href="../css/universal-header.css">
-    
-    <style>
-        .page-hero.modern-hero { position: relative; min-height: 70vh; display: flex; align-items: center; overflow: hidden; }
-        .hero-background { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; }
-        .hero-gradient { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 30%, rgba(255, 248, 240, 0.98) 70%, rgba(255, 255, 255, 0.95) 100%); }
-        .hero-pattern { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(196, 30, 58, 0.08) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.05) 0%, transparent 50%); background-size: 300px 300px, 400px 400px, 500px 500px; animation: patternMove 20s ease-in-out infinite; }
-        @keyframes patternMove { 0%, 100% { transform: translate(0, 0); } 25% { transform: translate(-10px, -10px); } 50% { transform: translate(10px, 10px); } 75% { transform: translate(-5px, 10px); } }
-        
-        /* Dark Theme Override */
-        :root[data-theme="dark"] .hero-gradient { background: linear-gradient(135deg, rgba(30, 30, 30, 0.95) 0%, rgba(45, 45, 45, 0.9) 30%, rgba(60, 60, 60, 0.95) 70%, rgba(30, 30, 30, 0.9) 100%) !important; }
-        :root[data-theme="dark"] .hero-pattern { background-image: radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.15) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(196, 30, 58, 0.12) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.08) 0%, transparent 50%) !important; }
-        
-        /* Stories Background */
-        [data-theme="light"] .hero-background { background-image: url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'); background-size: cover; background-position: center; }
-        [data-theme="light"] .hero-gradient { background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(248, 249, 250, 0.94) 30%, rgba(254, 249, 195, 0.96) 70%, rgba(255, 255, 255, 0.94) 100%); }
-        
-        .hero-container { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 2rem; width: 100%; }
-        .hero-content { color: #f8fafc; max-width: 800px; }
-        [data-theme="light"] .hero-content { color: #0f172a; }
-        .page-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin: 0 0 1.5rem 0; line-height: 1.1; color: #f1f5f9; }
-        [data-theme="light"] .page-title { color: var(--blood-color) !important; }
-        .page-subtitle { font-size: clamp(1.1rem, 2.5vw, 1.4rem); margin: 0; color: rgba(226, 232, 240, 0.9); line-height: 1.6; }
-        [data-theme="light"] .page-subtitle { color: var(--text-primary) !important; }
-        .page-content { padding: 4rem 0; background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%); }
-        [data-theme="dark"] .page-content { background: linear-gradient(180deg, var(--background-primary) 0%, var(--background-secondary) 100%) !important; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-        
-        /* Floating Elements */
-        .hero-visual.modern-visual { position: absolute; top: 50%; right: 5%; transform: translateY(-50%); width: 300px; height: 300px; pointer-events: none; opacity: 0.8; }
-        .floating-elements { position: relative; width: 100%; height: 100%; }
-        .float-element { position: absolute; border-radius: 50%; animation: float 6s ease-in-out infinite; }
-        .float-element.stories { width: 80px; height: 80px; top: 20%; right: 10%; animation-delay: 0s; background: linear-gradient(135deg, rgba(239, 68, 68, 0.5), rgba(251, 113, 133, 0.3)); box-shadow: 0 4px 20px rgba(239, 68, 68, 0.3); }
-        .float-element.community { width: 60px; height: 60px; top: 60%; right: 40%; animation-delay: -2s; background: linear-gradient(135deg, rgba(168, 85, 247, 0.4), rgba(196, 181, 253, 0.25)); box-shadow: 0 4px 20px rgba(168, 85, 247, 0.2); }
-        .float-element.hope { width: 70px; height: 70px; top: 40%; right: 70%; animation-delay: -4s; background: linear-gradient(135deg, rgba(34, 197, 94, 0.4), rgba(74, 222, 128, 0.25)); box-shadow: 0 4px 20px rgba(34, 197, 94, 0.2); }
-        
-        :root[data-theme="dark"] .float-element.stories { background: linear-gradient(135deg, rgba(239, 68, 68, 0.7), rgba(251, 113, 133, 0.5)); box-shadow: 0 4px 25px rgba(239, 68, 68, 0.4); }
-        :root[data-theme="dark"] .float-element.community { background: linear-gradient(135deg, rgba(168, 85, 247, 0.6), rgba(196, 181, 253, 0.4)); box-shadow: 0 4px 25px rgba(168, 85, 247, 0.3); }
-        :root[data-theme="dark"] .float-element.hope { background: linear-gradient(135deg, rgba(34, 197, 94, 0.6), rgba(74, 222, 128, 0.4)); box-shadow: 0 4px 25px rgba(34, 197, 94, 0.3); }
-        
-        @keyframes float { 0%, 100% { transform: translateY(0px) scale(1); opacity: 0.6; } 25% { transform: translateY(-20px) scale(1.05); opacity: 0.8; } 50% { transform: translateY(-10px) scale(0.95); opacity: 0.7; } 75% { transform: translateY(-15px) scale(1.02); opacity: 0.9; } }
-        
-        /* Breadcrumb */
-        .breadcrumb { margin-bottom: 2rem; }
-        .breadcrumb ol { display: flex; align-items: center; gap: 0.5rem; list-style: none; padding: 0; margin: 0; font-size: 0.9rem; }
-        .breadcrumb li::after { content: '/'; margin: 0 0.5rem; color: rgba(248, 250, 252, 0.5); }
-        [data-theme="light"] .breadcrumb li::after { color: rgba(30, 41, 59, 0.4); }
-        .breadcrumb li:last-child::after { display: none; }
-        .breadcrumb a { color: rgba(248, 250, 252, 0.8); text-decoration: none; transition: color 0.3s ease; }
-        .breadcrumb a:hover { color: #e2e8f0; }
-        [data-theme="light"] .breadcrumb a { color: rgba(30, 41, 59, 0.7); }
-        [data-theme="light"] .breadcrumb a:hover { color: #991b1b; }
-        
-        @media (max-width: 768px) { .hero-container { padding: 3rem 1.5rem; } .hero-visual.modern-visual { display: none; } }
-        
-        /* Content sections */
-        .section-title { font-size: 2.5rem; font-weight: 700; color: var(--blood-color); margin-bottom: 2rem; text-align: center; }
-        [data-theme="dark"] .section-title { color: var(--text-primary) !important; }
-        .section-text { font-size: 1.1rem; line-height: 1.7; color: #555; text-align: center; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto; }
-        [data-theme="dark"] .section-text { color: var(--text-secondary) !important; }
-        
-        /* Featured Story Banner */
-        .featured-story-banner { background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: white; padding: 3rem; border-radius: 16px; text-align: center; margin: 3rem 0; position: relative; overflow: hidden; }
-        [data-theme="dark"] .featured-story-banner { background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%) !important; }
-        .featured-story-banner::before { content: ''; position: absolute; top: -50%; right: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); transform: rotate(-45deg); }
-        
-        /* Story Filters */
-        .story-filters { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin: 3rem 0; }
-        .filter-btn { padding: 0.75rem 1.5rem; border: 2px solid #e2e8f0; background: white; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; color: #374151; }
-        .filter-btn:hover, .filter-btn.active { border-color: var(--blood-color); background: var(--blood-color); color: white; }
-        [data-theme="dark"] .filter-btn { background: var(--background-secondary) !important; border-color: var(--border-primary) !important; color: var(--text-primary) !important; }
-        [data-theme="dark"] .filter-btn:hover, [data-theme="dark"] .filter-btn.active { border-color: var(--blood-light) !important; background: var(--blood-light) !important; }
-        
-        /* Stories Grid */
-        .stories-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 2rem; margin: 3rem 0; }
-        .story-card { background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); border: 1px solid rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .story-card:hover { transform: translateY(-8px); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); }
-        [data-theme="dark"] .story-card { background: var(--card-background) !important; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important; border: 1px solid var(--border-primary) !important; }
-        [data-theme="dark"] .story-card:hover { box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4) !important; }
-        
-        .story-image { width: 100%; height: 250px; object-fit: cover; }
-        .story-content { padding: 2rem; }
-        .story-tag { display: inline-block; background: var(--blood-color); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 1rem; }
-        .story-title { font-size: 1.5rem; font-weight: 700; color: var(--blood-color); margin-bottom: 1rem; line-height: 1.3; }
-        [data-theme="dark"] .story-title { color: var(--text-primary) !important; }
-        .story-excerpt { color: #666; line-height: 1.6; margin-bottom: 1.5rem; }
-        [data-theme="dark"] .story-excerpt { color: var(--text-secondary) !important; }
-        .story-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; font-size: 0.9rem; color: #666; }
-        [data-theme="dark"] .story-meta { color: var(--text-secondary) !important; }
-        .author-info { display: flex; align-items: center; gap: 0.75rem; }
-        .author-avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
-        .story-action { display: inline-block; background: var(--blood-color); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: background 0.3s ease; }
-        .story-action:hover { background: var(--blood-light); color: white; }
-        
-        /* Share Your Story CTA */
-        .share-story-cta { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; padding: 4rem; border-radius: 16px; text-align: center; margin: 4rem 0; }
-        [data-theme="dark"] .share-story-cta { background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important; }
-        
-        /* Story Statistics */
-        .story-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 3rem 0; }
-        .stat-card { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 2rem; border-radius: 16px; text-align: center; border-left: 4px solid var(--blood-color); }
-        [data-theme="dark"] .stat-card { background: linear-gradient(135deg, var(--background-secondary) 0%, var(--background-tertiary) 100%) !important; border-left-color: var(--blood-light) !important; }
-        .stat-number { font-size: 3rem; font-weight: 800; color: var(--blood-color); line-height: 1; }
-        [data-theme="dark"] .stat-number { color: var(--blood-light) !important; }
-        .stat-label { font-size: 1rem; font-weight: 600; color: #666; margin-top: 0.5rem; }
-        [data-theme="dark"] .stat-label { color: var(--text-secondary) !important; }
-        
-        /* Newsletter signup */
-        .newsletter-signup { background: #ffffff; border-radius: 16px; padding: 3rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); margin: 3rem 0; text-align: center; }
-        [data-theme="dark"] .newsletter-signup { background: var(--card-background) !important; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important; }
-        .newsletter-form { display: flex; gap: 1rem; max-width: 500px; margin: 2rem auto 0; }
-        .newsletter-input { flex: 1; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; }
-        .newsletter-input:focus { outline: none; border-color: var(--blood-color); }
-        [data-theme="dark"] .newsletter-input { background: var(--background-secondary) !important; border-color: var(--border-primary) !important; color: var(--text-primary) !important; }
-        .newsletter-btn { padding: 1rem 2rem; background: var(--blood-color); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: background 0.3s ease; }
-        .newsletter-btn:hover { background: var(--blood-light); }
-        
-        @media (max-width: 768px) {
-            .stories-grid { grid-template-columns: 1fr; }
-            .newsletter-form { flex-direction: column; }
-            .story-filters { justify-content: flex-start; overflow-x: auto; padding-bottom: 1rem; }
-        }
-    </style>
+    <link rel="stylesheet" href="../css/information.css">
 </head>
-<body class="page-body">
-    <!-- Skip to main content -->
+<body>
+    <!-- Skip to main content link for accessibility -->
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
     
     <!-- Universal Header -->
@@ -209,6 +84,9 @@
                             <a href="forum.html" class="dropdown-link" role="menuitem">Forum</a>
                         </li>
                         <li class="dropdown-item" role="none">
+                            <a href="warrior-stories.html" class="dropdown-link" role="menuitem">Warrior Stories</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
                             <a href="blog.html" class="dropdown-link" role="menuitem">Blog</a>
                         </li>
                         <li class="dropdown-item" role="none">
@@ -220,15 +98,31 @@
                     </ul>
                 </div>
                 
-                <div class="nav-item">
-                    <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Professionals</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="../professionals/partnerships.html" class="dropdown-link" role="menuitem">Partnerships</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../professionals/researchers.html" class="dropdown-link" role="menuitem">Researchers</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../professionals/educators.html" class="dropdown-link" role="menuitem">Educators</a>
+                        </li>
+                    </ul>
                 </div>
                 
                 <div class="nav-item">
-                    <a href="../pages/get-involved.html" class="cta-button" role="menuitem">Get Involved</a>
+                    <a href="../pages/about-us.html" class="nav-link" role="menuitem">About Us</a>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="#get-involved" class="cta-button" role="menuitem">Get Involved</a>
                 </div>
                 
                 <!-- Mobile Only Links -->
+                <!-- Theme Toggle First -->
                 <div class="nav-item mobile-nav-item mobile-theme-item">
                     <div class="mobile-theme-toggle">
                         <span>Dark Mode</span>
@@ -240,41 +134,50 @@
                 <div class="nav-item mobile-nav-item">
                     <a href="../index.html" class="nav-link" role="menuitem">Home</a>
                 </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../support/about-sickle-cell.html" class="nav-link" role="menuitem">Living with Sickle Cell</a>
+                
+                <!-- Mobile Main Categories -->
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Support</a>
+                    <div class="mobile-submenu">
+                        <a href="../support/about-sickle-cell.html" class="mobile-submenu-link">Living with Sickle Cell</a>
+                        <a href="../support/support-groups.html" class="mobile-submenu-link">Support Groups</a>
+                        <a href="../support/counseling.html" class="mobile-submenu-link">Counseling Services</a>
+                        <a href="../support/resources.html" class="mobile-submenu-link">Resources</a>
+                    </div>
                 </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../information/what-is-sickle-cell.html" class="nav-link" role="menuitem">What is Sickle Cell</a>
+                
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Information</a>
+                    <div class="mobile-submenu">
+                        <a href="../information/what-is-sickle-cell.html" class="mobile-submenu-link">What is Sickle Cell</a>
+                        <a href="../information/types.html" class="mobile-submenu-link">Types of Sickle Cell</a>
+                        <a href="../information/diagnosis-treatment.html" class="mobile-submenu-link">Diagnosis & Treatment</a>
+                        <a href="../information/research.html" class="mobile-submenu-link">Research & Trials</a>
+                    </div>
                 </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../information/types.html" class="nav-link" role="menuitem">Types & Symptoms</a>
+                
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Community</a>
+                    <div class="mobile-submenu">
+                        <a href="forum.html" class="mobile-submenu-link">Forum</a>
+                        <a href="warrior-stories.html" class="mobile-submenu-link">Warrior Stories</a>
+                        <a href="blog.html" class="mobile-submenu-link">Blog</a>
+                        <a href="events.html" class="mobile-submenu-link">Events</a>
+                        <a href="gallery.html" class="mobile-submenu-link">Gallery</a>
+                    </div>
                 </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../information/diagnosis-treatment.html" class="nav-link" role="menuitem">Diagnosis & Treatment</a>
+                
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Professionals</a>
+                    <div class="mobile-submenu">
+                        <a href="../professionals/partnerships.html" class="mobile-submenu-link">Partnerships</a>
+                        <a href="../professionals/researchers.html" class="mobile-submenu-link">Researchers</a>
+                        <a href="../professionals/educators.html" class="mobile-submenu-link">Educators</a>
+                    </div>
                 </div>
+                
                 <div class="nav-item mobile-nav-item">
-                    <a href="../support/support-groups.html" class="nav-link" role="menuitem">Support Groups</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../support/resources.html" class="nav-link" role="menuitem">Resources</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../support/counseling.html" class="nav-link" role="menuitem">Counseling</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="events.html" class="nav-link" role="menuitem">Events</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="blog.html" class="nav-link" role="menuitem">Blog</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../information/research.html" class="nav-link" role="menuitem">Research</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../pages/advocacy.html" class="nav-link" role="menuitem">Advocacy</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact Us</a>
+                    <a href="../pages/about-us.html" class="nav-link" role="menuitem">About Us</a>
                 </div>
                 
                 <!-- Action Buttons Last -->
@@ -282,244 +185,329 @@
                     <a href="../pages/donate.html" class="mobile-action-btn mobile-donate-btn">Donate Now</a>
                 </div>
                 <div class="nav-item mobile-nav-item mobile-action-item">
-                    <a href="../pages/get-involved.html" class="mobile-action-btn mobile-get-involved-btn">Get Involved</a>
+                    <a href="#get-involved" class="mobile-action-btn mobile-get-involved-btn">Get Involved</a>
                 </div>
+                
+                <!-- Desktop Theme Toggle -->
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
             </nav>
             
-            <!-- Header Actions -->
-            <div class="header-actions">
-                <!-- Theme Toggle (Desktop) -->
-                <button class="theme-toggle" aria-label="Toggle dark mode" aria-describedby="theme-status">
-                    <span class="theme-icon">☀</span>
-                    <span class="sr-only" id="theme-status">Current theme: light mode</span>
-                </button>
-                
-                <!-- Mobile Menu Toggle -->
-                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main id="main-content" role="main" class="modern-main">
-        
+    <main id="main-content" class="main-content">
         <!-- Hero Section -->
-        <section class="page-hero modern-hero">
-            <div class="hero-background">
-                <div class="hero-gradient"></div>
-                <div class="hero-pattern"></div>
-            </div>
-            <div class="hero-container">
+        <section class="hero-information">
+            <div class="container">
                 <div class="hero-content">
-                    <nav class="breadcrumb modern-breadcrumb" aria-label="Breadcrumb">
-                        <ol>
-                            <li><a href="../index.html">Home</a></li>
-                            <li><a href="forum.html">Community</a></li>
-                            <li><span aria-current="page">Warrior Stories</span></li>
-                        </ol>
-                    </nav>
-                    <h1 class="page-title modern-title">Warrior Stories</h1>
-                    <p class="page-subtitle modern-subtitle">Real journeys of courage, strength, and triumph from warriors around the world</p>
-                </div>
-                <div class="hero-visual modern-visual">
-                    <div class="floating-elements">
-                        <div class="float-element stories"></div>
-                        <div class="float-element community"></div>
-                        <div class="float-element hope"></div>
+                    <h1 class="hero-title">Warrior Stories</h1>
+                    <p class="hero-subtitle">Inspiring journeys of strength, resilience, and triumph</p>
+                    <div class="hero-description">
+                        <p>Discover how warriors around the world are living full, meaningful lives while managing sickle cell disease.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Page Content -->
-        <section class="page-content modern-content">
+        <section class="page-content">
             <div class="container">
-                
-                <!-- Featured Story Banner -->
-                <div class="featured-story-banner">
-                    <h2>🌟 Featured Story: Maya's Journey to Becoming a Doctor</h2>
-                    <p>"They told me I couldn't become a doctor because of my condition. Today, I'm treating other warriors and proving that our dreams have no limits."</p>
-                    <a href="#maya-story" style="color: white; text-decoration: underline; font-weight: bold;">Read Maya's Complete Story</a>
-                </div>
-
-                <!-- Story Statistics -->
-                <div class="story-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">500+</div>
-                        <div class="stat-label">Stories Shared</div>
+                <!-- Featured Story -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">⭐</div>
+                        <h2 class="card-title">Featured Warrior Story</h2>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">Countries Represented</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">1M+</div>
-                        <div class="stat-label">Lives Inspired</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Hope Delivered</div>
-                    </div>
-                </div>
-
-                <h2 class="section-title">Stories That Inspire</h2>
-                <p class="section-text">
-                    Every warrior has a unique journey. These stories showcase the incredible strength, resilience, and triumph of our global warrior community. Your story could be the beacon of hope someone needs today.
-                </p>
-
-                <!-- Story Filters -->
-                <div class="story-filters">
-                    <button class="filter-btn active" data-category="all">All Stories</button>
-                    <button class="filter-btn" data-category="triumph">Triumphs</button>
-                    <button class="filter-btn" data-category="career">Career Success</button>
-                    <button class="filter-btn" data-category="family">Family Life</button>
-                    <button class="filter-btn" data-category="sports">Athletes</button>
-                    <button class="filter-btn" data-category="education">Education</button>
-                    <button class="filter-btn" data-category="advocacy">Advocacy</button>
-                    <button class="filter-btn" data-category="young">Young Warriors</button>
-                </div>
-
-                <!-- Stories Grid -->
-                <div class="stories-grid">
-                    <div class="story-card" data-category="career" id="maya-story">
-                        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Maya's Story" class="story-image">
-                        <div class="story-content">
-                            <div class="story-tag">Medical Professional</div>
-                            <h3 class="story-title">From Patient to Pediatrician: Maya's Inspiring Journey</h3>
-                            <p class="story-excerpt">
-                                Maya was told she'd never become a doctor due to her sickle cell disease. Today, she runs a pediatric practice specializing in sickle cell care, proving that our conditions don't define our limits.
-                            </p>
+                    <div class="card-content">
+                        <div class="featured-story">
                             <div class="story-meta">
-                                <div class="author-info">
-                                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b77c?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&q=80" alt="Maya" class="author-avatar">
-                                    <span><strong>Dr. Maya Johnson</strong> • Atlanta, GA</span>
-                                </div>
-                                <span>📅 Nov 2024</span>
+                                <span class="story-category">Medical Professional</span>
+                                <span class="story-location">Nigeria</span>
                             </div>
-                            <a href="stories/maya-journey.html" class="story-action">Read Full Story</a>
-                        </div>
-                    </div>
-
-                    <div class="story-card" data-category="sports">
-                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="James's Story" class="story-image">
-                        <div class="story-content">
-                            <div class="story-tag">Athlete</div>
-                            <h3 class="story-title">Breaking Barriers: The Marathon Runner Who Won't Quit</h3>
-                            <p class="story-excerpt">
-                                James completed his first marathon despite multiple hospitalizations during training. His story shows how determination and proper medical support can help warriors achieve athletic dreams.
-                            </p>
-                            <div class="story-meta">
-                                <div class="author-info">
-                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&q=80" alt="James" class="author-avatar">
-                                    <span><strong>James Wilson</strong> • Los Angeles, CA</span>
-                                </div>
-                                <span>📅 Oct 2024</span>
+                            <h3 class="story-title">From Patient to Pediatric Nurse: Turning Pain into Purpose</h3>
+                            <p class="story-excerpt">Growing up with sickle cell disease, Kemi spent countless hours in hospitals. Instead of letting this discourage her, she was inspired by the compassionate nurses who cared for her. Today, she works as a pediatric nurse at a major teaching hospital, providing the kind of care she wished for as a child. "Every time I comfort a young patient in pain, I remember being in that same bed. My condition didn't limit me – it gave me purpose."</p>
+                            <div class="story-highlights">
+                                <h4>Key Achievements:</h4>
+                                <ul>
+                                    <li>Graduated nursing school with honors despite frequent hospitalizations</li>
+                                    <li>Specializes in pediatric sickle cell care</li>
+                                    <li>Mentors young people with sickle cell disease</li>
+                                    <li>Advocates for better pain management protocols</li>
+                                </ul>
                             </div>
-                            <a href="#" class="story-action">Read Full Story</a>
-                        </div>
-                    </div>
-
-                    <div class="story-card" data-category="young">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Aria's Story" class="story-image">
-                        <div class="story-content">
-                            <div class="story-tag">Young Warrior</div>
-                            <h3 class="story-title">16-Year-Old Activist Changes School Policy</h3>
-                            <p class="story-excerpt">
-                                Aria successfully advocated for sickle cell awareness education in her school district, affecting over 50,000 students. She shows how young voices can create massive change.
-                            </p>
-                            <div class="story-meta">
-                                <div class="author-info">
-                                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&q=80" alt="Aria" class="author-avatar">
-                                    <span><strong>Aria Thompson</strong> • Houston, TX</span>
-                                </div>
-                                <span>📅 Oct 2024</span>
-                            </div>
-                            <a href="#" class="story-action">Read Full Story</a>
-                        </div>
-                    </div>
-
-                    <div class="story-card" data-category="family">
-                        <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Sarah's Story" class="story-image">
-                        <div class="story-content">
-                            <div class="story-tag">Motherhood</div>
-                            <h3 class="story-title">Motherhood and Medicine: Balancing Both Worlds</h3>
-                            <p class="story-excerpt">
-                                Sarah shares her journey of raising three healthy children while managing her sickle cell disease, offering practical advice for warrior parents and families planning for the future.
-                            </p>
-                            <div class="story-meta">
-                                <div class="author-info">
-                                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&q=80" alt="Sarah" class="author-avatar">
-                                    <span><strong>Sarah Davis</strong> • Chicago, IL</span>
-                                </div>
-                                <span>📅 Sep 2024</span>
-                            </div>
-                            <a href="#" class="story-action">Read Full Story</a>
-                        </div>
-                    </div>
-
-                    <div class="story-card" data-category="education">
-                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Marcus's Story" class="story-image">
-                        <div class="story-content">
-                            <div class="story-tag">PhD Graduate</div>
-                            <h3 class="story-title">From Hospital Bed to PhD: A Scholar's Determination</h3>
-                            <p class="story-excerpt">
-                                Marcus earned his PhD in Biochemistry while managing frequent hospitalizations. His research now focuses on developing better pain management for sickle cell patients.
-                            </p>
-                            <div class="story-meta">
-                                <div class="author-info">
-                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&q=80" alt="Marcus" class="author-avatar">
-                                    <span><strong>Dr. Marcus Lee</strong> • Boston, MA</span>
-                                </div>
-                                <span>📅 Sep 2024</span>
-                            </div>
-                            <a href="#" class="story-action">Read Full Story</a>
-                        </div>
-                    </div>
-
-                    <div class="story-card" data-category="advocacy">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Zara's Story" class="story-image">
-                        <div class="story-content">
-                            <div class="story-tag">Global Advocate</div>
-                            <h3 class="story-title">Building Healthcare Access in Rural Communities</h3>
-                            <p class="story-excerpt">
-                                Zara established mobile clinics in rural areas with limited sickle cell care. Her nonprofit has now served over 10,000 warriors across underserved communities worldwide.
-                            </p>
-                            <div class="story-meta">
-                                <div class="author-info">
-                                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=40&q=80" alt="Zara" class="author-avatar">
-                                    <span><strong>Zara Okafor</strong> • Lagos, Nigeria</span>
-                                </div>
-                                <span>📅 Aug 2024</span>
-                            </div>
-                            <a href="#" class="story-action">Read Full Story</a>
+                            <blockquote class="story-quote">
+                                "Having sickle cell disease taught me empathy in a way textbooks never could. My patients trust me because they know I truly understand their pain."
+                            </blockquote>
                         </div>
                     </div>
                 </div>
 
-                <!-- Share Your Story CTA -->
-                <div class="share-story-cta">
-                    <h2>🚀 Your Story Could Change Lives</h2>
-                    <p>Every warrior has a unique journey worth sharing. Your experiences, challenges, and victories can inspire and guide others on their path. Whether you're celebrating a milestone, overcoming obstacles, or sharing everyday wisdom, your voice matters.</p>
-                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
-                        <a href="#" style="display: inline-block; background: white; color: #d97706; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700;">Share Your Story</a>
-                        <a href="../pages/contact.html" style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700; border: 2px solid white;">Get Help Writing</a>
+                <!-- Warrior Stories Collection -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">💪</div>
+                        <h2 class="card-title">Inspiring Warrior Journeys</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="stories-grid">
+                            <div class="story-card">
+                                <div class="story-header">
+                                    <h3>The Teacher Who Never Gives Up</h3>
+                                    <div class="story-meta">
+                                        <span class="category">Education</span>
+                                        <span class="location">Ghana</span>
+                                    </div>
+                                </div>
+                                <div class="story-content">
+                                    <p>Despite frequent pain crises, Ama has taught primary school for over 15 years. She's developed innovative ways to manage her classroom even when experiencing pain, including peer teaching methods and flexible lesson plans. Her students never know when she's in pain because her dedication never wavers.</p>
+                                    <div class="story-impact">
+                                        <strong>Impact:</strong> Educated over 500 children, many of whom now mentor younger students with chronic conditions.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="story-card">
+                                <div class="story-header">
+                                    <h3>The Entrepreneur Building Dreams</h3>
+                                    <div class="story-meta">
+                                        <span class="category">Business</span>
+                                        <span class="location">Nigeria</span>
+                                    </div>
+                                </div>
+                                <div class="story-content">
+                                    <p>After struggling to find flexible employment due to unpredictable health needs, Tunde started his own digital marketing agency. He now employs 12 people and has created a workplace culture that prioritizes health and flexibility for all employees, not just those with chronic conditions.</p>
+                                    <div class="story-impact">
+                                        <strong>Impact:</strong> Created jobs for others and advocates for inclusive workplace policies.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="story-card">
+                                <div class="story-header">
+                                    <h3>The Student Who Wouldn't Quit</h3>
+                                    <div class="story-meta">
+                                        <span class="category">Academic</span>
+                                        <span class="location">Kenya</span>
+                                    </div>
+                                </div>
+                                <div class="story-content">
+                                    <p>Medical school seemed impossible for Grace when pain crises caused her to miss months of classes. With accommodations, study group support, and determination, she graduated and is now completing her residency in hematology, focusing on sickle cell research.</p>
+                                    <div class="story-impact">
+                                        <strong>Impact:</strong> Contributing to sickle cell research and inspiring other students with chronic conditions.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="story-card">
+                                <div class="story-header">
+                                    <h3>The Parent Breaking Generational Patterns</h3>
+                                    <div class="story-meta">
+                                        <span class="category">Family</span>
+                                        <span class="location">Tanzania</span>
+                                    </div>
+                                </div>
+                                <div class="story-content">
+                                    <p>Mwalimu manages both his own sickle cell disease and supports his daughter who also has the condition. He's become an expert at genetic counseling and family planning, helping other families understand their options and break cycles of stigma.</p>
+                                    <div class="story-impact">
+                                        <strong>Impact:</strong> Counseled 200+ families on genetic planning and advocacy.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="story-card">
+                                <div class="story-header">
+                                    <h3>The Artist Painting Through Pain</h3>
+                                    <div class="story-meta">
+                                        <span class="category">Creative Arts</span>
+                                        <span class="location">Nigeria</span>
+                                    </div>
+                                </div>
+                                <div class="story-content">
+                                    <p>Chioma uses art therapy to manage her pain and has turned her coping mechanism into a career. Her paintings depicting the sickle cell experience have been exhibited internationally, and she now teaches art therapy to other chronic pain patients.</p>
+                                    <div class="story-impact">
+                                        <strong>Impact:</strong> Art therapy workshops have helped 150+ individuals cope with chronic pain.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="story-card">
+                                <div class="story-header">
+                                    <h3>The Athlete Defying Expectations</h3>
+                                    <div class="story-meta">
+                                        <span class="category">Sports</span>
+                                        <span class="location">Nigeria</span>
+                                    </div>
+                                </div>
+                                <div class="story-content">
+                                    <p>Against all medical advice, Kola continued playing football (soccer) at a semi-professional level by developing careful hydration and rest protocols. He now coaches youth teams and teaches young athletes with chronic conditions how to pursue sports safely.</p>
+                                    <div class="story-impact">
+                                        <strong>Impact:</strong> Coached 50+ young athletes, promoting inclusive sports participation.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Newsletter Signup -->
-                <div class="newsletter-signup">
-                    <h3>📬 Stay Connected with Our Community</h3>
-                    <p>Get the latest warrior stories, community updates, and inspiration delivered straight to your inbox.</p>
-                    <form class="newsletter-form">
-                        <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
-                        <button type="submit" class="newsletter-btn">Subscribe</button>
-                    </form>
+                <!-- Story Categories -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">📂</div>
+                        <h2 class="card-title">Stories by Theme</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <h3>🎓 Education & Career Success</h3>
+                                <p>Warriors who have achieved their academic and professional dreams despite challenges.</p>
+                                <ul>
+                                    <li>Medical professionals with sickle cell</li>
+                                    <li>Teachers and educators</li>
+                                    <li>Students overcoming academic barriers</li>
+                                    <li>Career pivots and entrepreneurship</li>
+                                </ul>
+                                <p><strong>Featured:</strong> 12 stories of academic and professional achievement</p>
+                            </div>
+
+                            <div class="info-item">
+                                <h3>👨‍👩‍👧‍👦 Family & Relationships</h3>
+                                <p>Parents, partners, and family members navigating sickle cell together.</p>
+                                <ul>
+                                    <li>Parenting with sickle cell disease</li>
+                                    <li>Supporting children with sickle cell</li>
+                                    <li>Building strong relationships</li>
+                                    <li>Breaking cycles of stigma</li>
+                                </ul>
+                                <p><strong>Featured:</strong> 8 stories of family strength and love</p>
+                            </div>
+
+                            <div class="info-item">
+                                <h3>💼 Entrepreneurship & Innovation</h3>
+                                <p>Warriors who have created their own paths and opportunities.</p>
+                                <ul>
+                                    <li>Starting successful businesses</li>
+                                    <li>Creating inclusive workplaces</li>
+                                    <li>Innovative solutions for daily management</li>
+                                    <li>Technology and app development</li>
+                                </ul>
+                                <p><strong>Featured:</strong> 6 stories of business and innovation success</p>
+                            </div>
+
+                            <div class="info-item">
+                                <h3>🎨 Creative Expression</h3>
+                                <p>Artists, writers, and creators using their talents to inspire and heal.</p>
+                                <ul>
+                                    <li>Visual artists and painters</li>
+                                    <li>Writers and poets</li>
+                                    <li>Musicians and performers</li>
+                                    <li>Art and music therapy practitioners</li>
+                                </ul>
+                                <p><strong>Featured:</strong> 5 stories of creative triumph and expression</p>
+                            </div>
+
+                            <div class="info-item">
+                                <h3>⚕️ Healthcare Heroes</h3>
+                                <p>Warriors working in healthcare to help others with similar conditions.</p>
+                                <ul>
+                                    <li>Nurses specializing in sickle cell care</li>
+                                    <li>Medical researchers and doctors</li>
+                                    <li>Healthcare advocates and counselors</li>
+                                    <li>Medical interpreters and liaisons</li>
+                                </ul>
+                                <p><strong>Featured:</strong> 9 stories of healthcare dedication and service</p>
+                            </div>
+
+                            <div class="info-item">
+                                <h3>🌍 Community Leaders</h3>
+                                <p>Advocates and leaders making change in their communities.</p>
+                                <ul>
+                                    <li>Sickle cell awareness advocates</li>
+                                    <li>Community organizers and leaders</li>
+                                    <li>Policy advocates and activists</li>
+                                    <li>Mentors and youth leaders</li>
+                                </ul>
+                                <p><strong>Featured:</strong> 7 stories of advocacy and community impact</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
+
+                <!-- Story Submission -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">📝</div>
+                        <h2 class="card-title">Share Your Warrior Story</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="story-submission">
+                            <h3>Your Story Matters</h3>
+                            <p>Every warrior has a unique journey filled with challenges overcome, dreams pursued, and victories achieved. Your story could be exactly what another warrior needs to hear today.</p>
+                            
+                            <div class="submission-guidelines">
+                                <h4>What Makes a Great Warrior Story?</h4>
+                                <ul>
+                                    <li><strong>Authentic experiences:</strong> Real challenges and how you overcame them</li>
+                                    <li><strong>Inspiring achievements:</strong> Goals you've reached or progress you've made</li>
+                                    <li><strong>Practical insights:</strong> Tips and strategies that helped you succeed</li>
+                                    <li><strong>Hope and encouragement:</strong> Messages that uplift other warriors</li>
+                                    <li><strong>Diverse perspectives:</strong> All ages, backgrounds, and life stages welcome</li>
+                                </ul>
+                            </div>
+
+                            <div class="submission-process">
+                                <h4>How to Submit Your Story</h4>
+                                <div class="process-steps">
+                                    <div class="step">
+                                        <div class="step-number">1</div>
+                                        <div class="step-content">
+                                            <h5>Write Your Story</h5>
+                                            <p>Share your journey in 300-800 words. Include challenges faced, strategies used, and achievements reached.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <div class="step-number">2</div>
+                                        <div class="step-content">
+                                            <h5>Choose Your Privacy Level</h5>
+                                            <p>Decide if you want to use your real name, first name only, or remain anonymous.</p>
+                                        </div>
+                                    </div>
+                                    <div class="step">
+                                        <div class="step-number">3</div>
+                                        <div class="step-content">
+                                            <h5>Submit for Review</h5>
+                                            <p>Our team reviews all stories to ensure they inspire and support our community.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="cta-buttons">
+                                <a href="#" class="btn">Submit Your Story</a>
+                                <a href="forum.html" class="btn btn-secondary">Share in Forum</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="cta-section">
+                    <h2>Every Warrior Has a Story</h2>
+                    <p>Your journey matters. Your victories, big and small, can inspire others facing similar challenges. Join our community of warriors sharing strength, hope, and encouragement.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn">Tell Your Story</a>
+                        <a href="blog.html" class="btn btn-secondary">Read More Stories</a>
+                    </div>
+                </div>
             </div>
         </section>
         
@@ -564,7 +552,7 @@
                         <li><a href="forum.html">Forum</a></li>
                         <li><a href="blog.html">Blog</a></li>
                         <li><a href="events.html">Events</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="../pages/newsletter.html">Newsletter</a></li>
                     </ul>
                 </div>
                 
@@ -594,7 +582,6 @@
                     </div>
                     <div class="contact-info">
                         <p><strong>Email:</strong> wewarriorsng@gmail.com</p>
-                        <p><strong>Direct:</strong> +2347041120734</p>
                         <p><strong>Phone:</strong> 1-800-WARRIOR</p>
                     </div>
                 </div>
@@ -614,46 +601,12 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="../js/animations.js"></script>
+    <script src="../js/theme-toggle.js"></script>
+    <script src="../js/mobile-menu.js"></script>
     <script src="../js/universal-header.js"></script>
     <script src="../js/main.js"></script>
+    <script src="../js/animations.js"></script>
     <script src="../js/warriorbot.js"></script>
-    
-    <!-- Story Filtering JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const storyCards = document.querySelectorAll('.story-card');
-            
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const category = this.dataset.category;
-                    
-                    // Update active button
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    // Filter stories
-                    storyCards.forEach(card => {
-                        if (category === 'all' || card.dataset.category === category) {
-                            card.style.display = 'block';
-                            card.style.animation = 'fadeIn 0.5s ease-in-out';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            });
-            
-            // Newsletter form submission
-            const newsletterForm = document.querySelector('.newsletter-form');
-            newsletterForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const email = this.querySelector('.newsletter-input').value;
-                alert(`Thank you for subscribing with ${email}! You'll receive our latest warrior stories and community updates.`);
-                this.reset();
-            });
-        });
-    </script>
+
 </body>
 </html>

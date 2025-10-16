@@ -1,169 +1,32 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Read inspiring stories, updates, and resources from the We Warriors sickle cell community blog">
     <meta name="keywords" content="sickle cell blog, warrior stories, sickle cell news, community updates, inspiration">
-    <meta name="author" content="We Warriors Organization">
     
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Community Blog - We Warriors">
-    <meta property="og:description" content="Read inspiring stories, updates, and resources from the We Warriors sickle cell community blog">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://wewarriors.org/community/blog.html">
-    
-    <title>Community Blog - We Warriors</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1964650693892617" crossorigin="anonymous"></script>
+    <title>Community Blog - Stories & Updates - We Warriors</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/accessibility.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/modern-slideshow.css">
+    <link rel="stylesheet" href="../css/modern-homepage.css">
+    <link rel="stylesheet" href="../css/theme-optimization.css">
     <link rel="stylesheet" href="../css/universal-header.css">
-    
-    <!-- CORRECT Dual-Theme Hero System -->
-    <style>
-        .page-hero.modern-hero { position: relative; min-height: 70vh; display: flex; align-items: center; overflow: hidden; }
-        .hero-background { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; }
-        .hero-gradient { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 30%, rgba(255, 248, 240, 0.98) 70%, rgba(255, 255, 255, 0.95) 100%); }
-        .hero-pattern { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(196, 30, 58, 0.08) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.05) 0%, transparent 50%); background-size: 300px 300px, 400px 400px, 500px 500px; animation: patternMove 20s ease-in-out infinite; }
-        @keyframes patternMove { 0%, 100% { transform: translate(0, 0); } 25% { transform: translate(-10px, -10px); } 50% { transform: translate(10px, 10px); } 75% { transform: translate(-5px, 10px); } }
-        
-        /* ORIGINAL BEAUTIFUL DARK MODE FROM COMMUNITY EVENTS */
-        [data-theme="dark"] .hero-gradient { background: linear-gradient(135deg, rgba(30, 30, 30, 0.95) 0%, rgba(45, 45, 45, 0.9) 30%, rgba(60, 60, 60, 0.95) 70%, rgba(30, 30, 30, 0.9) 100%) !important; }
-        [data-theme="dark"] .hero-pattern { background-image: radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.15) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(196, 30, 58, 0.12) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.08) 0%, transparent 50%) !important; }
-        
-        /* Light Theme - Blog Background */
-        [data-theme="light"] .hero-background { background-image: url('https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'); background-size: cover; background-position: center; }
-        [data-theme="light"] .hero-gradient { background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(248, 249, 250, 0.94) 30%, rgba(254, 249, 195, 0.96) 70%, rgba(255, 255, 255, 0.94) 100%); }
-        
-        .hero-container { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 2rem; width: 100%; }
-        .hero-content { color: #f8fafc; max-width: 800px; }
-        [data-theme="light"] .hero-content { color: #0f172a; }
-        .page-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin: 0 0 1.5rem 0; line-height: 1.1; color: #f1f5f9; }
-        [data-theme="light"] .page-title { color: var(--blood-color) !important; }
-        .page-subtitle { font-size: clamp(1.1rem, 2.5vw, 1.4rem); margin: 0; color: rgba(226, 232, 240, 0.9); line-height: 1.6; }
-        [data-theme="light"] .page-subtitle { color: var(--text-primary) !important; }
-        .page-content { padding: 4rem 0; background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%); }
-        [data-theme="dark"] .page-content { background: linear-gradient(180deg, var(--background-primary) 0%, var(--background-secondary) 100%) !important; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-        
-        /* Modern Horizontal Breadcrumb Styling */
-        .breadcrumb { margin-bottom: 2rem; }
-        .breadcrumb ol { display: flex; align-items: center; gap: 0.5rem; list-style: none; padding: 0; margin: 0; font-size: 0.9rem; }
-        .breadcrumb li::after { content: '/'; margin: 0 0.5rem; color: rgba(248, 250, 252, 0.5); }
-        [data-theme="light"] .breadcrumb li::after { color: rgba(30, 41, 59, 0.4); }
-        .breadcrumb li:last-child::after { display: none; }
-        .breadcrumb a { color: rgba(248, 250, 252, 0.8); text-decoration: none; transition: color 0.3s ease; }
-        .breadcrumb a:hover { color: #e2e8f0; }
-        [data-theme="light"] .breadcrumb a { color: rgba(30, 41, 59, 0.7); }
-        [data-theme="light"] .breadcrumb a:hover { color: #991b1b; }
-        
-        /* Floating Elements Styling */
-        .hero-visual.modern-visual {
-            position: absolute;
-            top: 50%;
-            right: 5%;
-            transform: translateY(-50%);
-            width: 300px;
-            height: 300px;
-            pointer-events: none;
-            opacity: 0.8;
-        }
-        
-        .floating-elements {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .float-element {
-            position: absolute;
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(196, 30, 58, 0.15));
-        }
-        
-        .float-element.stories {
-            width: 80px;
-            height: 80px;
-            top: 20%;
-            right: 10%;
-            animation-delay: 0s;
-            background: linear-gradient(135deg, rgba(255, 193, 7, 0.5), rgba(255, 235, 59, 0.3));
-            box-shadow: 0 4px 20px rgba(255, 193, 7, 0.3);
-        }
-        
-        .float-element.inspiration {
-            width: 60px;
-            height: 60px;
-            top: 60%;
-            right: 40%;
-            animation-delay: -2s;
-            background: linear-gradient(135deg, rgba(156, 39, 176, 0.4), rgba(186, 85, 211, 0.25));
-            box-shadow: 0 4px 20px rgba(156, 39, 176, 0.2);
-        }
-        
-        .float-element.sharing {
-            width: 70px;
-            height: 70px;
-            top: 40%;
-            right: 70%;
-            animation-delay: -4s;
-            background: linear-gradient(135deg, rgba(255, 87, 34, 0.4), rgba(255, 138, 101, 0.25));
-            box-shadow: 0 4px 20px rgba(255, 87, 34, 0.2);
-        }
-        
-        /* Dark theme enhancement */
-        :root[data-theme="dark"] .float-element.stories {
-            background: linear-gradient(135deg, rgba(255, 193, 7, 0.7), rgba(255, 235, 59, 0.5));
-            box-shadow: 0 4px 25px rgba(255, 193, 7, 0.4);
-        }
-        
-        :root[data-theme="dark"] .float-element.inspiration {
-            background: linear-gradient(135deg, rgba(156, 39, 176, 0.6), rgba(186, 85, 211, 0.4));
-            box-shadow: 0 4px 25px rgba(156, 39, 176, 0.3);
-        }
-        
-        :root[data-theme="dark"] .float-element.sharing {
-            background: linear-gradient(135deg, rgba(255, 87, 34, 0.6), rgba(255, 138, 101, 0.4));
-            box-shadow: 0 4px 25px rgba(255, 87, 34, 0.3);
-        }
-        
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px) scale(1);
-                opacity: 0.6;
-            }
-            25% {
-                transform: translateY(-20px) scale(1.05);
-                opacity: 0.8;
-            }
-            50% {
-                transform: translateY(-10px) scale(0.95);
-                opacity: 0.7;
-            }
-            75% {
-                transform: translateY(-15px) scale(1.02);
-                opacity: 0.9;
-            }
-        }
-        
-        @media (max-width: 768px) { 
-            .hero-container { padding: 3rem 1.5rem; } 
-            .hero-visual.modern-visual { display: none; }
-        }
-    </style>
+    <link rel="stylesheet" href="../css/information.css">
 </head>
-<body class="page-body">
-    <!-- Skip to main content -->
+<body>
+    <!-- Skip to main content link for accessibility -->
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
     
     <!-- Universal Header -->
@@ -221,6 +84,9 @@
                             <a href="forum.html" class="dropdown-link" role="menuitem">Forum</a>
                         </li>
                         <li class="dropdown-item" role="none">
+                            <a href="warrior-stories.html" class="dropdown-link" role="menuitem">Warrior Stories</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
                             <a href="blog.html" class="dropdown-link" role="menuitem">Blog</a>
                         </li>
                         <li class="dropdown-item" role="none">
@@ -232,8 +98,23 @@
                     </ul>
                 </div>
                 
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Professionals</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="../professionals/partnerships.html" class="dropdown-link" role="menuitem">Partnerships</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../professionals/researchers.html" class="dropdown-link" role="menuitem">Researchers</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../professionals/educators.html" class="dropdown-link" role="menuitem">Educators</a>
+                        </li>
+                    </ul>
+                </div>
+                
                 <div class="nav-item">
-                    <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact</a>
+                    <a href="../pages/about-us.html" class="nav-link" role="menuitem">About Us</a>
                 </div>
                 
                 <div class="nav-item">
@@ -253,41 +134,50 @@
                 <div class="nav-item mobile-nav-item">
                     <a href="../index.html" class="nav-link" role="menuitem">Home</a>
                 </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../support/about-sickle-cell.html" class="nav-link" role="menuitem">Living with Sickle Cell</a>
+                
+                <!-- Mobile Main Categories -->
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Support</a>
+                    <div class="mobile-submenu">
+                        <a href="../support/about-sickle-cell.html" class="mobile-submenu-link">Living with Sickle Cell</a>
+                        <a href="../support/support-groups.html" class="mobile-submenu-link">Support Groups</a>
+                        <a href="../support/counseling.html" class="mobile-submenu-link">Counseling Services</a>
+                        <a href="../support/resources.html" class="mobile-submenu-link">Resources</a>
+                    </div>
                 </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../information/what-is-sickle-cell.html" class="nav-link" role="menuitem">What is Sickle Cell</a>
+                
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Information</a>
+                    <div class="mobile-submenu">
+                        <a href="../information/what-is-sickle-cell.html" class="mobile-submenu-link">What is Sickle Cell</a>
+                        <a href="../information/types.html" class="mobile-submenu-link">Types of Sickle Cell</a>
+                        <a href="../information/diagnosis-treatment.html" class="mobile-submenu-link">Diagnosis & Treatment</a>
+                        <a href="../information/research.html" class="mobile-submenu-link">Research & Trials</a>
+                    </div>
                 </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../information/types.html" class="nav-link" role="menuitem">Types & Symptoms</a>
+                
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Community</a>
+                    <div class="mobile-submenu">
+                        <a href="forum.html" class="mobile-submenu-link">Forum</a>
+                        <a href="warrior-stories.html" class="mobile-submenu-link">Warrior Stories</a>
+                        <a href="blog.html" class="mobile-submenu-link">Blog</a>
+                        <a href="events.html" class="mobile-submenu-link">Events</a>
+                        <a href="gallery.html" class="mobile-submenu-link">Gallery</a>
+                    </div>
                 </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../information/diagnosis-treatment.html" class="nav-link" role="menuitem">Diagnosis & Treatment</a>
+                
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Professionals</a>
+                    <div class="mobile-submenu">
+                        <a href="../professionals/partnerships.html" class="mobile-submenu-link">Partnerships</a>
+                        <a href="../professionals/researchers.html" class="mobile-submenu-link">Researchers</a>
+                        <a href="../professionals/educators.html" class="mobile-submenu-link">Educators</a>
+                    </div>
                 </div>
+                
                 <div class="nav-item mobile-nav-item">
-                    <a href="../support/support-groups.html" class="nav-link" role="menuitem">Support Groups</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../support/resources.html" class="nav-link" role="menuitem">Resources</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../support/counseling.html" class="nav-link" role="menuitem">Counseling</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="events.html" class="nav-link" role="menuitem">Events</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="blog.html" class="nav-link" role="menuitem">Blog</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../information/research.html" class="nav-link" role="menuitem">Research</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../pages/advocacy.html" class="nav-link" role="menuitem">Advocacy</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact Us</a>
+                    <a href="../pages/about-us.html" class="nav-link" role="menuitem">About Us</a>
                 </div>
                 
                 <!-- Action Buttons Last -->
@@ -297,289 +187,290 @@
                 <div class="nav-item mobile-nav-item mobile-action-item">
                     <a href="#get-involved" class="mobile-action-btn mobile-get-involved-btn">Get Involved</a>
                 </div>
+                
+                <!-- Desktop Theme Toggle -->
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
             </nav>
             
-            <!-- Header Actions -->
-            <div class="header-actions">
-                <!-- Theme Toggle (Desktop) -->
-                <button class="theme-toggle" aria-label="Toggle dark mode" aria-describedby="theme-status">
-                    <span class="theme-icon">â˜€</span>
-                    <span class="sr-only" id="theme-status">Current theme: light mode</span>
-                </button>
-                
-                <!-- Mobile Menu Toggle -->
-                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main id="main-content" role="main" class="modern-main">
-        
+    <main id="main-content" class="main-content">
         <!-- Hero Section -->
-        <section class="page-hero modern-hero">
-            <div class="hero-background">
-                <div class="hero-gradient"></div>
-                <div class="hero-pattern"></div>
-            </div>
-            <div class="hero-container">
+        <section class="hero-information">
+            <div class="container">
                 <div class="hero-content">
-                    <nav class="breadcrumb modern-breadcrumb" aria-label="Breadcrumb">
-                        <ol>
-                            <li><a href="../index.html">Home</a></li>
-                            <li><a href="../index.html#community">Community</a></li>
-                            <li><span aria-current="page">Blog</span></li>
-                        </ol>
-                    </nav>
-                    <h1 class="page-title modern-title">Warrior Stories & Updates</h1>
-                    <p class="page-subtitle modern-subtitle">Inspiration, hope, and community voices from our journey</p>
-                </div>
-                <div class="hero-visual modern-visual">
-                    <div class="floating-elements">
-                        <div class="float-element stories"></div>
-                        <div class="float-element inspiration"></div>
-                        <div class="float-element sharing"></div>
+                    <h1 class="hero-title">Community Blog</h1>
+                    <p class="hero-subtitle">Stories, insights, and updates from the warrior community</p>
+                    <div class="hero-description">
+                        <p>Discover inspiring stories, helpful tips, and the latest news in the sickle cell community.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Page Content -->
-        <section class="page-content modern-content">
+        <section class="page-content">
             <div class="container">
-                <div class="content-grid">
-                    <div class="main-content">
-                        <div class="blog-filters">
-                            <div class="filter-buttons">
-                                <button class="filter-btn active" data-filter="all">All Posts</button>
-                                <button class="filter-btn" data-filter="stories">Warrior Stories</button>
-                                <button class="filter-btn" data-filter="medical">Medical Updates</button>
-                                <button class="filter-btn" data-filter="research">Research News</button>
-                                <button class="filter-btn" data-filter="faith">Faith & Hope</button>
-                                <button class="filter-btn" data-filter="community">Community News</button>
+                <!-- Featured Article -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">⭐</div>
+                        <h2 class="card-title">Featured Article</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="featured-article">
+                            <div class="article-meta">
+                                <span class="category">Research & Hope</span>
+                                <span class="date">January 15, 2025</span>
+                                <span class="author">Dr. Sarah Johnson & We Warriors Team</span>
                             </div>
-                        </div>
-
-                        <div class="blog-posts">
-                            <article class="blog-post featured" data-category="stories">
-                                <div class="post-image">
-                                    <div class="placeholder-image"><span class="icon-book" aria-label="Book"></span></div>
-                                </div>
-                                <div class="post-content">
-                                    <div class="post-meta">
-                                        <span class="post-category">Warrior Stories</span>
-                                        <time class="post-date" datetime="2025-01-05">January 5, 2025</time>
-                                    </div>
-                                    <h2 class="post-title">From Pain to Purpose: Sarah's Journey of Hope</h2>
-                                    <p class="post-excerpt">
-                                        After years of struggling with frequent pain crises, Sarah M. found her calling in 
-                                        advocacy and helping other warriors navigate their journey. Her story reminds us that 
-                                        our struggles can become our strengths...
-                                    </p>
-                                    <div class="post-author">
-                                        <div class="author-info">
-                                            <span class="author-name">By Sarah M., Warrior & Advocate</span>
-                                            <span class="read-time">5 min read</span>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="read-more-btn">Read Full Story</a>
-                                </div>
-                            </article>
-
-                            <article class="blog-post" data-category="medical">
-                                <div class="post-image">
-                                    <div class="placeholder-image"><span class="icon-medical" aria-label="Medical"></span></div>
-                                </div>
-                                <div class="post-content">
-                                    <div class="post-meta">
-                                        <span class="post-category">Medical Updates</span>
-                                        <time class="post-date" datetime="2025-01-03">January 3, 2025</time>
-                                    </div>
-                                    <h2 class="post-title">New Pain Management Protocols: What Warriors Need to Know</h2>
-                                    <p class="post-excerpt">
-                                        Recent advances in pain management offer new hope for sickle cell warriors. 
-                                        Learn about the latest protocols and how to discuss them with your healthcare team...
-                                    </p>
-                                    <div class="post-author">
-                                        <div class="author-info">
-                                            <span class="author-name">By Dr. Michael Johnson, MD</span>
-                                            <span class="read-time">8 min read</span>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="read-more-btn">Read More</a>
-                                </div>
-                            </article>
-
-                            <article class="blog-post" data-category="research">
-                                <div class="post-image">
-                                    <div class="placeholder-image"><span class="icon-research" aria-label="Research"></span></div>
-                                </div>
-                                <div class="post-content">
-                                    <div class="post-meta">
-                                        <span class="post-category">Research News</span>
-                                        <time class="post-date" datetime="2025-01-01">January 1, 2025</time>
-                                    </div>
-                                    <h2 class="post-title">Gene Therapy Breakthrough: Hope on the Horizon</h2>
-                                    <p class="post-excerpt">
-                                        Promising results from recent gene therapy trials bring us closer to a cure. 
-                                        Here's what these developments mean for the sickle cell community...
-                                    </p>
-                                    <div class="post-author">
-                                        <div class="author-info">
-                                            <span class="author-name">By Research Team</span>
-                                            <span class="read-time">10 min read</span>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="read-more-btn">Read More</a>
-                                </div>
-                            </article>
-
-                            <article class="blog-post" data-category="faith">
-                                <div class="post-image">
-                                    <div class="placeholder-image"><span class="icon-prayer" aria-label="Prayer"></span></div>
-                                </div>
-                                <div class="post-content">
-                                    <div class="post-meta">
-                                        <span class="post-category">Faith & Hope</span>
-                                        <time class="post-date" datetime="2024-12-30">December 30, 2024</time>
-                                    </div>
-                                    <h2 class="post-title">Finding Strength in Scripture: Daily Devotions for Warriors</h2>
-                                    <p class="post-excerpt">
-                                        Daily reflections and biblical encouragement for warriors facing challenges. 
-                                        Let God's word be your anchor in the storm...
-                                    </p>
-                                    <div class="post-author">
-                                        <div class="author-info">
-                                            <span class="author-name">By Pastor David Wilson</span>
-                                            <span class="read-time">4 min read</span>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="read-more-btn">Read More</a>
-                                </div>
-                            </article>
-
-                            <article class="blog-post" data-category="community">
-                                <div class="post-image">
-                                    <div class="placeholder-image"><span class="icon-community" aria-label="Community"></span></div>
-                                </div>
-                                <div class="post-content">
-                                    <div class="post-meta">
-                                        <span class="post-category">Community News</span>
-                                        <time class="post-date" datetime="2024-12-28">December 28, 2024</time>
-                                    </div>
-                                    <h2 class="post-title">Warrior Walk 2025: Join Us in Making History</h2>
-                                    <p class="post-excerpt">
-                                        Our annual awareness walk returns bigger and stronger. Registration is now open 
-                                        for the largest sickle cell awareness event of the year...
-                                    </p>
-                                    <div class="post-author">
-                                        <div class="author-info">
-                                            <span class="author-name">By Events Team</span>
-                                            <span class="read-time">3 min read</span>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="read-more-btn">Read More</a>
-                                </div>
-                            </article>
-
-                            <article class="blog-post" data-category="stories">
-                                <div class="post-image">
-                                    <div class="placeholder-image"><span class="icon-strength" aria-label="Strength"></span></div>
-                                </div>
-                                <div class="post-content">
-                                    <div class="post-meta">
-                                        <span class="post-category">Warrior Stories</span>
-                                        <time class="post-date" datetime="2024-12-25">December 25, 2024</time>
-                                    </div>
-                                    <h2 class="post-title">Christmas Miracle: Marcus's Recovery Journey</h2>
-                                    <p class="post-excerpt">
-                                        After a challenging year with multiple hospitalizations, Marcus shares how faith 
-                                        and community support helped him find joy during the holiday season...
-                                    </p>
-                                    <div class="post-author">
-                                        <div class="author-info">
-                                            <span class="author-name">By Marcus Johnson, Warrior</span>
-                                            <span class="read-time">6 min read</span>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="read-more-btn">Read Full Story</a>
-                                </div>
-                            </article>
-                        </div>
-
-                        <div class="pagination">
-                            <button class="pagination-btn prev" disabled>â† Previous</button>
-                            <span class="page-numbers">
-                                <button class="page-number active">1</button>
-                                <button class="page-number">2</button>
-                                <button class="page-number">3</button>
-                                <span class="page-dots">...</span>
-                                <button class="page-number">8</button>
-                            </span>
-                            <button class="pagination-btn next">Next â†’</button>
+                            <h3 class="article-title">Breaking: First Gene Therapy Success Stories from Nigerian Warriors</h3>
+                            <p class="article-excerpt">Three sickle cell warriors from Nigeria have successfully completed gene therapy treatment, marking a historic milestone in the fight against sickle cell disease. Meet Adunni, Emeka, and Fatima - the first Nigerians to receive this groundbreaking treatment...</p>
+                            <div class="article-stats">
+                                <span>12 min read</span> • <span>2,347 views</span> • <span>89 comments</span>
+                            </div>
+                            <a href="#" class="btn">Read Full Story</a>
                         </div>
                     </div>
+                </div>
 
-                    <div class="sidebar">
-                        <div class="sidebar-card">
-                            <h3>Subscribe to Updates</h3>
-                            <p>Get the latest warrior stories and community updates delivered to your inbox.</p>
-                            <form class="newsletter-form">
-                                <input type="email" placeholder="Enter your email" class="newsletter-input">
-                                <button type="submit" class="btn btn-primary">Subscribe</button>
-                            </form>
-                        </div>
-
-                        <div class="sidebar-card">
-                            <h3>Share Your Story</h3>
-                            <p>Have an inspiring story to share with the warrior community?</p>
-                            <a href="../pages/contact.html" class="btn btn-secondary">Submit Your Story</a>
-                        </div>
-
-                        <div class="sidebar-card">
-                            <h3>Recent Comments</h3>
-                            <div class="recent-comments">
-                                <div class="comment-item">
-                                    <div class="comment-author">Lisa R.</div>
-                                    <div class="comment-text">"This story gave me so much hope..."</div>
-                                    <div class="comment-post">on "Sarah's Journey"</div>
+                <!-- Latest Articles -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">📝</div>
+                        <h2 class="card-title">Latest Articles</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="articles-grid">
+                            <article class="article-card">
+                                <div class="article-meta">
+                                    <span class="category warrior-story">Warrior Stories</span>
+                                    <span class="date">January 12, 2025</span>
                                 </div>
-                                <div class="comment-item">
-                                    <div class="comment-author">David M.</div>
-                                    <div class="comment-text">"Thank you for sharing this research..."</div>
-                                    <div class="comment-post">on "Gene Therapy News"</div>
+                                <h3 class="article-title">From Pain to Purpose: How Kemi Became a Pediatric Nurse</h3>
+                                <p class="article-excerpt">Kemi's journey from frequent hospital visits as a patient to becoming the nurse she wished she had during her childhood...</p>
+                                <div class="article-stats">
+                                    <span>8 min read</span> • <span>1,234 views</span>
+                                </div>
+                                <a href="#" class="read-more">Read Story →</a>
+                            </article>
+
+                            <article class="article-card">
+                                <div class="article-meta">
+                                    <span class="category tips">Daily Living</span>
+                                    <span class="date">January 10, 2025</span>
+                                </div>
+                                <h3 class="article-title">10 Hydration Hacks Every Warrior Should Know</h3>
+                                <p class="article-excerpt">Practical tips to stay properly hydrated throughout the day, including apps, reminders, and flavor combinations that make water exciting...</p>
+                                <div class="article-stats">
+                                    <span>5 min read</span> • <span>3,456 views</span>
+                                </div>
+                                <a href="#" class="read-more">Read Tips →</a>
+                            </article>
+
+                            <article class="article-card">
+                                <div class="article-meta">
+                                    <span class="category medical">Medical Updates</span>
+                                    <span class="date">January 8, 2025</span>
+                                </div>
+                                <h3 class="article-title">New Clinical Trial Opens in Nigeria: What You Need to Know</h3>
+                                <p class="article-excerpt">Lagos University Teaching Hospital announces a new clinical trial for advanced sickle cell treatment. Here's how to determine if you're eligible...</p>
+                                <div class="article-stats">
+                                    <span>6 min read</span> • <span>2,891 views</span>
+                                </div>
+                                <a href="#" class="read-more">Learn More →</a>
+                            </article>
+
+                            <article class="article-card">
+                                <div class="article-meta">
+                                    <span class="category family">Family Support</span>
+                                    <span class="date">January 5, 2025</span>
+                                </div>
+                                <h3 class="article-title">Explaining Sickle Cell to Siblings: A Parent's Guide</h3>
+                                <p class="article-excerpt">Age-appropriate ways to help siblings understand sickle cell disease, including books, activities, and conversation starters...</p>
+                                <div class="article-stats">
+                                    <span>7 min read</span> • <span>1,678 views</span>
+                                </div>
+                                <a href="#" class="read-more">Read Guide →</a>
+                            </article>
+
+                            <article class="article-card">
+                                <div class="article-meta">
+                                    <span class="category advocacy">Advocacy</span>
+                                    <span class="date">January 3, 2025</span>
+                                </div>
+                                <h3 class="article-title">World Sickle Cell Day 2025: This Year's Theme and How to Participate</h3>
+                                <p class="article-excerpt">Get ready for World Sickle Cell Day with this year's theme "Warriors Rising: From Awareness to Action" and discover ways to get involved...</p>
+                                <div class="article-stats">
+                                    <span>4 min read</span> • <span>4,123 views</span>
+                                </div>
+                                <a href="#" class="read-more">Join Campaign →</a>
+                            </article>
+
+                            <article class="article-card">
+                                <div class="article-meta">
+                                    <span class="category wellness">Mental Wellness</span>
+                                    <span class="date">December 30, 2024</span>
+                                </div>
+                                <h3 class="article-title">Mindfulness for Pain Management: A Warrior's Journey</h3>
+                                <p class="article-excerpt">How one warrior discovered the power of mindfulness meditation in managing chronic pain and the techniques that worked best...</p>
+                                <div class="article-stats">
+                                    <span>9 min read</span> • <span>2,567 views</span>
+                                </div>
+                                <a href="#" class="read-more">Read Journey →</a>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Categories -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">📂</div>
+                        <h2 class="card-title">Browse by Category</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <h3>💪 Warrior Stories</h3>
+                                <p>Inspiring journeys of triumph, resilience, and achievement from our community members.</p>
+                                <p><strong>Latest:</strong> From Pain to Purpose: How Kemi Became a Pediatric Nurse</p>
+                                <p><strong>Total Articles:</strong> 247 • <strong>Popular:</strong> Career success stories</p>
+                            </div>
+
+                            <div class="info-item">
+                                <h3>🏥 Medical Updates</h3>
+                                <p>Latest research, treatment advances, and clinical trial opportunities.</p>
+                                <p><strong>Latest:</strong> New Clinical Trial Opens in Nigeria: What You Need to Know</p>
+                                <p><strong>Total Articles:</strong> 156 • <strong>Popular:</strong> Gene therapy news</p>
+                            </div>
+
+                            <div class="info-item">
+                                <h3>🏠 Daily Living</h3>
+                                <p>Practical tips, hacks, and strategies for managing sickle cell in everyday life.</p>
+                                <p><strong>Latest:</strong> 10 Hydration Hacks Every Warrior Should Know</p>
+                                <p><strong>Total Articles:</strong> 189 • <strong>Popular:</strong> Pain management tips</p>
+                            </div>
+
+                            <div class="info-item">
+                                <h3>👨‍👩‍👧‍👦 Family Support</h3>
+                                <p>Guidance for families, caregivers, and loved ones navigating sickle cell together.</p>
+                                <p><strong>Latest:</strong> Explaining Sickle Cell to Siblings: A Parent's Guide</p>
+                                <p><strong>Total Articles:</strong> 134 • <strong>Popular:</strong> Parenting guides</p>
+                            </div>
+
+                            <div class="info-item">
+                                <h3>🎓 Education & Career</h3>
+                                <p>Success strategies for school, work, and professional development.</p>
+                                <p><strong>Latest:</strong> Remote Work Success: Accommodations That Actually Work</p>
+                                <p><strong>Total Articles:</strong> 98 • <strong>Popular:</strong> Workplace accommodations</p>
+                            </div>
+
+                            <div class="info-item">
+                                <h3>🧠 Mental Wellness</h3>
+                                <p>Mental health support, coping strategies, and emotional well-being resources.</p>
+                                <p><strong>Latest:</strong> Mindfulness for Pain Management: A Warrior's Journey</p>
+                                <p><strong>Total Articles:</strong> 112 • <strong>Popular:</strong> Stress management</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Popular This Month -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">🔥</div>
+                        <h2 class="card-title">Trending This Month</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="trending-list">
+                            <div class="trending-item">
+                                <div class="trending-rank">1</div>
+                                <div class="trending-content">
+                                    <h4>Gene Therapy Success Stories from Nigerian Warriors</h4>
+                                    <div class="trending-stats">15,234 views • 156 shares • 89 comments</div>
+                                </div>
+                            </div>
+
+                            <div class="trending-item">
+                                <div class="trending-rank">2</div>
+                                <div class="trending-content">
+                                    <h4>10 Hydration Hacks Every Warrior Should Know</h4>
+                                    <div class="trending-stats">12,456 views • 234 shares • 67 comments</div>
+                                </div>
+                            </div>
+
+                            <div class="trending-item">
+                                <div class="trending-rank">3</div>
+                                <div class="trending-content">
+                                    <h4>World Sickle Cell Day 2025: This Year's Theme</h4>
+                                    <div class="trending-stats">9,876 views • 312 shares • 45 comments</div>
+                                </div>
+                            </div>
+
+                            <div class="trending-item">
+                                <div class="trending-rank">4</div>
+                                <div class="trending-content">
+                                    <h4>From Pain to Purpose: How Kemi Became a Pediatric Nurse</h4>
+                                    <div class="trending-stats">8,234 views • 189 shares • 78 comments</div>
+                                </div>
+                            </div>
+
+                            <div class="trending-item">
+                                <div class="trending-rank">5</div>
+                                <div class="trending-content">
+                                    <h4>New Clinical Trial Opens in Nigeria: What You Need to Know</h4>
+                                    <div class="trending-stats">7,543 views • 167 shares • 92 comments</div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <div class="sidebar-card">
-                            <h3>Popular Tags</h3>
-                            <div class="tag-cloud">
-                                <span class="tag">#WarriorStrong</span>
-                                <span class="tag">#SickleCell</span>
-                                <span class="tag">#Hope</span>
-                                <span class="tag">#Research</span>
-                                <span class="tag">#Faith</span>
-                                <span class="tag">#Community</span>
-                                <span class="tag">#Treatment</span>
-                                <span class="tag">#Advocacy</span>
+                <!-- Subscribe Section -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">📧</div>
+                        <h2 class="card-title">Stay Updated</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="newsletter-signup">
+                            <h3>Never Miss a Story</h3>
+                            <p>Get the latest warrior stories, medical updates, and community news delivered directly to your inbox.</p>
+                            <div class="signup-benefits">
+                                <ul>
+                                    <li>✅ Weekly digest of new articles</li>
+                                    <li>✅ Breaking news in sickle cell research</li>
+                                    <li>✅ Exclusive content from warrior contributors</li>
+                                    <li>✅ Early access to community events</li>
+                                </ul>
+                            </div>
+                            <div class="cta-buttons">
+                                <a href="../pages/newsletter.html" class="btn">Subscribe to Newsletter</a>
+                                <a href="forum.html" class="btn btn-secondary">Join Community Discussions</a>
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <div class="sidebar-card">
-                            <h3>Archive</h3>
-                            <div class="archive-list">
-                                <a href="#" class="archive-link">January 2025 (8)</a>
-                                <a href="#" class="archive-link">December 2024 (12)</a>
-                                <a href="#" class="archive-link">November 2024 (10)</a>
-                                <a href="#" class="archive-link">October 2024 (15)</a>
-                                <a href="#" class="archive-link">September 2024 (11)</a>
-                            </div>
-                        </div>
+                <!-- Call to Action -->
+                <div class="cta-section">
+                    <h2>Have a Story to Share?</h2>
+                    <p>We're always looking for warrior voices to inspire and support our community. Share your journey, tips, or insights with fellow warriors.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn">Submit Your Story</a>
+                        <a href="warrior-stories.html" class="btn btn-secondary">Read More Stories</a>
                     </div>
                 </div>
             </div>
@@ -595,7 +486,7 @@
                     <div class="footer-logo">
                         <img src="../images/logo.svg" alt="We Warriors Logo" class="footer-logo-img">
                         <h3 class="footer-brand">We Warriors</h3>
-                        <p class="footer-tagline">From Pain comes Strength â€¢ Through Faith we Hope</p>
+                        <p class="footer-tagline">From Pain comes Strength • Through Faith we Hope</p>
                     </div>
                     <p class="footer-mission">Supporting people afflicted with sickle cell disease and educating others to drive the last generation of people with sickle cell.</p>
                 </div>
@@ -623,9 +514,9 @@
                 <div class="footer-section">
                     <h4 class="footer-title">Community</h4>
                     <ul class="footer-links">
-                        <li><a href="../community/forum.html">Forum</a></li>
-                        <li><a href="../community/blog.html">Blog</a></li>
-                        <li><a href="../community/events.html">Events</a></li>
+                        <li><a href="forum.html">Forum</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="events.html">Events</a></li>
                         <li><a href="../pages/newsletter.html">Newsletter</a></li>
                     </ul>
                 </div>
@@ -656,7 +547,6 @@
                     </div>
                     <div class="contact-info">
                         <p><strong>Email:</strong> wewarriorsng@gmail.com</p>
-                        <p><strong>Direct:</strong> +2347041120734</p>
                         <p><strong>Phone:</strong> 1-800-WARRIOR</p>
                     </div>
                 </div>
@@ -664,7 +554,7 @@
             
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
-                    <p class="copyright">Â© 2025 We Warriors Organization. All rights reserved.</p>
+                    <p class="copyright">© 2025 We Warriors Organization. All rights reserved.</p>
                     <div class="footer-links-bottom">
                         <a href="../pages/privacy.html">Privacy Policy</a>
                         <a href="../pages/terms.html">Terms of Service</a>
@@ -676,15 +566,12 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="../js/main.js"></script>
+    <script src="../js/theme-toggle.js"></script>
     <script src="../js/mobile-menu.js"></script>
-    <script src="../js/modern.js"></script>
-    <script src="../js/pages.js"></script>
-    <!-- Universal header scripts -->
-    <script src="../js/animations.js"></script>
     <script src="../js/universal-header.js"></script>
-<script src="../js/warriorbot.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/animations.js"></script>
+    <script src="../js/warriorbot.js"></script>
 
 </body>
 </html>
-

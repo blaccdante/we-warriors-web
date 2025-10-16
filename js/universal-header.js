@@ -81,8 +81,8 @@ class UniversalHeader {
             });
         }
         
-        // Close mobile menu when clicking on nav links
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-item .nav-link, .cta-button');
+        // Close mobile menu when clicking on nav links (except category toggles)
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-item .nav-link:not(.mobile-category-toggle), .cta-button');
         mobileNavLinks.forEach(link => {
             link.addEventListener('click', () => {
                 if (window.innerWidth <= 768) {
@@ -90,6 +90,9 @@ class UniversalHeader {
                 }
             });
         });
+        
+        // Setup mobile category toggles
+        this.setupMobileCategoryToggles();
     }
     
     toggleMobileMenu() {
@@ -107,6 +110,9 @@ class UniversalHeader {
     
     openMobileMenu() {
         console.log('Opening mobile menu - screen width:', window.innerWidth);
+        
+        // Capture current structure for debugging
+        this.captureMobileMenuStructure();
         
         try {
             // Create overlay
@@ -185,6 +191,78 @@ class UniversalHeader {
             
         } catch (error) {
             console.error('Error closing mobile menu:', error);
+        }
+    }
+    
+    /**
+     * Mobile category toggle functionality
+     */
+    setupMobileCategoryToggles() {
+        const mobileCategories = document.querySelectorAll('.mobile-category');
+        console.log('Found mobile categories:', mobileCategories.length);
+        
+        mobileCategories.forEach((category, index) => {
+            const toggle = category.querySelector('.mobile-category-toggle');
+            const submenu = category.querySelector('.mobile-submenu');
+            
+            console.log(`Category ${index}:`, {
+                category: category,
+                toggle: toggle,
+                submenu: submenu,
+                toggleText: toggle ? toggle.textContent.trim() : 'N/A'
+            });
+            
+            if (!toggle) {
+                console.warn(`No toggle found for category ${index}`);
+                return;
+            }
+            
+            if (!submenu) {
+                console.warn(`No submenu found for category ${index}`);
+                return;
+            }
+            
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // Toggle the active state of this category
+                const wasActive = category.classList.contains('active');
+                category.classList.toggle('active');
+                const isActive = category.classList.contains('active');
+                
+                console.log(`Mobile category "${toggle.textContent.trim()}" toggled:`, {
+                    wasActive: wasActive,
+                    isActive: isActive,
+                    submenuDisplay: window.getComputedStyle(submenu).display
+                });
+            });
+        });
+        
+        console.log('Mobile category toggles setup complete for', mobileCategories.length, 'categories');
+    }
+    
+    
+    /**
+     * Diagnostic function to capture current mobile menu structure
+     */
+    captureMobileMenuStructure() {
+        const nav = document.querySelector('.header-nav');
+        if (nav) {
+            console.log('=== CURRENT MOBILE MENU STRUCTURE ===');
+            console.log('Current theme:', document.documentElement.getAttribute('data-theme'));
+            console.log('Full nav HTML:', nav.innerHTML);
+            console.log('Mobile nav items:', nav.querySelectorAll('.mobile-nav-item').length);
+            
+            const mobileItems = nav.querySelectorAll('.mobile-nav-item');
+            mobileItems.forEach((item, index) => {
+                console.log(`Item ${index}:`, {
+                    classes: item.className,
+                    html: item.outerHTML.substring(0, 200) + '...'
+                });
+            });
+            
+            console.log('=== END STRUCTURE ===');
         }
     }
     
@@ -286,10 +364,14 @@ class UniversalHeader {
         const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
         
+        // Add instant theme switching class
+        document.documentElement.classList.add('theme-instant');
+        
+        // Apply theme immediately with no transitions
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
         
-        // Update theme toggle icon
+        // Update theme toggle icon immediately
         this.updateThemeToggleIcon(newTheme);
         
         // Update screen reader text
@@ -297,6 +379,27 @@ class UniversalHeader {
         if (statusElement) {
             statusElement.textContent = `Current theme: ${newTheme} mode`;
         }
+        
+        // Force a repaint to ensure instant theme switch
+        document.documentElement.offsetHeight;
+        
+        // Re-enable transitions after a brief delay
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                document.documentElement.classList.remove('theme-instant');
+                document.documentElement.classList.add('theme-transition-end');
+                
+                // Remove transition end class after animation
+                setTimeout(() => {
+                    document.documentElement.classList.remove('theme-transition-end');
+                }, 150);
+            });
+        });
+        
+        // Emit custom event for other components
+        document.dispatchEvent(new CustomEvent('themeChanged', {
+            detail: { theme: newTheme }
+        }));
         
         console.log(`Theme switched to: ${newTheme}`);
     }

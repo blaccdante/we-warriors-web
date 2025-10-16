@@ -1,0 +1,460 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join the We Warriors community forum to connect with other sickle cell warriors, share experiences, and find support">
+    <meta name="keywords" content="sickle cell forum, warrior community, support group, discussion, sickle cell support">
+    <meta name="author" content="We Warriors Organization">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Community Forum - We Warriors">
+    <meta property="og:description" content="Join the We Warriors community forum to connect with other sickle cell warriors, share experiences, and find support">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wewarriors.org/community/forum.html">
+    
+    <title>Community Forum - We Warriors</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1964650693892617" crossorigin="anonymous"></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/accessibility.css">
+    <link rel="stylesheet" href="../css/universal-header.css">
+    
+    <!-- Modern Forum System -->
+    <style>
+        .page-hero.modern-hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        .hero-background { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; }
+        .hero-gradient {
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 30%, rgba(255, 248, 240, 0.98) 70%, rgba(255, 255, 255, 0.95) 100%);
+        }
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(196, 30, 58, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.05) 0%, transparent 50%);
+            background-size: 300px 300px, 400px 400px, 500px 500px;
+            animation: patternMove 20s ease-in-out infinite;
+        }
+        
+        @keyframes patternMove {
+            0%, 100% { transform: translate(0, 0); }
+            25% { transform: translate(-10px, -10px); }
+            50% { transform: translate(10px, 10px); }
+            75% { transform: translate(-5px, 10px); }
+        }
+        
+        /* EXACT Original Dark Theme Override */
+        [data-theme="dark"] .hero-gradient { background: linear-gradient(135deg, rgba(30, 30, 30, 0.95) 0%, rgba(45, 45, 45, 0.9) 30%, rgba(60, 60, 60, 0.95) 70%, rgba(30, 30, 30, 0.9) 100%) !important; }
+        [data-theme="dark"] .hero-pattern { background-image: radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.15) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(196, 30, 58, 0.12) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.08) 0%, transparent 50%) !important; }
+        [data-theme="light"] .hero-background { background-image: url('https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'); background-size: cover; background-position: center; }
+        [data-theme="light"] .hero-gradient { background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(248, 249, 250, 0.94) 30%, rgba(239, 246, 255, 0.96) 70%, rgba(255, 255, 255, 0.94) 100%); }
+        .hero-container { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 2rem; width: 100%; }
+        .hero-content { color: #f8fafc; max-width: 800px; }
+        [data-theme="light"] .hero-content { color: #0f172a; }
+        .page-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin: 0 0 1.5rem 0; line-height: 1.1; color: #f1f5f9; }
+        [data-theme="light"] .page-title { color: var(--blood-color) !important; }
+        .page-subtitle { font-size: clamp(1.1rem, 2.5vw, 1.4rem); margin: 0; color: rgba(226, 232, 240, 0.9); line-height: 1.6; }
+        [data-theme="light"] .page-subtitle { color: var(--text-primary) !important; }
+        .page-content { padding: 4rem 0; background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%); }
+        [data-theme="dark"] .page-content { background: linear-gradient(180deg, var(--background-primary) 0%, var(--background-secondary) 100%) !important; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .content-card { background: #ffffff; border-radius: 16px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); margin-bottom: 3rem; overflow: hidden; border: 1px solid rgba(0, 0, 0, 0.05); }
+        [data-theme="dark"] .content-card { background: var(--card-background) !important; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important; border: 1px solid var(--border-primary) !important; }
+        .card-header { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 2rem; display: flex; align-items: center; gap: 1rem; }
+        [data-theme="dark"] .card-header { background: linear-gradient(135deg, var(--background-secondary) 0%, var(--background-tertiary) 100%) !important; }
+        .card-icon { font-size: 2.5rem; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; background: rgba(255, 255, 255, 0.9); border-radius: 12px; }
+        [data-theme="dark"] .card-icon { background: var(--background-primary) !important; }
+        .card-title { font-size: 1.8rem; font-weight: 700; margin: 0; color: var(--blood-color); }
+        [data-theme="dark"] .card-title { color: var(--text-primary) !important; }
+        .card-content { padding: 2.5rem; }
+        .forum-post { background: #f8fafc; padding: 1.5rem; border-radius: 12px; margin: 1rem 0; border-left: 4px solid var(--blood-color); }
+        [data-theme="dark"] .forum-post { background: var(--background-tertiary) !important; border-left-color: var(--blood-light) !important; }
+        .post-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+        .forum-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .stat-card { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); padding: 1.5rem; border-radius: 12px; text-align: center; }
+        [data-theme="dark"] .stat-card { background: linear-gradient(135deg, var(--background-secondary) 0%, var(--background-tertiary) 100%) !important; }
+        
+        /* Modern Horizontal Breadcrumb Styling */
+        .breadcrumb { margin-bottom: 2rem; }
+        .breadcrumb ol { display: flex; align-items: center; gap: 0.5rem; list-style: none; padding: 0; margin: 0; font-size: 0.9rem; }
+        .breadcrumb li::after { content: '/'; margin: 0 0.5rem; color: rgba(248, 250, 252, 0.5); }
+        [data-theme="light"] .breadcrumb li::after { color: rgba(30, 41, 59, 0.4); }
+        .breadcrumb li:last-child::after { display: none; }
+        .breadcrumb a { color: rgba(248, 250, 252, 0.8); text-decoration: none; transition: color 0.3s ease; }
+        .breadcrumb a:hover { color: #e2e8f0; }
+        [data-theme="light"] .breadcrumb a { color: rgba(30, 41, 59, 0.7); }
+        [data-theme="light"] .breadcrumb a:hover { color: #991b1b; }
+        
+        /* Floating Elements Styling */
+        .hero-visual.modern-visual {
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            transform: translateY(-50%);
+            width: 300px;
+            height: 300px;
+            pointer-events: none;
+            opacity: 0.8;
+        }
+        
+        .floating-elements {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .float-element {
+            position: absolute;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(196, 30, 58, 0.15));
+        }
+        
+        .float-element.discussion {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            right: 10%;
+            animation-delay: 0s;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.5), rgba(147, 197, 253, 0.3));
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+        }
+        
+        .float-element.community {
+            width: 60px;
+            height: 60px;
+            top: 60%;
+            right: 40%;
+            animation-delay: -2s;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.4), rgba(52, 211, 153, 0.25));
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.2);
+        }
+        
+        .float-element.engagement {
+            width: 70px;
+            height: 70px;
+            top: 40%;
+            right: 70%;
+            animation-delay: -4s;
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.4), rgba(196, 181, 253, 0.25));
+            box-shadow: 0 4px 20px rgba(168, 85, 247, 0.2);
+        }
+        
+        /* Dark theme enhancement */
+        :root[data-theme="dark"] .float-element.discussion {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.7), rgba(147, 197, 253, 0.5));
+            box-shadow: 0 4px 25px rgba(59, 130, 246, 0.4);
+        }
+        
+        :root[data-theme="dark"] .float-element.community {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.6), rgba(52, 211, 153, 0.4));
+            box-shadow: 0 4px 25px rgba(16, 185, 129, 0.3);
+        }
+        
+        :root[data-theme="dark"] .float-element.engagement {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.6), rgba(196, 181, 253, 0.4));
+            box-shadow: 0 4px 25px rgba(168, 85, 247, 0.3);
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) scale(1);
+                opacity: 0.6;
+            }
+            25% {
+                transform: translateY(-20px) scale(1.05);
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(-10px) scale(0.95);
+                opacity: 0.7;
+            }
+            75% {
+                transform: translateY(-15px) scale(1.02);
+                opacity: 0.9;
+            }
+        }
+        
+        @media (max-width: 768px) { 
+            .hero-container { padding: 3rem 1.5rem; } 
+            .hero-visual.modern-visual { display: none; }
+        }
+    </style>
+</head>
+<body class="page-body">
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    
+    <!-- Universal Header -->
+    <header class="universal-header" role="banner">
+        <div class="header-container">
+            <!-- Logo -->
+            <a href="../index.html" class="header-logo" aria-label="We Warriors Home">
+                <img src="../images/logo.svg" alt="We Warriors Logo" class="logo-img">
+                <span class="logo-text">We Warriors</span>
+            </a>
+            
+            <!-- Navigation Menu -->
+            <nav class="header-nav" role="navigation" aria-label="Main navigation">
+                <!-- Desktop Dropdowns -->
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Support</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="../support/about-sickle-cell.html" class="dropdown-link" role="menuitem">Living with Sickle Cell</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../support/support-groups.html" class="dropdown-link" role="menuitem">Support Groups</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../support/counseling.html" class="dropdown-link" role="menuitem">Counseling Services</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../support/resources.html" class="dropdown-link" role="menuitem">Resources</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Information</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="../information/what-is-sickle-cell.html" class="dropdown-link" role="menuitem">What is Sickle Cell</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../information/types.html" class="dropdown-link" role="menuitem">Types of Sickle Cell</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../information/diagnosis-treatment.html" class="dropdown-link" role="menuitem">Diagnosis & Treatment</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../information/research.html" class="dropdown-link" role="menuitem">Research & Trials</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Community</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="forum.html" class="dropdown-link" role="menuitem">Forum</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="blog.html" class="dropdown-link" role="menuitem">Blog</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="events.html" class="dropdown-link" role="menuitem">Events</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="gallery.html" class="dropdown-link" role="menuitem">Gallery</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact</a>
+                </div>
+                
+                <div class="nav-item">
+                    <a href="#get-involved" class="cta-button" role="menuitem">Get Involved</a>
+                </div>
+                
+                <!-- Mobile Only Links -->
+                <!-- Theme Toggle First -->
+                <div class="nav-item mobile-nav-item mobile-theme-item">
+                    <div class="mobile-theme-toggle">
+                        <span>Dark Mode</span>
+                        <div class="mobile-theme-switch" id="mobileThemeSwitch">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item">
+                    <a href="../index.html" class="nav-link" role="menuitem">Home</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../support/about-sickle-cell.html" class="nav-link" role="menuitem">Living with Sickle Cell</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../information/what-is-sickle-cell.html" class="nav-link" role="menuitem">What is Sickle Cell</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../information/types.html" class="nav-link" role="menuitem">Types & Symptoms</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../information/diagnosis-treatment.html" class="nav-link" role="menuitem">Diagnosis & Treatment</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../support/support-groups.html" class="nav-link" role="menuitem">Support Groups</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../support/resources.html" class="nav-link" role="menuitem">Resources</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../support/counseling.html" class="nav-link" role="menuitem">Counseling</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="events.html" class="nav-link" role="menuitem">Events</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="blog.html" class="nav-link" role="menuitem">Blog</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../information/research.html" class="nav-link" role="menuitem">Research</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../pages/advocacy.html" class="nav-link" role="menuitem">Advocacy</a>
+                </div>
+                <div class="nav-item mobile-nav-item">
+                    <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact Us</a>
+                </div>
+                
+                <!-- Action Buttons Last -->
+                <div class="nav-item mobile-nav-item mobile-action-item">
+                    <a href="../pages/donate.html" class="mobile-action-btn mobile-donate-btn">Donate Now</a>
+                </div>
+                <div class="nav-item mobile-nav-item mobile-action-item">
+                    <a href="#get-involved" class="mobile-action-btn mobile-get-involved-btn">Get Involved</a>
+                </div>
+            </nav>
+            
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- Theme Toggle (Desktop) -->
+                <button class="theme-toggle" aria-label="Toggle dark mode" aria-describedby="theme-status">
+                    <span class="theme-icon">â˜€</span>
+                    <span class="sr-only" id="theme-status">Current theme: light mode</span>
+                </button>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main" class="modern-main">
+        
+        <!-- Hero Section -->
+        <section class="page-hero modern-hero">
+            <div class="hero-background">
+                <div class="hero-gradient"></div>
+                <div class="hero-pattern"></div>
+            </div>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <nav class="breadcrumb modern-breadcrumb" aria-label="Breadcrumb">
+                        <ol>
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="#">Community</a></li>
+                            <li><span aria-current="page">Forum</span></li>
+                        </ol>
+                    </nav>
+                    <h1 class="page-title">Community Forum</h1>
+                    <p class="page-subtitle">Connect, share, and support each other in our warrior community</p>
+                </div>
+                <div class="hero-visual modern-visual">
+                    <div class="floating-elements">
+                        <div class="float-element discussion"></div>
+                        <div class="float-element community"></div>
+                        <div class="float-element engagement"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-content">
+            <div class="container">
+                
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">ðŸ’¬</div>
+                        <h2 class="card-title">Forum Categories</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="forum-stats">
+                            <div class="stat-card">
+                                <h3>ðŸ¤ General Support</h3>
+                                <p>Share experiences, ask questions, get support</p>
+                                <small>245 posts â€¢ 89 members</small>
+                            </div>
+                            <div class="stat-card">
+                                <h3>ðŸ’Š Treatment Discussions</h3>
+                                <p>Discuss medications, therapies, and treatments</p>
+                                <small>156 posts â€¢ 67 members</small>
+                            </div>
+                            <div class="stat-card">
+                                <h3>ðŸ‘¨â€ðŸ‘©â€ðŸ‘§â€ðŸ‘¦ Family & Caregivers</h3>
+                                <p>Support for families and loved ones</p>
+                                <small>98 posts â€¢ 45 members</small>
+                            </div>
+                        </div>
+                        
+                        <div class="forum-post">
+                            <div class="post-meta">
+                                <strong>ðŸ’ª SarahWarrior</strong>
+                                <span>2 hours ago</span>
+                            </div>
+                            <h4>Managing pain during weather changes?</h4>
+                            <p>Has anyone else noticed their pain gets worse when the weather changes? Looking for tips...</p>
+                            <div><small>12 replies â€¢ 45 views</small></div>
+                        </div>
+                        
+                        <div class="forum-post">
+                            <div class="post-meta">
+                                <strong>ðŸŒŸ MichaelStrong</strong>
+                                <span>5 hours ago</span>
+                            </div>
+                            <h4>Success story: Starting hydroxyurea</h4>
+                            <p>Wanted to share my positive experience with hydroxyurea after 6 months...</p>
+                            <div><small>8 replies â€¢ 89 views</small></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>We Warriors</h3>
+                    <p>Supporting sickle cell warriors and families</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/universal-header.js"></script>
+    <script src="../js/theme-toggle.js"></script>
+    <script src="../js/main.js"></script>
+<script src="../js/warriorbot.js"></script>
+
+</body>
+</html>
+

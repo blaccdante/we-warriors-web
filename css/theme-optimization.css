@@ -1,0 +1,1077 @@
+/* Theme Optimization for Instant Dark Mode Switching */
+
+:root {
+    /* Theme transition speed - can be controlled via JS */
+    --transition-speed: 150ms;
+    
+    /* Light theme colors - Glassmorphism & Liquid Glass */
+    --bg-primary: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 100%);
+    --bg-secondary: linear-gradient(145deg, rgba(248, 249, 250, 0.85) 0%, rgba(241, 245, 249, 0.9) 100%);
+    --bg-glass: rgba(255, 255, 255, 0.2);
+    --bg-glass-hover: rgba(255, 255, 255, 0.3);
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --text-muted: #94a3b8;
+    --border-color: rgba(255, 255, 255, 0.18);
+    --border-glass: rgba(255, 255, 255, 0.25);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --shadow-glass: 0 8px 32px rgba(31, 38, 135, 0.2);
+    --accent-color: #8B4513;
+    --accent-glass: rgba(139, 69, 19, 0.15);
+    --backdrop-blur: blur(20px);
+}
+
+/* Dark theme colors - Consistent Brown Theme */
+[data-theme="dark"] {
+    --bg-primary: #000000;     /* Pure black - cinematic */
+    --bg-secondary: #000000;   /* Pure black - same as primary */
+    --bg-tertiary: #111111;    /* Card backgrounds - elegant lift */
+    --bg-glass: rgba(17, 17, 17, 0.8); /* Glass morphism */
+    --text-primary: #ffffff;   /* Pure white text - maximum contrast */
+    --text-secondary: #e0e0e0; /* Bright gray - premium look */
+    --text-muted: #a0a0a0;     /* Muted but visible */
+    --border-color: #222222;   /* Subtle dark borders */
+    --border-glow: #333333;    /* Glowing borders */
+    --shadow-color: rgba(0, 0, 0, 0.9); /* Deep shadows */
+    --shadow-glow: rgba(139, 69, 19, 0.3); /* Brown colored shadows */
+    --accent-color: #8B4513;   /* Consistent brown - same as light mode */
+    --accent-secondary: #D2691E; /* Orange-brown accent - same as light */
+    --accent-blue: #00bfff;    /* Cyan accent */
+    --surface-color: #0d0d0d;  /* Surface elements */
+    --gradient-primary: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
+    --gradient-secondary: linear-gradient(145deg, #000000 0%, #1a1a1a 100%);
+    --gradient-accent: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);
+}
+
+/* LIQUID GLASS BODY BACKGROUND - WITH HEADER PADDING */
+body {
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(139, 69, 19, 0.05) 0%, transparent 50%),
+        linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
+    color: var(--text-primary);
+    transition: background var(--transition-speed) ease, color var(--transition-speed) ease;
+    min-height: 100vh;
+    background-attachment: fixed;
+    padding-top: 0 !important; /* Hero section handles header spacing */
+    margin: 0 !important;
+}
+
+/* MODERN GLOBAL LINK STYLING - NO UNDERLINES */
+* {
+    text-decoration: none !important;
+}
+
+a, a:hover, a:focus, a:active, a:visited {
+    text-decoration: none !important;
+}
+
+button, .btn, .card-link {
+    text-decoration: none !important;
+}
+
+button:hover, .btn:hover, .card-link:hover {
+    text-decoration: none !important;
+}
+
+/* Optimized element transitions */
+.section,
+.container,
+.modern-card,
+.testimonial-card,
+.hero-slideshow,
+.about-section,
+.stats-section,
+.community-section,
+.support-section,
+.featured-section,
+.faith-section,
+.get-involved-section {
+    transition: background-color var(--transition-speed) ease, 
+                border-color var(--transition-speed) ease,
+                box-shadow var(--transition-speed) ease;
+}
+
+/* STUNNING GLASSMORPHISM CARDS - LIGHT MODE */
+.modern-card {
+    background: var(--bg-glass) !important;
+    backdrop-filter: var(--backdrop-blur) !important;
+    -webkit-backdrop-filter: var(--backdrop-blur) !important;
+    border: 1px solid var(--border-glass) !important;
+    box-shadow: var(--shadow-glass), 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+    border-radius: 20px !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.modern-card::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 1px !important;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent) !important;
+}
+
+.modern-card:hover {
+    background: var(--bg-glass-hover) !important;
+    transform: translateY(-5px) !important;
+    box-shadow: var(--shadow-glass), 0 16px 64px rgba(31, 38, 135, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .modern-card {
+    background: var(--bg-tertiary);
+    border-color: var(--border-color);
+    box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+/* GLASSMORPHISM TESTIMONIAL CARDS */
+.testimonial-card {
+    background: var(--bg-glass) !important;
+    backdrop-filter: var(--backdrop-blur) !important;
+    -webkit-backdrop-filter: var(--backdrop-blur) !important;
+    border: 1px solid var(--border-glass) !important;
+    box-shadow: var(--shadow-glass), 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+    border-radius: 16px !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.testimonial-card::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 1px !important;
+    background: linear-gradient(90deg, transparent, var(--accent-glass), transparent) !important;
+}
+
+[data-theme="dark"] .testimonial-card {
+    background: var(--bg-tertiary);
+    border-color: var(--border-color);
+    box-shadow: 0 6px 20px var(--shadow-color);
+}
+
+/* Text color optimizations */
+.section-title,
+.card-title,
+.testimonial-author,
+.stat-title {
+    color: var(--text-primary);
+}
+
+.section-subtitle,
+.card-description,
+.testimonial-quote,
+.stat-description {
+    color: var(--text-secondary);
+}
+
+/* MAKE CARD BULLET POINT TEXT BOLDER & BLACKER IN LIGHT MODE */
+.modern-card ul li,
+.card ul li,
+.feature-list li,
+.card-list li,
+.support-list li,
+.resource-list li {
+    color: #000000 !important; /* Pure black for maximum contrast */
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    text-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Target specific card content text */
+.modern-card p,
+.card p {
+    color: #1a1a1a !important; /* Very dark gray, almost black */
+    font-weight: 500 !important;
+    line-height: 1.6 !important;
+}
+
+/* Ensure list items in cards are bold and black */
+.modern-card .card-content ul li,
+.card .card-content ul li {
+    color: #000000 !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* STUNNING GLASSMORPHISM HEADER - FIXED POSITIONING */
+.universal-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    background: var(--bg-glass) !important;
+    backdrop-filter: var(--backdrop-blur) !important;
+    -webkit-backdrop-filter: var(--backdrop-blur) !important;
+    border-bottom: 1px solid var(--border-glass) !important;
+    box-shadow: var(--shadow-glass), 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+    height: 80px !important;
+    transition: all var(--transition-speed) ease !important;
+}
+
+.universal-header::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 1px !important;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.6), 
+        var(--accent-glass),
+        rgba(255, 255, 255, 0.6), 
+        transparent
+    ) !important;
+}
+
+/* BEAUTIFUL HEADER TYPOGRAPHY & NAVIGATION - FULLY TRANSPARENT */
+.header-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 2rem !important;
+    height: 100% !important;
+    background: transparent !important;
+}
+
+/* Ensure all header elements are transparent */
+.header-nav,
+.nav-item,
+.dropdown {
+    background: transparent !important;
+}
+
+/* Make sure DESKTOP navigation container is transparent - EXCLUDE MOBILE */
+@media (min-width: 769px) {
+    .header-nav {
+        background: transparent !important;
+    }
+    
+    /* Ensure no background on DESKTOP navigation wrapper */
+    .universal-header * {
+        background-color: transparent !important;
+    }
+    
+    /* Override any existing backgrounds on DESKTOP header elements */
+    .universal-header .header-container,
+    .universal-header .header-nav,
+    .universal-header .nav-item,
+    .universal-header .dropdown,
+    .universal-header nav {
+        background: transparent !important;
+        background-color: transparent !important;
+    }
+}
+
+/* Logo Styling */
+.header-logo {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    text-decoration: none !important;
+    color: var(--text-primary) !important;
+    font-weight: 700 !important;
+    font-size: 1.5rem !important;
+    transition: all 0.3s ease !important;
+}
+
+.logo-img {
+    height: 45px !important;
+    width: auto !important;
+    filter: drop-shadow(0 2px 8px rgba(139, 69, 19, 0.3)) !important;
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 700 !important;
+    background: linear-gradient(135deg, var(--accent-color), #D2691E) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    text-shadow: 0 2px 4px rgba(139, 69, 19, 0.2) !important;
+}
+
+/* Navigation Links */
+.header-nav {
+    display: flex !important;
+    align-items: center !important;
+    gap: 2rem !important;
+}
+
+.nav-item {
+    position: relative !important;
+}
+
+.nav-link,
+.dropdown-toggle {
+    color: var(--text-primary) !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    padding: 0.75rem 1rem !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    letter-spacing: 0.5px !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+.nav-link:hover,
+.dropdown-toggle:hover {
+    color: var(--accent-color) !important;
+    background: rgba(139, 69, 19, 0.1) !important;
+    transform: translateY(-1px) !important;
+    text-shadow: 0 2px 8px rgba(139, 69, 19, 0.3) !important;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.2) !important;
+}
+
+/* CTA Button - Make it pop */
+.cta-button {
+    background: linear-gradient(135deg, var(--accent-color), #D2691E) !important;
+    color: white !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 50px !important;
+    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3) !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.cta-button::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) !important;
+    transition: left 0.5s ease !important;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px) scale(1.05) !important;
+    box-shadow: 0 12px 35px rgba(139, 69, 19, 0.4) !important;
+    background: linear-gradient(135deg, #A0522D, var(--accent-color)) !important;
+}
+
+.cta-button:hover::before {
+    left: 100% !important;
+}
+
+/* DARK MODE HEADER - MINIMAL CONSISTENT CHANGES */
+[data-theme="dark"] .universal-header {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border-bottom: 1px solid rgba(240, 246, 252, 0.2) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(240, 246, 252, 0.15) !important;
+}
+
+/* Ensure all DESKTOP dark mode header elements are transparent - EXCLUDE MOBILE */
+@media (min-width: 769px) {
+    [data-theme="dark"] .universal-header * {
+        background-color: transparent !important;
+    }
+    
+    [data-theme="dark"] .universal-header .header-container,
+    [data-theme="dark"] .universal-header .header-nav,
+    [data-theme="dark"] .universal-header .nav-item,
+    [data-theme="dark"] .universal-header .dropdown,
+    [data-theme="dark"] .universal-header nav {
+        background: transparent !important;
+        background-color: transparent !important;
+    }
+}
+
+[data-theme="dark"] .header-logo {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .logo-text {
+    background: linear-gradient(135deg, var(--accent-color), #D2691E) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+[data-theme="dark"] .nav-link,
+[data-theme="dark"] .dropdown-toggle {
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .nav-link:hover,
+[data-theme="dark"] .dropdown-toggle:hover {
+    color: var(--accent-color) !important;
+    background: rgba(139, 69, 19, 0.1) !important;
+}
+
+[data-theme="dark"] .cta-button {
+    background: linear-gradient(135deg, var(--accent-color), #D2691E) !important;
+    color: white !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+[data-theme="dark"] .cta-button:hover {
+    background: linear-gradient(135deg, #A0522D, var(--accent-color)) !important;
+}
+
+/* Restore beautiful blueish-white top gradient line in dark mode */
+[data-theme="dark"] .universal-header::before {
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(240, 246, 252, 0.6), 
+        rgba(200, 220, 255, 0.8),
+        rgba(240, 246, 252, 0.6), 
+        transparent
+    ) !important;
+}
+
+/* HIGH PRIORITY OVERRIDES - ENSURE DARK MODE HEADER CONSISTENCY */
+html[data-theme="dark"] .universal-header,
+:root[data-theme="dark"] .universal-header {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border-bottom: 1px solid rgba(240, 246, 252, 0.2) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(240, 246, 252, 0.15) !important;
+    backdrop-filter: var(--backdrop-blur) !important;
+    -webkit-backdrop-filter: var(--backdrop-blur) !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    height: 80px !important;
+}
+
+/* FORCE DARK MODE NAVIGATION CONSISTENCY */
+html[data-theme="dark"] .header-nav,
+:root[data-theme="dark"] .header-nav {
+    display: flex !important;
+    align-items: center !important;
+    gap: 2rem !important;
+}
+
+html[data-theme="dark"] .nav-link,
+:root[data-theme="dark"] .nav-link,
+html[data-theme="dark"] .dropdown-toggle,
+:root[data-theme="dark"] .dropdown-toggle {
+    color: #ffffff !important;
+    background: transparent !important;
+    border: none !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 0.75rem 1.25rem !important;
+    border-radius: 12px !important;
+    font-weight: 500 !important;
+    font-size: 1rem !important;
+    transition: all 0.3s ease !important;
+}
+
+html[data-theme="dark"] .nav-link:hover,
+:root[data-theme="dark"] .nav-link:hover,
+html[data-theme="dark"] .dropdown-toggle:hover,
+:root[data-theme="dark"] .dropdown-toggle:hover {
+    color: var(--accent-color) !important;
+    background: rgba(139, 69, 19, 0.1) !important;
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow: 0 6px 24px rgba(139, 69, 19, 0.2) !important;
+}
+
+/* FORCE DARK MODE CTA BUTTON CONSISTENCY */
+html[data-theme="dark"] .cta-button,
+:root[data-theme="dark"] .cta-button {
+    background: linear-gradient(135deg, var(--accent-color), #D2691E) !important;
+    color: white !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+    display: flex !important;
+    align-items: center !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3) !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+html[data-theme="dark"] .cta-button:hover,
+:root[data-theme="dark"] .cta-button:hover {
+    background: linear-gradient(135deg, #A0522D, var(--accent-color)) !important;
+    transform: translateY(-2px) scale(1.05) !important;
+    box-shadow: 0 12px 35px rgba(139, 69, 19, 0.4) !important;
+}
+
+/* FORCE DARK MODE LOGO CONSISTENCY */
+html[data-theme="dark"] .logo-text,
+:root[data-theme="dark"] .logo-text {
+    background: linear-gradient(135deg, var(--accent-color), #D2691E) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-family: 'Playfair Display', serif !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+}
+
+/* FORCE THEME TOGGLE CONSISTENCY */
+html[data-theme="dark"] .theme-toggle,
+:root[data-theme="dark"] .theme-toggle {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 2px solid rgba(240, 246, 252, 0.3) !important;
+    color: #ffffff !important;
+    border-radius: 50% !important;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+
+.nav-link,
+.dropdown-link {
+    color: var(--text-primary);
+    transition: color var(--transition-speed) ease;
+}
+
+.nav-link:hover,
+.dropdown-link:hover {
+    color: var(--accent-color);
+}
+
+/* Footer optimizations */
+.site-footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    transition: background-color var(--transition-speed) ease,
+                border-color var(--transition-speed) ease,
+                color var(--transition-speed) ease;
+}
+
+/* LIQUID GLASS BUTTONS */
+.btn-modern-primary {
+    background: linear-gradient(135deg, 
+        var(--accent-color) 0%, 
+        rgba(139, 69, 19, 0.9) 50%,
+        var(--accent-color) 100%) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 
+        0 8px 32px rgba(139, 69, 19, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+    border-radius: 12px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    transition: all var(--transition-speed) ease;
+}
+
+.btn-modern-primary::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.3), 
+        transparent) !important;
+    transition: left 0.5s ease !important;
+}
+
+.btn-modern-primary:hover::before {
+    left: 100% !important;
+}
+
+.btn-modern-primary:hover {
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow: 
+        0 16px 48px rgba(139, 69, 19, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+}
+
+.btn-modern-secondary {
+    background: var(--bg-glass) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: 1px solid var(--border-glass) !important;
+    color: var(--accent-color) !important;
+    box-shadow: var(--shadow-glass), 0 0 0 1px rgba(255, 255, 255, 0.05) !important;
+    border-radius: 12px !important;
+    transition: all var(--transition-speed) ease;
+}
+
+.btn-modern-secondary:hover {
+    background: var(--bg-glass-hover) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: var(--shadow-glass), 0 12px 32px rgba(31, 38, 135, 0.25) !important;
+}
+
+/* Theme toggle button optimization */
+.theme-toggle {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-speed) ease;
+}
+
+.theme-toggle:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Mobile theme toggle */
+.mobile-theme-switch {
+    background: var(--border-color);
+    transition: background-color var(--transition-speed) ease;
+}
+
+.mobile-theme-switch.active {
+    background: var(--accent-color);
+}
+
+.mobile-theme-switch::before {
+    background: white;
+    transition: transform var(--transition-speed) ease,
+                background-color var(--transition-speed) ease;
+}
+
+/* Slideshow optimizations for dark mode - No overlays for clean images */
+[data-theme="dark"] .hero-slideshow {
+    background: var(--bg-primary);
+}
+
+[data-theme="dark"] .slide {
+    background: transparent;
+}
+
+/* Stats section dark mode */
+[data-theme="dark"] .stats-counter {
+    color: var(--accent-color);
+}
+
+/* Dropdown menu optimization */
+.dropdown-menu {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px var(--shadow-color);
+    transition: all var(--transition-speed) ease;
+}
+
+/* Loading states optimization - DISABLED */
+.slideshow-loading {
+    display: none !important;
+}
+
+/* Dark theme comprehensive coverage - 4K Game Style */
+[data-theme="dark"] {
+    /* Pure black background for body */
+    body {
+        background: var(--bg-primary) !important;
+        color: var(--text-primary) !important;
+    }
+    
+    /* Main sections with glass morphism theme */
+    .about-section,
+    .stats-section,
+    .support-section,
+    .community-section,
+    .featured-section,
+    .faith-section,
+    .get-involved-section {
+        background: var(--bg-glass) !important;
+        backdrop-filter: blur(30px) !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* Alternate sections with enhanced glass effect */
+    .stats-section,
+    .community-section,
+    .faith-section {
+        background: rgba(17, 17, 17, 0.9) !important;
+        backdrop-filter: blur(40px) !important;
+        box-shadow: 
+            inset 0 1px 0 rgba(255, 255, 255, 0.1),
+            inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+    }
+    
+    /* Add subtle glow effect to alternate sections */
+    .stats-section::before,
+    .community-section::before,
+    .faith-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at center, rgba(255, 107, 107, 0.03) 0%, transparent 70%);
+        pointer-events: none;
+    }
+    
+    /* Ensure images and media are always visible */
+    img, video, .slide-image, .slide-video {
+        opacity: 1 !important;
+        filter: none !important;
+    }
+    
+    /* STUNNING PREMIUM CARDS - Next Level Beauty */
+    .card, .about-card, .stat-card, .story-card, .involvement-card, .modern-card {
+        background: linear-gradient(145deg, 
+            rgba(25, 25, 25, 0.95) 0%, 
+            rgba(35, 35, 35, 0.9) 50%,
+            rgba(20, 20, 20, 0.95) 100%) !important;
+        backdrop-filter: blur(25px) !important;
+        border: 2px solid transparent !important;
+        background-clip: padding-box !important;
+        box-shadow: 
+            0 20px 60px rgba(0, 0, 0, 0.8),
+            0 8px 24px rgba(0, 0, 0, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.15),
+            inset 0 -1px 0 rgba(255, 255, 255, 0.05),
+            0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+        border-radius: 20px !important;
+        position: relative !important;
+        overflow: hidden !important;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    }
+    
+    /* Premium card glow overlay */
+    .card::before, .about-card::before, .stat-card::before, .story-card::before, .involvement-card::before, .modern-card::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background: radial-gradient(circle at 30% 20%, rgba(255, 107, 107, 0.1) 0%, transparent 50%) !important;
+        pointer-events: none !important;
+        z-index: 1 !important;
+    }
+    
+    /* Card content above overlay */
+    .card > *, .about-card > *, .stat-card > *, .story-card > *, .involvement-card > *, .modern-card > * {
+        position: relative !important;
+        z-index: 2 !important;
+    }
+    
+    /* INCREDIBLE CARD HOVER EFFECTS */
+    .card:hover, .about-card:hover, .stat-card:hover, .story-card:hover, .involvement-card:hover, .modern-card:hover {
+        transform: translateY(-12px) scale(1.02) !important;
+        background: linear-gradient(145deg, 
+            rgba(40, 40, 40, 0.98) 0%, 
+            rgba(50, 50, 50, 0.95) 50%,
+            rgba(35, 35, 35, 0.98) 100%) !important;
+        box-shadow: 
+            0 40px 80px rgba(0, 0, 0, 0.9),
+            0 20px 40px rgba(255, 107, 107, 0.2),
+            inset 0 2px 0 rgba(255, 255, 255, 0.2),
+            inset 0 -2px 0 rgba(255, 255, 255, 0.1),
+            0 0 0 2px rgba(255, 107, 107, 0.3),
+            0 0 60px rgba(255, 107, 107, 0.15) !important;
+        border-color: rgba(255, 107, 107, 0.5) !important;
+    }
+    
+    /* Enhanced glow on hover */
+    .card:hover::before, .about-card:hover::before, .stat-card:hover::before, .story-card:hover::before, .involvement-card:hover::before, .modern-card:hover::before {
+        background: radial-gradient(circle at 30% 20%, rgba(255, 107, 107, 0.2) 0%, rgba(255, 215, 0, 0.1) 70%, transparent 100%) !important;
+    }
+    
+    /* Section titles with glow */
+    .section-title, h1, h2, h3, h4, h5, h6 {
+        color: var(--text-primary) !important;
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    /* Premium text styling */
+    .section-subtitle, .card-description, p {
+        color: var(--text-secondary) !important;
+    }
+    
+    /* Stats counters with glow effect */
+    .stats-counter {
+        color: var(--accent-color) !important;
+        text-shadow: 0 0 30px var(--shadow-glow) !important;
+        font-weight: 700 !important;
+    }
+    
+    /* CLEAN MODERN LINKS AND BUTTONS */
+    .btn, .card-link, .featured-link, .btn-primary, .btn-secondary {
+        text-decoration: none !important;
+        border-radius: 8px !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .btn:hover, .card-link:hover, .featured-link:hover, .btn-primary:hover, .btn-secondary:hover {
+        text-decoration: none !important;
+        transform: translateY(-2px) !important;
+    }
+    
+    /* BEAUTIFUL SUBTLE LINK INDICATORS */
+    
+    /* Card Links - Elegant glow effect */
+    .card-link, .featured-link {
+        color: var(--accent-color) !important;
+        font-weight: 500 !important;
+        position: relative !important;
+        transition: all 0.3s ease !important;
+        padding: 6px 12px !important;
+        border-radius: 6px !important;
+        background: rgba(255, 107, 107, 0.1) !important;
+        border: 1px solid rgba(255, 107, 107, 0.2) !important;
+        display: inline-block !important;
+    }
+    
+    .card-link:hover, .featured-link:hover {
+        background: rgba(255, 107, 107, 0.2) !important;
+        border-color: rgba(255, 107, 107, 0.4) !important;
+        box-shadow: 0 0 20px rgba(255, 107, 107, 0.3) !important;
+        transform: translateY(-1px) !important;
+    }
+    
+    /* Navigation Links - Subtle bottom border */
+    .nav-link, .dropdown-link {
+        position: relative !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .nav-link::after, .dropdown-link::after {
+        content: '' !important;
+        position: absolute !important;
+        bottom: -2px !important;
+        left: 50% !important;
+        width: 0 !important;
+        height: 2px !important;
+        background: var(--accent-color) !important;
+        transition: all 0.3s ease !important;
+        transform: translateX(-50%) !important;
+        border-radius: 1px !important;
+    }
+    
+    .nav-link:hover::after, .dropdown-link:hover::after {
+        width: 80% !important;
+        box-shadow: 0 0 8px rgba(255, 107, 107, 0.6) !important;
+    }
+    
+    /* Footer Links - Subtle left border glow */
+    .footer-links a {
+        position: relative !important;
+        padding-left: 8px !important;
+        transition: all 0.3s ease !important;
+        border-left: 2px solid transparent !important;
+    }
+    
+    .footer-links a:hover {
+        border-left-color: var(--accent-color) !important;
+        padding-left: 12px !important;
+        color: var(--accent-color) !important;
+        text-shadow: 0 0 10px rgba(255, 107, 107, 0.5) !important;
+    }
+    
+    /* Breadcrumb Links - Elegant underline animation */
+    .breadcrumb a {
+        position: relative !important;
+        color: var(--accent-secondary) !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .breadcrumb a::after {
+        content: '' !important;
+        position: absolute !important;
+        bottom: -1px !important;
+        left: 0 !important;
+        width: 0 !important;
+        height: 1px !important;
+        background: var(--accent-secondary) !important;
+        transition: width 0.3s ease !important;
+    }
+    
+    .breadcrumb a:hover::after {
+        width: 100% !important;
+    }
+    
+    /* Social Links - Glow effect */
+    .social-link {
+        transition: all 0.3s ease !important;
+        border-radius: 8px !important;
+        padding: 8px !important;
+    }
+    
+    .social-link:hover {
+        background: rgba(255, 107, 107, 0.1) !important;
+        box-shadow: 0 0 15px rgba(255, 107, 107, 0.3) !important;
+        transform: scale(1.1) !important;
+    }
+    
+    /* General Text Links - Subtle color change with glow */
+    p a, .card-description a, .section-subtitle a {
+        color: var(--accent-secondary) !important;
+        transition: all 0.3s ease !important;
+        padding: 2px 4px !important;
+        border-radius: 4px !important;
+        position: relative !important;
+    }
+    
+    p a:hover, .card-description a:hover, .section-subtitle a:hover {
+        color: var(--accent-color) !important;
+        background: rgba(255, 107, 107, 0.1) !important;
+        text-shadow: 0 0 8px rgba(255, 107, 107, 0.4) !important;
+    }
+    
+    /* CTA and Button Links - Modern elevated design */
+    .btn, .cta-button, .action-link {
+        background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary)) !important;
+        color: white !important;
+        padding: 12px 24px !important;
+        border-radius: 8px !important;
+        border: none !important;
+        font-weight: 600 !important;
+        position: relative !important;
+        overflow: hidden !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3) !important;
+    }
+    
+    .btn:hover, .cta-button:hover, .action-link:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4) !important;
+        background: linear-gradient(135deg, var(--accent-secondary), var(--accent-color)) !important;
+    }
+    
+    .btn:active, .cta-button:active, .action-link:active {
+        transform: translateY(0) !important;
+        box-shadow: 0 2px 10px rgba(255, 107, 107, 0.3) !important;
+    }
+    
+    /* Focus States - Beautiful glowing outline */
+    a:focus, .nav-link:focus, .dropdown-link:focus, .social-link:focus, .footer-links a:focus, .breadcrumb a:focus {
+        outline: none !important;
+        box-shadow: 0 0 0 2px var(--accent-color), 0 0 20px rgba(255, 107, 107, 0.4) !important;
+        border-radius: 4px !important;
+    }
+    
+    /* Remove all underlines globally */
+    * {
+        text-decoration: none !important;
+    }
+    
+    /* FOOTER PREMIUM STYLING */
+    .site-footer {
+        background: var(--bg-glass) !important;
+        backdrop-filter: blur(40px) !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+        box-shadow: 
+            0 -20px 60px rgba(0, 0, 0, 0.5),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    }
+}
+
+/* Performance optimizations */
+/* Reduce animations when theme switching is in progress */
+[data-theme-switching] * {
+    transition-duration: 0ms !important;
+    animation-duration: 0ms !important;
+}
+
+/* GPU acceleration for smooth transitions */
+.modern-card,
+.testimonial-card,
+.universal-header,
+.theme-toggle,
+.mobile-theme-switch {
+    will-change: background-color, color, border-color;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --transition-speed: 0ms;
+    }
+    
+    [data-theme="dark"] {
+        --bg-primary: #000000;
+        --bg-secondary: #111111;
+        --text-primary: #ffffff;
+        --text-secondary: #cccccc;
+        --border-color: #666666;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --transition-speed: 0ms;
+    }
+    
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* Force hardware acceleration for theme-sensitive elements */
+@supports (backdrop-filter: blur(10px)) {
+    .modern-card,
+    .testimonial-card {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+    
+    [data-theme="dark"] .modern-card,
+    [data-theme="dark"] .testimonial-card {
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+    }
+}
+
+/* Critical rendering path optimization */
+.theme-critical {
+    /* These styles will be inlined for instant theme switching */
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Instant theme switch utility class */
+.theme-instant * {
+    transition-duration: 0ms !important;
+    animation-duration: 0ms !important;
+}
+
+/* Theme transition end */
+@keyframes theme-fade-in {
+    from { opacity: 0.95; }
+    to { opacity: 1; }
+}
+
+.theme-transition-end {
+    animation: theme-fade-in 100ms ease-out;
+}

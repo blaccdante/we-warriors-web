@@ -5,88 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Educational resources for teachers, professors, and healthcare educators teaching about sickle cell disease - curriculum materials, training programs, and teaching tools">
     <meta name="keywords" content="sickle cell education, teaching resources, curriculum, medical education, nursing education, health education">
-    <meta name="author" content="We Warriors Organization">
     
     <title>Educator Resources - We Warriors</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1964650693892617" crossorigin="anonymous"></script>
     
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/accessibility.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/modern-slideshow.css">
+    <link rel="stylesheet" href="../css/modern-homepage.css">
+    <link rel="stylesheet" href="../css/theme-optimization.css">
     <link rel="stylesheet" href="../css/universal-header.css">
-    
-    <style>
-        .page-hero.modern-hero { position: relative; min-height: 70vh; display: flex; align-items: center; overflow: hidden; }
-        .hero-background { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; }
-        .hero-gradient { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(16, 185, 129, 0.95) 0%, rgba(5, 150, 105, 0.9) 30%, rgba(6, 95, 70, 0.95) 70%, rgba(16, 185, 129, 0.9) 100%); }
-        .hero-pattern { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(52, 211, 153, 0.2) 0%, transparent 50%); background-size: 300px 300px, 400px 400px; animation: patternMove 20s ease-in-out infinite; }
-        @keyframes patternMove { 0%, 100% { transform: translate(0, 0); } 25% { transform: translate(-10px, -10px); } 50% { transform: translate(10px, 10px); } 75% { transform: translate(-5px, 10px); } }
-        
-        :root[data-theme="dark"] .hero-gradient { background: linear-gradient(135deg, rgba(30, 30, 30, 0.95) 0%, rgba(45, 45, 45, 0.9) 30%, rgba(60, 60, 60, 0.95) 70%, rgba(30, 30, 30, 0.9) 100%) !important; }
-        
-        .hero-container { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 2rem; width: 100%; }
-        .hero-content { color: #f8fafc; max-width: 800px; }
-        .page-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin: 0 0 1.5rem 0; line-height: 1.1; color: #f1f5f9; }
-        .page-subtitle { font-size: clamp(1.1rem, 2.5vw, 1.4rem); margin: 0; color: rgba(226, 232, 240, 0.9); line-height: 1.6; }
-        .page-content { padding: 4rem 0; background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%); }
-        [data-theme="dark"] .page-content { background: linear-gradient(180deg, var(--background-primary) 0%, var(--background-secondary) 100%) !important; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-        
-        .section-title { font-size: 2.5rem; font-weight: 700; color: var(--blood-color); margin-bottom: 2rem; text-align: center; }
-        [data-theme="dark"] .section-title { color: var(--text-primary) !important; }
-        .section-text { font-size: 1.1rem; line-height: 1.7; color: #555; text-align: center; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto; }
-        [data-theme="dark"] .section-text { color: var(--text-secondary) !important; }
-        
-        .educator-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 3rem 0; }
-        .stat-card { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 2rem; border-radius: 16px; text-align: center; }
-        [data-theme="dark"] .stat-card { background: linear-gradient(135deg, #047857 0%, #065f46 100%) !important; }
-        .stat-number { font-size: 3rem; font-weight: 800; line-height: 1; }
-        .stat-label { font-size: 1rem; font-weight: 600; margin-top: 0.5rem; opacity: 0.9; }
-        
-        .education-categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 3rem 0; }
-        .education-card { background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); border: 1px solid rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .education-card:hover { transform: translateY(-8px); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); }
-        [data-theme="dark"] .education-card { background: var(--card-background) !important; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important; border: 1px solid var(--border-primary) !important; }
-        [data-theme="dark"] .education-card:hover { box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4) !important; }
-        
-        .education-header { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; padding: 2rem; text-align: center; }
-        .education-icon { font-size: 3rem; margin-bottom: 1rem; }
-        .education-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .education-subtitle { opacity: 0.9; }
-        .education-content { padding: 2rem; }
-        .education-list { list-style: none; padding: 0; }
-        .education-list li { padding: 0.75rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; gap: 0.75rem; }
-        .education-list li:last-child { border-bottom: none; }
-        [data-theme="dark"] .education-list li { border-bottom-color: var(--border-primary) !important; }
-        .education-action { display: block; background: var(--blood-color); color: white; padding: 1rem; text-align: center; text-decoration: none; font-weight: 600; transition: background 0.3s ease; }
-        .education-action:hover { background: var(--blood-light); color: white; }
-        
-        .training-program { background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); color: white; padding: 3rem; border-radius: 16px; text-align: center; margin: 3rem 0; }
-        [data-theme="dark"] .training-program { background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%) !important; }
-        
-        .curriculum-showcase { background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 3rem; border-radius: 16px; text-align: center; margin: 3rem 0; position: relative; overflow: hidden; }
-        [data-theme="dark"] .curriculum-showcase { background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%) !important; }
-        .curriculum-showcase::before { content: ''; position: absolute; top: -50%; right: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); transform: rotate(-45deg); }
-        
-        @media (max-width: 768px) {
-            .education-categories { grid-template-columns: 1fr; }
-        }
-    </style>
+    <link rel="stylesheet" href="../css/information.css">
 </head>
-<body class="page-body">
+<body>
+    <!-- Skip to main content link for accessibility -->
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
     
     <!-- Universal Header -->
     <header class="universal-header" role="banner">
         <div class="header-container">
+            <!-- Logo -->
             <a href="../index.html" class="header-logo" aria-label="We Warriors Home">
                 <img src="../images/logo.svg" alt="We Warriors Logo" class="logo-img">
                 <span class="logo-text">We Warriors</span>
             </a>
             
+            <!-- Navigation Menu -->
             <nav class="header-nav" role="navigation" aria-label="Main navigation">
+                <!-- Desktop Dropdowns -->
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Support</a>
                     <ul class="dropdown-menu" role="menu">
@@ -145,221 +99,515 @@
                 </div>
                 
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Professionals</a>
+                    <a href="#" class="nav-link dropdown-toggle active" role="menuitem" aria-haspopup="true">Professionals</a>
                     <ul class="dropdown-menu" role="menu">
                         <li class="dropdown-item" role="none">
-                            <a href="../professionals/healthcare-providers.html" class="dropdown-link" role="menuitem">Healthcare Providers</a>
+                            <a href="partnerships.html" class="dropdown-link" role="menuitem">Partnerships</a>
                         </li>
                         <li class="dropdown-item" role="none">
-                            <a href="../professionals/researchers.html" class="dropdown-link" role="menuitem">Researchers</a>
+                            <a href="researchers.html" class="dropdown-link" role="menuitem">Researchers</a>
                         </li>
                         <li class="dropdown-item" role="none">
-                            <a href="../professionals/educators.html" class="dropdown-link" role="menuitem">Educators</a>
+                            <a href="educators.html" class="dropdown-link active" role="menuitem">Educators</a>
                         </li>
                     </ul>
                 </div>
                 
                 <div class="nav-item">
-                    <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact</a>
+                    <a href="../pages/about-us.html" class="nav-link" role="menuitem">About Us</a>
                 </div>
                 
                 <div class="nav-item">
-                    <a href="../pages/get-involved.html" class="cta-button" role="menuitem">Get Involved</a>
+                    <a href="#get-involved" class="cta-button" role="menuitem">Get Involved</a>
                 </div>
+                
+                <!-- Mobile Only Links -->
+                <!-- Theme Toggle First -->
+                <div class="nav-item mobile-nav-item mobile-theme-item">
+                    <div class="mobile-theme-toggle">
+                        <span>Dark Mode</span>
+                        <div class="mobile-theme-switch" id="mobileThemeSwitch">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item">
+                    <a href="../index.html" class="nav-link" role="menuitem">Home</a>
+                </div>
+                
+                <!-- Mobile Main Categories -->
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Support</a>
+                    <div class="mobile-submenu">
+                        <a href="../support/about-sickle-cell.html" class="mobile-submenu-link">Living with Sickle Cell</a>
+                        <a href="../support/support-groups.html" class="mobile-submenu-link">Support Groups</a>
+                        <a href="../support/counseling.html" class="mobile-submenu-link">Counseling Services</a>
+                        <a href="../support/resources.html" class="mobile-submenu-link">Resources</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Information</a>
+                    <div class="mobile-submenu">
+                        <a href="../information/what-is-sickle-cell.html" class="mobile-submenu-link">What is Sickle Cell</a>
+                        <a href="../information/types.html" class="mobile-submenu-link">Types of Sickle Cell</a>
+                        <a href="../information/diagnosis-treatment.html" class="mobile-submenu-link">Diagnosis & Treatment</a>
+                        <a href="../information/research.html" class="mobile-submenu-link">Research & Trials</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Community</a>
+                    <div class="mobile-submenu">
+                        <a href="../community/forum.html" class="mobile-submenu-link">Forum</a>
+                        <a href="../community/warrior-stories.html" class="mobile-submenu-link">Warrior Stories</a>
+                        <a href="../community/blog.html" class="mobile-submenu-link">Blog</a>
+                        <a href="../community/events.html" class="mobile-submenu-link">Events</a>
+                        <a href="../community/gallery.html" class="mobile-submenu-link">Gallery</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Professionals</a>
+                    <div class="mobile-submenu">
+                        <a href="partnerships.html" class="mobile-submenu-link">Partnerships</a>
+                        <a href="researchers.html" class="mobile-submenu-link">Researchers</a>
+                        <a href="educators.html" class="mobile-submenu-link">Educators</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item">
+                    <a href="../pages/about-us.html" class="nav-link" role="menuitem">About Us</a>
+                </div>
+                
+                <!-- Action Buttons Last -->
+                <div class="nav-item mobile-nav-item mobile-action-item">
+                    <a href="../pages/donate.html" class="mobile-action-btn mobile-donate-btn">Donate Now</a>
+                </div>
+                <div class="nav-item mobile-nav-item mobile-action-item">
+                    <a href="#get-involved" class="mobile-action-btn mobile-get-involved-btn">Get Involved</a>
+                </div>
+                
+                <!-- Desktop Theme Toggle -->
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
             </nav>
             
-            <div class="header-actions">
-                <button class="theme-toggle" aria-label="Toggle dark mode" aria-describedby="theme-status">
-                    <span class="theme-icon">☀</span>
-                    <span class="sr-only" id="theme-status">Current theme: light mode</span>
-                </button>
-                
-                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
         </div>
     </header>
 
-    <main id="main-content" role="main" class="modern-main">
-        
-        <section class="page-hero modern-hero">
-            <div class="hero-background">
-                <div class="hero-gradient"></div>
-                <div class="hero-pattern"></div>
-            </div>
-            <div class="hero-container">
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-information">
+            <div class="container">
                 <div class="hero-content">
-                    <h1 class="page-title modern-title">Educator Resources</h1>
-                    <p class="page-subtitle modern-subtitle">Comprehensive teaching materials and training programs for sickle cell disease education</p>
+                    <h1 class="hero-title">Educator Resources</h1>
+                    <p class="hero-subtitle">Comprehensive teaching materials and training programs for sickle cell disease education</p>
+                    <div class="hero-description">
+                        <p>Access curriculum materials, training programs, teaching tools, and professional development resources specifically designed for educators teaching about sickle cell disease.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="page-content modern-content">
+        <!-- Page Content -->
+        <section class="page-content">
             <div class="container">
-                
-                <!-- New Curriculum Alert -->
-                <div class="curriculum-showcase">
-                    <h2>📚 New K-12 Curriculum Available</h2>
-                    <p>Age-appropriate sickle cell education modules now available for elementary, middle, and high school educators. Includes lesson plans, activities, and assessment tools.</p>
-                    <a href="#curriculum" style="color: white; text-decoration: underline; font-weight: bold;">Download Curriculum</a>
-                </div>
+                <!-- Educator Network Statistics -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">📊</div>
+                        <h2 class="card-title">Educator Network</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <h3>👨‍🏫 Active Educators</h3>
+                                <p class="stat-number">234</p>
+                                <p>Teachers and professors in our network</p>
+                                <div class="stat-breakdown">
+                                    <small>K-12 Teachers: 156 • College Professors: 45 • Nursing Instructors: 33</small>
+                                </div>
+                            </div>
 
-                <!-- Educator Statistics -->
-                <div class="educator-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">1,200+</div>
-                        <div class="stat-label">Educators Trained</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">35</div>
-                        <div class="stat-label">States Participating</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">500K+</div>
-                        <div class="stat-label">Students Reached</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">98%</div>
-                        <div class="stat-label">Educator Satisfaction</div>
-                    </div>
-                </div>
+                            <div class="info-item">
+                                <h3>🏫 Participating Schools</h3>
+                                <p class="stat-number">67</p>
+                                <p>Educational institutions using our materials</p>
+                                <div class="stat-breakdown">
+                                    <small>Elementary: 23 • High Schools: 28 • Universities: 16</small>
+                                </div>
+                            </div>
 
-                <h2 class="section-title">Educational Resources & Training</h2>
-                <p class="section-text">
-                    Empower educators with comprehensive resources to teach about sickle cell disease, from K-12 awareness programs to advanced medical education curricula.
-                </p>
+                            <div class="info-item">
+                                <h3>📚 Curriculum Downloads</h3>
+                                <p class="stat-number">4,567</p>
+                                <p>Educational materials downloaded this year</p>
+                                <div class="stat-breakdown">
+                                    <small>Lesson Plans: 2,234 • Presentations: 1,456 • Activities: 877</small>
+                                </div>
+                            </div>
 
-                <!-- Education Categories -->
-                <div class="education-categories">
-                    <div class="education-card">
-                        <div class="education-header">
-                            <div class="education-icon">🎓</div>
-                            <h3 class="education-title">K-12 Curriculum</h3>
-                            <p class="education-subtitle">Age-appropriate teaching materials</p>
+                            <div class="info-item">
+                                <h3>🎓 Students Reached</h3>
+                                <p class="stat-number">12,890</p>
+                                <p>Students educated about sickle cell disease</p>
+                                <div class="stat-breakdown">
+                                    <small>K-12: 8,456 • College: 3,234 • Health Programs: 1,200</small>
+                                </div>
+                            </div>
                         </div>
-                        <div class="education-content">
-                            <ul class="education-list">
-                                <li>📖 Elementary Lesson Plans (K-5)</li>
-                                <li>🔬 Middle School Science Modules</li>
-                                <li>🧬 High School Biology Units</li>
-                                <li>🎯 Interactive Activities & Games</li>
-                                <li>📊 Assessment Tools</li>
-                                <li>👨‍👩‍👧‍👦 Family Engagement Resources</li>
-                            </ul>
-                        </div>
-                        <a href="#k12" class="education-action">Access Materials</a>
-                    </div>
-
-                    <div class="education-card">
-                        <div class="education-header">
-                            <div class="education-icon">🏥</div>
-                            <h3 class="education-title">Medical Education</h3>
-                            <p class="education-subtitle">Professional healthcare training</p>
-                        </div>
-                        <div class="education-content">
-                            <ul class="education-list">
-                                <li>🩺 Medical School Curriculum</li>
-                                <li>👩‍⚕️ Nursing Education Modules</li>
-                                <li>💊 Pharmacy Training Materials</li>
-                                <li>🏥 Residency Training Programs</li>
-                                <li>📋 Clinical Case Studies</li>
-                                <li>🎯 Competency Assessments</li>
-                            </ul>
-                        </div>
-                        <a href="#medical" class="education-action">Explore Training</a>
-                    </div>
-
-                    <div class="education-card">
-                        <div class="education-header">
-                            <div class="education-icon">💻</div>
-                            <h3 class="education-title">Digital Learning</h3>
-                            <p class="education-subtitle">Online courses & virtual tools</p>
-                        </div>
-                        <div class="education-content">
-                            <ul class="education-list">
-                                <li>🖥️ Interactive Online Modules</li>
-                                <li>🎮 Educational Games & Simulations</li>
-                                <li>📱 Mobile Learning Apps</li>
-                                <li>🎥 Video Libraries</li>
-                                <li>📚 Digital Textbooks</li>
-                                <li>🔊 Audio Resources</li>
-                            </ul>
-                        </div>
-                        <a href="#digital" class="education-action">Explore Digital</a>
-                    </div>
-
-                    <div class="education-card">
-                        <div class="education-header">
-                            <div class="education-icon">📋</div>
-                            <h3 class="education-title">Teacher Training</h3>
-                            <p class="education-subtitle">Professional development programs</p>
-                        </div>
-                        <div class="education-content">
-                            <ul class="education-list">
-                                <li>👩‍🏫 Workshop Series</li>
-                                <li>🎓 Certification Programs</li>
-                                <li>💻 Webinar Training</li>
-                                <li>📖 Teaching Guides</li>
-                                <li>🤝 Mentor Networks</li>
-                                <li>🏆 Best Practice Sharing</li>
-                            </ul>
-                        </div>
-                        <a href="#training" class="education-action">Join Training</a>
-                    </div>
-
-                    <div class="education-card">
-                        <div class="education-header">
-                            <div class="education-icon">🔬</div>
-                            <h3 class="education-title">Research & Data</h3>
-                            <p class="education-subtitle">Educational research & outcomes</p>
-                        </div>
-                        <div class="education-content">
-                            <ul class="education-list">
-                                <li>📊 Education Impact Studies</li>
-                                <li>📈 Learning Outcome Data</li>
-                                <li>🔍 Curriculum Effectiveness</li>
-                                <li>📝 Research Publications</li>
-                                <li>🎯 Program Evaluation</li>
-                                <li>💡 Innovation Reports</li>
-                            </ul>
-                        </div>
-                        <a href="#research" class="education-action">View Research</a>
-                    </div>
-
-                    <div class="education-card">
-                        <div class="education-header">
-                            <div class="education-icon">🌍</div>
-                            <h3 class="education-title">Community Outreach</h3>
-                            <p class="education-subtitle">Public awareness & engagement</p>
-                        </div>
-                        <div class="education-content">
-                            <ul class="education-list">
-                                <li>🗣️ Community Presentations</li>
-                                <li>📅 Awareness Events</li>
-                                <li>👥 Parent Education</li>
-                                <li>🏢 Workplace Training</li>
-                                <li>📺 Media Resources</li>
-                                <li>🤝 Partnership Programs</li>
-                            </ul>
-                        </div>
-                        <a href="#outreach" class="education-action">Get Involved</a>
                     </div>
                 </div>
 
-                <!-- Training Program -->
-                <div class="training-program">
-                    <h2>🚀 Certified Sickle Cell Educator Program</h2>
-                    <p>Join our comprehensive 40-hour certification program designed for educators at all levels. Learn evidence-based teaching strategies, access exclusive resources, and become part of our global educator network.</p>
-                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
-                        <a href="#" style="display: inline-block; background: white; color: #7c3aed; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700;">Enroll Now</a>
-                        <a href="#" style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700; border: 2px solid white;">Learn More</a>
+                <!-- Educational Resources -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">📚</div>
+                        <h2 class="card-title">Educational Resources</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="resource-categories">
+                            
+                            <!-- Curriculum Materials -->
+                            <div class="category-section">
+                                <h3 class="category-title">📖 Curriculum Materials</h3>
+                                <p class="category-description">Complete lesson plans, activities, and assessments for different grade levels</p>
+                                <div class="resource-grid">
+                                    <div class="resource-item">
+                                        <div class="resource-icon">🎒</div>
+                                        <h4>K-12 Lesson Plans</h4>
+                                        <p>Age-appropriate lessons about sickle cell disease</p>
+                                        <ul>
+                                            <li>Elementary science lessons</li>
+                                            <li>Middle school genetics units</li>
+                                            <li>High school biology curriculum</li>
+                                            <li>Health education modules</li>
+                                        </ul>
+                                        <a href="#" class="resource-link">Download Lessons →</a>
+                                    </div>
+                                    
+                                    <div class="resource-item">
+                                        <div class="resource-icon">🎓</div>
+                                        <h4>Higher Education Modules</h4>
+                                        <p>College and university course materials</p>
+                                        <ul>
+                                            <li>Pre-med coursework</li>
+                                            <li>Nursing program content</li>
+                                            <li>Public health curricula</li>
+                                            <li>Medical school resources</li>
+                                        </ul>
+                                        <a href="#" class="resource-link">Access Modules →</a>
+                                    </div>
+                                    
+                                    <div class="resource-item">
+                                        <div class="resource-icon">🎨</div>
+                                        <h4>Interactive Activities</h4>
+                                        <p>Hands-on learning experiences and experiments</p>
+                                        <ul>
+                                            <li>Laboratory simulations</li>
+                                            <li>Case study scenarios</li>
+                                            <li>Group discussion guides</li>
+                                            <li>Creative projects</li>
+                                        </ul>
+                                        <a href="#" class="resource-link">Browse Activities →</a>
+                                    </div>
+                                    
+                                    <div class="resource-item">
+                                        <div class="resource-icon">📊</div>
+                                        <h4>Assessment Tools</h4>
+                                        <p>Evaluation materials and rubrics</p>
+                                        <ul>
+                                            <li>Quiz templates</li>
+                                            <li>Project rubrics</li>
+                                            <li>Learning objectives</li>
+                                            <li>Progress tracking tools</li>
+                                        </ul>
+                                        <a href="#" class="resource-link">Download Tools →</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-                
+
+                <!-- Training Programs -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">🎓</div>
+                        <h2 class="card-title">Professional Development</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="cme-programs">
+                            <h3>Training Programs for Educators</h3>
+                            <p>Enhance your knowledge and teaching skills with our professional development opportunities</p>
+                            
+                            <div class="cme-categories">
+                                <div class="cme-category">
+                                    <h4>🎯 Featured Workshop</h4>
+                                    <div class="featured-course">
+                                        <h5>Teaching Sickle Cell Disease: A Comprehensive Approach</h5>
+                                        <p><strong>Duration:</strong> 8 hours (2-day intensive)</p>
+                                        <p><strong>Format:</strong> Virtual workshop with interactive sessions</p>
+                                        <p><strong>Topics Covered:</strong></p>
+                                        <ul>
+                                            <li>Disease pathophysiology and genetics</li>
+                                            <li>Cultural sensitivity and awareness</li>
+                                            <li>Effective teaching strategies</li>
+                                            <li>Student support and accommodation</li>
+                                        </ul>
+                                        <div class="course-meta">
+                                            <span class="duration">16 CEUs available</span>
+                                            <span class="cost">Free for educators</span>
+                                            <span class="accreditation">Accredited Program</span>
+                                        </div>
+                                        <a href="#" class="btn">Register Now</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="cme-list">
+                                    <h4>📚 Available Training</h4>
+                                    <div class="course-list">
+                                        <div class="course-item">
+                                            <h5>Genetics Education Fundamentals</h5>
+                                            <p>4 hours • Online • Self-paced</p>
+                                            <span class="course-badge new">New</span>
+                                        </div>
+                                        
+                                        <div class="course-item">
+                                            <h5>Supporting Students with Chronic Conditions</h5>
+                                            <p>3 hours • Webinar • Live session</p>
+                                            <span class="course-badge popular">Popular</span>
+                                        </div>
+                                        
+                                        <div class="course-item">
+                                            <h5>Health Literacy in the Classroom</h5>
+                                            <p>2 hours • Online module • Self-paced</p>
+                                        </div>
+                                        
+                                        <div class="course-item">
+                                            <h5>Cultural Competency in Health Education</h5>
+                                            <p>6 hours • Workshop • Virtual</p>
+                                        </div>
+                                        
+                                        <div class="course-item">
+                                            <h5>Science Communication Skills</h5>
+                                            <p>4 hours • Interactive • Online</p>
+                                            <span class="course-badge updated">Updated</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teaching Materials & Resources -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">🎬</div>
+                        <h2 class="card-title">Teaching Materials & Media</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="research-updates">
+                            <h3>Ready-to-Use Educational Content</h3>
+                            
+                            <div class="update-categories">
+                                <div class="update-item featured">
+                                    <div class="update-badge">Featured</div>
+                                    <h4>Interactive Digital Textbook</h4>
+                                    <p><strong>Grade Level:</strong> 9-12 • Updated January 2024</p>
+                                    <p>Comprehensive digital textbook covering genetics, pathophysiology, and social aspects of sickle cell disease with multimedia content and interactive exercises.</p>
+                                    <a href="#" class="read-more">Access Textbook →</a>
+                                </div>
+                                
+                                <div class="research-categories">
+                                    <div class="research-item">
+                                        <h4>📹 Video Resources</h4>
+                                        <ul>
+                                            <li>Documentary films</li>
+                                            <li>Patient testimonials</li>
+                                            <li>Scientific animations</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="research-item">
+                                        <h4>📊 Presentation Materials</h4>
+                                        <ul>
+                                            <li>PowerPoint templates</li>
+                                            <li>Infographics</li>
+                                            <li>Statistical charts</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="research-item">
+                                        <h4>📖 Print Resources</h4>
+                                        <ul>
+                                            <li>Student handouts</li>
+                                            <li>Fact sheets</li>
+                                            <li>Posters and visuals</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="clinical-trials">
+                                <h4>🎯 Subject-Specific Resources</h4>
+                                <p>Materials organized by academic discipline:</p>
+                                <div class="trials-list">
+                                    <div class="trial-item">
+                                        <h5>Biology & Life Sciences</h5>
+                                        <p><strong>Grades:</strong> 6-12 • <strong>Topics:</strong> Genetics, Cell Biology</p>
+                                        <p>Covers inheritance patterns, protein structure, and molecular mechanisms</p>
+                                    </div>
+                                    
+                                    <div class="trial-item">
+                                        <h5>Health & Physical Education</h5>
+                                        <p><strong>Grades:</strong> K-12 • <strong>Topics:</strong> Health Awareness, Fitness</p>
+                                        <p>Focuses on health management, exercise considerations, and wellness</p>
+                                    </div>
+                                    
+                                    <div class="trial-item">
+                                        <h5>Social Studies & Geography</h5>
+                                        <p><strong>Grades:</strong> 3-12 • <strong>Topics:</strong> Global Health, Demographics</p>
+                                        <p>Explores geographic distribution, cultural impacts, and health disparities</p>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-secondary">Browse All Resources</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Educator Community -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">🤝</div>
+                        <h2 class="card-title">Educator Community</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="networking-section">
+                            <h3>Connect with Fellow Educators</h3>
+                            <p>Join our global network of educators committed to raising awareness and understanding of sickle cell disease.</p>
+                            
+                            <div class="network-features">
+                                <div class="feature-grid">
+                                    <div class="feature-item">
+                                        <div class="feature-icon">💬</div>
+                                        <h4>Teaching Forums</h4>
+                                        <p>Share lesson ideas, ask questions, and collaborate with other educators</p>
+                                        <a href="#" class="feature-link">Join Discussion →</a>
+                                    </div>
+                                    
+                                    <div class="feature-item">
+                                        <div class="feature-icon">📚</div>
+                                        <h4>Resource Sharing</h4>
+                                        <p>Upload and download teaching materials created by educators</p>
+                                        <a href="#" class="feature-link">Share Resources →</a>
+                                    </div>
+                                    
+                                    <div class="feature-item">
+                                        <div class="feature-icon">📅</div>
+                                        <h4>Virtual Workshops</h4>
+                                        <p>Attend monthly workshops on teaching strategies and new developments</p>
+                                        <a href="#" class="feature-link">View Schedule →</a>
+                                    </div>
+                                    
+                                    <div class="feature-item">
+                                        <div class="feature-icon">🏆</div>
+                                        <h4>Recognition Program</h4>
+                                        <p>Get recognized for outstanding contributions to sickle cell education</p>
+                                        <a href="#" class="feature-link">Learn More →</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="membership-info">
+                                <h4>Community Benefits</h4>
+                                <div class="benefits-list">
+                                    <div class="benefit-item">
+                                        <span class="benefit-icon">✓</span>
+                                        <span>Free access to all curriculum materials and resources</span>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <span class="benefit-icon">✓</span>
+                                        <span>Priority registration for professional development workshops</span>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <span class="benefit-icon">✓</span>
+                                        <span>Networking opportunities with health professionals</span>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <span class="benefit-icon">✓</span>
+                                        <span>Access to guest speakers and subject matter experts</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teaching Tools -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">🛠️</div>
+                        <h2 class="card-title">Teaching Tools & Technology</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="tools-section">
+                            <h3>Digital Tools for Modern Education</h3>
+                            <div class="tools-grid">
+                                <div class="tool-item">
+                                    <div class="tool-icon">💻</div>
+                                    <h4>Interactive Simulations</h4>
+                                    <p>Virtual laboratory experiences and disease modeling tools</p>
+                                    <a href="#" class="tool-link">Launch Simulations</a>
+                                </div>
+                                
+                                <div class="tool-item">
+                                    <div class="tool-icon">🎮</div>
+                                    <h4>Educational Games</h4>
+                                    <p>Gamified learning experiences for different age groups</p>
+                                    <a href="#" class="tool-link">Play Games</a>
+                                </div>
+                                
+                                <div class="tool-item">
+                                    <div class="tool-icon">📱</div>
+                                    <h4>Mobile Learning Apps</h4>
+                                    <p>Smartphone and tablet applications for students</p>
+                                    <a href="#" class="tool-link">Download Apps</a>
+                                </div>
+                                
+                                <div class="tool-item">
+                                    <div class="tool-icon">📊</div>
+                                    <h4>Assessment Platform</h4>
+                                    <p>Digital tools for creating and grading assignments</p>
+                                    <a href="#" class="tool-link">Access Platform</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="cta-section">
+                    <h2>Join Our Educator Network</h2>
+                    <p>Connect with fellow educators, access comprehensive teaching materials, and help us educate the next generation about sickle cell disease.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn">Join Network</a>
+                        <a href="../pages/contact.html" class="btn btn-secondary">Contact Us</a>
+                    </div>
+                </div>
             </div>
         </section>
         
@@ -404,7 +652,7 @@
                         <li><a href="../community/forum.html">Forum</a></li>
                         <li><a href="../community/blog.html">Blog</a></li>
                         <li><a href="../community/events.html">Events</a></li>
-                        <li><a href="../community/gallery.html">Gallery</a></li>
+                        <li><a href="../pages/newsletter.html">Newsletter</a></li>
                     </ul>
                 </div>
                 
@@ -434,7 +682,6 @@
                     </div>
                     <div class="contact-info">
                         <p><strong>Email:</strong> wewarriorsng@gmail.com</p>
-                        <p><strong>Direct:</strong> +2347041120734</p>
                         <p><strong>Phone:</strong> 1-800-WARRIOR</p>
                     </div>
                 </div>
@@ -453,9 +700,13 @@
         </div>
     </footer>
 
-    <script src="../js/animations.js"></script>
+    <!-- JavaScript -->
+    <script src="../js/theme-toggle.js"></script>
+    <script src="../js/mobile-menu.js"></script>
     <script src="../js/universal-header.js"></script>
     <script src="../js/main.js"></script>
+    <script src="../js/animations.js"></script>
     <script src="../js/warriorbot.js"></script>
+
 </body>
 </html>

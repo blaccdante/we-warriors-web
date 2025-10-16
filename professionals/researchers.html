@@ -5,88 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Research resources for sickle cell disease investigators - funding opportunities, collaboration networks, data repositories, and research tools">
     <meta name="keywords" content="sickle cell research, medical research, funding, grants, collaboration, data sharing, research tools">
-    <meta name="author" content="We Warriors Organization">
     
     <title>Research Hub - We Warriors</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1964650693892617" crossorigin="anonymous"></script>
     
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/accessibility.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/modern-slideshow.css">
+    <link rel="stylesheet" href="../css/modern-homepage.css">
+    <link rel="stylesheet" href="../css/theme-optimization.css">
     <link rel="stylesheet" href="../css/universal-header.css">
-    
-    <style>
-        .page-hero.modern-hero { position: relative; min-height: 70vh; display: flex; align-items: center; overflow: hidden; }
-        .hero-background { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; }
-        .hero-gradient { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(76, 29, 149, 0.95) 0%, rgba(67, 56, 202, 0.9) 30%, rgba(59, 130, 246, 0.95) 70%, rgba(76, 29, 149, 0.9) 100%); }
-        .hero-pattern { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(59, 130, 246, 0.2) 0%, transparent 50%); background-size: 300px 300px, 400px 400px; animation: patternMove 20s ease-in-out infinite; }
-        @keyframes patternMove { 0%, 100% { transform: translate(0, 0); } 25% { transform: translate(-10px, -10px); } 50% { transform: translate(10px, 10px); } 75% { transform: translate(-5px, 10px); } }
-        
-        :root[data-theme="dark"] .hero-gradient { background: linear-gradient(135deg, rgba(30, 30, 30, 0.95) 0%, rgba(45, 45, 45, 0.9) 30%, rgba(60, 60, 60, 0.95) 70%, rgba(30, 30, 30, 0.9) 100%) !important; }
-        
-        .hero-container { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 2rem; width: 100%; }
-        .hero-content { color: #f8fafc; max-width: 800px; }
-        .page-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin: 0 0 1.5rem 0; line-height: 1.1; color: #f1f5f9; }
-        .page-subtitle { font-size: clamp(1.1rem, 2.5vw, 1.4rem); margin: 0; color: rgba(226, 232, 240, 0.9); line-height: 1.6; }
-        .page-content { padding: 4rem 0; background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%); }
-        [data-theme="dark"] .page-content { background: linear-gradient(180deg, var(--background-primary) 0%, var(--background-secondary) 100%) !important; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-        
-        .section-title { font-size: 2.5rem; font-weight: 700; color: var(--blood-color); margin-bottom: 2rem; text-align: center; }
-        [data-theme="dark"] .section-title { color: var(--text-primary) !important; }
-        .section-text { font-size: 1.1rem; line-height: 1.7; color: #555; text-align: center; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto; }
-        [data-theme="dark"] .section-text { color: var(--text-secondary) !important; }
-        
-        .research-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 3rem 0; }
-        .stat-card { background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; padding: 2rem; border-radius: 16px; text-align: center; }
-        [data-theme="dark"] .stat-card { background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%) !important; }
-        .stat-number { font-size: 3rem; font-weight: 800; line-height: 1; }
-        .stat-label { font-size: 1rem; font-weight: 600; margin-top: 0.5rem; opacity: 0.9; }
-        
-        .research-categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; margin: 3rem 0; }
-        .research-card { background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); border: 1px solid rgba(0, 0, 0, 0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .research-card:hover { transform: translateY(-8px); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12); }
-        [data-theme="dark"] .research-card { background: var(--card-background) !important; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important; border: 1px solid var(--border-primary) !important; }
-        [data-theme="dark"] .research-card:hover { box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4) !important; }
-        
-        .research-header { background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%); color: white; padding: 2rem; text-align: center; }
-        .research-icon { font-size: 3rem; margin-bottom: 1rem; }
-        .research-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .research-subtitle { opacity: 0.9; }
-        .research-content { padding: 2rem; }
-        .research-list { list-style: none; padding: 0; }
-        .research-list li { padding: 0.75rem 0; border-bottom: 1px solid #e5e7eb; display: flex; align-items: center; gap: 0.75rem; }
-        .research-list li:last-child { border-bottom: none; }
-        [data-theme="dark"] .research-list li { border-bottom-color: var(--border-primary) !important; }
-        .research-action { display: block; background: var(--blood-color); color: white; padding: 1rem; text-align: center; text-decoration: none; font-weight: 600; transition: background 0.3s ease; }
-        .research-action:hover { background: var(--blood-light); color: white; }
-        
-        .collaboration-network { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; padding: 3rem; border-radius: 16px; text-align: center; margin: 3rem 0; }
-        [data-theme="dark"] .collaboration-network { background: linear-gradient(135deg, #d97706 0%, #b45309 100%) !important; }
-        
-        .funding-alert { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; padding: 3rem; border-radius: 16px; text-align: center; margin: 3rem 0; position: relative; overflow: hidden; }
-        [data-theme="dark"] .funding-alert { background: linear-gradient(135deg, #059669 0%, #047857 100%) !important; }
-        .funding-alert::before { content: ''; position: absolute; top: -50%; right: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%); transform: rotate(-45deg); }
-        
-        @media (max-width: 768px) {
-            .research-categories { grid-template-columns: 1fr; }
-        }
-    </style>
+    <link rel="stylesheet" href="../css/information.css">
 </head>
-<body class="page-body">
+<body>
+    <!-- Skip to main content link for accessibility -->
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
     
     <!-- Universal Header -->
     <header class="universal-header" role="banner">
         <div class="header-container">
+            <!-- Logo -->
             <a href="../index.html" class="header-logo" aria-label="We Warriors Home">
                 <img src="../images/logo.svg" alt="We Warriors Logo" class="logo-img">
                 <span class="logo-text">We Warriors</span>
             </a>
             
+            <!-- Navigation Menu -->
             <nav class="header-nav" role="navigation" aria-label="Main navigation">
+                <!-- Desktop Dropdowns -->
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Support</a>
                     <ul class="dropdown-menu" role="menu">
@@ -145,221 +99,515 @@
                 </div>
                 
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Professionals</a>
+                    <a href="#" class="nav-link dropdown-toggle active" role="menuitem" aria-haspopup="true">Professionals</a>
                     <ul class="dropdown-menu" role="menu">
                         <li class="dropdown-item" role="none">
-                            <a href="../professionals/healthcare-providers.html" class="dropdown-link" role="menuitem">Healthcare Providers</a>
+                            <a href="partnerships.html" class="dropdown-link" role="menuitem">Partnerships</a>
                         </li>
                         <li class="dropdown-item" role="none">
-                            <a href="../professionals/researchers.html" class="dropdown-link" role="menuitem">Researchers</a>
+                            <a href="researchers.html" class="dropdown-link active" role="menuitem">Researchers</a>
                         </li>
                         <li class="dropdown-item" role="none">
-                            <a href="../professionals/educators.html" class="dropdown-link" role="menuitem">Educators</a>
+                            <a href="educators.html" class="dropdown-link" role="menuitem">Educators</a>
                         </li>
                     </ul>
                 </div>
                 
                 <div class="nav-item">
-                    <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact</a>
+                    <a href="../pages/about-us.html" class="nav-link" role="menuitem">About Us</a>
                 </div>
                 
                 <div class="nav-item">
-                    <a href="../pages/get-involved.html" class="cta-button" role="menuitem">Get Involved</a>
+                    <a href="#get-involved" class="cta-button" role="menuitem">Get Involved</a>
                 </div>
+                
+                <!-- Mobile Only Links -->
+                <!-- Theme Toggle First -->
+                <div class="nav-item mobile-nav-item mobile-theme-item">
+                    <div class="mobile-theme-toggle">
+                        <span>Dark Mode</span>
+                        <div class="mobile-theme-switch" id="mobileThemeSwitch">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item">
+                    <a href="../index.html" class="nav-link" role="menuitem">Home</a>
+                </div>
+                
+                <!-- Mobile Main Categories -->
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Support</a>
+                    <div class="mobile-submenu">
+                        <a href="../support/about-sickle-cell.html" class="mobile-submenu-link">Living with Sickle Cell</a>
+                        <a href="../support/support-groups.html" class="mobile-submenu-link">Support Groups</a>
+                        <a href="../support/counseling.html" class="mobile-submenu-link">Counseling Services</a>
+                        <a href="../support/resources.html" class="mobile-submenu-link">Resources</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Information</a>
+                    <div class="mobile-submenu">
+                        <a href="../information/what-is-sickle-cell.html" class="mobile-submenu-link">What is Sickle Cell</a>
+                        <a href="../information/types.html" class="mobile-submenu-link">Types of Sickle Cell</a>
+                        <a href="../information/diagnosis-treatment.html" class="mobile-submenu-link">Diagnosis & Treatment</a>
+                        <a href="../information/research.html" class="mobile-submenu-link">Research & Trials</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Community</a>
+                    <div class="mobile-submenu">
+                        <a href="../community/forum.html" class="mobile-submenu-link">Forum</a>
+                        <a href="../community/warrior-stories.html" class="mobile-submenu-link">Warrior Stories</a>
+                        <a href="../community/blog.html" class="mobile-submenu-link">Blog</a>
+                        <a href="../community/events.html" class="mobile-submenu-link">Events</a>
+                        <a href="../community/gallery.html" class="mobile-submenu-link">Gallery</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Professionals</a>
+                    <div class="mobile-submenu">
+                        <a href="partnerships.html" class="mobile-submenu-link">Partnerships</a>
+                        <a href="researchers.html" class="mobile-submenu-link">Researchers</a>
+                        <a href="educators.html" class="mobile-submenu-link">Educators</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item">
+                    <a href="../pages/about-us.html" class="nav-link" role="menuitem">About Us</a>
+                </div>
+                
+                <!-- Action Buttons Last -->
+                <div class="nav-item mobile-nav-item mobile-action-item">
+                    <a href="../pages/donate.html" class="mobile-action-btn mobile-donate-btn">Donate Now</a>
+                </div>
+                <div class="nav-item mobile-nav-item mobile-action-item">
+                    <a href="#get-involved" class="mobile-action-btn mobile-get-involved-btn">Get Involved</a>
+                </div>
+                
+                <!-- Desktop Theme Toggle -->
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
             </nav>
             
-            <div class="header-actions">
-                <button class="theme-toggle" aria-label="Toggle dark mode" aria-describedby="theme-status">
-                    <span class="theme-icon">☀</span>
-                    <span class="sr-only" id="theme-status">Current theme: light mode</span>
-                </button>
-                
-                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
         </div>
     </header>
 
-    <main id="main-content" role="main" class="modern-main">
-        
-        <section class="page-hero modern-hero">
-            <div class="hero-background">
-                <div class="hero-gradient"></div>
-                <div class="hero-pattern"></div>
-            </div>
-            <div class="hero-container">
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-information">
+            <div class="container">
                 <div class="hero-content">
-                    <h1 class="page-title modern-title">Research Hub</h1>
-                    <p class="page-subtitle modern-subtitle">Collaborative research platform for sickle cell disease investigators worldwide</p>
+                    <h1 class="hero-title">Research Hub</h1>
+                    <p class="hero-subtitle">Collaborative research platform for sickle cell disease investigators worldwide</p>
+                    <div class="hero-description">
+                        <p>Access funding opportunities, research tools, collaboration networks, and data repositories specifically designed for sickle cell disease researchers.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="page-content modern-content">
+        <!-- Page Content -->
+        <section class="page-content">
             <div class="container">
-                
-                <!-- Funding Opportunity Alert -->
-                <div class="funding-alert">
-                    <h2>💰 $50M in New Funding Available</h2>
-                    <p>The National Institute of Health has announced new grant opportunities specifically for sickle cell disease research. Applications due March 2025.</p>
-                    <a href="#funding" style="color: white; text-decoration: underline; font-weight: bold;">View All Opportunities</a>
-                </div>
+                <!-- Research Network Statistics -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">📊</div>
+                        <h2 class="card-title">Research Network</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <h3>🔬 Active Researchers</h3>
+                                <p class="stat-number">156</p>
+                                <p>Scientists and investigators in our network</p>
+                                <div class="stat-breakdown">
+                                    <small>Principal Investigators: 45 • Postdocs: 67 • Graduate Students: 44</small>
+                                </div>
+                            </div>
 
-                <!-- Research Statistics -->
-                <div class="research-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">850+</div>
-                        <div class="stat-label">Active Researchers</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">45</div>
-                        <div class="stat-label">Countries Involved</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">120+</div>
-                        <div class="stat-label">Published Studies</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">$2.5B</div>
-                        <div class="stat-label">Research Funding</div>
-                    </div>
-                </div>
+                            <div class="info-item">
+                                <h3>🏛️ Affiliated Institutions</h3>
+                                <p class="stat-number">34</p>
+                                <p>Universities and research centers worldwide</p>
+                                <div class="stat-breakdown">
+                                    <small>R1 Universities: 18 • Medical Schools: 12 • Research Institutes: 4</small>
+                                </div>
+                            </div>
 
-                <h2 class="section-title">Research Resources & Tools</h2>
-                <p class="section-text">
-                    Access comprehensive research tools, datasets, collaboration networks, and funding opportunities to advance sickle cell disease research worldwide.
-                </p>
+                            <div class="info-item">
+                                <h3>💰 Funding Secured</h3>
+                                <p class="stat-number">$12.8M</p>
+                                <p>Total research grants awarded</p>
+                                <div class="stat-breakdown">
+                                    <small>This year: $2.1M • Last year: $1.8M</small>
+                                </div>
+                            </div>
 
-                <!-- Research Categories -->
-                <div class="research-categories">
-                    <div class="research-card">
-                        <div class="research-header">
-                            <div class="research-icon">💰</div>
-                            <h3 class="research-title">Funding & Grants</h3>
-                            <p class="research-subtitle">Research funding opportunities</p>
+                            <div class="info-item">
+                                <h3>📄 Publications</h3>
+                                <p class="stat-number">89</p>
+                                <p>Peer-reviewed publications this year</p>
+                                <div class="stat-breakdown">
+                                    <small>High-impact: 23 • Clinical: 34 • Basic science: 32</small>
+                                </div>
+                            </div>
                         </div>
-                        <div class="research-content">
-                            <ul class="research-list">
-                                <li>🎯 NIH/NHLBI Grant Database</li>
-                                <li>💼 Private Foundation Funding</li>
-                                <li>🌍 International Grant Programs</li>
-                                <li>📋 Grant Writing Resources</li>
-                                <li>🤝 Collaborative Funding</li>
-                                <li>📊 Funding Success Analytics</li>
-                            </ul>
-                        </div>
-                        <a href="#funding" class="research-action">Find Funding</a>
-                    </div>
-
-                    <div class="research-card">
-                        <div class="research-header">
-                            <div class="research-icon">🗄️</div>
-                            <h3 class="research-title">Data & Repositories</h3>
-                            <p class="research-subtitle">Research datasets & biobanks</p>
-                        </div>
-                        <div class="research-content">
-                            <ul class="research-list">
-                                <li>📊 Clinical Data Repository</li>
-                                <li>🧬 Genomic Data Bank</li>
-                                <li>🩸 Biospecimen Collections</li>
-                                <li>📈 Outcome Databases</li>
-                                <li>🔒 Secure Data Sharing</li>
-                                <li>📋 Data Use Agreements</li>
-                            </ul>
-                        </div>
-                        <a href="#data" class="research-action">Access Data</a>
-                    </div>
-
-                    <div class="research-card">
-                        <div class="research-header">
-                            <div class="research-icon">🤝</div>
-                            <h3 class="research-title">Collaboration Network</h3>
-                            <p class="research-subtitle">Connect with global researchers</p>
-                        </div>
-                        <div class="research-content">
-                            <ul class="research-list">
-                                <li>🌐 Global Researcher Directory</li>
-                                <li>💬 Research Collaboration Portal</li>
-                                <li>📅 Virtual Research Meetings</li>
-                                <li>🎯 Expertise Matching</li>
-                                <li>📚 Shared Resources</li>
-                                <li>🏆 Joint Publications</li>
-                            </ul>
-                        </div>
-                        <a href="#collaborate" class="research-action">Start Collaborating</a>
-                    </div>
-
-                    <div class="research-card">
-                        <div class="research-header">
-                            <div class="research-icon">📊</div>
-                            <h3 class="research-title">Research Tools</h3>
-                            <p class="research-subtitle">Advanced analytics & instruments</p>
-                        </div>
-                        <div class="research-content">
-                            <ul class="research-list">
-                                <li>📈 Statistical Analysis Software</li>
-                                <li>🧮 Power Calculation Tools</li>
-                                <li>📋 Electronic Data Capture</li>
-                                <li>🔬 Lab Protocol Database</li>
-                                <li>📱 Mobile Data Collection</li>
-                                <li>☁️ Cloud Computing Resources</li>
-                            </ul>
-                        </div>
-                        <a href="#tools" class="research-action">Access Tools</a>
-                    </div>
-
-                    <div class="research-card">
-                        <div class="research-header">
-                            <div class="research-icon">📚</div>
-                            <h3 class="research-title">Publications & Knowledge</h3>
-                            <p class="research-subtitle">Latest research findings</p>
-                        </div>
-                        <div class="research-content">
-                            <ul class="research-list">
-                                <li>📖 Publication Database</li>
-                                <li>🔍 Literature Review Tools</li>
-                                <li>📊 Citation Tracking</li>
-                                <li>🆕 Latest Findings</li>
-                                <li>📝 Preprint Repository</li>
-                                <li>🎓 Training Materials</li>
-                            </ul>
-                        </div>
-                        <a href="#publications" class="research-action">Browse Publications</a>
-                    </div>
-
-                    <div class="research-card">
-                        <div class="research-header">
-                            <div class="research-icon">⚖️</div>
-                            <h3 class="research-title">Ethics & Compliance</h3>
-                            <p class="research-subtitle">IRB support & regulatory guidance</p>
-                        </div>
-                        <div class="research-content">
-                            <ul class="research-list">
-                                <li>📋 IRB Templates & Guidelines</li>
-                                <li>🔒 HIPAA Compliance Tools</li>
-                                <li>📄 Consent Form Templates</li>
-                                <li>🌍 International Guidelines</li>
-                                <li>👥 Community Engagement</li>
-                                <li>✅ Regulatory Updates</li>
-                            </ul>
-                        </div>
-                        <a href="#ethics" class="research-action">Get Guidance</a>
                     </div>
                 </div>
 
-                <!-- Collaboration Network -->
-                <div class="collaboration-network">
-                    <h2>🌐 Join the Global Research Network</h2>
-                    <p>Connect with 850+ researchers across 45 countries working to end sickle cell disease. Share resources, collaborate on studies, and accelerate breakthrough discoveries.</p>
-                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
-                        <a href="#" style="display: inline-block; background: white; color: #d97706; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700;">Join Network</a>
-                        <a href="#" style="display: inline-block; background: rgba(255,255,255,0.2); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 700; border: 2px solid white;">Browse Researchers</a>
+                <!-- Research Resources -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">🔬</div>
+                        <h2 class="card-title">Research Resources</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="resource-categories">
+                            
+                            <!-- Research Tools -->
+                            <div class="category-section">
+                                <h3 class="category-title">🛠️ Research Tools & Protocols</h3>
+                                <p class="category-description">Laboratory protocols, data analysis tools, and research methodologies</p>
+                                <div class="resource-grid">
+                                    <div class="resource-item">
+                                        <div class="resource-icon">🧪</div>
+                                        <h4>Laboratory Protocols</h4>
+                                        <p>Standardized protocols for sickle cell research</p>
+                                        <ul>
+                                            <li>Cell culture techniques</li>
+                                            <li>Protein analysis methods</li>
+                                            <li>Molecular biology protocols</li>
+                                            <li>Flow cytometry procedures</li>
+                                        </ul>
+                                        <a href="#" class="resource-link">Access Protocols →</a>
+                                    </div>
+                                    
+                                    <div class="resource-item">
+                                        <div class="resource-icon">📊</div>
+                                        <h4>Data Analysis Tools</h4>
+                                        <p>Software and statistical methods for research</p>
+                                        <ul>
+                                            <li>Bioinformatics pipelines</li>
+                                            <li>Statistical analysis scripts</li>
+                                            <li>Imaging analysis software</li>
+                                            <li>Genomics data tools</li>
+                                        </ul>
+                                        <a href="#" class="resource-link">Access Tools →</a>
+                                    </div>
+                                    
+                                    <div class="resource-item">
+                                        <div class="resource-icon">🗄️</div>
+                                        <h4>Data Repositories</h4>
+                                        <p>Shared datasets and biobanking resources</p>
+                                        <ul>
+                                            <li>Genomics databases</li>
+                                            <li>Clinical trial datasets</li>
+                                            <li>Biospecimen repositories</li>
+                                            <li>Imaging databases</li>
+                                        </ul>
+                                        <a href="#" class="resource-link">Access Data →</a>
+                                    </div>
+                                    
+                                    <div class="resource-item">
+                                        <div class="resource-icon">🔬</div>
+                                        <h4>Core Facilities</h4>
+                                        <p>Shared research equipment and services</p>
+                                        <ul>
+                                            <li>Genomics sequencing</li>
+                                            <li>Mass spectrometry</li>
+                                            <li>Microscopy facilities</li>
+                                            <li>Animal research models</li>
+                                        </ul>
+                                        <a href="#" class="resource-link">Access Facilities →</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-                
+
+                <!-- Funding Opportunities -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">💰</div>
+                        <h2 class="card-title">Funding Opportunities</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="cme-programs">
+                            <h3>Grant and Fellowship Programs</h3>
+                            <p>Current funding opportunities for sickle cell disease research</p>
+                            
+                            <div class="cme-categories">
+                                <div class="cme-category">
+                                    <h4>🎯 Featured Opportunity</h4>
+                                    <div class="featured-course">
+                                        <h5>NHLBI Sickle Cell Disease Research Grant</h5>
+                                        <p><strong>Amount:</strong> $250,000 per year for 3 years</p>
+                                        <p><strong>Deadline:</strong> March 15, 2024</p>
+                                        <p><strong>Focus Areas:</strong></p>
+                                        <ul>
+                                            <li>Novel therapeutic approaches</li>
+                                            <li>Pain management mechanisms</li>
+                                            <li>Gene therapy development</li>
+                                            <li>Health disparities research</li>
+                                        </ul>
+                                        <div class="course-meta">
+                                            <span class="duration">3-year funding</span>
+                                            <span class="cost">Up to $750K total</span>
+                                            <span class="accreditation">NIH Program</span>
+                                        </div>
+                                        <a href="#" class="btn">Apply Now</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="cme-list">
+                                    <h4>💡 Available Funding</h4>
+                                    <div class="course-list">
+                                        <div class="course-item">
+                                            <h5>Young Investigator Awards</h5>
+                                            <p>$50,000 • 2 years • Early career support</p>
+                                            <span class="course-badge new">New</span>
+                                        </div>
+                                        
+                                        <div class="course-item">
+                                            <h5>Collaborative Research Grants</h5>
+                                            <p>$150,000 • 3 years • Multi-site studies</p>
+                                            <span class="course-badge popular">Popular</span>
+                                        </div>
+                                        
+                                        <div class="course-item">
+                                            <h5>Pilot Project Funding</h5>
+                                            <p>$25,000 • 1 year • Proof of concept</p>
+                                        </div>
+                                        
+                                        <div class="course-item">
+                                            <h5>Graduate Student Fellowships</h5>
+                                            <p>$30,000 • 2 years • PhD support</p>
+                                        </div>
+                                        
+                                        <div class="course-item">
+                                            <h5>International Exchange Program</h5>
+                                            <p>$15,000 • 6 months • Research visits</p>
+                                            <span class="course-badge updated">Updated</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Current Research & Publications -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">📚</div>
+                        <h2 class="card-title">Current Research & Publications</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="research-updates">
+                            <h3>Latest Research Findings</h3>
+                            
+                            <div class="update-categories">
+                                <div class="update-item featured">
+                                    <div class="update-badge">Published</div>
+                                    <h4>CRISPR Gene Editing Breakthrough</h4>
+                                    <p><strong>Journal:</strong> Nature Medicine • January 2024</p>
+                                    <p>Successful correction of sickle cell mutations in patient-derived stem cells shows promise for clinical translation with 98% editing efficiency.</p>
+                                    <a href="#" class="read-more">Read Publication →</a>
+                                </div>
+                                
+                                <div class="research-categories">
+                                    <div class="research-item">
+                                        <h4>🧬 Gene Therapy Research</h4>
+                                        <ul>
+                                            <li>Base editing approaches</li>
+                                            <li>Lentiviral vector optimization</li>
+                                            <li>In vivo delivery systems</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="research-item">
+                                        <h4>💊 Drug Development</h4>
+                                        <ul>
+                                            <li>Anti-sickling compounds</li>
+                                            <li>Anti-inflammatory agents</li>
+                                            <li>Adhesion inhibitors</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="research-item">
+                                        <h4>🧠 Pathophysiology Studies</h4>
+                                        <ul>
+                                            <li>Vaso-occlusion mechanisms</li>
+                                            <li>Organ damage pathways</li>
+                                            <li>Pain sensitization models</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="clinical-trials">
+                                <h4>🔬 Active Research Projects</h4>
+                                <p>Ongoing studies seeking collaboration:</p>
+                                <div class="trials-list">
+                                    <div class="trial-item">
+                                        <h5>Multi-Center Gene Therapy Study</h5>
+                                        <p><strong>Lead:</strong> Dr. Smith, Johns Hopkins • <strong>Phase:</strong> Preclinical</p>
+                                        <p>Developing improved CRISPR protocols for clinical application</p>
+                                    </div>
+                                    
+                                    <div class="trial-item">
+                                        <h5>Pain Biomarker Discovery</h5>
+                                        <p><strong>Lead:</strong> Dr. Johnson, UCSF • <strong>Phase:</strong> Data Collection</p>
+                                        <p>Identifying molecular markers for pain severity prediction</p>
+                                    </div>
+                                    
+                                    <div class="trial-item">
+                                        <h5>Health Disparities Analysis</h5>
+                                        <p><strong>Lead:</strong> Dr. Williams, Emory • <strong>Phase:</strong> Analysis</p>
+                                        <p>Examining access to care across different populations</p>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-secondary">View All Projects</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Collaboration -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">🤝</div>
+                        <h2 class="card-title">Research Collaboration</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="networking-section">
+                            <h3>Connect with Sickle Cell Researchers</h3>
+                            <p>Join our global network of investigators advancing sickle cell disease research and therapeutic development.</p>
+                            
+                            <div class="network-features">
+                                <div class="feature-grid">
+                                    <div class="feature-item">
+                                        <div class="feature-icon">💬</div>
+                                        <h4>Research Forums</h4>
+                                        <p>Discuss methodologies, share protocols, and seek technical advice</p>
+                                        <a href="#" class="feature-link">Join Discussion →</a>
+                                    </div>
+                                    
+                                    <div class="feature-item">
+                                        <div class="feature-icon">🔬</div>
+                                        <h4>Collaboration Matching</h4>
+                                        <p>Find researchers with complementary expertise for joint projects</p>
+                                        <a href="#" class="feature-link">Find Collaborators →</a>
+                                    </div>
+                                    
+                                    <div class="feature-item">
+                                        <div class="feature-icon">📅</div>
+                                        <h4>Research Seminars</h4>
+                                        <p>Attend virtual seminars and present your work to the community</p>
+                                        <a href="#" class="feature-link">View Schedule →</a>
+                                    </div>
+                                    
+                                    <div class="feature-item">
+                                        <div class="feature-icon">📖</div>
+                                        <h4>Protocol Repository</h4>
+                                        <p>Access and contribute standardized research protocols</p>
+                                        <a href="#" class="feature-link">Browse Protocols →</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="membership-info">
+                                <h4>Research Network Benefits</h4>
+                                <div class="benefits-list">
+                                    <div class="benefit-item">
+                                        <span class="benefit-icon">✓</span>
+                                        <span>Access to shared datasets and biorepositories</span>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <span class="benefit-icon">✓</span>
+                                        <span>Funding opportunity alerts and application support</span>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <span class="benefit-icon">✓</span>
+                                        <span>Priority access to research conferences and workshops</span>
+                                    </div>
+                                    <div class="benefit-item">
+                                        <span class="benefit-icon">✓</span>
+                                        <span>Collaboration opportunities with leading institutions</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Tools -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="card-icon">🛠️</div>
+                        <h2 class="card-title">Research Tools & Databases</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="tools-section">
+                            <h3>Essential Tools for Sickle Cell Research</h3>
+                            <div class="tools-grid">
+                                <div class="tool-item">
+                                    <div class="tool-icon">🧬</div>
+                                    <h4>Genomics Analysis Suite</h4>
+                                    <p>Comprehensive tools for variant analysis and interpretation</p>
+                                    <a href="#" class="tool-link">Access Suite</a>
+                                </div>
+                                
+                                <div class="tool-item">
+                                    <div class="tool-icon">📊</div>
+                                    <h4>Statistical Analysis Package</h4>
+                                    <p>Specialized biostatistics tools for clinical research</p>
+                                    <a href="#" class="tool-link">Download Package</a>
+                                </div>
+                                
+                                <div class="tool-item">
+                                    <div class="tool-icon">🗃️</div>
+                                    <h4>Research Database</h4>
+                                    <p>Curated collection of sickle cell research data</p>
+                                    <a href="#" class="tool-link">Browse Database</a>
+                                </div>
+                                
+                                <div class="tool-item">
+                                    <div class="tool-icon">📋</div>
+                                    <h4>Protocol Templates</h4>
+                                    <p>Standardized templates for common research procedures</p>
+                                    <a href="#" class="tool-link">Download Templates</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="cta-section">
+                    <h2>Join Our Research Network</h2>
+                    <p>Connect with leading researchers, access cutting-edge tools, and contribute to advancing sickle cell disease research worldwide.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn">Join Network</a>
+                        <a href="../pages/contact.html" class="btn btn-secondary">Contact Us</a>
+                    </div>
+                </div>
             </div>
         </section>
         
@@ -404,7 +652,7 @@
                         <li><a href="../community/forum.html">Forum</a></li>
                         <li><a href="../community/blog.html">Blog</a></li>
                         <li><a href="../community/events.html">Events</a></li>
-                        <li><a href="../community/gallery.html">Gallery</a></li>
+                        <li><a href="../pages/newsletter.html">Newsletter</a></li>
                     </ul>
                 </div>
                 
@@ -434,7 +682,6 @@
                     </div>
                     <div class="contact-info">
                         <p><strong>Email:</strong> wewarriorsng@gmail.com</p>
-                        <p><strong>Direct:</strong> +2347041120734</p>
                         <p><strong>Phone:</strong> 1-800-WARRIOR</p>
                     </div>
                 </div>
@@ -453,9 +700,13 @@
         </div>
     </footer>
 
-    <script src="../js/animations.js"></script>
+    <!-- JavaScript -->
+    <script src="../js/theme-toggle.js"></script>
+    <script src="../js/mobile-menu.js"></script>
     <script src="../js/universal-header.js"></script>
     <script src="../js/main.js"></script>
+    <script src="../js/animations.js"></script>
     <script src="../js/warriorbot.js"></script>
+
 </body>
 </html>

@@ -1114,7 +1114,7 @@ main {
 
 /* Section Headers */
 .section-header {
-  text-align: center;
+  text-align: left;
   margin-bottom: var(--spacing-xl);
 }
 
@@ -1128,7 +1128,7 @@ main {
   color: var(--text-secondary);
   font-size: 1.125rem;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 /* Navigation List Fixes */
@@ -1652,10 +1652,10 @@ section:not(:last-child)::after {
 }
 
 .section-header {
-  text-align: center;
+  text-align: left;
   margin-bottom: var(--spacing-xxl);
   max-width: 800px;
-  margin-left: auto;
+  margin-left: 0;
   margin-right: auto;
 }
 

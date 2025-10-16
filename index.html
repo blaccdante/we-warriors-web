@@ -32,8 +32,12 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/accessibility.css">
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Universal header should load last to override other styles -->
-    <link rel="stylesheet" href="css/universal-header.css">
+    <!-- Modern components -->
+    <link rel="stylesheet" href="css/modern-slideshow.css">
+    <link rel="stylesheet" href="css/modern-homepage.css">
+    <link rel="stylesheet" href="css/theme-optimization.css">
+    <!-- Universal header MUST load LAST to override conflicting mobile menu styles -->
+    <link rel="stylesheet" href="css/universal-header.css?v=7">
     
 </head>
 <body>
@@ -113,7 +117,7 @@
                     <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Professionals</a>
                     <ul class="dropdown-menu" role="menu">
                         <li class="dropdown-item" role="none">
-                            <a href="professionals/healthcare-providers.html" class="dropdown-link" role="menuitem">Healthcare Providers</a>
+                            <a href="professionals/partnerships.html" class="dropdown-link" role="menuitem">Partnerships</a>
                         </li>
                         <li class="dropdown-item" role="none">
                             <a href="professionals/researchers.html" class="dropdown-link" role="menuitem">Researchers</a>
@@ -125,14 +129,14 @@
                 </div>
                 
                 <div class="nav-item">
-                    <a href="pages/contact.html" class="nav-link" role="menuitem">Contact</a>
+                    <a href="pages/about-us.html" class="nav-link" role="menuitem">About Us</a>
                 </div>
                 
                 <div class="nav-item">
                     <a href="#get-involved" class="cta-button" role="menuitem">Get Involved</a>
                 </div>
                 
-                <!-- Mobile Only Links -->
+                <!-- Mobile Organized Menu -->
                 <!-- Theme Toggle First -->
                 <div class="nav-item mobile-nav-item mobile-theme-item">
                     <div class="mobile-theme-toggle">
@@ -145,50 +149,53 @@
                 <div class="nav-item mobile-nav-item">
                     <a href="index.html" class="nav-link" role="menuitem">Home</a>
                 </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="support/about-sickle-cell.html" class="nav-link" role="menuitem">Living with Sickle Cell</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="information/what-is-sickle-cell.html" class="nav-link" role="menuitem">What is Sickle Cell</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="information/types.html" class="nav-link" role="menuitem">Types & Symptoms</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="information/diagnosis-treatment.html" class="nav-link" role="menuitem">Diagnosis & Treatment</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="support/support-groups.html" class="nav-link" role="menuitem">Support Groups</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="support/resources.html" class="nav-link" role="menuitem">Resources</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="support/counseling.html" class="nav-link" role="menuitem">Counseling</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="community/events.html" class="nav-link" role="menuitem">Events</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="community/blog.html" class="nav-link" role="menuitem">Blog</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="information/research.html" class="nav-link" role="menuitem">Research</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="community/warrior-stories.html" class="nav-link" role="menuitem">Warrior Stories</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="professionals/healthcare-providers.html" class="nav-link" role="menuitem">Healthcare Providers</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="pages/advocacy.html" class="nav-link" role="menuitem">Advocacy</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="pages/contact.html" class="nav-link" role="menuitem">Contact Us</a>
+                
+                <!-- Mobile Main Categories -->
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Support</a>
+                    <div class="mobile-submenu">
+                        <a href="support/about-sickle-cell.html" class="mobile-submenu-link">Living with Sickle Cell</a>
+                        <a href="support/support-groups.html" class="mobile-submenu-link">Support Groups</a>
+                        <a href="support/counseling.html" class="mobile-submenu-link">Counseling Services</a>
+                        <a href="support/resources.html" class="mobile-submenu-link">Resources</a>
+                    </div>
                 </div>
                 
-                <!-- Action Buttons Last -->
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Information</a>
+                    <div class="mobile-submenu">
+                        <a href="information/what-is-sickle-cell.html" class="mobile-submenu-link">What is Sickle Cell</a>
+                        <a href="information/types.html" class="mobile-submenu-link">Types of Sickle Cell</a>
+                        <a href="information/diagnosis-treatment.html" class="mobile-submenu-link">Diagnosis & Treatment</a>
+                        <a href="information/research.html" class="mobile-submenu-link">Research & Trials</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Community</a>
+                    <div class="mobile-submenu">
+                        <a href="community/forum.html" class="mobile-submenu-link">Forum</a>
+                        <a href="community/warrior-stories.html" class="mobile-submenu-link">Warrior Stories</a>
+                        <a href="community/blog.html" class="mobile-submenu-link">Blog</a>
+                        <a href="community/events.html" class="mobile-submenu-link">Events</a>
+                        <a href="community/gallery.html" class="mobile-submenu-link">Gallery</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Professionals</a>
+                    <div class="mobile-submenu">
+                        <a href="professionals/partnerships.html" class="mobile-submenu-link">Partnerships</a>
+                        <a href="professionals/researchers.html" class="mobile-submenu-link">Researchers</a>
+                        <a href="professionals/educators.html" class="mobile-submenu-link">Educators</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item">
+                    <a href="pages/about-us.html" class="nav-link" role="menuitem">About Us</a>
+                </div>
+                
+                <!-- Action Buttons -->
                 <div class="nav-item mobile-nav-item mobile-action-item">
                     <a href="pages/donate.html" class="mobile-action-btn mobile-donate-btn">Donate Now</a>
                 </div>
@@ -218,85 +225,88 @@
     <!-- Main Content -->
     <main id="main-content" role="main">
         
-        <!-- Hero Section -->
-        <section id="home" class="hero-section" role="banner">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <h1 class="hero-title">
-                        <span class="hero-we">We</span>
-                        <span class="hero-warriors">Warriors</span>
-                    </h1>
-                    <p class="hero-tagline">From Pain comes Strength • Through Faith we Hope</p>
-                    <p class="hero-description">
-                        Supporting people afflicted with sickle cell disease and educating others 
-                        to drive the last generation of people with sickle cell.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="#support" class="btn btn-primary">Find Support</a>
-                        <a href="#about" class="btn btn-secondary">Learn More</a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <!-- Journey visual representation -->
-                    <div class="journey-visual">
-                        <div class="journey-step pain">
-                            <span class="step-label">Pain</span>
-                        </div>
-                        <div class="journey-connector"></div>
-                        <div class="journey-step faith">
-                            <span class="step-label">Faith</span>
-                        </div>
-                        <div class="journey-connector"></div>
-                        <div class="journey-step hope">
-                            <span class="step-label">Hope</span>
-                        </div>
-                        <div class="journey-connector"></div>
-                        <div class="journey-step strength">
-                            <span class="step-label">Strength</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Modern Hero Slideshow -->
+        <section id="home" class="hero-slideshow" role="banner">
         </section>
 
         <!-- Living with Sickle Cell Section -->
-        <section id="about" class="about-section">
+        <section id="about" class="about-section section">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header scroll-reveal">
                     <h2 class="section-title">Understanding Sickle Cell Disease</h2>
                     <p class="section-subtitle">Education empowers warriors and builds community support</p>
                 </div>
                 
-                <div class="about-grid">
-                    <article class="about-card">
-                        <div class="card-icon blood-icon" role="img" aria-label="Blood cell icon"></div>
+                <div class="about-grid modern-grid modern-grid-3">
+                    <article class="about-card modern-card scroll-reveal">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                            </svg>
+                        </div>
                         <h3 class="card-title">What is Sickle Cell?</h3>
                         <p class="card-description">
                             A genetic blood disorder where red blood cells become misshapen, 
                             causing pain and complications throughout the body.
                         </p>
-                        <a href="information/what-is-sickle-cell.html" class="card-link" aria-describedby="sickle-cell-desc">Learn More</a>
+                        <a href="information/what-is-sickle-cell.html" class="card-link">Learn More</a>
                     </article>
                     
-                    <article class="about-card">
-                        <div class="card-icon medical-icon" role="img" aria-label="Medical symbol icon"></div>
+                    <article class="about-card modern-card scroll-reveal">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4c-4.42 0-8 3.58-8 8H1l4 4 4-4H6z"/>
+                            </svg>
+                        </div>
                         <h3 class="card-title">Treatment Options</h3>
                         <p class="card-description">
                             Modern treatments including medications, blood transfusions, 
                             and emerging gene therapies offer hope for better outcomes.
                         </p>
-                        <a href="information/diagnosis-treatment.html" class="card-link" aria-describedby="treatment-desc">Explore Treatments</a>
+                        <a href="information/diagnosis-treatment.html" class="card-link">Explore Treatments</a>
                     </article>
                     
-                    <article class="about-card">
-                        <div class="card-icon research-icon" role="img" aria-label="Research microscope icon"></div>
+                    <article class="about-card modern-card scroll-reveal">
+                        <div class="card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
                         <h3 class="card-title">Latest Research</h3>
                         <p class="card-description">
                             Breakthrough research in gene therapy and cure development 
                             brings us closer to ending sickle cell disease.
                         </p>
-                        <a href="information/research.html" class="card-link" aria-describedby="research-desc">Research Updates</a>
+                        <a href="information/research.html" class="card-link">Research Updates</a>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Section -->
+        <section id="stats" class="stats-section section">
+            <div class="container">
+                <div class="stats-grid modern-grid modern-grid-4">
+                    <div class="stat-card modern-card scroll-reveal-scale">
+                        <div class="stats-counter" data-count="1000">0</div>
+                        <h3 class="stat-title">Warriors to Impact</h3>
+                        <p class="stat-description">Our target for monthly active users by 2026</p>
+                    </div>
+                    <div class="stat-card modern-card scroll-reveal-scale">
+                        <div class="stats-counter" data-count="5">0</div>
+                        <h3 class="stat-title">Launch Countries</h3>
+                        <p class="stat-description">Phase 1: Nigeria, Ghana, Kenya, UK, US</p>
+                    </div>
+                    <div class="stat-card modern-card scroll-reveal-scale">
+                        <div class="stats-counter" data-count="10">0</div>
+                        <h3 class="stat-title">Healthcare Partners</h3>
+                        <p class="stat-description">Goal for clinic partnerships by end 2025</p>
+                    </div>
+                    <div class="stat-card modern-card scroll-reveal-scale">
+                        <div class="stats-counter" data-count="3">0</div>
+                        <h3 class="stat-title">Tech Solutions</h3>
+                        <p class="stat-description">In Development: WarriorBot AI, Mobile App, Platform</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -376,48 +386,65 @@
                         <p class="featured-description">
                             Professional resources, CME courses, and clinical tools for healthcare providers treating sickle cell disease.
                         </p>
-                        <a href="professionals/healthcare-providers.html" class="featured-link">Access Resources</a>
+                <a href="professionals/partnerships.html" class="cta-link">Partnerships</a>
                     </article>
                 </div>
             </div>
         </section>
 
         <!-- Community Section -->
-        <section id="community" class="community-section">
+        <section id="community" class="community-section section">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Warrior Community</h2>
-                    <p class="section-subtitle">Stories of strength, hope, and triumph</p>
+                <div class="section-header scroll-reveal">
+                    <h2 class="section-title">Building Our Warrior Community</h2>
+                    <p class="section-subtitle">Join us in creating a supportive network for sickle cell warriors</p>
                 </div>
                 
                 <div class="community-content">
-                    <div class="warrior-stories">
-                        <h3 class="stories-title">Warrior Stories</h3>
-                        <div class="story-grid">
-                            <div class="story-card">
-                                <div class="story-quote">
-                                    "Through faith, I found strength I never knew I had. 
-                                    Every crisis became a testimony of God's grace."
-                                </div>
-                                <div class="story-author">- Sarah M., Warrior since 1995</div>
+                    <div class="testimonials-grid modern-grid modern-grid-2">
+                        <article class="testimonial-card scroll-reveal-left">
+                            <div class="testimonial-quote">
+                                "I believe that together, we can create a community where no warrior 
+                                fights alone. Every voice matters, every story has power, and every 
+                                connection builds hope for our future."
                             </div>
-                            
-                            <div class="story-card">
-                                <div class="story-quote">
-                                    "The pain was real, but so was the hope. 
-                                    This community taught me I'm not alone in this fight."
-                                </div>
-                                <div class="story-author">- Marcus J., Warrior & Advocate</div>
+                            <div class="testimonial-author">Oladepo Oreofe Daniel, Founder & Warrior</div>
+                        </article>
+                        
+                        <article class="testimonial-card scroll-reveal-right">
+                            <div class="testimonial-quote">
+                                "We're not just building a platform - we're creating a movement. 
+                                A place where pain transforms into purpose, where warriors become 
+                                advocates, and where families find strength in unity."
                             </div>
-                        </div>
+                            <div class="testimonial-author">Our Vision for the Future</div>
+                        </article>
+                        
+                        <article class="testimonial-card scroll-reveal-left">
+                            <div class="testimonial-quote">
+                                "From Nigeria to the UK, from the US to Ghana and Kenya - 
+                                we're connecting warriors across continents. Your story, 
+                                your struggle, your strength can inspire someone thousands of miles away."
+                            </div>
+                            <div class="testimonial-author">Global Warrior Network Initiative</div>
+                        </article>
+                        
+                        <article class="testimonial-card scroll-reveal-right">
+                            <div class="testimonial-quote">
+                                "Be the first to join our growing community. Share your journey, 
+                                find your voice, and help us build something unprecedented - 
+                                the last generation of people with sickle cell."
+                            </div>
+                            <div class="testimonial-author">Invitation to Early Warriors</div>
+                        </article>
                     </div>
                     
-                    <div class="community-actions">
-                        <h3 class="actions-title">Connect & Support</h3>
+                    <div class="community-actions scroll-reveal">
+                        <h3 class="actions-title">Help Us Build Something Amazing</h3>
                         <div class="action-buttons">
-                            <a href="support/support-groups.html" class="btn btn-community">Join Support Groups</a>
-                            <a href="community/forum.html" class="btn btn-community">Share Your Story</a>
-                            <a href="community/events.html" class="btn btn-community">Find Events</a>
+                            <a href="support/support-groups.html" class="btn-modern btn-modern-primary">Start a Support Group</a>
+                            <a href="community/forum.html" class="btn-modern btn-modern-secondary">Be Our First Voice</a>
+                            <a href="community/events.html" class="btn-modern btn-modern-primary">Organize an Event</a>
                         </div>
                     </div>
                 </div>
@@ -587,7 +614,13 @@
     <!-- JavaScript -->
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
-    <script src="js/universal-header.js"></script>
+    <script src="js/universal-header.js?v=2"></script>
+    <!-- Modern Components -->
+    <script src="js/performance-monitor.js"></script>
+    <script src="js/component-library.js"></script>
+    <script src="js/modern-slideshow.js"></script>
+    <script src="js/modern-interactions.js"></script>
+    <!-- WarriorBot -->
     <script src="js/warriorbot-gemini.js"></script>
     <script src="js/warriorbot-ai.js"></script>
     <script src="warriorbot-direct-ai.js"></script>

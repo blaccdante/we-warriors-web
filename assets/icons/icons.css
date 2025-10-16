@@ -1,0 +1,134 @@
+/* SVG Icon System for Sickle Cell Support Website */
+
+/* Base icon styling */
+.icon {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    vertical-align: middle;
+    fill: currentColor;
+    transition: all 0.2s ease;
+}
+
+/* Icon size variants */
+.icon-sm {
+    width: 1em;
+    height: 1em;
+}
+
+.icon-md {
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.icon-lg {
+    width: 2em;
+    height: 2em;
+}
+
+.icon-xl {
+    width: 2.5em;
+    height: 2.5em;
+}
+
+/* Icon container for card icons */
+.card-icon .icon,
+.benefit-icon .icon,
+.management-icon .icon {
+    width: 2.5em;
+    height: 2.5em;
+    color: var(--primary-color);
+}
+
+/* Medical icons styling */
+.icon-medical {
+    color: #dc3545;
+}
+
+.icon-emergency {
+    color: #ff0000;
+}
+
+.icon-warning {
+    color: #ffc107;
+}
+
+.icon-health {
+    color: #28a745;
+}
+
+/* Activity icons styling */
+.icon-education {
+    color: #007bff;
+}
+
+.icon-support {
+    color: #6610f2;
+}
+
+.icon-creative {
+    color: #e83e8c;
+}
+
+.icon-professional {
+    color: #20c997;
+}
+
+/* Emotional icons styling */
+.icon-heart {
+    color: #dc3545;
+}
+
+.icon-star {
+    color: #ffc107;
+}
+
+.icon-achievement {
+    color: #fd7e14;
+}
+
+.icon-community {
+    color: #6f42c1;
+}
+
+/* Hover effects for interactive icons */
+.card-icon:hover .icon,
+.benefit-icon:hover .icon {
+    transform: scale(1.1);
+}
+
+/* Accessibility improvements */
+.icon[aria-hidden="true"] {
+    pointer-events: none;
+}
+
+/* Icon backgrounds for cards */
+.card-icon,
+.benefit-icon,
+.management-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(var(--primary-rgb), 0.1);
+    margin-bottom: 1rem;
+}
+
+/* Responsive icon sizing */
+@media (max-width: 768px) {
+    .card-icon .icon,
+    .benefit-icon .icon,
+    .management-icon .icon {
+        width: 2em;
+        height: 2em;
+    }
+    
+    .card-icon,
+    .benefit-icon,
+    .management-icon {
+        width: 50px;
+        height: 50px;
+    }
+}

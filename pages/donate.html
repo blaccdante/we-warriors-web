@@ -5,183 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Support We Warriors in the fight against sickle cell disease. Your donations fund research, support services, and advocacy efforts.">
     <meta name="keywords" content="donate sickle cell, support warriors, sickle cell research funding, charity donation">
-    <meta name="author" content="We Warriors Organization">
     
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Donate - We Warriors">
-    <meta property="og:description" content="Support We Warriors in the fight against sickle cell disease. Your donations fund research, support services, and advocacy efforts.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://wewarriors.org/pages/donate.html">
-    
-    <title>Donate - We Warriors</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1964650693892617" crossorigin="anonymous"></script>
+    <title>Donate - We Warriors | Supporting Sickle Cell Warriors</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/accessibility.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/modern-slideshow.css">
+    <link rel="stylesheet" href="../css/modern-homepage.css">
+    <link rel="stylesheet" href="../css/theme-optimization.css">
     <link rel="stylesheet" href="../css/universal-header.css">
-    <style>
-        .page-hero.modern-hero { position: relative; min-height: 70vh; display: flex; align-items: center; overflow: hidden; }
-        .hero-background { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; }
-        .hero-gradient { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 30%, rgba(255, 248, 240, 0.98) 70%, rgba(255, 255, 255, 0.95) 100%); }
-        .hero-pattern { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(196, 30, 58, 0.08) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.05) 0%, transparent 50%); background-size: 300px 300px, 400px 400px, 500px 500px; animation: patternMove 20s ease-in-out infinite; }
-        @keyframes patternMove { 0%, 100% { transform: translate(0, 0); } 25% { transform: translate(-10px, -10px); } 50% { transform: translate(10px, 10px); } 75% { transform: translate(-5px, 10px); } }
-        [data-theme="dark"] .hero-gradient { background: linear-gradient(135deg, rgba(30, 30, 30, 0.95) 0%, rgba(45, 45, 45, 0.9) 30%, rgba(60, 60, 60, 0.95) 70%, rgba(30, 30, 30, 0.9) 100%) !important; }
-        [data-theme="dark"] .hero-pattern { background-image: radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.15) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(196, 30, 58, 0.12) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.08) 0%, transparent 50%) !important; }
-        [data-theme="light"] .hero-background { background-image: url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'); background-size: cover; background-position: center; }
-        [data-theme="light"] .hero-gradient { background: linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(248, 249, 250, 0.94) 30%, rgba(255, 251, 235, 0.96) 70%, rgba(255, 255, 255, 0.94) 100%); }
-        .hero-container { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 2rem; width: 100%; }
-        .hero-content { color: #f8fafc; max-width: 800px; }
-        [data-theme="light"] .hero-content { color: #0f172a; }
-        .page-title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; margin: 0 0 1.5rem 0; line-height: 1.1; color: #f1f5f9; }
-        [data-theme="light"] .page-title { color: var(--blood-color) !important; }
-        .page-subtitle { font-size: clamp(1.1rem, 2.5vw, 1.4rem); margin: 0; color: rgba(226, 232, 240, 0.9); line-height: 1.6; }
-        [data-theme="light"] .page-subtitle { color: var(--text-primary) !important; }
-        .page-content { padding: 4rem 0; background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%); }
-        [data-theme="dark"] .page-content { background: linear-gradient(180deg, var(--background-primary) 0%, var(--background-secondary) 100%) !important; }
-        
-        /* Modern Horizontal Breadcrumb Styling */
-        .breadcrumb { margin-bottom: 2rem; }
-        .breadcrumb ol { display: flex; align-items: center; gap: 0.5rem; list-style: none; padding: 0; margin: 0; font-size: 0.9rem; }
-        .breadcrumb li::after { content: '/'; margin: 0 0.5rem; color: rgba(248, 250, 252, 0.5); }
-        [data-theme="light"] .breadcrumb li::after { color: rgba(30, 41, 59, 0.4); }
-        .breadcrumb li:last-child::after { display: none; }
-        .breadcrumb a { color: rgba(248, 250, 252, 0.8); text-decoration: none; transition: color 0.3s ease; }
-        .breadcrumb a:hover { color: #e2e8f0; }
-        [data-theme="light"] .breadcrumb a { color: rgba(30, 41, 59, 0.7); }
-        [data-theme="light"] .breadcrumb a:hover { color: #991b1b; }
-        
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-        
-        /* Floating Elements Styling */
-        .hero-visual.modern-visual { position: absolute; top: 50%; right: 5%; transform: translateY(-50%); width: 300px; height: 300px; pointer-events: none; opacity: 0.8; }
-        .floating-elements { position: relative; width: 100%; height: 100%; }
-        .float-element { position: absolute; border-radius: 50%; animation: float 6s ease-in-out infinite; background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(196, 30, 58, 0.15)); }
-        .float-element.hope { width: 80px; height: 80px; top: 20%; right: 10%; animation-delay: 0s; background: linear-gradient(135deg, rgba(34, 197, 94, 0.5), rgba(52, 211, 153, 0.3)); box-shadow: 0 4px 20px rgba(34, 197, 94, 0.3); }
-        .float-element.faith { width: 60px; height: 60px; top: 60%; right: 40%; animation-delay: -2s; background: linear-gradient(135deg, rgba(147, 51, 234, 0.4), rgba(168, 85, 247, 0.25)); box-shadow: 0 4px 20px rgba(147, 51, 234, 0.2); }
-        .float-element.strength { width: 70px; height: 70px; top: 40%; right: 70%; animation-delay: -4s; background: linear-gradient(135deg, rgba(245, 158, 11, 0.4), rgba(251, 191, 36, 0.25)); box-shadow: 0 4px 20px rgba(245, 158, 11, 0.2); }
-        
-        /* Dark theme enhancement */
-        :root[data-theme="dark"] .float-element.hope { background: linear-gradient(135deg, rgba(34, 197, 94, 0.7), rgba(52, 211, 153, 0.5)); box-shadow: 0 4px 25px rgba(34, 197, 94, 0.4); }
-        :root[data-theme="dark"] .float-element.faith { background: linear-gradient(135deg, rgba(147, 51, 234, 0.6), rgba(168, 85, 247, 0.4)); box-shadow: 0 4px 25px rgba(147, 51, 234, 0.3); }
-        :root[data-theme="dark"] .float-element.strength { background: linear-gradient(135deg, rgba(245, 158, 11, 0.6), rgba(251, 191, 36, 0.4)); box-shadow: 0 4px 25px rgba(245, 158, 11, 0.3); }
-        
-        @keyframes float { 0%, 100% { transform: translateY(0px) scale(1); opacity: 0.6; } 25% { transform: translateY(-20px) scale(1.05); opacity: 0.8; } 50% { transform: translateY(-10px) scale(0.95); opacity: 0.7; } 75% { transform: translateY(-15px) scale(1.02); opacity: 0.9; } }
-        
-        /* Content styling */
-        .content-grid { display: grid; grid-template-columns: 1fr 300px; gap: 3rem; }
-        @media (max-width: 1024px) { 
-            .content-grid { grid-template-columns: 1fr; gap: 2rem; } 
-            .sidebar { order: -1; }
-        }
-        
-        .section-title { font-size: 2.5rem; font-weight: 700; color: var(--blood-color); margin-bottom: 2rem; text-align: center; }
-        [data-theme="dark"] .section-title { color: var(--text-primary) !important; }
-        .section-text { font-size: 1.1rem; line-height: 1.7; color: #555; text-align: center; margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto; }
-        [data-theme="dark"] .section-text { color: var(--text-secondary) !important; }
-        
-        /* Impact Stats */
-        .impact-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin: 3rem 0; }
-        .stat-card { background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); padding: 2rem; border-radius: 16px; text-align: center; border-left: 4px solid var(--blood-color); transition: transform 0.3s ease; }
-        .stat-card:hover { transform: translateY(-5px); }
-        [data-theme="dark"] .stat-card { background: linear-gradient(135deg, var(--background-secondary) 0%, var(--background-tertiary) 100%) !important; border-left-color: var(--blood-light) !important; }
-        .stat-number { font-size: 2.5rem; font-weight: 800; color: var(--blood-color); line-height: 1; }
-        [data-theme="dark"] .stat-number { color: var(--blood-light) !important; }
-        .stat-description { font-size: 0.9rem; font-weight: 500; color: #666; margin-top: 0.5rem; }
-        [data-theme="dark"] .stat-description { color: var(--text-secondary) !important; }
-        
-        /* Donation Form */
-        .donation-section { background: #ffffff; border-radius: 16px; padding: 3rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); margin: 3rem 0; }
-        [data-theme="dark"] .donation-section { background: var(--card-background) !important; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important; }
-        
-        .donation-type-tabs { display: flex; gap: 0.5rem; margin-bottom: 2rem; background: #f1f5f9; border-radius: 12px; padding: 0.5rem; }
-        [data-theme="dark"] .donation-type-tabs { background: var(--background-tertiary) !important; }
-        .donation-tab { flex: 1; padding: 0.75rem 1.5rem; border: none; background: transparent; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
-        .donation-tab.active { background: white; color: var(--blood-color); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        [data-theme="dark"] .donation-tab.active { background: var(--background-primary) !important; color: var(--blood-light) !important; }
-        
-        .form-section-title { font-size: 1.3rem; font-weight: 700; color: var(--blood-color); margin-bottom: 1rem; }
-        [data-theme="dark"] .form-section-title { color: var(--text-primary) !important; }
-        
-        .amount-buttons { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; }
-        .amount-btn { padding: 1rem 1.5rem; border: 2px solid #e2e8f0; background: white; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
-        .amount-btn:hover, .amount-btn.active { border-color: var(--blood-color); background: var(--blood-color); color: white; }
-        [data-theme="dark"] .amount-btn { background: var(--background-secondary) !important; border-color: var(--border-primary) !important; color: var(--text-primary) !important; }
-        [data-theme="dark"] .amount-btn:hover, [data-theme="dark"] .amount-btn.active { border-color: var(--blood-light) !important; background: var(--blood-light) !important; }
-        
-        .custom-amount { display: flex; align-items: center; border: 2px solid #e2e8f0; border-radius: 8px; padding: 0.5rem; background: white; }
-        [data-theme="dark"] .custom-amount { background: var(--background-secondary) !important; border-color: var(--border-primary) !important; }
-        .custom-amount span { padding: 0.5rem; font-weight: 600; color: #666; }
-        [data-theme="dark"] .custom-amount span { color: var(--text-secondary) !important; }
-        .custom-amount-input { border: none; background: none; outline: none; font-size: 1rem; width: 120px; }
-        [data-theme="dark"] .custom-amount-input { color: var(--text-primary) !important; }
-        
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-        .form-group { margin-bottom: 1.5rem; }
-        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: #374151; }
-        [data-theme="dark"] .form-group label { color: var(--text-primary) !important; }
-        .form-group input, .form-group select { width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s ease; }
-        .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--blood-color); }
-        [data-theme="dark"] .form-group input, [data-theme="dark"] .form-group select { background: var(--background-secondary) !important; border-color: var(--border-primary) !important; color: var(--text-primary) !important; }
-        [data-theme="dark"] .form-group input:focus, [data-theme="dark"] .form-group select:focus { border-color: var(--blood-light) !important; }
-        
-        /* Checkboxes */
-        .checkbox-label { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1rem; cursor: pointer; font-size: 0.95rem; line-height: 1.5; }
-        .checkbox-label input[type="checkbox"] { display: none; }
-        .checkmark { width: 20px; height: 20px; border: 2px solid #d1d5db; border-radius: 4px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; flex-shrink: 0; margin-top: 2px; }
-        .checkbox-label input[type="checkbox"]:checked + .checkmark { background: var(--blood-color); border-color: var(--blood-color); }
-        .checkbox-label input[type="checkbox"]:checked + .checkmark::after { content: '✓'; color: white; font-size: 12px; font-weight: bold; }
-        [data-theme="dark"] .checkmark { border-color: var(--border-primary) !important; }
-        [data-theme="dark"] .checkbox-label input[type="checkbox"]:checked + .checkmark { background: var(--blood-light) !important; border-color: var(--blood-light) !important; }
-        
-        /* Donation Summary */
-        .donation-summary { background: #f8fafc; border-radius: 12px; padding: 2rem; margin: 2rem 0; }
-        [data-theme="dark"] .donation-summary { background: var(--background-tertiary) !important; }
-        .summary-row { display: flex; justify-content: space-between; margin-bottom: 0.75rem; }
-        .summary-row.total { font-weight: 700; font-size: 1.1rem; border-top: 2px solid #e2e8f0; padding-top: 0.75rem; margin-top: 1rem; }
-        [data-theme="dark"] .summary-row.total { border-top-color: var(--border-primary) !important; }
-        
-        /* Buttons */
-        .btn { display: inline-block; padding: 0.75rem 1.5rem; border: none; border-radius: 8px; font-weight: 600; text-decoration: none; cursor: pointer; transition: all 0.3s ease; font-size: 1rem; }
-        .btn-primary { background: var(--blood-color); color: white; }
-        .btn-primary:hover { background: var(--blood-light); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(196, 30, 58, 0.3); }
-        .btn-large { padding: 1rem 2rem; font-size: 1.1rem; }
-        
-        /* Sidebar */
-        .sidebar { display: flex; flex-direction: column; gap: 2rem; }
-        .sidebar-card { background: #ffffff; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); }
-        [data-theme="dark"] .sidebar-card { background: var(--card-background) !important; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important; }
-        .sidebar-card h3 { color: var(--blood-color); margin-bottom: 1rem; font-size: 1.3rem; }
-        [data-theme="dark"] .sidebar-card h3 { color: var(--blood-light) !important; }
-        
-        /* Other Ways to Give */
-        .giving-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .giving-option { background: #f8fafc; border-radius: 12px; padding: 2rem; text-align: center; border: 2px solid transparent; transition: all 0.3s ease; }
-        .giving-option:hover { border-color: var(--blood-color); transform: translateY(-5px); }
-        [data-theme="dark"] .giving-option { background: var(--background-secondary) !important; }
-        [data-theme="dark"] .giving-option:hover { border-color: var(--blood-light) !important; }
-        .option-icon { font-size: 3rem; margin-bottom: 1rem; }
-        .giving-option h3 { color: var(--blood-color); margin-bottom: 1rem; }
-        [data-theme="dark"] .giving-option h3 { color: var(--text-primary) !important; }
-        
-        @media (max-width: 768px) { 
-            .hero-container { padding: 3rem 1.5rem; } 
-            .hero-visual.modern-visual { display: none; }
-            .amount-buttons { grid-template-columns: repeat(2, 1fr); }
-            .form-grid { grid-template-columns: 1fr; }
-            .giving-options { grid-template-columns: 1fr; }
-        }
-    </style>
+    <link rel="stylesheet" href="../css/donate.css">
 </head>
-<body class="page-body donate-page">
-    <!-- Skip to main content -->
+<body>
+    <!-- Skip to main content link for accessibility -->
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
     
     <!-- Universal Header -->
@@ -239,6 +84,9 @@
                             <a href="../community/forum.html" class="dropdown-link" role="menuitem">Forum</a>
                         </li>
                         <li class="dropdown-item" role="none">
+                            <a href="../community/warrior-stories.html" class="dropdown-link" role="menuitem">Warrior Stories</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
                             <a href="../community/blog.html" class="dropdown-link" role="menuitem">Blog</a>
                         </li>
                         <li class="dropdown-item" role="none">
@@ -250,15 +98,30 @@
                     </ul>
                 </div>
                 
-                <div class="nav-item">
-                    <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Professionals</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="../professionals/partnerships.html" class="dropdown-link" role="menuitem">Partnerships</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../professionals/researchers.html" class="dropdown-link" role="menuitem">Researchers</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../professionals/educators.html" class="dropdown-link" role="menuitem">Educators</a>
+                        </li>
+                    </ul>
                 </div>
                 
                 <div class="nav-item">
-                    <a href="get-involved.html" class="nav-link" role="menuitem">Get Involved</a>
+                    <a href="about-us.html" class="nav-link" role="menuitem">About Us</a>
                 </div>
                 
-                <!-- Mobile Only Links -->
+                <div class="nav-item">
+                    <a href="#get-involved" class="cta-button" role="menuitem">Get Involved</a>
+                </div>
+                
+                <!-- Mobile Organized Menu -->
                 <!-- Theme Toggle First -->
                 <div class="nav-item mobile-nav-item mobile-theme-item">
                     <div class="mobile-theme-toggle">
@@ -271,102 +134,93 @@
                 <div class="nav-item mobile-nav-item">
                     <a href="../index.html" class="nav-link" role="menuitem">Home</a>
                 </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../support/about-sickle-cell.html" class="nav-link" role="menuitem">Living with Sickle Cell</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../information/what-is-sickle-cell.html" class="nav-link" role="menuitem">What is Sickle Cell</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../information/types.html" class="nav-link" role="menuitem">Types & Symptoms</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../information/diagnosis-treatment.html" class="nav-link" role="menuitem">Diagnosis & Treatment</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../support/support-groups.html" class="nav-link" role="menuitem">Support Groups</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../support/resources.html" class="nav-link" role="menuitem">Resources</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../support/counseling.html" class="nav-link" role="menuitem">Counseling</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../community/events.html" class="nav-link" role="menuitem">Events</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../community/blog.html" class="nav-link" role="menuitem">Blog</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../information/research.html" class="nav-link" role="menuitem">Research</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../pages/advocacy.html" class="nav-link" role="menuitem">Advocacy</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact Us</a>
+                
+                <!-- Mobile Main Categories -->
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Support</a>
+                    <div class="mobile-submenu">
+                        <a href="../support/about-sickle-cell.html" class="mobile-submenu-link">Living with Sickle Cell</a>
+                        <a href="../support/support-groups.html" class="mobile-submenu-link">Support Groups</a>
+                        <a href="../support/counseling.html" class="mobile-submenu-link">Counseling Services</a>
+                        <a href="../support/resources.html" class="mobile-submenu-link">Resources</a>
+                    </div>
                 </div>
                 
-                <!-- Action Buttons Last -->
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Information</a>
+                    <div class="mobile-submenu">
+                        <a href="../information/what-is-sickle-cell.html" class="mobile-submenu-link">What is Sickle Cell</a>
+                        <a href="../information/types.html" class="mobile-submenu-link">Types of Sickle Cell</a>
+                        <a href="../information/diagnosis-treatment.html" class="mobile-submenu-link">Diagnosis & Treatment</a>
+                        <a href="../information/research.html" class="mobile-submenu-link">Research & Trials</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Community</a>
+                    <div class="mobile-submenu">
+                        <a href="../community/forum.html" class="mobile-submenu-link">Forum</a>
+                        <a href="../community/warrior-stories.html" class="mobile-submenu-link">Warrior Stories</a>
+                        <a href="../community/blog.html" class="mobile-submenu-link">Blog</a>
+                        <a href="../community/events.html" class="mobile-submenu-link">Events</a>
+                        <a href="../community/gallery.html" class="mobile-submenu-link">Gallery</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Professionals</a>
+                    <div class="mobile-submenu">
+                        <a href="../professionals/partnerships.html" class="mobile-submenu-link">Partnerships</a>
+                        <a href="../professionals/researchers.html" class="mobile-submenu-link">Researchers</a>
+                        <a href="../professionals/educators.html" class="mobile-submenu-link">Educators</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item">
+                    <a href="about-us.html" class="nav-link" role="menuitem">About Us</a>
+                </div>
+                
+                <!-- Action Buttons -->
                 <div class="nav-item mobile-nav-item mobile-action-item">
                     <a href="../pages/donate.html" class="mobile-action-btn mobile-donate-btn">Donate Now</a>
                 </div>
                 <div class="nav-item mobile-nav-item mobile-action-item">
-                    <a href="get-involved.html" class="mobile-action-btn mobile-get-involved-btn">Get Involved</a>
+                    <a href="#get-involved" class="mobile-action-btn mobile-get-involved-btn">Get Involved</a>
                 </div>
+                
+                <!-- Desktop Theme Toggle -->
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
             </nav>
             
-            <!-- Header Actions -->
-            <div class="header-actions">
-                <!-- Theme Toggle (Desktop) -->
-                <button class="theme-toggle" aria-label="Toggle dark mode" aria-describedby="theme-status">
-                    <span class="theme-icon">☀</span>
-                    <span class="sr-only" id="theme-status">Current theme: light mode</span>
-                </button>
-                
-                <!-- Mobile Menu Toggle -->
-                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main id="main-content" role="main" class="modern-main">
-        
+    <main id="main-content" class="main-content">
         <!-- Hero Section -->
-        <section class="page-hero modern-hero">
-            <div class="hero-background">
-                <div class="hero-gradient"></div>
-                <div class="hero-pattern"></div>
-            </div>
-            <div class="hero-container">
+        <section class="hero-donate">
+            <div class="container">
                 <div class="hero-content">
-                    <nav class="breadcrumb modern-breadcrumb" aria-label="Breadcrumb">
-                        <ol>
-                            <li><a href="../index.html">Home</a></li>
-                            <li><span aria-current="page">Donate</span></li>
-                        </ol>
-                    </nav>
-                    <h1 class="page-title modern-title">Support the Warriors</h1>
-                    <p class="page-subtitle modern-subtitle">Your generosity fuels hope, research, and support for the warrior community</p>
-                </div>
-                <div class="hero-visual modern-visual">
-                    <div class="floating-elements">
-                        <div class="float-element hope"></div>
-                        <div class="float-element faith"></div>
-                        <div class="float-element strength"></div>
+                    <h1 class="hero-title">Support the Warriors</h1>
+                    <p class="hero-subtitle">Your generosity fuels hope, research, and support for the warrior community</p>
+                    <div class="hero-description">
+                        <p>Together, we can make a difference in the lives of sickle cell warriors.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Page Content -->
-        <section class="page-content modern-content">
+        <section class="page-content">
             <div class="container">
                 <div class="content-grid">
                     <div class="main-content">
@@ -555,7 +409,7 @@
                     <div class="sidebar">
                         <div class="sidebar-card">
                             <h3>Tax Information</h3>
-                            <p>We Warriors Organization is a 501(c)(3) nonprofit organization. Your donation is tax-deductible to the full extent allowed by law.</p>
+                            <p>We Warriors Organization is a nonprofit NGO. Your donation supports our mission to help sickle cell warriors and their families.</p>
                         </div>
 
                         <div class="sidebar-card">

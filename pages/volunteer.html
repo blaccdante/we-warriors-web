@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/accessibility.css">
     <link rel="stylesheet" href="../css/universal-header.css">
+    <link rel="stylesheet" href="../assets/icons/icons.css">
     <style>
         .page-hero.modern-hero { position: relative; min-height: 70vh; display: flex; align-items: center; overflow: hidden; }
         .hero-background { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1; }
@@ -57,6 +58,252 @@
         [data-theme="light"] .breadcrumb a:hover { color: #991b1b; }
         
         .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        
+        /* Modern Card & List Styling */
+        .opportunity-card {
+            position: relative;
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(var(--primary-rgb), 0.1);
+        }
+        
+        .opportunity-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .card-requirements {
+            margin: 1.5rem 0;
+        }
+        
+        .requirements-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .requirements-title::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--blood-light));
+            border-radius: 2px;
+        }
+        
+        .modern-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .modern-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+        }
+        
+        .modern-list li:hover {
+            background-color: rgba(var(--primary-rgb), 0.05);
+            padding-left: 0.5rem;
+            margin-left: -0.5rem;
+        }
+        
+        .list-icon {
+            width: 18px;
+            height: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            fill: var(--primary-color);
+        }
+        
+        .card-commitment {
+            margin-top: auto;
+            padding: 0.75rem 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--blood-light));
+            color: white;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .commitment-icon {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+        
+        /* Benefits Section Styling */
+        .benefit-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid rgba(var(--primary-rgb), 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .benefit-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--blood-light), var(--primary-color));
+        }
+        
+        .benefit-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(var(--primary-rgb), 0.15);
+        }
+        
+        .benefit-content {
+            flex: 1;
+        }
+        
+        .benefit-content h3 {
+            margin: 0 0 1rem 0;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        
+        .benefit-content p {
+            margin: 0 0 1rem 0;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+        
+        .benefit-highlight {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(var(--primary-rgb), 0.1);
+            color: var(--primary-color);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        /* Section spacing and modern touches */
+        .opportunities-section, .benefits-section {
+            padding: 4rem 0;
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--blood-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .opportunities-grid, .benefits-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .opportunities-grid {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+        
+        .benefits-grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        /* Add subtle animations */
+        .opportunity-card, .benefit-item {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .opportunity-card:nth-child(1) { animation-delay: 0.1s; }
+        .opportunity-card:nth-child(2) { animation-delay: 0.2s; }
+        .opportunity-card:nth-child(3) { animation-delay: 0.3s; }
+        .opportunity-card:nth-child(4) { animation-delay: 0.4s; }
+        .opportunity-card:nth-child(5) { animation-delay: 0.5s; }
+        .opportunity-card:nth-child(6) { animation-delay: 0.6s; }
+        
+        .benefit-item:nth-child(1) { animation-delay: 0.1s; }
+        .benefit-item:nth-child(2) { animation-delay: 0.2s; }
+        .benefit-item:nth-child(3) { animation-delay: 0.3s; }
+        .benefit-item:nth-child(4) { animation-delay: 0.4s; }
+        .benefit-item:nth-child(5) { animation-delay: 0.5s; }
+        .benefit-item:nth-child(6) { animation-delay: 0.6s; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive improvements */
+        @media (max-width: 768px) {
+            .opportunity-card, .benefit-item {
+                padding: 1.5rem;
+            }
+            
+            .benefit-item {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .modern-list li {
+                gap: 0.5rem;
+            }
+            
+            .list-icon {
+                width: 16px;
+                height: 16px;
+            }
+            
+            .opportunities-grid, .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body class="page-body volunteer-page">
@@ -118,6 +365,9 @@
                             <a href="../community/forum.html" class="dropdown-link" role="menuitem">Forum</a>
                         </li>
                         <li class="dropdown-item" role="none">
+                            <a href="../community/warrior-stories.html" class="dropdown-link" role="menuitem">Warrior Stories</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
                             <a href="../community/blog.html" class="dropdown-link" role="menuitem">Blog</a>
                         </li>
                         <li class="dropdown-item" role="none">
@@ -129,15 +379,30 @@
                     </ul>
                 </div>
                 
-                <div class="nav-item">
-                    <a href="contact.html" class="nav-link" role="menuitem">Contact</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Professionals</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="../professionals/healthcare-providers.html" class="dropdown-link" role="menuitem">Healthcare Providers</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../professionals/researchers.html" class="dropdown-link" role="menuitem">Researchers</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../professionals/educators.html" class="dropdown-link" role="menuitem">Educators</a>
+                        </li>
+                    </ul>
                 </div>
                 
                 <div class="nav-item">
-                    <a href="get-involved.html" class="nav-link" role="menuitem">Get Involved</a>
+                    <a href="about-us.html" class="nav-link" role="menuitem">About Us</a>
                 </div>
                 
-                <!-- Mobile Only Links -->
+                <div class="nav-item">
+                    <a href="#get-involved" class="cta-button" role="menuitem">Get Involved</a>
+                </div>
+                
+                <!-- Mobile Organized Menu -->
                 <!-- Theme Toggle First -->
                 <div class="nav-item mobile-nav-item mobile-theme-item">
                     <div class="mobile-theme-toggle">
@@ -150,67 +415,73 @@
                 <div class="nav-item mobile-nav-item">
                     <a href="../index.html" class="nav-link" role="menuitem">Home</a>
                 </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../support/about-sickle-cell.html" class="nav-link" role="menuitem">Living with Sickle Cell</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../information/what-is-sickle-cell.html" class="nav-link" role="menuitem">What is Sickle Cell</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../information/types.html" class="nav-link" role="menuitem">Types & Symptoms</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../information/diagnosis-treatment.html" class="nav-link" role="menuitem">Diagnosis & Treatment</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../support/support-groups.html" class="nav-link" role="menuitem">Support Groups</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../support/resources.html" class="nav-link" role="menuitem">Resources</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../support/counseling.html" class="nav-link" role="menuitem">Counseling</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../community/events.html" class="nav-link" role="menuitem">Events</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../community/blog.html" class="nav-link" role="menuitem">Blog</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../information/research.html" class="nav-link" role="menuitem">Research</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="advocacy.html" class="nav-link" role="menuitem">Advocacy</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="contact.html" class="nav-link" role="menuitem">Contact Us</a>
+                
+                <!-- Mobile Main Categories -->
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Support</a>
+                    <div class="mobile-submenu">
+                        <a href="../support/about-sickle-cell.html" class="mobile-submenu-link">Living with Sickle Cell</a>
+                        <a href="../support/support-groups.html" class="mobile-submenu-link">Support Groups</a>
+                        <a href="../support/counseling.html" class="mobile-submenu-link">Counseling Services</a>
+                        <a href="../support/resources.html" class="mobile-submenu-link">Resources</a>
+                    </div>
                 </div>
                 
-                <!-- Action Buttons Last -->
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Information</a>
+                    <div class="mobile-submenu">
+                        <a href="../information/what-is-sickle-cell.html" class="mobile-submenu-link">What is Sickle Cell</a>
+                        <a href="../information/types.html" class="mobile-submenu-link">Types of Sickle Cell</a>
+                        <a href="../information/diagnosis-treatment.html" class="mobile-submenu-link">Diagnosis & Treatment</a>
+                        <a href="../information/research.html" class="mobile-submenu-link">Research & Trials</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Community</a>
+                    <div class="mobile-submenu">
+                        <a href="../community/forum.html" class="mobile-submenu-link">Forum</a>
+                        <a href="../community/warrior-stories.html" class="mobile-submenu-link">Warrior Stories</a>
+                        <a href="../community/blog.html" class="mobile-submenu-link">Blog</a>
+                        <a href="../community/events.html" class="mobile-submenu-link">Events</a>
+                        <a href="../community/gallery.html" class="mobile-submenu-link">Gallery</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Professionals</a>
+                    <div class="mobile-submenu">
+                        <a href="../professionals/healthcare-providers.html" class="mobile-submenu-link">Healthcare Providers</a>
+                        <a href="../professionals/researchers.html" class="mobile-submenu-link">Researchers</a>
+                        <a href="../professionals/educators.html" class="mobile-submenu-link">Educators</a>
+                    </div>
+                </div>
+                
+                <div class="nav-item mobile-nav-item">
+                    <a href="about-us.html" class="nav-link" role="menuitem">About Us</a>
+                </div>
+                
+                <!-- Action Buttons -->
                 <div class="nav-item mobile-nav-item mobile-action-item">
-                    <a href="donate.html" class="mobile-action-btn mobile-donate-btn">Donate Now</a>
+                    <a href="../pages/donate.html" class="mobile-action-btn mobile-donate-btn">Donate Now</a>
                 </div>
                 <div class="nav-item mobile-nav-item mobile-action-item">
-                    <a href="get-involved.html" class="mobile-action-btn mobile-get-involved-btn">Get Involved</a>
+                    <a href="#get-involved" class="mobile-action-btn mobile-get-involved-btn">Get Involved</a>
                 </div>
+                
+                <!-- Desktop Theme Toggle -->
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
             </nav>
             
-            <!-- Header Actions -->
-            <div class="header-actions">
-                <!-- Theme Toggle (Desktop) -->
-                <button class="theme-toggle" aria-label="Toggle dark mode" aria-describedby="theme-status">
-                    <span class="theme-icon">☀</span>
-                    <span class="sr-only" id="theme-status">Current theme: light mode</span>
-                </button>
-                
-                <!-- Mobile Menu Toggle -->
-                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
         </div>
     </header>
 
@@ -282,93 +553,129 @@
                 
                 <div class="opportunities-grid">
                     <div class="opportunity-card">
-                        <div class="card-icon">🤝</div>
+                        <div class="card-icon"><svg class="icon"><use href="#icon-handshake"></use></svg></div>
                         <h3 class="card-title">Peer Support</h3>
                         <p class="card-description">
                             Provide emotional support and encouragement to warriors and families 
                             through one-on-one mentoring and group sessions.
                         </p>
-                        <ul class="card-requirements">
-                            <li>Compassionate and empathetic</li>
-                            <li>Good listening skills</li>
-                            <li>Training provided</li>
-                        </ul>
-                        <div class="card-commitment">Commitment: 4 hours/month</div>
+                        <div class="card-requirements">
+                            <h4 class="requirements-title">Requirements & Skills:</h4>
+                            <ul class="modern-list">
+                                <li><svg class="list-icon"><use href="#icon-heart"></use></svg>Compassionate and empathetic nature</li>
+                                <li><svg class="list-icon"><use href="#icon-support"></use></svg>Excellent listening and communication skills</li>
+                                <li><svg class="list-icon"><use href="#icon-star"></use></svg>Complete training provided - no experience needed</li>
+                            </ul>
+                        </div>
+                        <div class="card-commitment">
+                            <svg class="commitment-icon"><use href="#icon-stethoscope"></use></svg>
+                            <span>4 hours per month</span>
+                        </div>
                     </div>
 
                     <div class="opportunity-card">
-                        <div class="card-icon">📚</div>
+                        <div class="card-icon"><svg class="icon"><use href="#icon-books"></use></svg></div>
                         <h3 class="card-title">Education & Outreach</h3>
                         <p class="card-description">
                             Help educate communities Living with Sickle Cell disease through 
                             presentations, workshops, and awareness campaigns.
                         </p>
-                        <ul class="card-requirements">
-                            <li>Public speaking experience preferred</li>
-                            <li>Passion for education</li>
-                            <li>Materials provided</li>
-                        </ul>
-                        <div class="card-commitment">Commitment: 6 hours/month</div>
+                        <div class="card-requirements">
+                            <h4 class="requirements-title">Requirements & Skills:</h4>
+                            <ul class="modern-list">
+                                <li><svg class="list-icon"><use href="#icon-graduation"></use></svg>Public speaking experience preferred</li>
+                                <li><svg class="list-icon"><use href="#icon-lightbulb"></use></svg>Passion for education and helping others learn</li>
+                                <li><svg class="list-icon"><use href="#icon-books"></use></svg>All training materials and resources provided</li>
+                            </ul>
+                        </div>
+                        <div class="card-commitment">
+                            <svg class="commitment-icon"><use href="#icon-star"></use></svg>
+                            <span>6 hours per month</span>
+                        </div>
                     </div>
 
                     <div class="opportunity-card">
-                        <div class="card-icon">🎉</div>
+                        <div class="card-icon"><svg class="icon"><use href="#icon-celebration"></use></svg></div>
                         <h3 class="card-title">Event Support</h3>
                         <p class="card-description">
                             Help organize and run community events, fundraisers, 
                             and awareness campaigns that bring warriors together.
                         </p>
-                        <ul class="card-requirements">
-                            <li>Event planning experience helpful</li>
-                            <li>Team player</li>
-                            <li>Flexible schedule</li>
-                        </ul>
-                        <div class="card-commitment">Commitment: Variable</div>
+                        <div class="card-requirements">
+                            <h4 class="requirements-title">Requirements & Skills:</h4>
+                            <ul class="modern-list">
+                                <li><svg class="list-icon"><use href="#icon-celebration"></use></svg>Event planning experience helpful but not required</li>
+                                <li><svg class="list-icon"><use href="#icon-people"></use></svg>Strong team collaboration and leadership skills</li>
+                                <li><svg class="list-icon"><use href="#icon-scales"></use></svg>Flexible schedule for event dates and times</li>
+                            </ul>
+                        </div>
+                        <div class="card-commitment">
+                            <svg class="commitment-icon"><use href="#icon-scales"></use></svg>
+                            <span>Flexible schedule</span>
+                        </div>
                     </div>
 
                     <div class="opportunity-card">
-                        <div class="card-icon">💻</div>
+                        <div class="card-icon"><svg class="icon"><use href="#icon-computer"></use></svg></div>
                         <h3 class="card-title">Digital Support</h3>
                         <p class="card-description">
                             Assist with website updates, social media management, 
                             and digital communications to expand our reach.
                         </p>
-                        <ul class="card-requirements">
-                            <li>Basic tech skills</li>
-                            <li>Social media familiarity</li>
-                            <li>Creative mindset</li>
-                        </ul>
-                        <div class="card-commitment">Commitment: 3 hours/week</div>
+                        <div class="card-requirements">
+                            <h4 class="requirements-title">Requirements & Skills:</h4>
+                            <ul class="modern-list">
+                                <li><svg class="list-icon"><use href="#icon-computer"></use></svg>Basic computer and internet navigation skills</li>
+                                <li><svg class="list-icon"><use href="#icon-star"></use></svg>Familiarity with social media platforms</li>
+                                <li><svg class="list-icon"><use href="#icon-lightbulb"></use></svg>Creative mindset and eye for engaging content</li>
+                            </ul>
+                        </div>
+                        <div class="card-commitment">
+                            <svg class="commitment-icon"><use href="#icon-computer"></use></svg>
+                            <span>3 hours per week</span>
+                        </div>
                     </div>
 
                     <div class="opportunity-card">
-                        <div class="card-icon">🏥</div>
+                        <div class="card-icon"><svg class="icon"><use href="#icon-hospital"></use></svg></div>
                         <h3 class="card-title">Medical Support</h3>
                         <p class="card-description">
                             Healthcare professionals can volunteer their expertise 
                             for medical advice, screenings, and educational content.
                         </p>
-                        <ul class="card-requirements">
-                            <li>Medical background required</li>
-                            <li>Current license/certification</li>
-                            <li>Sickle cell knowledge preferred</li>
-                        </ul>
-                        <div class="card-commitment">Commitment: 4 hours/month</div>
+                        <div class="card-requirements">
+                            <h4 class="requirements-title">Requirements & Skills:</h4>
+                            <ul class="modern-list">
+                                <li><svg class="list-icon"><use href="#icon-stethoscope"></use></svg>Medical background or healthcare training required</li>
+                                <li><svg class="list-icon"><use href="#icon-hospital"></use></svg>Current professional license or certification</li>
+                                <li><svg class="list-icon"><use href="#icon-heart"></use></svg>Sickle cell knowledge preferred but training available</li>
+                            </ul>
+                        </div>
+                        <div class="card-commitment">
+                            <svg class="commitment-icon"><use href="#icon-hospital"></use></svg>
+                            <span>4 hours per month</span>
+                        </div>
                     </div>
 
                     <div class="opportunity-card">
-                        <div class="card-icon">🎨</div>
+                        <div class="card-icon"><svg class="icon"><use href="#icon-art"></use></svg></div>
                         <h3 class="card-title">Creative Services</h3>
                         <p class="card-description">
                             Use your creative talents for graphic design, photography, 
                             videography, and content creation for our campaigns.
                         </p>
-                        <ul class="card-requirements">
-                            <li>Portfolio of work</li>
-                            <li>Design software skills</li>
-                            <li>Creative vision</li>
-                        </ul>
-                        <div class="card-commitment">Commitment: 5 hours/month</div>
+                        <div class="card-requirements">
+                            <h4 class="requirements-title">Requirements & Skills:</h4>
+                            <ul class="modern-list">
+                                <li><svg class="list-icon"><use href="#icon-art"></use></svg>Portfolio showcasing creative work and style</li>
+                                <li><svg class="list-icon"><use href="#icon-computer"></use></svg>Proficiency in design software (Photoshop, Canva, etc.)</li>
+                                <li><svg class="list-icon"><use href="#icon-star"></use></svg>Creative vision aligned with our mission</li>
+                            </ul>
+                        </div>
+                        <div class="card-commitment">
+                            <svg class="commitment-icon"><use href="#icon-art"></use></svg>
+                            <span>5 hours per month</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -384,39 +691,57 @@
                 
                 <div class="benefits-grid">
                     <div class="benefit-item">
-                        <div class="benefit-icon">❤️</div>
-                        <h3>Personal Fulfillment</h3>
-                        <p>Make a direct, meaningful impact in the lives of warriors and their families.</p>
+                        <div class="benefit-icon"><svg class="icon icon-heart"><use href="#icon-heart"></use></svg></div>
+                        <div class="benefit-content">
+                            <h3>Personal Fulfillment</h3>
+                            <p>Make a direct, meaningful impact in the lives of warriors and their families while discovering the joy that comes from serving others.</p>
+                            <div class="benefit-highlight">✓ Deep sense of purpose and satisfaction</div>
+                        </div>
                     </div>
                     
                     <div class="benefit-item">
-                        <div class="benefit-icon">🌟</div>
-                        <h3>Skill Development</h3>
-                        <p>Develop new skills in healthcare, education, event planning, and communication.</p>
+                        <div class="benefit-icon"><svg class="icon icon-star"><use href="#icon-star"></use></svg></div>
+                        <div class="benefit-content">
+                            <h3>Professional Skill Development</h3>
+                            <p>Expand your expertise in healthcare advocacy, public speaking, event coordination, digital marketing, and interpersonal communication.</p>
+                            <div class="benefit-highlight">✓ Transferable skills for career advancement</div>
+                        </div>
                     </div>
                     
                     <div class="benefit-item">
-                        <div class="benefit-icon">🤝</div>
-                        <h3>Community Connection</h3>
-                        <p>Build lasting relationships with like-minded individuals passionate about making a difference.</p>
+                        <div class="benefit-icon"><svg class="icon icon-support"><use href="#icon-handshake"></use></svg></div>
+                        <div class="benefit-content">
+                            <h3>Meaningful Community Connection</h3>
+                            <p>Join a supportive network of dedicated volunteers, healthcare professionals, and warrior families who share your commitment to the cause.</p>
+                            <div class="benefit-highlight">✓ Lifelong friendships and professional networks</div>
+                        </div>
                     </div>
                     
                     <div class="benefit-item">
-                        <div class="benefit-icon">🎓</div>
-                        <h3>Training & Education</h3>
-                        <p>Receive comprehensive training Living with Sickle Cell disease and volunteer best practices.</p>
+                        <div class="benefit-icon"><svg class="icon icon-education"><use href="#icon-graduation"></use></svg></div>
+                        <div class="benefit-content">
+                            <h3>Comprehensive Training & Certification</h3>
+                            <p>Access specialized training programs, educational workshops, and resources to become an expert advocate for the sickle cell community.</p>
+                            <div class="benefit-highlight">✓ Official volunteer certification upon completion</div>
+                        </div>
                     </div>
                     
                     <div class="benefit-item">
-                        <div class="benefit-icon">🏆</div>
-                        <h3>Recognition</h3>
-                        <p>Be recognized for your contributions through volunteer appreciation events and awards.</p>
+                        <div class="benefit-icon"><svg class="icon icon-achievement"><use href="#icon-trophy"></use></svg></div>
+                        <div class="benefit-content">
+                            <h3>Recognition & Appreciation</h3>
+                            <p>Your dedication will be celebrated through volunteer appreciation events, service awards, social media features, and community recognition programs.</p>
+                            <div class="benefit-highlight">✓ Annual Volunteer Excellence Awards</div>
+                        </div>
                     </div>
                     
                     <div class="benefit-item">
-                        <div class="benefit-icon">⚖️</div>
-                        <h3>Flexible Commitment</h3>
-                        <p>Choose volunteer opportunities that fit your schedule and availability.</p>
+                        <div class="benefit-icon"><svg class="icon icon-professional"><use href="#icon-scales"></use></svg></div>
+                        <div class="benefit-content">
+                            <h3>Flexible & Accommodating Schedule</h3>
+                            <p>We work with your busy lifestyle, offering opportunities that fit your schedule - whether you have 2 hours a month or 10 hours a week to give.</p>
+                            <div class="benefit-highlight">✓ Virtual and in-person options available</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -701,6 +1026,101 @@
     <script src="../js/pages.js"></script>
     
     <script src="../js/warriorbot.js"></script>
+    
+    <!-- SVG Icon Libraries -->
+    <script src="../assets/icons/icon-loader.js"></script>
+    
+    <!-- Include SVG icons inline -->
+    <div style="display: none;">
+        <!-- Medical Icons -->
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <symbol id="icon-hospital" viewBox="0 0 24 24">
+            <path d="M12 3L2 9v12h20V9l-10-6zm8 16H4v-8.5l8-4.8 8 4.8V19z"/>
+            <path d="M13 11h-2v2h-2v2h2v2h2v-2h2v-2h-2v-2z"/>
+          </symbol>
+          <symbol id="icon-pills" viewBox="0 0 24 24">
+            <ellipse cx="7" cy="17" rx="6" ry="4" fill="currentColor" opacity="0.8"/>
+            <ellipse cx="17" cy="7" rx="6" ry="4" fill="currentColor" opacity="0.6"/>
+          </symbol>
+          <symbol id="icon-stethoscope" viewBox="0 0 24 24">
+            <path d="M19.14 7.5c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+            <circle cx="6" cy="9.5" r="2"/>
+            <circle cx="18" cy="9.5" r="2"/>
+          </symbol>
+        </svg>
+        
+        <!-- Activity Icons -->
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <symbol id="icon-handshake" viewBox="0 0 24 24">
+            <path d="M18 4l-4 4h3v2l-5-5-1.5 1.5 5 5H17v2l-6-6-1.5 1.5 6 6h1.5v2h2V4h-1z"/>
+            <path d="M9.5 14.5l5-5L13 8l-5 5 1.5 1.5z"/>
+            <path d="M6.5 11.5l3-3L8 7l-3 3 1.5 1.5z"/>
+          </symbol>
+          <symbol id="icon-books" viewBox="0 0 24 24">
+            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/>
+            <path d="M7 15h10v2H7z"/>
+            <path d="M7 11h10v2H7z"/>
+            <path d="M7 7h7v2H7z"/>
+          </symbol>
+          <symbol id="icon-celebration" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 2l1 3-1 3-1-3 1-3z"/>
+            <path d="M12 16l1 3-1 3-1-3 1-3z"/>
+            <path d="M2 12l3-1 3 1-3 1-3-1z"/>
+            <path d="M16 12l3-1 3 1-3 1-3-1z"/>
+          </symbol>
+          <symbol id="icon-computer" viewBox="0 0 24 24">
+            <path d="M4 6h16c1.1 0 2 .9 2 2v8c0 1.1-.9 2-2 2h-7l1 2v1H10v-1l1-2H4c-1.1 0-2-.9-2-2V8c0-1.1.9-2 2-2zm16 10V8H4v8h16z"/>
+            <circle cx="12" cy="12" r="1"/>
+          </symbol>
+          <symbol id="icon-art" viewBox="0 0 24 24">
+            <path d="M12 2C8.69 2 6 4.69 6 8c0 2.5 1.5 4.67 3.64 5.64L7 22h10l-2.64-8.36C16.5 12.67 18 10.5 18 8c0-3.31-2.69-6-6-6z"/>
+            <circle cx="12" cy="8" r="2"/>
+          </symbol>
+          <symbol id="icon-graduation" viewBox="0 0 24 24">
+            <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6L23 9l-11-6zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9z"/>
+          </symbol>
+          <symbol id="icon-scales" viewBox="0 0 24 24">
+            <path d="M11 2h2v8h-2V2z"/>
+            <circle cx="7" cy="13" r="3"/>
+            <circle cx="17" cy="13" r="3"/>
+            <path d="M11 18h2v4h-2z"/>
+            <path d="M7 22h10v2H7z"/>
+          </symbol>
+          <symbol id="icon-trophy" viewBox="0 0 24 24">
+            <path d="M7 4V2c0-1.1.9-2 2-2h6c1.1 0 2 .9 2 2v2h1c1.1 0 2 .9 2 2v4c0 2.21-1.79 4-4 4h-1.17C14.42 15.28 13.28 16 12 16s-2.42-.72-2.83-1.72H8c-2.21 0-4-1.79-4-4V6c0-1.1.9-2 2-2h1z"/>
+            <path d="M10 20h4v2h-4z"/>
+            <path d="M8 18h8v2H8z"/>
+          </symbol>
+        </svg>
+        
+        <!-- Emotional Icons -->
+        <svg xmlns="http://www.w3.org/2000/svg">
+          <symbol id="icon-heart" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </symbol>
+      <symbol id="icon-star" viewBox="0 0 24 24">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+      </symbol>
+      <symbol id="icon-lightbulb" viewBox="0 0 24 24">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.87-3.13-7-7-7z"/>
+        <path d="M9 21h6v2H9z"/>
+        <path d="M10 19h4v1h-4z"/>
+      </symbol>
+      <symbol id="icon-people" viewBox="0 0 24 24">
+        <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2z"/>
+        <path d="M20 22v-6c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v6h2v-6h4v6h2z"/>
+        <path d="M8 4c0-1.11-.89-2-2-2S4 2.89 4 4s.89 2 2 2 2-.89 2-2z"/>
+        <path d="M10 22v-6c0-1.11-.89-2-2-2H4c-1.11 0-2 .89-2 2v6h2v-6h4v6h2z"/>
+      </symbol>
+      <symbol id="icon-support" viewBox="0 0 24 24">
+        <path d="M13 1.07V9h7c0-4.08-3.05-7.44-7-7.93z"/>
+        <path d="M4 15c0 4.42 3.58 8 8 8s8-3.58 8-8v-4H4v4zm8 6c-3.31 0-6-2.69-6-6v-2h12v2c0 3.31-2.69 6-6 6z"/>
+        <path d="M11 1.07C7.05 1.56 4 4.92 4 9h7V1.07z"/>
+        <circle cx="12" cy="17" r="2"/>
+      </symbol>
+    </svg>
+</div>
 
 </body>
 </html>

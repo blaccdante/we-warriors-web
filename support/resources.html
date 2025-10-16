@@ -1,336 +1,32 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Comprehensive sickle cell support resources - specialists, hospitals, organizations, and assistance programs in Nigeria and worldwide">
     <meta name="keywords" content="sickle cell specialists Nigeria, hospitals, organizations, financial assistance, medical resources">
-    <meta name="author" content="We Warriors Organization">
     
     <title>Support Resources - Nigerian Specialists & Organizations - We Warriors</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1964650693892617" crossorigin="anonymous"></script>
     
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../images/logo.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/accessibility.css">
     <link rel="stylesheet" href="../css/styles.css">
-    <!-- Universal header should load last to override other styles -->
+    <link rel="stylesheet" href="../css/modern-slideshow.css">
+    <link rel="stylesheet" href="../css/modern-homepage.css">
+    <link rel="stylesheet" href="../css/theme-optimization.css">
     <link rel="stylesheet" href="../css/universal-header.css">
-    <style>
-        /* EXACT Original Dark Theme Hero System from Community Events */
-        .page-hero.modern-hero {
-            position: relative;
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-        }
-        
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 1;
-        }
-        
-        .hero-gradient {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, 
-                rgba(255, 255, 255, 0.98) 0%, 
-                rgba(248, 249, 250, 0.95) 30%, 
-                rgba(255, 248, 240, 0.98) 70%, 
-                rgba(255, 255, 255, 0.95) 100%);
-        }
-        
-        .hero-pattern {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(196, 30, 58, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.05) 0%, transparent 50%);
-            background-size: 300px 300px, 400px 400px, 500px 500px;
-            animation: patternMove 20s ease-in-out infinite;
-        }
-        
-        @keyframes patternMove {
-            0%, 100% { transform: translate(0, 0); }
-            25% { transform: translate(-10px, -10px); }
-            50% { transform: translate(10px, 10px); }
-            75% { transform: translate(-5px, 10px); }
-        }
-        
-        /* EXACT Original Dark Theme Override */
-        :root[data-theme="dark"] .hero-gradient {
-            background: linear-gradient(135deg, 
-                rgba(30, 30, 30, 0.95) 0%, 
-                rgba(45, 45, 45, 0.9) 30%, 
-                rgba(60, 60, 60, 0.95) 70%, 
-                rgba(30, 30, 30, 0.9) 100%) !important;
-        }
-        
-        :root[data-theme="dark"] .hero-pattern {
-            background-image: 
-                radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(196, 30, 58, 0.12) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(139, 0, 0, 0.08) 0%, transparent 50%) !important;
-        }
-        
-        /* Light Theme - Resources Library Background */
-        [data-theme="light"] .hero-background {
-            background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        
-        [data-theme="light"] .hero-gradient {
-            background: linear-gradient(135deg, 
-                rgba(255, 255, 255, 0.96) 0%, 
-                rgba(248, 249, 250, 0.94) 30%, 
-                rgba(219, 234, 254, 0.96) 70%, 
-                rgba(255, 255, 255, 0.94) 100%);
-        }
-        
-        .hero-container {
-            position: relative;
-            z-index: 2;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            width: 100%;
-        }
-        
-        .hero-content {
-            color: #f8fafc;
-            max-width: 800px;
-        }
-        
-        [data-theme="light"] .hero-content {
-            color: #0f172a;
-        }
-        
-        .page-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            margin: 0 0 1.5rem 0;
-            line-height: 1.1;
-            color: #f1f5f9;
-        }
-        
-        [data-theme="light"] .page-title {
-            color: var(--blood-color) !important;
-        }
-        
-        .page-subtitle {
-            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-            margin: 0;
-            color: rgba(226, 232, 240, 0.9);
-            line-height: 1.6;
-        }
-        
-        [data-theme="light"] .page-subtitle {
-            color: var(--text-primary) !important;
-        }
-        
-        .page-content {
-            padding: 4rem 0;
-            background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
-        }
-        
-        :root[data-theme="dark"] .page-content {
-            background: linear-gradient(180deg, var(--background-primary) 0%, var(--background-secondary) 100%) !important;
-        }
-        
-        /* Floating Elements Styling */
-        .hero-visual.modern-visual {
-            position: absolute;
-            top: 50%;
-            right: 5%;
-            transform: translateY(-50%);
-            width: 300px;
-            height: 300px;
-            pointer-events: none;
-            opacity: 0.8;
-        }
-        
-        .floating-elements {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .float-element {
-            position: absolute;
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(196, 30, 58, 0.15));
-        }
-        
-        .float-element.knowledge {
-            width: 80px;
-            height: 80px;
-            top: 20%;
-            right: 10%;
-            animation-delay: 0s;
-            background: linear-gradient(135deg, rgba(91, 33, 182, 0.5), rgba(147, 51, 234, 0.3));
-            box-shadow: 0 4px 20px rgba(91, 33, 182, 0.3);
-        }
-        
-        .float-element.tools {
-            width: 60px;
-            height: 60px;
-            top: 60%;
-            right: 40%;
-            animation-delay: -2s;
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.4), rgba(132, 204, 22, 0.25));
-            box-shadow: 0 4px 20px rgba(34, 197, 94, 0.2);
-        }
-        
-        .float-element.support {
-            width: 70px;
-            height: 70px;
-            top: 40%;
-            right: 70%;
-            animation-delay: -4s;
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.4), rgba(249, 115, 22, 0.25));
-            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.2);
-        }
-        
-        /* Dark theme enhancement */
-        :root[data-theme="dark"] .float-element.knowledge {
-            background: linear-gradient(135deg, rgba(147, 51, 234, 0.7), rgba(168, 85, 247, 0.5));
-            box-shadow: 0 4px 25px rgba(147, 51, 234, 0.4);
-        }
-        
-        :root[data-theme="dark"] .float-element.tools {
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.6), rgba(132, 204, 22, 0.4));
-            box-shadow: 0 4px 25px rgba(34, 197, 94, 0.3);
-        }
-        
-        :root[data-theme="dark"] .float-element.support {
-            background: linear-gradient(135deg, rgba(245, 158, 11, 0.6), rgba(249, 115, 22, 0.4));
-            box-shadow: 0 4px 25px rgba(245, 158, 11, 0.3);
-        }
-        
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px) scale(1);
-                opacity: 0.6;
-            }
-            25% {
-                transform: translateY(-20px) scale(1.05);
-                opacity: 0.8;
-            }
-            50% {
-                transform: translateY(-10px) scale(0.95);
-                opacity: 0.7;
-            }
-            75% {
-                transform: translateY(-15px) scale(1.02);
-                opacity: 0.9;
-            }
-        }
-        
-        /* Modern Horizontal Breadcrumb Styling */
-        .breadcrumb.modern-breadcrumb {
-            margin-bottom: 2rem;
-        }
-        
-        .breadcrumb ol {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            font-size: 0.9rem;
-            flex-wrap: wrap;
-        }
-        
-        .breadcrumb li {
-            display: flex;
-            align-items: center;
-        }
-        
-        .breadcrumb li::after {
-            content: '/';
-            margin: 0 0.5rem;
-            color: rgba(248, 250, 252, 0.5);
-            font-weight: normal;
-        }
-        
-        [data-theme="light"] .breadcrumb li::after {
-            color: rgba(30, 41, 59, 0.4);
-        }
-        
-        .breadcrumb li:last-child::after {
-            display: none;
-        }
-        
-        .breadcrumb a {
-            color: rgba(248, 250, 252, 0.8);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-        
-        .breadcrumb a:hover {
-            color: #e2e8f0;
-            text-decoration: underline;
-        }
-        
-        [data-theme="light"] .breadcrumb a {
-            color: var(--blood-color) !important;
-        }
-        
-        [data-theme="light"] .breadcrumb a:hover {
-            color: var(--blood-light) !important;
-        }
-        
-        [data-theme="light"] .breadcrumb [aria-current="page"] {
-            color: var(--text-primary) !important;
-            font-weight: 600;
-        }
-        
-        .breadcrumb [aria-current="page"] {
-            color: rgba(226, 232, 240, 0.9);
-            font-weight: 600;
-        }
-        
-        @media (max-width: 768px) {
-            .hero-container {
-                padding: 3rem 1.5rem;
-            }
-            
-            .hero-visual.modern-visual {
-                display: none;
-            }
-            
-            .breadcrumb ol {
-                font-size: 0.8rem;
-                gap: 0.3rem;
-            }
-            
-            .breadcrumb li::after {
-                margin: 0 0.3rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../css/information.css">
 </head>
-<body class="page-body">
+<body>
+    <!-- Skip to main content link for accessibility -->
     <a href="#main-content" class="skip-to-main">Skip to main content</a>
     
     <!-- Universal Header -->
@@ -388,6 +84,9 @@
                             <a href="../community/forum.html" class="dropdown-link" role="menuitem">Forum</a>
                         </li>
                         <li class="dropdown-item" role="none">
+                            <a href="../community/warrior-stories.html" class="dropdown-link" role="menuitem">Warrior Stories</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
                             <a href="../community/blog.html" class="dropdown-link" role="menuitem">Blog</a>
                         </li>
                         <li class="dropdown-item" role="none">
@@ -399,8 +98,23 @@
                     </ul>
                 </div>
                 
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" role="menuitem" aria-haspopup="true">Professionals</a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item" role="none">
+                            <a href="../professionals/partnerships.html" class="dropdown-link" role="menuitem">Partnerships</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../professionals/researchers.html" class="dropdown-link" role="menuitem">Researchers</a>
+                        </li>
+                        <li class="dropdown-item" role="none">
+                            <a href="../professionals/educators.html" class="dropdown-link" role="menuitem">Educators</a>
+                        </li>
+                    </ul>
+                </div>
+                
                 <div class="nav-item">
-                    <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact</a>
+                    <a href="../pages/about-us.html" class="nav-link" role="menuitem">About Us</a>
                 </div>
                 
                 <div class="nav-item">
@@ -420,41 +134,50 @@
                 <div class="nav-item mobile-nav-item">
                     <a href="../index.html" class="nav-link" role="menuitem">Home</a>
                 </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="about-sickle-cell.html" class="nav-link" role="menuitem">Living with Sickle Cell</a>
+                
+                <!-- Mobile Main Categories -->
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Support</a>
+                    <div class="mobile-submenu">
+                        <a href="about-sickle-cell.html" class="mobile-submenu-link">Living with Sickle Cell</a>
+                        <a href="support-groups.html" class="mobile-submenu-link">Support Groups</a>
+                        <a href="counseling.html" class="mobile-submenu-link">Counseling Services</a>
+                        <a href="resources.html" class="mobile-submenu-link">Resources</a>
+                    </div>
                 </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../information/what-is-sickle-cell.html" class="nav-link" role="menuitem">What is Sickle Cell</a>
+                
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Information</a>
+                    <div class="mobile-submenu">
+                        <a href="../information/what-is-sickle-cell.html" class="mobile-submenu-link">What is Sickle Cell</a>
+                        <a href="../information/types.html" class="mobile-submenu-link">Types of Sickle Cell</a>
+                        <a href="../information/diagnosis-treatment.html" class="mobile-submenu-link">Diagnosis & Treatment</a>
+                        <a href="../information/research.html" class="mobile-submenu-link">Research & Trials</a>
+                    </div>
                 </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../information/types.html" class="nav-link" role="menuitem">Types & Symptoms</a>
+                
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Community</a>
+                    <div class="mobile-submenu">
+                        <a href="../community/forum.html" class="mobile-submenu-link">Forum</a>
+                        <a href="../community/warrior-stories.html" class="mobile-submenu-link">Warrior Stories</a>
+                        <a href="../community/blog.html" class="mobile-submenu-link">Blog</a>
+                        <a href="../community/events.html" class="mobile-submenu-link">Events</a>
+                        <a href="../community/gallery.html" class="mobile-submenu-link">Gallery</a>
+                    </div>
                 </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../information/diagnosis-treatment.html" class="nav-link" role="menuitem">Diagnosis & Treatment</a>
+                
+                <div class="nav-item mobile-nav-item mobile-category">
+                    <a href="#" class="nav-link mobile-category-toggle" role="menuitem">Professionals</a>
+                    <div class="mobile-submenu">
+                        <a href="../professionals/partnerships.html" class="mobile-submenu-link">Partnerships</a>
+                        <a href="../professionals/researchers.html" class="mobile-submenu-link">Researchers</a>
+                        <a href="../professionals/educators.html" class="mobile-submenu-link">Educators</a>
+                    </div>
                 </div>
+                
                 <div class="nav-item mobile-nav-item">
-                    <a href="support-groups.html" class="nav-link" role="menuitem">Support Groups</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="resources.html" class="nav-link" role="menuitem">Resources</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="counseling.html" class="nav-link" role="menuitem">Counseling</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../community/events.html" class="nav-link" role="menuitem">Events</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../community/blog.html" class="nav-link" role="menuitem">Blog</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../information/research.html" class="nav-link" role="menuitem">Research</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../pages/advocacy.html" class="nav-link" role="menuitem">Advocacy</a>
-                </div>
-                <div class="nav-item mobile-nav-item">
-                    <a href="../pages/contact.html" class="nav-link" role="menuitem">Contact Us</a>
+                    <a href="../pages/about-us.html" class="nav-link" role="menuitem">About Us</a>
                 </div>
                 
                 <!-- Action Buttons Last -->
@@ -464,68 +187,51 @@
                 <div class="nav-item mobile-nav-item mobile-action-item">
                     <a href="#get-involved" class="mobile-action-btn mobile-get-involved-btn">Get Involved</a>
                 </div>
+                
+                <!-- Desktop Theme Toggle -->
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <span class="sun-icon">☀️</span>
+                    <span class="moon-icon">🌙</span>
+                </button>
             </nav>
             
-            <!-- Header Actions -->
-            <div class="header-actions">
-                <!-- Theme Toggle (Desktop) -->
-                <button class="theme-toggle" aria-label="Toggle dark mode" aria-describedby="theme-status">
-                    <span class="theme-icon">â˜€</span>
-                    <span class="sr-only" id="theme-status">Current theme: light mode</span>
-                </button>
-                
-                <!-- Mobile Menu Toggle -->
-                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            </div>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
         </div>
     </header>
 
-    <main id="main-content" role="main" class="modern-main">
-        
-        <section class="page-hero modern-hero">
-            <div class="hero-background">
-                <div class="hero-gradient"></div>
-                <div class="hero-pattern"></div>
-            </div>
-            <div class="hero-container">
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-information">
+            <div class="container">
                 <div class="hero-content">
-                    <nav class="breadcrumb modern-breadcrumb" aria-label="Breadcrumb">
-                        <ol>
-                            <li><a href="../index.html">Home</a></li>
-                            <li><a href="../index.html#support">Support</a></li>
-                            <li><span aria-current="page">Resources</span></li>
-                        </ol>
-                    </nav>
-                    <h1 class="page-title modern-title">Support Resources</h1>
-                    <p class="page-subtitle modern-subtitle">Comprehensive directory of specialists, hospitals, organizations, and assistance programs for sickle cell warriors and families</p>
-                </div>
-                <div class="hero-visual modern-visual">
-                    <div class="floating-elements">
-                        <div class="float-element knowledge"></div>
-                        <div class="float-element tools"></div>
-                        <div class="float-element support"></div>
+                    <h1 class="hero-title">Support Resources</h1>
+                    <p class="hero-subtitle">Comprehensive directory of specialists, hospitals, and assistance programs</p>
+                    <div class="hero-description">
+                        <p>For sickle cell warriors and families in Nigeria and worldwide.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="page-content modern-content">
+        <!-- Page Content -->
+        <section class="page-content">
             <div class="container">
-
-                <!-- Quick Access Section -->
+                <!-- Emergency Resources -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">ðŸš¨</div>
+                        <div class="card-icon">🚨</div>
                         <h2 class="card-title">Emergency & Quick Access</h2>
                     </div>
                     <div class="card-content">
-                        <div class="emergency-grid">
-                            <div class="emergency-item">
-                                <h3>ðŸš¨ Emergency Numbers</h3>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <h3>🚨 Emergency Numbers</h3>
                                 <ul>
                                     <li><strong>Nigeria Emergency:</strong> 199, 911</li>
                                     <li><strong>Lagos State Ambulance:</strong> 199</li>
@@ -534,8 +240,8 @@
                                     <li><strong>Fire Service:</strong> 199</li>
                                 </ul>
                             </div>
-                            <div class="emergency-item">
-                                <h3>ðŸ¥ 24/7 Sickle Cell Emergency Centers</h3>
+                            <div class="info-item">
+                                <h3>🏥 24/7 Sickle Cell Emergency Centers</h3>
                                 <ul>
                                     <li><strong>Lagos University Teaching Hospital</strong> - Idi-Araba</li>
                                     <li><strong>University College Hospital</strong> - Ibadan</li>
@@ -546,243 +252,45 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Nigerian Sickle Cell Specialists -->
+
+                <!-- Nigerian Specialists -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">ðŸ¥</div>
+                        <div class="card-icon">🏥</div>
                         <h2 class="card-title">Nigerian Sickle Cell Specialists & Centers</h2>
                     </div>
                     <div class="card-content">
-                        
-                        <h3>ðŸ‡³ðŸ‡¬ Leading Sickle Cell Centers in Nigeria</h3>
-                        
-                        <div class="specialists-by-region">
-                            <div class="region-section">
-                                <h4>ðŸ“ Lagos State</h4>
-                                <div class="specialists-grid">
-                                    <div class="specialist-card">
-                                        <h5>Lagos University Teaching Hospital (LUTH)</h5>
-                                        <p><strong>Address:</strong> Idi-Araba, Mushin, Lagos</p>
-                                        <p><strong>Phone:</strong> +234-1-8936481, +234-1-8936482</p>
-                                        <p><strong>Department:</strong> Haematology & Blood Transfusion</p>
-                                        <p><strong>Services:</strong> Comprehensive sickle cell care, bone marrow transplant evaluation, hydroxyurea therapy</p>
-                                        <div class="specialist-details">
-                                            <p><strong>Key Specialists:</strong></p>
-                                            <ul>
-                                                <li>Prof. Sulaimon Akanmu - Chief Consultant Haematologist</li>
-                                                <li>Dr. Adedayo Adeyemo - Consultant Haematologist</li>
-                                                <li>Dr. Titilope Adeyemo - Paediatric Haematologist</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="specialist-card">
-                                        <h5>Lagos State University Teaching Hospital (LASUTH)</h5>
-                                        <p><strong>Address:</strong> 1-5 Oba Akinjobi Way, Ikeja, Lagos</p>
-                                        <p><strong>Phone:</strong> +234-1-4530009, +234-1-4530010</p>
-                                        <p><strong>Department:</strong> Haematology & Oncology</p>
-                                        <p><strong>Services:</strong> Adult and pediatric sickle cell care, pain management, genetic counseling</p>
-                                    </div>
-                                    
-                                    <div class="specialist-card">
-                                        <h5>National Orthopaedic Hospital Lagos</h5>
-                                        <p><strong>Address:</strong> 120/124 Ikorodu Road, Fadeyi, Lagos</p>
-                                        <p><strong>Phone:</strong> +234-1-8115777</p>
-                                        <p><strong>Specialty:</strong> Sickle cell bone complications, avascular necrosis</p>
-                                        <p><strong>Services:</strong> Joint replacement, orthopedic surgery for sickle cell complications</p>
-                                    </div>
-                                </div>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <h3>Lagos University Teaching Hospital (LUTH)</h3>
+                                <p><strong>Address:</strong> Idi-Araba, Mushin, Lagos</p>
+                                <p><strong>Phone:</strong> +234-1-8936481, +234-1-8936482</p>
+                                <p><strong>Department:</strong> Haematology & Blood Transfusion</p>
+                                <p><strong>Services:</strong> Comprehensive sickle cell care, bone marrow transplant evaluation, hydroxyurea therapy</p>
                             </div>
 
-                            <div class="region-section">
-                                <h4>ðŸ“ Federal Capital Territory (Abuja)</h4>
-                                <div class="specialists-grid">
-                                    <div class="specialist-card">
-                                        <h5>University of Abuja Teaching Hospital</h5>
-                                        <p><strong>Address:</strong> Gwagwalada, Abuja, FCT</p>
-                                        <p><strong>Phone:</strong> +234-9-6700107</p>
-                                        <p><strong>Department:</strong> Haematology & Blood Transfusion</p>
-                                        <p><strong>Services:</strong> Comprehensive sickle cell management, research programs</p>
-                                    </div>
-                                    
-                                    <div class="specialist-card">
-                                        <h5>National Hospital Abuja</h5>
-                                        <p><strong>Address:</strong> Central Business District, Abuja</p>
-                                        <p><strong>Phone:</strong> +234-9-4613220</p>
-                                        <p><strong>Services:</strong> Specialist sickle cell clinic, advanced diagnostics</p>
-                                    </div>
-                                </div>
+                            <div class="info-item">
+                                <h3>University College Hospital (UCH) Ibadan</h3>
+                                <p><strong>Address:</strong> Queen Elizabeth Road, Ibadan, Oyo State</p>
+                                <p><strong>Phone:</strong> +234-2-2410089</p>
+                                <p><strong>Department:</strong> Haematology</p>
+                                <p><strong>Services:</strong> Leading sickle cell research center, comprehensive care</p>
                             </div>
 
-                            <div class="region-section">
-                                <h4>ðŸ“ Oyo State</h4>
-                                <div class="specialists-grid">
-                                    <div class="specialist-card">
-                                        <h5>University College Hospital (UCH) Ibadan</h5>
-                                        <p><strong>Address:</strong> Queen Elizabeth Road, Ibadan, Oyo State</p>
-                                        <p><strong>Phone:</strong> +234-2-2410089</p>
-                                        <p><strong>Department:</strong> Haematology</p>
-                                        <p><strong>Services:</strong> Leading sickle cell research center, comprehensive care</p>
-                                        <div class="specialist-details">
-                                            <p><strong>Key Specialists:</strong></p>
-                                            <ul>
-                                                <li>Prof. Titilola Akingbola - Paediatric Haematologist</li>
-                                                <li>Prof. Muheez Durosinmi - Chief Consultant Haematologist</li>
-                                                <li>Dr. Isaac Odunola Olusanya - Consultant Haematologist</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="info-item">
+                                <h3>Ahmadu Bello University Teaching Hospital (ABUTH)</h3>
+                                <p><strong>Address:</strong> Shika, Zaria, Kaduna State</p>
+                                <p><strong>Phone:</strong> +234-69-550473</p>
+                                <p><strong>Department:</strong> Haematology & Blood Transfusion</p>
+                                <p><strong>Services:</strong> Comprehensive sickle cell care, hydroxyurea clinic, newborn screening</p>
                             </div>
 
-                            <div class="region-section">
-                                <h4>ðŸ“ Kaduna State</h4>
-                                <div class="specialists-grid">
-                                    <div class="specialist-card">
-                                        <h5>Ahmadu Bello University Teaching Hospital (ABUTH)</h5>
-                                        <p><strong>Address:</strong> Shika, Zaria, Kaduna State</p>
-                                        <p><strong>Phone:</strong> +234-69-550473</p>
-                                        <p><strong>Department:</strong> Haematology & Blood Transfusion</p>
-                                        <p><strong>Services:</strong> Comprehensive sickle cell care, hydroxyurea clinic, newborn screening</p>
-                                        <div class="specialist-details">
-                                            <p><strong>Key Specialists:</strong></p>
-                                            <ul>
-                                                <li>Prof. Hauwa Salisu - Head, Haematology Department</li>
-                                                <li>Dr. Mohammed Bashir Abdullahi - Consultant Haematologist</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="region-section">
-                                <h4>ðŸ“ Enugu State</h4>
-                                <div class="specialists-grid">
-                                    <div class="specialist-card">
-                                        <h5>University of Nigeria Teaching Hospital (UNTH)</h5>
-                                        <p><strong>Address:</strong> Ituku-Ozalla, Enugu State</p>
-                                        <p><strong>Phone:</strong> +234-42-250581</p>
-                                        <p><strong>Department:</strong> Haematology & Immunology</p>
-                                        <p><strong>Services:</strong> Sickle cell management, genetic studies, family counseling</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="region-section">
-                                <h4>ðŸ“ Kano State</h4>
-                                <div class="specialists-grid">
-                                    <div class="specialist-card">
-                                        <h5>Aminu Kano Teaching Hospital</h5>
-                                        <p><strong>Address:</strong> Kano, Kano State</p>
-                                        <p><strong>Phone:</strong> +234-64-644229</p>
-                                        <p><strong>Department:</strong> Haematology</p>
-                                        <p><strong>Services:</strong> Sickle cell clinic, blood transfusion services</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3>ðŸ¥ Specialized Sickle Cell Organizations in Nigeria</h3>
-                        <div class="organizations-grid">
-                            <div class="organization-card">
-                                <h4>Sickle Cell Foundation Nigeria</h4>
-                                <p><strong>Address:</strong> Plot 267 Muhammadu Buhari Way, Central Business District, Abuja</p>
-                                <p><strong>Phone:</strong> +234-9-2348056</p>
-                                <p><strong>Email:</strong> info@sicklecellfoundation.com</p>
-                                <p><strong>Website:</strong> www.sicklecellfoundation.com</p>
-                                <div class="services-list">
-                                    <h5>Services:</h5>
-                                    <ul>
-                                        <li>Free genotype testing and counseling</li>
-                                        <li>Educational programs and awareness campaigns</li>
-                                        <li>Support groups and patient advocacy</li>
-                                        <li>Research and policy development</li>
-                                        <li>Newborn screening programs</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="organization-card">
-                                <h4>Centre for Sickle Cell Disease, Nigeria</h4>
-                                <p><strong>Location:</strong> University College Hospital, Ibadan</p>
-                                <p><strong>Phone:</strong> +234-803-4567890</p>
-                                <p><strong>Services:</strong> Research, treatment protocols, specialist training</p>
-                            </div>
-
-                            <div class="organization-card">
-                                <h4>Nigerian Sickle Cell Society</h4>
-                                <p><strong>Headquarters:</strong> Lagos</p>
-                                <p><strong>Services:</strong> Patient support networks, advocacy, educational materials</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- International Resources -->
-                <div class="content-card">
-                    <div class="card-header">
-                        <div class="card-icon">ðŸŒ</div>
-                        <h2 class="card-title">International Sickle Cell Centers</h2>
-                    </div>
-                    <div class="card-content">
-                        
-                        <h3>ðŸ‡ºðŸ‡¸ United States - Leading Centers</h3>
-                        <div class="international-centers">
-                            <div class="center-card">
-                                <h4>St. Jude Children's Research Hospital</h4>
-                                <p><strong>Location:</strong> Memphis, Tennessee</p>
-                                <p><strong>Phone:</strong> +1-901-595-3300</p>
-                                <p><strong>Specialty:</strong> Pediatric sickle cell care, gene therapy trials</p>
-                                <p><strong>Notable:</strong> Leading CRISPR gene therapy research</p>
-                            </div>
-
-                            <div class="center-card">
-                                <h4>Children's Hospital of Philadelphia (CHOP)</h4>
-                                <p><strong>Location:</strong> Philadelphia, Pennsylvania</p>
-                                <p><strong>Phone:</strong> +1-215-590-1000</p>
-                                <p><strong>Specialty:</strong> Comprehensive sickle cell program, bone marrow transplants</p>
-                            </div>
-
-                            <div class="center-card">
-                                <h4>Boston Children's Hospital</h4>
-                                <p><strong>Location:</strong> Boston, Massachusetts</p>
-                                <p><strong>Phone:</strong> +1-617-355-6000</p>
-                                <p><strong>Specialty:</strong> Advanced gene therapy, research trials</p>
-                            </div>
-
-                            <div class="center-card">
-                                <h4>Children's National Hospital</h4>
-                                <p><strong>Location:</strong> Washington, D.C.</p>
-                                <p><strong>Phone:</strong> +1-202-476-5000</p>
-                                <p><strong>Specialty:</strong> Sickle cell comprehensive care, hydroxyurea protocols</p>
-                            </div>
-                        </div>
-
-                        <h3>ðŸ‡¬ðŸ‡§ United Kingdom</h3>
-                        <div class="international-centers">
-                            <div class="center-card">
-                                <h4>Guy's and St Thomas' NHS Foundation Trust</h4>
-                                <p><strong>Location:</strong> London, England</p>
-                                <p><strong>Phone:</strong> +44-20-7188-7188</p>
-                                <p><strong>Specialty:</strong> Adult sickle cell services, gene therapy trials</p>
-                            </div>
-
-                            <div class="center-card">
-                                <h4>Great Ormond Street Hospital</h4>
-                                <p><strong>Location:</strong> London, England</p>
-                                <p><strong>Phone:</strong> +44-20-7405-9200</p>
-                                <p><strong>Specialty:</strong> Pediatric sickle cell care, bone marrow transplants</p>
-                            </div>
-                        </div>
-
-                        <h3>ðŸ‡«ðŸ‡· France</h3>
-                        <div class="international-centers">
-                            <div class="center-card">
-                                <h4>HÃ´pital Necker-Enfants Malades</h4>
-                                <p><strong>Location:</strong> Paris, France</p>
-                                <p><strong>Phone:</strong> +33-1-44-49-40-00</p>
-                                <p><strong>Specialty:</strong> Pediatric sickle cell care, gene therapy research</p>
+                            <div class="info-item">
+                                <h3>National Orthopaedic Hospital Lagos</h3>
+                                <p><strong>Address:</strong> 120/124 Ikorodu Road, Fadeyi, Lagos</p>
+                                <p><strong>Phone:</strong> +234-1-8115777</p>
+                                <p><strong>Specialty:</strong> Sickle cell bone complications, avascular necrosis</p>
+                                <p><strong>Services:</strong> Joint replacement, orthopedic surgery for sickle cell complications</p>
                             </div>
                         </div>
                     </div>
@@ -791,15 +299,13 @@
                 <!-- Financial Assistance -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">ðŸ’°</div>
+                        <div class="card-icon">💰</div>
                         <h2 class="card-title">Financial Assistance & Support Programs</h2>
                     </div>
                     <div class="card-content">
-                        
-                        <h3>ðŸ‡³ðŸ‡¬ Nigerian Financial Support</h3>
-                        <div class="assistance-programs">
-                            <div class="program-card">
-                                <h4>National Health Insurance Scheme (NHIS)</h4>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <h3>National Health Insurance Scheme (NHIS)</h3>
                                 <p><strong>Coverage:</strong> Basic sickle cell treatment coverage</p>
                                 <p><strong>Registration:</strong> Through NHIS offices nationwide</p>
                                 <p><strong>Website:</strong> www.nhis.gov.ng</p>
@@ -810,8 +316,8 @@
                                 </ul>
                             </div>
 
-                            <div class="program-card">
-                                <h4>Lagos State Health Scheme (LSHS)</h4>
+                            <div class="info-item">
+                                <h3>Lagos State Health Scheme (LSHS)</h3>
                                 <p><strong>Eligibility:</strong> Lagos State residents</p>
                                 <p><strong>Coverage:</strong> Enhanced sickle cell benefits</p>
                                 <p><strong>Registration:</strong> LSHS centers across Lagos</p>
@@ -822,108 +328,50 @@
                                 </ul>
                             </div>
 
-                            <div class="program-card">
-                                <h4>Sickle Cell Foundation Nigeria Assistance</h4>
-                                <p><strong>Type:</strong> Non-profit support</p>
-                                <p><strong>Services:</strong> Free testing, counseling, education</p>
-                                <ul>
-                                    <li>Free genotype testing</li>
-                                    <li>Educational materials</li>
-                                    <li>Support group facilitation</li>
-                                    <li>Emergency medication assistance</li>
-                                </ul>
-                            </div>
-
-                            <div class="program-card">
-                                <h4>State-Specific Programs</h4>
-                                <div class="state-programs">
-                                    <div class="state-program">
-                                        <h5>ðŸ›ï¸ Oyo State</h5>
-                                        <p>Free sickle cell screening in public health facilities</p>
-                                    </div>
-                                    <div class="state-program">
-                                        <h5>ðŸ›ï¸ Kaduna State</h5>
-                                        <p>Subsidized sickle cell medications through state hospitals</p>
-                                    </div>
-                                    <div class="state-program">
-                                        <h5>ðŸ›ï¸ FCT Abuja</h5>
-                                        <p>Free newborn sickle cell screening</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3>ðŸŒ International Assistance Programs</h3>
-                        <div class="assistance-programs">
-                            <div class="program-card">
-                                <h4>Sickle Cell Disease Association of America (SCDAA)</h4>
-                                <p><strong>Website:</strong> www.sicklecelldisease.org</p>
-                                <p><strong>Services:</strong> Educational resources, advocacy, research funding</p>
-                            </div>
-
-                            <div class="program-card">
-                                <h4>American Society of Hematology</h4>
-                                <p><strong>Program:</strong> Global initiatives for sickle cell care</p>
-                                <p><strong>Focus:</strong> Training programs for healthcare providers</p>
-                            </div>
-
-                            <div class="program-card">
-                                <h4>World Health Organization</h4>
-                                <p><strong>Initiative:</strong> Global Programme on Sickle Cell Disease</p>
-                                <p><strong>Focus:</strong> Policy development, awareness campaigns</p>
+                            <div class="info-item">
+                                <h3>Sickle Cell Foundation Nigeria</h3>
+                                <p><strong>Address:</strong> Plot 267 Muhammadu Buhari Way, Central Business District, Abuja</p>
+                                <p><strong>Phone:</strong> +234-9-2348056</p>
+                                <p><strong>Email:</strong> info@sicklecellfoundation.com</p>
+                                <p><strong>Website:</strong> www.sicklecellfoundation.com</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Insurance Navigation -->
+                <!-- International Centers -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">ðŸ“‹</div>
-                        <h2 class="card-title">Insurance Navigation & Coverage</h2>
+                        <div class="card-icon">🌍</div>
+                        <h2 class="card-title">International Sickle Cell Centers</h2>
                     </div>
                     <div class="card-content">
-                        
-                        <h3>ðŸ” Understanding Your Insurance Coverage</h3>
-                        <div class="insurance-guide">
-                            <div class="guide-section">
-                                <h4>âœ… What Should Be Covered</h4>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <h3>🇺🇸 United States</h3>
                                 <ul>
-                                    <li>Regular hematologist visits</li>
-                                    <li>Hydroxyurea and other disease-modifying medications</li>
-                                    <li>Pain management medications</li>
-                                    <li>Emergency room visits for pain crises</li>
-                                    <li>Blood transfusions when medically necessary</li>
-                                    <li>Preventive vaccinations</li>
-                                    <li>Annual screening tests (TCD, echocardiogram)</li>
+                                    <li><strong>St. Jude Children's Research Hospital</strong> - Memphis, Tennessee</li>
+                                    <li><strong>Children's Hospital of Philadelphia (CHOP)</strong> - Philadelphia, Pennsylvania</li>
+                                    <li><strong>Boston Children's Hospital</strong> - Boston, Massachusetts</li>
+                                    <li><strong>Children's National Hospital</strong> - Washington, D.C.</li>
                                 </ul>
                             </div>
 
-                            <div class="guide-section">
-                                <h4>ðŸ“ž Insurance Navigation Tips</h4>
-                                <ol>
-                                    <li><strong>Know Your Policy:</strong> Request a copy of your benefits summary</li>
-                                    <li><strong>Pre-Authorization:</strong> Understand which treatments need approval</li>
-                                    <li><strong>In-Network Providers:</strong> Find sickle cell specialists in your network</li>
-                                    <li><strong>Appeal Process:</strong> Know how to appeal denied claims</li>
-                                    <li><strong>Document Everything:</strong> Keep records of all medical communications</li>
-                                </ol>
-                            </div>
-                        </div>
-
-                        <h3>ðŸ“ž Insurance Assistance Contacts</h3>
-                        <div class="assistance-contacts">
-                            <div class="contact-card">
-                                <h4>NHIS Customer Service</h4>
-                                <p><strong>Phone:</strong> 0700-NHIS-HELP (0700-6447-4357)</p>
-                                <p><strong>Email:</strong> customerservice@nhis.gov.ng</p>
-                                <p><strong>Hours:</strong> Monday-Friday, 8:00 AM - 5:00 PM</p>
+                            <div class="info-item">
+                                <h3>🇬🇧 United Kingdom</h3>
+                                <ul>
+                                    <li><strong>Guy's and St Thomas' NHS Foundation Trust</strong> - London</li>
+                                    <li><strong>Great Ormond Street Hospital</strong> - London</li>
+                                    <li><strong>King's College Hospital</strong> - London</li>
+                                </ul>
                             </div>
 
-                            <div class="contact-card">
-                                <h4>Lagos State Health Scheme</h4>
-                                <p><strong>Phone:</strong> +234-1-4531207</p>
-                                <p><strong>Email:</strong> info@lashma.lg.gov.ng</p>
+                            <div class="info-item">
+                                <h3>🇫🇷 France</h3>
+                                <ul>
+                                    <li><strong>Hôpital Necker-Enfants Malades</strong> - Paris</li>
+                                    <li><strong>Hôpital Henri Mondor</strong> - Créteil</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -932,72 +380,38 @@
                 <!-- Prescription Assistance -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">ðŸ’Š</div>
+                        <div class="card-icon">💊</div>
                         <h2 class="card-title">Prescription Assistance Programs</h2>
                     </div>
                     <div class="card-content">
-                        
-                        <h3>ðŸ’° Medication Cost Assistance</h3>
-                        <div class="medication-assistance">
-                            <div class="assistance-card">
-                                <h4>Hydroxyurea (Siklos, Droxia)</h4>
-                                <div class="assistance-options">
-                                    <div class="option">
-                                        <h5>ðŸ‡³ðŸ‡¬ In Nigeria</h5>
-                                        <ul>
-                                            <li><strong>NHIS Coverage:</strong> Available through national health insurance</li>
-                                            <li><strong>Generic Options:</strong> More affordable generic versions available</li>
-                                            <li><strong>Hospital Pharmacies:</strong> Often have subsidized pricing</li>
-                                            <li><strong>State Programs:</strong> Some states provide free hydroxyurea</li>
-                                        </ul>
-                                    </div>
-                                    <div class="option">
-                                        <h5>ðŸŒ International Programs</h5>
-                                        <ul>
-                                            <li><strong>WHO Essential Medicines:</strong> Global pricing initiatives</li>
-                                            <li><strong>Pharmaceutical Company Programs:</strong> Patient assistance programs</li>
-                                        </ul>
-                                    </div>
-                                </div>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <h3>Hydroxyurea (Siklos, Droxia)</h3>
+                                <p><strong>In Nigeria:</strong></p>
+                                <ul>
+                                    <li>NHIS Coverage: Available through national health insurance</li>
+                                    <li>Generic Options: More affordable generic versions available</li>
+                                    <li>Hospital Pharmacies: Often have subsidized pricing</li>
+                                    <li>State Programs: Some states provide free hydroxyurea</li>
+                                </ul>
                             </div>
 
-                            <div class="assistance-card">
-                                <h4>Voxelotor (Oxbryta)</h4>
-                                <p><strong>Manufacturer:</strong> Pfizer/Global Blood Therapeutics</p>
-                                <p><strong>Program:</strong> Patient assistance program available</p>
-                                <p><strong>Eligibility:</strong> Income-based assistance</p>
+                            <div class="info-item">
+                                <h3>Pain Medications</h3>
+                                <p><strong>Over-the-Counter:</strong></p>
+                                <ul>
+                                    <li>Generic acetaminophen and ibuprofen widely available</li>
+                                    <li>Bulk purchasing through pharmacies for better pricing</li>
+                                </ul>
+                                <p><strong>Prescription:</strong></p>
+                                <ul>
+                                    <li>NHIS coverage for prescribed pain medications</li>
+                                    <li>Hospital pharmacy programs</li>
+                                </ul>
                             </div>
 
-                            <div class="assistance-card">
-                                <h4>Crizanlizumab (Adakveo)</h4>
-                                <p><strong>Manufacturer:</strong> Novartis</p>
-                                <p><strong>Program:</strong> Novartis Patient Assistance Program</p>
-                                <p><strong>Coverage:</strong> May provide medication at no cost for eligible patients</p>
-                            </div>
-
-                            <div class="assistance-card">
-                                <h4>Pain Medications</h4>
-                                <div class="pain-med-assistance">
-                                    <h5>ðŸ’Š Over-the-Counter</h5>
-                                    <ul>
-                                        <li>Generic acetaminophen and ibuprofen widely available</li>
-                                        <li>Bulk purchasing through pharmacies for better pricing</li>
-                                    </ul>
-                                    
-                                    <h5>ðŸ¥ Prescription Pain Medications</h5>
-                                    <ul>
-                                        <li>NHIS coverage for prescribed pain medications</li>
-                                        <li>Hospital pharmacy programs</li>
-                                        <li>Generic alternatives when available</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3>ðŸª Reliable Pharmacy Networks</h3>
-                        <div class="pharmacy-networks">
-                            <div class="pharmacy-card">
-                                <h4>ðŸ‡³ðŸ‡¬ Nigeria</h4>
+                            <div class="info-item">
+                                <h3>Reliable Pharmacy Networks</h3>
                                 <ul>
                                     <li><strong>MedPlus Pharmacy</strong> - Multiple locations nationwide</li>
                                     <li><strong>Alpha Pharmacy</strong> - Lagos, Abuja, Port Harcourt</li>
@@ -1009,174 +423,39 @@
                     </div>
                 </div>
 
-                <!-- Travel Support -->
+                <!-- Crisis Support -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">âœˆï¸</div>
-                        <h2 class="card-title">Travel Support & Medical Tourism</h2>
+                        <div class="card-icon">📞</div>
+                        <h2 class="card-title">Crisis Support & Emergency Funds</h2>
                     </div>
                     <div class="card-content">
-                        
-                        <h3>ðŸŒ Medical Travel Assistance</h3>
-                        <div class="travel-assistance">
-                            <div class="travel-card">
-                                <h4>For Treatment Abroad</h4>
-                                <div class="travel-services">
-                                    <h5>âœˆï¸ Travel Arrangements</h5>
-                                    <ul>
-                                        <li><strong>Medical Travel Companies:</strong> Specialized in healthcare travel</li>
-                                        <li><strong>Embassy Medical Services:</strong> Assistance with medical visas</li>
-                                        <li><strong>Airline Medical Assistance:</strong> Special accommodation for medical passengers</li>
-                                    </ul>
-                                    
-                                    <h5>ðŸ¨ Accommodation</h5>
-                                    <ul>
-                                        <li><strong>Ronald McDonald House:</strong> Near children's hospitals</li>
-                                        <li><strong>Hospital Guest Houses:</strong> Reduced-rate accommodation</li>
-                                        <li><strong>Medical Tourism Hotels:</strong> Specialized facilities</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="travel-card">
-                                <h4>Domestic Travel Within Nigeria</h4>
-                                <div class="domestic-travel">
-                                    <h5>ðŸšŒ Transportation Assistance</h5>
-                                    <ul>
-                                        <li><strong>Medical Emergency Transport:</strong> Ambulance services between cities</li>
-                                        <li><strong>Subsidized Travel:</strong> Some NGOs provide travel grants</li>
-                                        <li><strong>Family Accommodation:</strong> Guest houses at teaching hospitals</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3>ðŸŽ« Travel Tips for Sickle Cell Patients</h3>
-                        <div class="travel-tips">
-                            <div class="tip-category">
-                                <h4>âœˆï¸ Air Travel</h4>
-                                <ul>
-                                    <li>Request supplemental oxygen if needed</li>
-                                    <li>Carry medications in carry-on luggage</li>
-                                    <li>Stay hydrated during flights</li>
-                                    <li>Notify airline of medical condition</li>
-                                    <li>Consider travel insurance with medical coverage</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="tip-category">
-                                <h4>ðŸ¥ Medical Preparation</h4>
-                                <ul>
-                                    <li>Obtain medical records and test results</li>
-                                    <li>Research healthcare facilities at destination</li>
-                                    <li>Pack extra medications</li>
-                                    <li>Carry emergency contact information</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Emergency Assistance -->
-                <div class="content-card">
-                    <div class="card-header">
-                        <div class="card-icon">ðŸš¨</div>
-                        <h2 class="card-title">Emergency Fund & Crisis Assistance</h2>
-                    </div>
-                    <div class="card-content">
-                        
-                        <h3>ðŸ’° Emergency Financial Assistance</h3>
-                        <div class="emergency-funds">
-                            <div class="fund-card">
-                                <h4>Sickle Cell Foundation Nigeria Emergency Fund</h4>
-                                <p><strong>Contact:</strong> +234-9-2348056</p>
-                                <p><strong>Email:</strong> emergency@sicklecellfoundation.com</p>
-                                <p><strong>Eligibility:</strong> Nigerian citizens with confirmed sickle cell disease</p>
-                                <div class="fund-details">
-                                    <h5>Available Assistance:</h5>
-                                    <ul>
-                                        <li>Emergency medication funding</li>
-                                        <li>Hospital bill assistance</li>
-                                        <li>Transportation to treatment centers</li>
-                                        <li>Blood transfusion support</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="fund-card">
-                                <h4>Religious and Community Organizations</h4>
-                                <div class="community-support">
-                                    <h5>ðŸ’’ Faith-Based Support</h5>
-                                    <ul>
-                                        <li><strong>Church Medical Missions:</strong> Many churches have medical assistance programs</li>
-                                        <li><strong>Islamic Medical Organizations:</strong> Zakat-based medical assistance</li>
-                                        <li><strong>Community Groups:</strong> Local community fundraising for medical emergencies</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="fund-card">
-                                <h4>Corporate Social Responsibility Programs</h4>
-                                <div class="corporate-support">
-                                    <ul>
-                                        <li><strong>Banking Sector:</strong> Medical assistance programs by major banks</li>
-                                        <li><strong>Telecommunications:</strong> Health support initiatives by telecom companies</li>
-                                        <li><strong>Oil Companies:</strong> Community health programs in operational areas</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3>ðŸ“ž 24/7 Crisis Support Hotlines</h3>
-                        <div class="crisis-hotlines">
-                            <div class="hotline-card">
-                                <h4>ðŸ‡³ðŸ‡¬ Nigerian Crisis Support</h4>
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <h3>24/7 Crisis Support Hotlines</h3>
                                 <ul>
                                     <li><strong>Mental Health Crisis:</strong> +234-806-210-6493</li>
-                                    <li><strong>Sickle Cell Emergency:</strong> Contact nearest teaching hospital</li>
                                     <li><strong>National Emergency:</strong> 112, 199, 911</li>
+                                    <li><strong>Sickle Cell Emergency:</strong> Contact nearest teaching hospital</li>
                                 </ul>
                             </div>
-                            
-                            <div class="hotline-card">
-                                <h4>ðŸŒ International Support</h4>
-                                <ul>
-                                    <li><strong>Sickle Cell Disease Association:</strong> +1-410-528-1555</li>
-                                    <li><strong>International Crisis Text:</strong> Text HOME to 741741</li>
-                                </ul>
-                            </div>
+
                         </div>
                     </div>
                 </div>
 
-                <!-- Action Section -->
-                <div class="content-card">
-                    <div class="card-header">
-                        <div class="card-icon">ðŸ“ž</div>
-                        <h2 class="card-title">Get Connected & Find Help</h2>
-                    </div>
-                    <div class="card-content">
-                        <p>Don't navigate sickle cell disease alone. These resources are here to support you every step of your journey. From finding the right specialist to accessing financial assistance, help is available.</p>
-                        
-                        <div class="action-buttons">
-                            <a href="support-groups.html" class="btn-modern">Join Support Groups</a>
-                            <a href="about-sickle-cell.html" class="btn-modern">Learn Living with Sickle Cell</a>
-                            <a href="../information/diagnosis-treatment.html" class="btn-modern">Treatment Options</a>
-                            <a href="../community/forum.html" class="btn-secondary-modern">Connect with Community</a>
-                        </div>
-
-                        <div class="important-reminder">
-                            <h4>âš ï¸ Important Reminder</h4>
-                            <p class="reminder-text">Always consult with qualified healthcare professionals for medical advice. This resource directory is for informational purposes and should not replace professional medical consultation. In case of medical emergency, immediately contact your nearest emergency services.</p>
-                        </div>
-                    </div>
+                <!-- Call to Action -->
+                <div class="cta-section">
+                    <h2>Need Help Finding Resources?</h2>
+                    <p>Don't navigate sickle cell disease alone. These resources are here to support you every step of your journey.</p>
+                    <a href="support-groups.html" class="btn">Join Support Groups</a>
                 </div>
-
             </div>
         </section>
         
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer modern-footer" role="contentinfo">
         <div class="footer-container">
             <div class="footer-content">
@@ -1184,7 +463,7 @@
                     <div class="footer-logo">
                         <img src="../images/logo.svg" alt="We Warriors Logo" class="footer-logo-img">
                         <h3 class="footer-brand">We Warriors</h3>
-                        <p class="footer-tagline">From Pain comes Strength â€¢ Through Faith we Hope</p>
+                        <p class="footer-tagline">From Pain comes Strength • Through Faith we Hope</p>
                     </div>
                     <p class="footer-mission">Supporting people afflicted with sickle cell disease and educating others to drive the last generation of people with sickle cell.</p>
                 </div>
@@ -1210,25 +489,35 @@
                 </div>
                 
                 <div class="footer-section">
+                    <h4 class="footer-title">Community</h4>
+                    <ul class="footer-links">
+                        <li><a href="../community/forum.html">Forum</a></li>
+                        <li><a href="../community/blog.html">Blog</a></li>
+                        <li><a href="../community/events.html">Events</a></li>
+                        <li><a href="../pages/newsletter.html">Newsletter</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
                     <h4 class="footer-title">Connect</h4>
                     <div class="social-links">
                         <a href="#" class="social-link facebook" aria-label="Facebook">
-                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                             </svg>
                         </a>
                         <a href="#" class="social-link twitter" aria-label="Twitter">
-                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
                             </svg>
                         </a>
                         <a href="#" class="social-link instagram" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                             </svg>
                         </a>
                         <a href="#" class="social-link linkedin" aria-label="LinkedIn">
-                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                             </svg>
                         </a>
@@ -1242,7 +531,7 @@
             
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
-                    <p class="copyright">Â© 2025 We Warriors Organization. All rights reserved.</p>
+                    <p class="copyright">© 2025 We Warriors Organization. All rights reserved.</p>
                     <div class="footer-links-bottom">
                         <a href="../pages/privacy.html">Privacy Policy</a>
                         <a href="../pages/terms.html">Terms of Service</a>
@@ -1253,16 +542,13 @@
         </div>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <!-- JavaScript -->
+    <script src="../js/theme-toggle.js"></script>
     <script src="../js/mobile-menu.js"></script>
-    <script src="../js/modern.js"></script>
-    <!-- Universal header scripts -->
-    <script src="../js/animations.js"></script>
     <script src="../js/universal-header.js"></script>
-    
-<script src="../js/warriorbot.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/animations.js"></script>
+    <script src="../js/warriorbot.js"></script>
 
-    
 </body>
 </html>
-

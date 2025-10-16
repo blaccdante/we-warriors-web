@@ -547,21 +547,27 @@ class WarriorBot {
 
             .quick-actions {
                 display: flex;
-                gap: 5px;
-                margin-bottom: 10px;
+                gap: 3px;
+                margin-bottom: 6px;
                 flex-wrap: wrap;
+                padding: 0;
             }
 
             .quick-btn {
-                padding: 6px 12px;
+                padding: 3px 6px;
                 border: 1px solid var(--blood-color);
                 background: transparent;
                 color: var(--blood-color);
-                border-radius: 20px;
-                font-size: 12px;
+                border-radius: 12px;
+                font-size: 10px;
                 cursor: pointer;
                 transition: all 0.3s ease;
                 white-space: nowrap;
+                line-height: 1.2;
+                min-height: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
 
             .quick-btn:hover,
@@ -687,15 +693,69 @@ class WarriorBot {
             /* Responsive */
             @media (max-width: 480px) {
                 .warriorbot-chat {
-                    width: 95vw;
-                    height: 80vh;
-                    right: 2.5vw;
-                    bottom: 70px;
+                    width: 90vw;
+                    height: 60vh;
+                    right: 5vw;
+                    bottom: 80px;
+                    max-height: 500px;
                 }
                 
                 #warriorbot-container {
                     bottom: 15px;
                     right: 15px;
+                }
+                
+                .quick-actions {
+                    gap: 2px;
+                    margin-bottom: 4px;
+                    padding: 0;
+                }
+                
+                .quick-btn {
+                    padding: 2px 4px;
+                    font-size: 9px;
+                    border-radius: 10px;
+                    flex: 1;
+                    min-width: 0;
+                    min-height: 20px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    line-height: 1.1;
+                }
+                
+                .chat-messages {
+                    padding: 12px;
+                }
+                
+                .message {
+                    font-size: 13px;
+                    max-width: 90%;
+                    padding: 10px 14px;
+                }
+                
+                .chat-input-container {
+                    padding: 10px;
+                }
+                
+                #chat-input {
+                    font-size: 13px;
+                    padding: 10px;
+                }
+            }
+            
+            /* Tablet and small desktop */
+            @media (max-width: 768px) and (min-width: 481px) {
+                .warriorbot-chat {
+                    width: 360px;
+                    height: 500px;
+                    right: 10px;
+                    bottom: 75px;
+                }
+                
+                .quick-btn {
+                    padding: 3px 7px;
+                    font-size: 10px;
+                    min-height: 22px;
                 }
             }
         `;
