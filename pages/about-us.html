@@ -484,5 +484,16 @@
     <script src="../js/theme-toggle.js"></script>
     <script src="../js/mobile-menu.js"></script>
     <script src="../js/universal-header.js"></script>
+    
+    <!-- WarriorBot - Load last as it's heaviest -->
+    <script defer src="../js/warriorbot.js"></script>
+    <script>
+      // Initialize WarriorBot on page load
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof WarriorBot !== 'undefined') {
+          new WarriorBot();
+        }
+      });
+    </script>
 </body>
 </html>
