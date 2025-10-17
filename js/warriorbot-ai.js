@@ -7,6 +7,14 @@
 class WarriorBotAI {
     constructor() {
         this.providers = {
+            // Preferred: OpenAI ChatGPT
+            openai: {
+                enabled: false,
+                apiKey: null, // DO NOT hardcode; load via config/localStorage or call through your backend proxy
+                baseUrl: 'https://api.openai.com/v1',
+                model: 'gpt-4o-mini'
+            },
+            // Optional local/dev providers
             ollama: {
                 enabled: false,
                 baseUrl: 'http://localhost:11434',
@@ -120,6 +128,14 @@ Stay focused on sickle cell, health, faith, community support, and warrior theme
             try {
                 const parsed = JSON.parse(config);
                 
+                if (parsed.openai?.apiKey) {
+                    this.providers.openai.apiKey = parsed.openai.apiKey;
+                    this.providers.openai.enabled = true;
+                    if (parsed.openai.baseUrl) this.providers.openai.baseUrl = parsed.openai.baseUrl;
+                    if (parsed.openai.model) this.providers.openai.model = parsed.openai.model;
+                    if (parsed.openai.proxyPath) this.providers.openai.proxyPath = parsed.openai.proxyPath; // e.g., '/api/warriorbot'
+                }
+                
                 if (parsed.huggingface?.apiKey) {
                     this.providers.huggingface.apiKey = parsed.huggingface.apiKey;
                     this.providers.huggingface.enabled = true;
@@ -184,6 +200,8 @@ Stay focused on sickle cell, health, faith, community support, and warrior theme
 
     async callProvider(provider, message, history) {
         switch (provider) {
+            case 'openai':
+                return await this.callOpenAI(message, history);
             case 'ollama':
                 return await this.callOllama(message, history);
             case 'huggingface':
@@ -273,6 +291,51 @@ Stay focused on sickle cell, health, faith, community support, and warrior theme
 
         const data = await response.json();
         return data.candidates?.[0]?.content?.parts?.[0]?.text;
+    }
+
+    async callOpenAI(message, history) {
+        // Prefer hitting a backend proxy if configured (recommended)
+        if (this.providers.openai.proxyPath) {
+            const response = await fetch(this.providers.openai.proxyPath, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    provider: 'openai',
+                    model: this.providers.openai.model,
+                    system: this.contextPrompt,
+                    history,
+                    message
+                })
+            });
+            if (!response.ok) throw new Error(`Proxy error ${response.status}`);
+            const data = await response.json();
+            return data.reply || data.content || data.message || JSON.stringify(data);
+        }
+        // Direct client-side call (for local/dev only). Do NOT ship with real keys embedded.
+        const messages = [
+            { role: 'system', content: this.contextPrompt },
+            ...history.map(h => ({ role: h.sender === 'user' ? 'user' : 'assistant', content: h.message })).slice(-6),
+            { role: 'user', content: message }
+        ];
+        const url = `${this.providers.openai.baseUrl}/chat/completions`;
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${this.providers.openai.apiKey}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                model: this.providers.openai.model,
+                messages,
+                temperature: 0.7,
+                max_tokens: 600,
+                stream: false
+            })
+        });
+        if (!response.ok) throw new Error(`OpenAI API error ${response.status}`);
+        const data = await response.json();
+        const content = data.choices?.[0]?.message?.content;
+        return content;
     }
 
     async callGroq(message, history) {

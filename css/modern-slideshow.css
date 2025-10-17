@@ -199,15 +199,13 @@ main#main-content {
     max-width: 600px;
     padding: 2.5rem;
     width: auto;
-    /* Improved background for better text contrast */
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
-    backdrop-filter: blur(15px);
-    border-radius: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 
-        0 25px 80px rgba(0, 0, 0, 0.6),
-        0 8px 32px rgba(0, 0, 0, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    /* Remove shaded container in all themes */
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
 }
 
 .slide-title {
@@ -323,6 +321,14 @@ main#main-content {
     display: flex;
     gap: 1rem;
     z-index: 5;
+    /* Ensure no background container behind dots */
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
 }
 
 .nav-dot {
@@ -334,6 +340,12 @@ main#main-content {
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
+    /* Reset native button styling to avoid dark accents */
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    padding: 0;
+    box-shadow: none;
 }
 
 .nav-dot.active {
@@ -388,17 +400,19 @@ main#main-content {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.2);
+    height: 0;
+    background: transparent !important;
     z-index: 5;
+    display: none !important;
 }
 
 .progress-bar {
-    height: 100%;
-    background: linear-gradient(90deg, #8B4513 0%, #D2691E 100%);
-    width: 0%;
-    transition: width 0.3s ease;
-    animation: progressGrow 6s linear infinite;
+    height: 0;
+    background: transparent !important;
+    width: 0 !important;
+    transition: none !important;
+    animation: none !important;
+    display: none !important;
 }
 
 @keyframes progressGrow {
@@ -713,26 +727,8 @@ main#main-content {
     -moz-osx-font-smoothing: grayscale !important;
 }
 
-:root[data-theme="dark"] .nav-dot {
-    background: rgba(255, 255, 255, 0.8) !important;
-    border-color: rgba(255, 255, 255, 0.6) !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    z-index: 1000 !important;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3) !important;
-}
 
-:root[data-theme="dark"] .nav-dot.active {
-    background: #ffffff !important;
-    border-color: #ffffff !important;
-    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.5) !important;
-}
 
-:root[data-theme="dark"] .nav-dot:hover {
-    background: rgba(255, 255, 255, 0.9) !important;
-    transform: scale(1.2) !important;
-    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4) !important;
-}
 
 :root[data-theme="dark"] .slideshow-nav {
     opacity: 1 !important;
@@ -740,27 +736,7 @@ main#main-content {
     z-index: 1000 !important;
 }
 
-:root[data-theme="dark"] .slideshow-arrow {
-    background: rgba(255, 255, 255, 0.15) !important;
-    backdrop-filter: blur(20px) !important;
-    color: #ffffff !important;
-    border: 2px solid rgba(255, 255, 255, 0.3) !important;
-    box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.5),
-        0 4px 16px rgba(255, 255, 255, 0.1) !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    z-index: 1000 !important;
-}
 
-:root[data-theme="dark"] .slideshow-arrow:hover {
-    background: rgba(255, 107, 107, 0.3) !important;
-    border-color: #ff6b6b !important;
-    transform: translateY(-50%) scale(1.1) !important;
-    box-shadow: 
-        0 12px 48px rgba(0, 0, 0, 0.7),
-        0 6px 24px rgba(255, 107, 107, 0.4) !important;
-}
 
 /* Force navigation visibility in all cases for dark mode */
 :root[data-theme="dark"] .slideshow-arrow.prev,
@@ -802,6 +778,16 @@ main#main-content {
     .progress-bar {
         animation: none !important;
     }
+}
+
+/* Remove shaded rectangle behind slide text (both themes) */
+.hero-slideshow .slide .slide-content {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
 }
 
 /* Focus States */

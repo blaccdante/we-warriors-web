@@ -41,71 +41,51 @@
     
     // Enhanced theme toggle fix for mobile
     function fixThemeToggle() {
+        // If UniversalHeader manages theme, avoid adding duplicate handlers
+        if (window.universalHeader && window.universalHeader.handleThemeToggle) {
+            return;
+        }
+
         const themeToggles = document.querySelectorAll('.theme-toggle, .mobile-theme-switch, #mobileThemeSwitch');
         
         themeToggles.forEach(toggle => {
             if (!toggle) return;
+            if (toggle.dataset.themeBound === '1') return;
+            toggle.dataset.themeBound = '1';
             
-            // Prevent double-tap zoom
+            // Prevent double-tap zoom and selection quirks
             toggle.style.touchAction = 'manipulation';
             toggle.style.userSelect = 'none';
             toggle.style.webkitUserSelect = 'none';
             toggle.style.webkitTouchCallout = 'none';
             
-            // Remove existing listeners to prevent conflicts
-            const newToggle = toggle.cloneNode(true);
-            toggle.parentNode.replaceChild(newToggle, toggle);
-            
-            // Add optimized touch handling
+            // Optimized touch/click handling with fallback toggle only
             let touchStartTime = 0;
             let touchHandled = false;
             
-            newToggle.addEventListener('touchstart', (e) => {
+            toggle.addEventListener('touchstart', () => {
                 touchStartTime = Date.now();
                 touchHandled = false;
             }, { passive: true });
             
-            newToggle.addEventListener('touchend', (e) => {
+            toggle.addEventListener('touchend', (e) => {
                 const touchDuration = Date.now() - touchStartTime;
-                
-                // Only handle quick taps (not long presses)
                 if (touchDuration < 500 && !touchHandled) {
                     e.preventDefault();
                     e.stopPropagation();
                     touchHandled = true;
-                    
-                    // Add visual feedback
-                    newToggle.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        newToggle.style.transform = '';
-                    }, 100);
-                    
-                    // Trigger theme change
-                    if (window.universalHeader && window.universalHeader.handleThemeToggle) {
-                        window.universalHeader.handleThemeToggle();
-                    } else {
-                        // Fallback theme toggle
-                        toggleThemeFallback();
-                    }
-                    
-                    // Haptic feedback
-                    if (navigator.vibrate) {
-                        navigator.vibrate(10);
-                    }
+                    toggle.style.transform = 'scale(0.95)';
+                    setTimeout(() => { toggle.style.transform = ''; }, 100);
+                    toggleThemeFallback();
+                    if (navigator.vibrate) { navigator.vibrate(10); }
                 }
             }, { passive: false });
             
-            // Fallback click handler for non-touch devices
-            newToggle.addEventListener('click', (e) => {
+            toggle.addEventListener('click', (e) => {
                 if (!touchHandled) {
                     e.preventDefault();
                     e.stopPropagation();
-                    
-                    if (window.universalHeader && window.universalHeader.handleThemeToggle) {
-                        window.universalHeader.handleThemeToggle();
-                    } else {
-                        toggleThemeFallback();
-                    }
+                    toggleThemeFallback();
                 }
             });
         });
@@ -138,9 +118,9 @@
     
     // Initialize fixes when DOM is ready
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', fixThemeToggle);
+        document.addEventListener('DOMContentLoaded', () => setTimeout(fixThemeToggle, 500));
     } else {
-        fixThemeToggle();
+        setTimeout(fixThemeToggle, 500);
     }
     
     // Re-apply fixes when new content is loaded
@@ -156,10 +136,13 @@
         }
     });
     
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true
-    });
+    if (document.body) {
+        observer.observe(document.body, { childList: true, subtree: true });
+    } else {
+        document.addEventListener('DOMContentLoaded', function(){
+            observer.observe(document.body, { childList: true, subtree: true });
+        });
+    }
     
     // Optimize images for mobile
     if (isMobile || hasLimitedBandwidth) {

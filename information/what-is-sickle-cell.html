@@ -183,19 +183,23 @@
                 <div class="nav-item mobile-nav-item mobile-action-item">
                     <a href="#get-involved" class="mobile-action-btn mobile-get-involved-btn">Get Involved</a>
                 </div>
-                <!-- Desktop Theme Toggle -->
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                    <span class="sun-icon">??</span>
-                    <span class="moon-icon">??</span>
-                </button>
             </nav>
             
-            <!-- Mobile Menu Toggle -->
-            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <!-- Theme Toggle (Desktop) -->
+                <button class="theme-toggle" aria-label="Toggle dark mode" aria-describedby="theme-status">
+                    <span class="theme-icon">☀</span>
+                    <span class="sr-only" id="theme-status">Current theme: light mode</span>
+                </button>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -221,7 +225,7 @@
                 <!-- Overview -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">??</div>
+                        <div class="card-icon">&#x1F52C;</div>
                         <h2 class="card-title">Disease Overview</h2>
                     </div>
                     <div class="card-content">
@@ -232,7 +236,7 @@
                         
                         <div class="comparison-grid">
                             <div class="comparison-item">
-                                <h4>?? Normal Red Blood Cells</h4>
+                                <h4>&#x1F534; Normal Red Blood Cells</h4>
                                 <ul>
                                     <li>Round, flexible, disc-shaped</li>
                                     <li>Move easily through blood vessels</li>
@@ -242,7 +246,7 @@
                                 </ul>
                             </div>
                             <div class="comparison-item">
-                                <h4>?? Sickled Red Blood Cells</h4>
+                                <h4>&#x26A0;&#xFE0F; Sickled Red Blood Cells</h4>
                                 <ul>
                                     <li>Crescent or "sickle" shaped</li>
                                     <li>Rigid and sticky</li>
@@ -255,7 +259,7 @@
                         
                         <!-- Interactive Disease Progression Visualization -->
                         <div class="disease-progression">
-                            <h3>?? Understanding Disease Progression</h3>
+                            <h3>&#x1F4C8; Understanding Disease Progression</h3>
                             <div class="progression-timeline">
                                 <div class="progression-step" data-step="1">
                                     <div class="step-indicator">1</div>
@@ -293,7 +297,7 @@
                 <!-- Genetics and Inheritance -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">??</div>
+                        <div class="card-icon">&#x1F9EC;</div>
                         <h2 class="card-title">Genetics and Inheritance</h2>
                     </div>
                     <div class="card-content">
@@ -302,7 +306,7 @@
                         
                         <div class="inheritance-scenarios">
                             <div class="scenario">
-                                <h4>??????????? Both Parents Have Sickle Cell Trait (AS)</h4>
+                                <h4>&#x1F46A; Both Parents Have Sickle Cell Trait (AS)</h4>
                                 <div class="probability-grid">
                                     <div class="prob-item">
                                         <span class="percentage">25%</span>
@@ -320,7 +324,7 @@
                             </div>
                             
                             <div class="scenario">
-                                <h4>?? One Parent Has Disease (SS), One Has Trait (AS)</h4>
+                                <h4>&#x1F46A; One Parent Has Disease (SS), One Has Trait (AS)</h4>
                                 <div class="probability-grid">
                                     <div class="prob-item">
                                         <span class="percentage">50%</span>
@@ -337,7 +341,7 @@
                         <h3>Sickle Cell Trait vs. Disease</h3>
                         <div class="info-grid">
                             <div class="info-item">
-                                <h4>?? Sickle Cell Trait (AS)</h4>
+                                <h4>&#x1F9EC; Sickle Cell Trait (AS)</h4>
                                 <p><strong>One abnormal gene:</strong> People with sickle cell trait have one normal hemoglobin gene and one sickle cell gene. They generally do not have symptoms but can pass the gene to their children.</p>
                                 <ul>
                                     <li>Usually no symptoms</li>
@@ -347,7 +351,7 @@
                                 </ul>
                             </div>
                             <div class="info-item">
-                                <h4>?? Sickle Cell Disease (SS)</h4>
+                                <h4>&#x1FA78; Sickle Cell Disease (SS)</h4>
                                 <p><strong>Two abnormal genes:</strong> People with sickle cell disease have two sickle cell genes and experience the full effects of the condition.</p>
                                 <ul>
                                     <li>Chronic anemia</li>
@@ -363,7 +367,7 @@
                 <!-- Global Impact and Epidemiology -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">??</div>
+                        <div class="card-icon">&#x1F30D;</div>
                         <h2 class="card-title">Global Impact and Statistics</h2>
                     </div>
                     <div class="card-content">
@@ -394,19 +398,19 @@
                         <h3>Geographic Distribution</h3>
                         <div class="geographic-info">
                             <div class="region-item">
-                                <h4>?? Sub-Saharan Africa</h4>
+                                <h4>&#x1F30D; Sub-Saharan Africa</h4>
                                 <p>Highest prevalence globally - up to 40% of population carries the trait in some regions. Countries like Nigeria, Democratic Republic of Congo, and Ghana have the highest burden.</p>
                             </div>
                             <div class="region-item">
-                                <h4>???? United States</h4>
+                                <h4>&#x1F1FA;&#x1F1F8; United States</h4>
                                 <p>Approximately 1 in 365 African American babies and 1 in 16,300 Hispanic American babies are born with SCD. Universal newborn screening implemented since 2006.</p>
                             </div>
                             <div class="region-item">
-                                <h4>?? Mediterranean & Middle East</h4>
+                                <h4>&#x1F30D; Mediterranean & Middle East</h4>
                                 <p>Significant prevalence in Greece, Turkey, Italy, and Middle Eastern countries. Different variants like HbS-beta thalassemia are common.</p>
                             </div>
                             <div class="region-item">
-                                <h4>???? India</h4>
+                                <h4>&#x1F1EE;&#x1F1F3; India</h4>
                                 <p>High prevalence in tribal populations, particularly in central and western regions. Estimated 20 million people carry the trait.</p>
                             </div>
                         </div>
@@ -416,7 +420,7 @@
                 <!-- Why Sickle Cell Evolved -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">??</div>
+                        <div class="card-icon">&#x1F9A0;</div>
                         <h2 class="card-title">Evolutionary Advantage: The Malaria Connection</h2>
                     </div>
                     <div class="card-content">
@@ -424,7 +428,7 @@
                         <p>The sickle cell gene persists in populations because carrying one copy (sickle cell trait) provides significant protection against malaria, particularly the deadly Plasmodium falciparum malaria.</p>
                         
                         <div class="mechanism-explanation">
-                            <h4>??? How Sickle Cell Trait Protects Against Malaria</h4>
+                            <h4>&#x1F6E1;&#xFE0F; How Sickle Cell Trait Protects Against Malaria</h4>
                             <ol>
                                 <li><strong>Parasite Lifecycle Disruption:</strong> Malaria parasites have difficulty completing their lifecycle in cells containing some sickle hemoglobin</li>
                                 <li><strong>Cell Sickling:</strong> When infected red blood cells sickle, they are quickly removed by the spleen before parasites can multiply</li>
@@ -434,7 +438,7 @@
                         </div>
 
                         <div class="malaria-map-info">
-                            <h4>??? Geographic Correlation</h4>
+                            <h4>&#x1F5FA;&#xFE0F; Geographic Correlation</h4>
                             <p>The distribution of sickle cell trait closely matches historical malaria endemic regions:</p>
                             <ul>
                                 <li><strong>Africa:</strong> Sub-Saharan regions where malaria is endemic</li>
@@ -450,7 +454,7 @@
                 <!-- Physical and Biological Impact -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">??</div>
+                        <div class="card-icon">&#x1F9E0;</div>
                         <h2 class="card-title">How Sickle Cell Affects the Body</h2>
                     </div>
                     <div class="card-content">
@@ -491,27 +495,27 @@
                         <h3>Body Systems Affected</h3>
                         <div class="systems-grid">
                             <div class="system-item">
-                                <h4>?? Respiratory System</h4>
+                                <h4>&#x1F32C;&#xFE0F; Respiratory System</h4>
                                 <p>Acute chest syndrome, pulmonary hypertension, reduced oxygen capacity</p>
                             </div>
                             <div class="system-item">
-                                <h4>?? Nervous System</h4>
+                                <h4>&#x1F9E0; Nervous System</h4>
                                 <p>Stroke risk, silent brain injury, cognitive effects, headaches</p>
                             </div>
                             <div class="system-item">
-                                <h4>?? Musculoskeletal</h4>
+                                <h4>&#x1F4AA; Musculoskeletal</h4>
                                 <p>Bone pain, avascular necrosis, delayed growth, bone infections</p>
                             </div>
                             <div class="system-item">
-                                <h4>??? Eyes</h4>
+                                <h4>&#x1F441;&#xFE0F; Eyes</h4>
                                 <p>Retinopathy, vision problems, increased pressure in eyes</p>
                             </div>
                             <div class="system-item">
-                                <h4>?? Kidneys</h4>
+                                <h4>&#x2695;&#xFE0F; Kidneys</h4>
                                 <p>Kidney damage, blood in urine, difficulty concentrating urine</p>
                             </div>
                             <div class="system-item">
-                                <h4>?? Blood</h4>
+                                <h4>&#x1FA78; Blood</h4>
                                 <p>Chronic anemia, increased infection risk, shortened red cell lifespan</p>
                             </div>
                         </div>
@@ -521,7 +525,7 @@
                 <!-- Life Expectancy and Prognosis -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">??</div>
+                        <div class="card-icon">&#x23F3;</div>
                         <h2 class="card-title">Prognosis and Life Expectancy</h2>
                     </div>
                     <div class="card-content">
@@ -562,7 +566,7 @@
                         <h3>Factors Influencing Prognosis</h3>
                         <div class="prognosis-factors">
                             <div class="positive-factors">
-                                <h4>? Positive Factors</h4>
+                                <h4>&#x2705; Positive Factors</h4>
                                 <ul>
                                     <li>Early diagnosis through newborn screening</li>
                                     <li>Regular comprehensive medical care</li>
@@ -574,7 +578,7 @@
                                 </ul>
                             </div>
                             <div class="challenging-factors">
-                                <h4>?? Challenging Factors</h4>
+                                <h4>&#x26A0;&#xFE0F; Challenging Factors</h4>
                                 <ul>
                                     <li>Frequent pain crises</li>
                                     <li>Early stroke or organ damage</li>
@@ -592,7 +596,7 @@
                 <!-- Living with Sickle Cell -->
                 <div class="content-card">
                     <div class="card-header">
-                        <div class="card-icon">??</div>
+                        <div class="card-icon">&#x1F4AA;</div>
                         <h2 class="card-title">Living with Sickle Cell Disease</h2>
                     </div>
                     <div class="card-content">

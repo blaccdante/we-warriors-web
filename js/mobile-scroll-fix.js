@@ -9,16 +9,18 @@
     // Function to enable scrolling
     function enableScrolling() {
         if (window.innerWidth <= 768) {
-            document.documentElement.style.overflowY = 'auto';
-            document.body.style.overflowY = 'auto';
-            document.documentElement.style.webkitOverflowScrolling = 'touch';
-            document.body.style.webkitOverflowScrolling = 'touch';
-            document.documentElement.style.touchAction = 'pan-y';
-            document.body.style.touchAction = 'pan-y';
-            
+            const html = document.documentElement;
+            const body = document.body;
+            if (!body) { setTimeout(enableScrolling, 50); return; }
+            html.style.overflowY = 'auto';
+            body.style.overflowY = 'auto';
+            html.style.webkitOverflowScrolling = 'touch';
+            body.style.webkitOverflowScrolling = 'touch';
+            html.style.touchAction = 'pan-y';
+            body.style.touchAction = 'pan-y';
             // Remove any position fixed that might block scrolling
-            document.body.style.position = 'relative';
-            document.documentElement.style.position = 'relative';
+            body.style.position = 'relative';
+            html.style.position = 'relative';
         }
     }
     

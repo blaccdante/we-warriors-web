@@ -1,1312 +1,333 @@
-/**
- * WarriorBot - AI Companion for Sickle Cell Warriors
- * "From Pain comes Strength • Through Faith we Hope"
- * 
- * Features:
- * - 24/7 Crisis Support
- * - Faith-Based Encouragement
- * - Medical Guidance
- * - Animated Warrior Avatar
- * - Voice & Text Input
- * - Emergency Resource Connection
- */
+/*
+  WarriorBot AI (v2) — Beautiful, effective ChatGPT-powered assistant for sickle cell support
+  - Floating bubble, elegant chat panel (light/dark)
+  - Triage chips: Crisis, Encouragement, Hydroxyurea, Gene therapy, Nigeria clinics
+  - Uses serverless proxy at /api/warriorbot (set OPENAI_API_KEY on host)
+  - Accessibility-first, mobile-friendly
+*/
 
 class WarriorBot {
-    constructor() {
-        this.isOpen = false;
-        this.isTyping = false;
-        this.conversations = this.loadConversations();
-        this.conversationHistory = [];
-        this.warriorStates = ['idle', 'listening', 'thinking', 'speaking', 'encouraging'];
-        this.currentState = 'idle';
-        
-        // Initialize AI system
-        this.aiSystem = null;
-        this.initializeAI();
-        this.faithVerses = [
-            {
-                verse: "Isaiah 40:31",
-                text: "Those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint."
-            },
-            {
-                verse: "Philippians 4:13",
-                text: "I can do all things through Christ who strengthens me."
-            },
-            {
-                verse: "Romans 8:28",
-                text: "And we know that in all things God works for the good of those who love him, who have been called according to his purpose."
-            },
-            {
-                verse: "2 Corinthians 12:9",
-                text: "My grace is sufficient for you, for my power is made perfect in weakness."
-            },
-            {
-                verse: "Jeremiah 29:11",
-                text: "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, to give you hope and a future."
-            }
-        ];
-        
-        this.crisisResponses = [
-            {
-                keywords: ['pain', 'crisis', 'hurt', 'agonizing', 'severe', 'emergency'],
-                responses: [
-                    "I'm here with you, warrior! 💪 First, let's get you through this crisis. Try these immediate steps:\n\n🌡️ **Stay warm** - Use heating pads on painful areas\n💧 **Hydrate** - Drink plenty of water\n🌬️ **Deep breathing** - In for 4, hold for 4, out for 4\n📞 **Consider calling your doctor** if pain is 8/10 or higher\n\nYou are stronger than this pain. Would you like me to help you find the nearest emergency room or call a crisis hotline?",
-                    
-                    "Hey brave warrior! 🦅 I know this pain feels overwhelming, but remember: 'Those who hope in the Lord will renew their strength' (Isaiah 40:31).\n\n**Immediate help:**\n• Take your prescribed pain medication\n• Apply heat to painful areas\n• Stay hydrated - small sips if nauseous\n• Try meditation or prayer\n\n**When to seek help:**\n• Pain over 7/10 that doesn't improve\n• Shortness of breath\n• Fever over 101°F\n• Signs of stroke\n\nWant me to connect you with emergency resources or guide you through breathing exercises?"
-                ]
-            },
-            {
-                keywords: ['sad', 'depressed', 'hopeless', 'scared', 'alone', 'afraid'],
-                responses: [
-                    "Sweet warrior, I feel your heart right now. 💜 You are NOT alone in this fight - you have an entire community of warriors standing with you, and most importantly, you have divine strength within you.\n\n'The Lord your God is with you, the Mighty Warrior who saves' (Zephaniah 3:17)\n\nIt's okay to feel scared or sad. These emotions are valid, but they don't define your story. You've survived every crisis before this one, and you'll survive this too.\n\nWould you like to:\n• Talk to a counselor (I can connect you)\n• Read some warrior stories for inspiration\n• Have a prayer together\n• Learn some coping techniques",
-                    
-                    "Precious warrior, your feelings matter and they're completely understandable. Living with sickle cell takes incredible courage every single day. 🌟\n\n**Remember your strength:**\n• You wake up fighting every day\n• You've overcome countless challenges\n• You inspire others just by existing\n• You are fearfully and wonderfully made\n\n'Be strong and courageous! Do not be afraid or discouraged, for the Lord your God is with you wherever you go' (Joshua 1:9)\n\nCan I help you connect with our support community or would you prefer some encouraging warrior stories?"
-                ]
-            }
-        ];
+  constructor() {
+    this.history = [];
+    this.render();
+    this.bind();
+    setTimeout(() => this.bot("Hi warrior! I’m here 24/7 — how can I support you today?"), 500);
+  }
 
-        this.medicalGuidance = {
-            'hydroxyurea': "Hydroxyurea is a game-changer for many warriors! 💊 It helps reduce pain crises by increasing fetal hemoglobin. Common tips from our community:\n\n• Take it at the same time daily\n• Stay hydrated (extra important!)\n• Monitor blood counts regularly\n• Side effects like mouth sores can be managed\n• It may take 3-6 months to see full benefits\n\nAlways consult your healthcare team for personalized advice. Would you like me to connect you with our healthcare provider resources?",
-            
-            'pain management': "Pain management is so personal for each warrior. Here's what our community has learned works:\n\n**During crisis:**\n• Heat therapy (heating pads, warm baths)\n• Meditation and breathing exercises\n• Distraction techniques (music, movies, games)\n• Prescribed medications as directed\n\n**Prevention:**\n• Stay hydrated always\n• Avoid extreme temperatures\n• Regular exercise (gentle)\n• Stress management\n• Good sleep hygiene\n\nRemember: You know your body best. Advocate for yourself! Need help finding pain specialists or support groups?",
-            
-            'blood transfusion': "Blood transfusions can be lifesaving for warriors! 🩸 Here's what you should know:\n\n**Benefits:**\n• Reduces sickling\n• Improves oxygen delivery\n• Can prevent complications\n• May reduce pain crises\n\n**What to expect:**\n• Usually takes 2-4 hours\n• Monitored closely for reactions\n• May feel more energetic after\n• Regular blood tests needed\n\n**Questions for your team:**\n• How often will I need them?\n• What are my hemoglobin goals?\n• Iron overload monitoring?\n\nWant me to help you prepare questions for your next appointment?"
-        };
-
-        this.init();
-    }
-    
-    async initializeAI() {
-        try {
-            if (window.WarriorBotAI) {
-                this.aiSystem = new window.WarriorBotAI();
-                await this.aiSystem.initialize();
-                console.log('🤖 WarriorBot AI system ready!');
-            }
-        } catch (error) {
-            console.log('WarriorBot running in legacy mode');
-        }
-    }
-
-    init() {
-        this.createBotInterface();
-        this.bindEvents();
-        this.startAvatarAnimation();
-        
-        // Show welcome message after page load
-        setTimeout(() => {
-            if (!localStorage.getItem('warriorbot_welcomed')) {
-                this.showWelcomeMessage();
-                localStorage.setItem('warriorbot_welcomed', 'true');
-            }
-        }, 3000);
-    }
-
-    createBotInterface() {
-        const botHTML = `
-            <div id="warriorbot-container" class="warriorbot-closed">
-                <!-- Floating Action Button -->
-                <div id="warriorbot-fab" class="warriorbot-fab">
-                    <div class="warrior-avatar-mini">
-                        <div class="warrior-wings"></div>
-                        <div class="warrior-body"></div>
-                        <div class="pulse-ring"></div>
-                    </div>
-                    <div class="notification-badge" id="bot-notification" style="display: none;">1</div>
-                </div>
-
-                <!-- Chat Interface -->
-                <div id="warriorbot-chat" class="warriorbot-chat">
-                    <div class="chat-header">
-                        <div class="warrior-avatar">
-                            <div class="avatar-container">
-                                <div class="warrior-wings ${this.currentState}"></div>
-                                <div class="warrior-body ${this.currentState}"></div>
-                                <div class="warrior-halo"></div>
-                            </div>
-                        </div>
-                        <div class="bot-info">
-                            <h3>WarriorBot</h3>
-                            <p class="bot-status">Hybrid AI + Expert Knowledge • Always Here for You</p>
-                        </div>
-                        <button id="close-bot" class="close-btn">&times;</button>
-                    </div>
-
-                    <div class="chat-messages" id="chat-messages">
-                        <!-- Messages will be populated here -->
-                    </div>
-
-                    <div class="chat-input-container">
-                        <div class="quick-actions">
-                            <button class="quick-btn crisis-btn" data-message="I'm having a pain crisis, help!">🚨 Crisis Help</button>
-                            <button class="quick-btn faith-btn" data-message="I need encouragement and hope">🙏 Need Hope</button>
-                            <button class="quick-btn resource-btn" data-message="Show me resources">📚 Resources</button>
-                        </div>
-                        <div class="input-area">
-                            <input type="text" id="chat-input" placeholder="Type your message, warrior..." maxlength="500">
-                            <button id="voice-btn" class="voice-btn" title="Voice input">🎤</button>
-                            <button id="send-btn" class="send-btn">Send</button>
-                        </div>
-                    </div>
-                </div>
+  render() {
+    const html = `
+      <div id="warriorbot" class="wb wb-closed" aria-live="polite">
+        <button class="wb-fab" id="wb-fab" aria-label="Open WarriorBot chat" title="Chat with WarriorBot">
+          <span class="wb-fab-pulse" aria-hidden="true"></span>
+          <span class="wb-neo-icon" aria-hidden="true">
+            <span class="wb-moon"></span>
+            <span class="wb-robot">
+              <span class="wb-antenna"></span>
+              <span class="wb-eye left"></span>
+              <span class="wb-eye right"></span>
+              <span class="wb-mouth"></span>
+            </span>
+          </span>
+        </button>
+        <section class="wb-panel" role="dialog" aria-label="WarriorBot chat" aria-modal="false">
+          <header class="wb-head">
+            <div class="wb-brand">
+              <div class="wb-title">
+                <h3>WarriorBot AI</h3>
+                <p>Premier Sickle Cell Support • 24/7</p>
+              </div>
             </div>
-        `;
+            <button class="wb-close" id="wb-close" aria-label="Close chat">×</button>
+          </header>
+          <div class="wb-body" id="wb-body"></div>
+          <div class="wb-quick" id="wb-quick"></div>
+          <footer class="wb-foot">
+            <input id="wb-input" class="wb-input" type="text" maxlength="600" placeholder="Type your message…" aria-label="Message input" />
+            <button id="wb-send" class="wb-send" aria-label="Send message">Send</button>
+          </footer>
+        </section>
+      </div>`;
 
-        document.body.insertAdjacentHTML('beforeend', botHTML);
-        this.addBotStyles();
+    document.body.insertAdjacentHTML('beforeend', html);
+    this.injectStyles();
+    // Fallback inline style in case CSS fails to load
+    const fab = document.getElementById('wb-fab');
+    const root = document.getElementById('warriorbot');
+    if (root) root.style.zIndex = '2147483647';
+    if (fab) {
+      fab.style.cssText += 'position:fixed;bottom:20px;right:20px;z-index:2147483647;display:flex;align-items:center;justify-content:center;';
     }
 
-    addBotStyles() {
-        const style = document.createElement('style');
-        style.textContent = `
-            /* WarriorBot Styles */
-            #warriorbot-container {
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                z-index: 99999;
-                font-family: 'Inter', sans-serif;
-            }
+    // Build quick chips
+    const quick = document.getElementById('wb-quick');
+    const chips = [
+      { k: 'crisis', t: '🚨 Crisis Help' },
+      { k: 'encourage', t: '💜 Encouragement' },
+      { k: 'hydroxyurea', t: '💊 Hydroxyurea' },
+      { k: 'gene', t: '🧬 Gene Therapy' },
+      { k: 'clinics', t: '🏥 Clinics (NG)' }
+    ];
+    quick.innerHTML = chips.map(c => `<button class="wb-chip" data-k="${c.k}">${c.t}</button>`).join('');
+  }
 
-            .warriorbot-fab {
-                width: 60px;
-                height: 60px;
-                background: linear-gradient(135deg, #8B0000 0%, #C41E3A 100%);
-                border-radius: 50%;
-                cursor: pointer;
-                box-shadow: 0 4px 20px rgba(139, 0, 0, 0.3);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: relative;
-                transition: all 0.3s ease;
-                animation: gentlePulse 3s ease-in-out infinite;
-            }
+  bind() {
+    const fab = document.getElementById('wb-fab');
+    const close = document.getElementById('wb-close');
+    const send = document.getElementById('wb-send');
+    const input = document.getElementById('wb-input');
 
-            .warriorbot-fab:hover {
-                transform: scale(1.1);
-                box-shadow: 0 6px 25px rgba(139, 0, 0, 0.4);
-            }
+    fab.addEventListener('click', () => this.toggle(true));
+    close.addEventListener('click', () => this.toggle(false));
+    send.addEventListener('click', () => this.send());
+    input.addEventListener('keypress', (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); this.send(); } });
 
-            .warrior-avatar-mini {
-                position: relative;
-                width: 30px;
-                height: 30px;
-            }
+    document.querySelectorAll('.wb-chip').forEach(b => b.addEventListener('click', () => this.quick(b.dataset.k)));
+  }
 
-            .warrior-wings {
-                position: absolute;
-                top: -5px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 25px;
-                height: 15px;
-                background: linear-gradient(45deg, #FFD700, #FFA500);
-                border-radius: 50% 50% 0 0;
-                animation: wingFlap 2s ease-in-out infinite;
-            }
+  toggle(open) {
+    const root = document.getElementById('warriorbot');
+    const isOpen = open !== undefined ? open : root.classList.contains('wb-closed');
+    root.classList.toggle('wb-open', isOpen);
+    root.classList.toggle('wb-closed', !isOpen);
+    if (isOpen) document.getElementById('wb-input').focus();
+  }
 
-            .warrior-wings::before,
-            .warrior-wings::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                width: 12px;
-                height: 15px;
-                background: linear-gradient(45deg, #FFD700, #FFA500);
-                border-radius: 50% 50% 0 0;
-            }
+  user(text) { this.add('user', text); }
+  bot(text) { this.add('bot', text); }
 
-            .warrior-wings::before {
-                left: -8px;
-                transform: rotate(-30deg);
-            }
+  add(role, text) {
+    const body = document.getElementById('wb-body');
+    const el = document.createElement('div');
+    el.className = `wb-msg wb-${role}`;
+    el.innerHTML = this.format(text);
+    body.appendChild(el);
+    body.scrollTop = body.scrollHeight;
+    this.history.push({ sender: role === 'user' ? 'user' : 'bot', message: text });
+    if (this.history.length > 24) this.history = this.history.slice(-24);
+  }
 
-            .warrior-wings::after {
-                right: -8px;
-                transform: rotate(30deg);
-            }
+  typing(show = true) {
+    const body = document.getElementById('wb-body');
+    let t = document.getElementById('wb-typing');
+    if (show) {
+      if (t) return;
+      t = document.createElement('div');
+      t.id = 'wb-typing';
+      t.className = 'wb-typing';
+      t.innerHTML = `<span>WarriorBot is thinking</span><i></i><i></i><i></i>`;
+      body.appendChild(t);
+      body.scrollTop = body.scrollHeight;
+    } else if (t) t.remove();
+  }
 
-            .warrior-body {
-                width: 20px;
-                height: 25px;
-                background: linear-gradient(135deg, #4A90E2, #7BB3F0);
-                border-radius: 50% 50% 40% 40%;
-                position: relative;
-                margin: 0 auto;
-            }
+  format(t) {
+    return t
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+      .replace(/\n/g, '<br>');
+  }
 
-            .warrior-body::before {
-                content: '💪';
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                font-size: 10px;
-            }
+  send() {
+    const input = document.getElementById('wb-input');
+    const text = input.value.trim();
+    if (!text) return;
+    input.value = '';
+    this.user(text);
+    this.route(text);
+  }
 
-            .pulse-ring {
-                position: absolute;
-                top: -5px;
-                left: -5px;
-                width: 70px;
-                height: 70px;
-                border: 2px solid rgba(139, 0, 0, 0.3);
-                border-radius: 50%;
-                animation: pulse 2s ease-out infinite;
-            }
+  quick(k) {
+    const map = {
+      crisis: "I'm having a pain crisis. Give me immediate steps and when to go to ER.",
+      encourage: "I need encouragement and a short Bible verse.",
+      hydroxyurea: "Explain hydroxyurea and common questions in simple terms.",
+      gene: "What is the latest on gene therapy for sickle cell?",
+      clinics: "I’m in Nigeria — help me find sickle cell clinics near me."
+    };
+    const msg = map[k];
+    this.user(msg);
+    this.route(msg);
+  }
 
-            .notification-badge {
-                position: absolute;
-                top: -8px;
-                right: -8px;
-                background: #FF4444;
-                color: white;
-                border-radius: 50%;
-                width: 20px;
-                height: 20px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 12px;
-                font-weight: bold;
-            }
+  async route(message) {
+    // Crisis fast-path notice
+    const crisis = ['crisis', 'emergency', "can't breathe", 'chest pain', 'stroke', 'severe pain'];
+    if (crisis.some(w => message.toLowerCase().includes(w))) {
+      this.bot("🚨 If you’re in severe distress, call emergency services now.\n\nAt home: heat on painful areas, hydrate steadily, take prescribed meds, deep breathing (in 4, hold 4, out 4).\nGo to ER if pain 8/10+, fever >101°F/38.3°C, chest pain, breathing trouble, or stroke signs.");
+    }
+    await this.askOpenAI(message);
+  }
 
-            .warriorbot-chat {
-                display: none;
-                width: 380px;
-                height: 600px;
-                max-width: 95vw;
-                max-height: 80vh;
-                background: white;
-                border-radius: 20px;
-                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-                position: absolute;
-                bottom: 80px;
-                right: 0;
-                overflow: hidden;
-                border: 2px solid var(--blood-color);
-            }
+  getApiEndpoint() {
+    const meta = document.querySelector('meta[name="warriorbot-endpoint"]');
+    if (meta && meta.content) return meta.content;
+    if (window.WARRIORBOT_API) return window.WARRIORBOT_API;
+    return '/api/warriorbot';
+  }
 
-            :root[data-theme="dark"] .warriorbot-chat {
-                background: #2C2C2C !important;
-                border-color: var(--blood-light) !important;
-                color: #E8E8E8 !important;
-            }
-            
-            :root[data-theme="dark"] .chat-header {
-                background: linear-gradient(135deg, #8B0000 0%, #C41E3A 100%) !important;
-            }
-            
-            :root[data-theme="dark"] .bot-info h3,
-            :root[data-theme="dark"] .bot-status {
-                color: white !important;
-                background: none !important;
-                text-shadow: none !important;
-            }
-            
-            /* Target potential black rectangle sources */
-            :root[data-theme="dark"] .bot-info {
-                background: none !important;
-            }
-            
-            :root[data-theme="dark"] .bot-info h3:before,
-            :root[data-theme="dark"] .bot-info h3:after,
-            :root[data-theme="dark"] .bot-status:before,
-            :root[data-theme="dark"] .bot-status:after {
-                display: none !important;
-            }
-            
-            :root[data-theme="dark"] .bot-info h3::selection,
-            :root[data-theme="dark"] .bot-status::selection {
-                background: rgba(200, 30, 58, 0.3) !important;
-                color: white !important;
-            }
-            
-            :root[data-theme="dark"] .bot-info h3::-moz-selection,
-            :root[data-theme="dark"] .bot-status::-moz-selection {
-                background: rgba(200, 30, 58, 0.3) !important;
-                color: white !important;
-            }
+  async localFallback(userMessage) {
+    try {
+      if (window.WarriorBotAI) {
+        const ai = new window.WarriorBotAI();
+        if (ai.initialize) await ai.initialize();
+        const resp = await ai.generateResponse(userMessage, this.history.slice(-8));
+        return resp;
+      }
+      if (window.EnhancedWarriorBotAI) {
+        const ai2 = new window.EnhancedWarriorBotAI();
+        const resp2 = await ai2.generateEnhancedResponse(userMessage, {});
+        return resp2;
+      }
+    } catch (err) { console.warn('Local fallback failed', err); }
 
-            #warriorbot-container.warriorbot-open .warriorbot-chat {
-                display: flex;
-                flex-direction: column;
-                animation: slideUpFadeIn 0.3s ease-out;
-            }
-
-            .chat-header {
-                background: linear-gradient(135deg, #8B0000 0%, #C41E3A 100%);
-                color: white;
-                padding: 15px;
-                display: flex;
-                align-items: center;
-                gap: 10px;
-            }
-
-            .warrior-avatar {
-                width: 50px;
-                height: 50px;
-                position: relative;
-            }
-
-            .avatar-container {
-                width: 100%;
-                height: 100%;
-                position: relative;
-            }
-
-            .warrior-avatar .warrior-wings {
-                position: absolute;
-                top: -10px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 40px;
-                height: 25px;
-                background: linear-gradient(45deg, #FFD700, #FFA500);
-                border-radius: 50% 50% 0 0;
-            }
-
-            .warrior-avatar .warrior-body {
-                width: 35px;
-                height: 40px;
-                background: linear-gradient(135deg, #4A90E2, #7BB3F0);
-                border-radius: 50% 50% 40% 40%;
-                margin: 0 auto;
-                position: relative;
-                top: 5px;
-            }
-
-            .warrior-halo {
-                position: absolute;
-                top: -15px;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 30px;
-                height: 15px;
-                border: 2px solid #FFD700;
-                border-radius: 50%;
-                border-bottom: none;
-                opacity: 0.8;
-                animation: haloGlow 3s ease-in-out infinite;
-            }
-
-            .bot-info h3 {
-                margin: 0;
-                font-size: 18px;
-                font-weight: 700;
-                color: white;
-                background: transparent;
-                user-select: none;
-            }
-
-            .bot-status {
-                margin: 0;
-                font-size: 12px;
-                opacity: 0.9;
-                color: white;
-                background: transparent;
-                user-select: none;
-            }
-
-            .close-btn {
-                background: rgba(255, 255, 255, 0.1);
-                border: 2px solid rgba(255, 255, 255, 0.3);
-                font-size: 20px;
-                color: white;
-                cursor: pointer;
-                padding: 8px;
-                border-radius: 50%;
-                transition: all 0.3s ease;
-                width: 36px;
-                height: 36px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: relative;
-                z-index: 10;
-            }
-
-            .close-btn:hover {
-                background: rgba(255, 255, 255, 0.25);
-                border-color: rgba(255, 255, 255, 0.5);
-                transform: scale(1.1);
-            }
-            
-            /* Enhanced close button for mobile */
-            @media (max-width: 768px) {
-                .close-btn {
-                    background: rgba(255, 255, 255, 0.15) !important;
-                    border: 2px solid rgba(255, 255, 255, 0.4) !important;
-                    font-size: 18px !important;
-                    width: 32px !important;
-                    height: 32px !important;
-                }
-                
-                .close-btn:hover {
-                    background: rgba(255, 255, 255, 0.3) !important;
-                    border-color: rgba(255, 255, 255, 0.6) !important;
-                }
-            }
-
-            .chat-messages {
-                flex: 1;
-                padding: 15px;
-                overflow-y: auto;
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .message {
-                max-width: 85%;
-                padding: 12px 16px;
-                border-radius: 18px;
-                line-height: 1.4;
-                font-size: 14px;
-                position: relative;
-                animation: messageSlideIn 0.3s ease-out;
-            }
-
-            .message.bot {
-                background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-                color: #2d3748;
-                align-self: flex-start;
-                border-bottom-left-radius: 6px;
-                border: 1px solid rgba(139, 0, 0, 0.1);
-            }
-
-            .message.user {
-                background: linear-gradient(135deg, #8B0000 0%, #C41E3A 100%);
-                color: white;
-                align-self: flex-end;
-                border-bottom-right-radius: 6px;
-            }
-
-            :root[data-theme="dark"] .message.bot {
-                background: #3A3A3A;
-                color: #E8E8E8;
-                border: 1px solid rgba(200, 30, 58, 0.3);
-            }
-            
-            :root[data-theme="dark"] .message.user {
-                background: linear-gradient(135deg, #8B0000 0%, #C41E3A 100%);
-                color: white;
-            }
-            
-            :root[data-theme="dark"] .typing-indicator {
-                background: #3A3A3A;
-                color: #E8E8E8;
-            }
-
-            .typing-indicator {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                padding: 12px 16px;
-                background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-                border-radius: 18px;
-                border-bottom-left-radius: 6px;
-                align-self: flex-start;
-                max-width: 85%;
-            }
-
-            .typing-dots {
-                display: flex;
-                gap: 4px;
-            }
-
-            .typing-dots span {
-                width: 6px;
-                height: 6px;
-                background: #8B0000;
-                border-radius: 50%;
-                animation: typingDots 1.4s ease-in-out infinite;
-            }
-
-            .typing-dots span:nth-child(1) { animation-delay: 0s; }
-            .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
-            .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
-
-            .chat-input-container {
-                padding: 15px;
-                border-top: 1px solid rgba(0, 0, 0, 0.1);
-            }
-
-            :root[data-theme="dark"] .chat-input-container {
-                border-top: 1px solid rgba(255, 255, 255, 0.2);
-                background: #2C2C2C;
-            }
-            
-            :root[data-theme="dark"] .quick-btn {
-                border-color: rgba(200, 30, 58, 0.6);
-                color: #E8E8E8;
-                background: rgba(44, 44, 44, 0.8);
-            }
-            
-            :root[data-theme="dark"] .quick-btn:hover,
-            :root[data-theme="dark"] .quick-btn.active {
-                background: var(--blood-color);
-                color: white;
-                border-color: var(--blood-color);
-            }
-            
-            :root[data-theme="dark"] .crisis-btn {
-                border-color: #ff6666;
-                color: #ff6666;
-            }
-            
-            :root[data-theme="dark"] .crisis-btn:hover {
-                background: #ff4444;
-                color: white;
-            }
-            
-            :root[data-theme="dark"] .faith-btn {
-                border-color: #ffd700;
-                color: #ffd700;
-            }
-            
-            :root[data-theme="dark"] .faith-btn:hover {
-                background: #ffd700;
-                color: #333;
-            }
-
-            .quick-actions {
-                display: flex;
-                gap: 3px;
-                margin-bottom: 6px;
-                flex-wrap: wrap;
-                padding: 0;
-            }
-
-            .quick-btn {
-                padding: 3px 6px;
-                border: 1px solid var(--blood-color);
-                background: transparent;
-                color: var(--blood-color);
-                border-radius: 12px;
-                font-size: 10px;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                white-space: nowrap;
-                line-height: 1.2;
-                min-height: 24px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .quick-btn:hover,
-            .quick-btn.active {
-                background: var(--blood-color);
-                color: white;
-            }
-
-            .crisis-btn { border-color: #ff4444; color: #ff4444; }
-            .crisis-btn:hover { background: #ff4444; }
-            .faith-btn { border-color: #ffd700; color: #ffd700; }
-            .faith-btn:hover { background: #ffd700; color: #333; }
-
-            .input-area {
-                display: flex;
-                gap: 8px;
-                align-items: center;
-            }
-
-            #chat-input {
-                flex: 1;
-                padding: 12px;
-                border: 2px solid rgba(139, 0, 0, 0.2);
-                border-radius: 25px;
-                outline: none;
-                font-size: 14px;
-                transition: border-color 0.3s ease;
-            }
-
-            #chat-input:focus {
-                border-color: var(--blood-color);
-            }
-
-            :root[data-theme="dark"] #chat-input {
-                background: #3A3A3A;
-                color: #E8E8E8;
-                border: 2px solid rgba(255, 255, 255, 0.3);
-            }
-            
-            :root[data-theme="dark"] #chat-input:focus {
-                border-color: var(--blood-light);
-                background: #404040;
-            }
-            
-            :root[data-theme="dark"] #chat-input::placeholder {
-                color: #B8B8B8;
-            }
-
-            .voice-btn,
-            .send-btn {
-                padding: 12px;
-                border: none;
-                border-radius: 50%;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                font-size: 14px;
-            }
-
-            .voice-btn {
-                background: linear-gradient(135deg, #4A90E2, #7BB3F0);
-                color: white;
-            }
-
-            .send-btn {
-                background: linear-gradient(135deg, #8B0000, #C41E3A);
-                color: white;
-            }
-
-            .voice-btn:hover,
-            .send-btn:hover {
-                transform: scale(1.1);
-            }
-
-            /* Animations */
-            @keyframes gentlePulse {
-                0%, 100% { transform: scale(1); }
-                50% { transform: scale(1.05); }
-            }
-
-            @keyframes wingFlap {
-                0%, 100% { transform: translateX(-50%) rotateZ(0deg); }
-                25% { transform: translateX(-50%) rotateZ(-5deg); }
-                75% { transform: translateX(-50%) rotateZ(5deg); }
-            }
-
-            @keyframes pulse {
-                0% { transform: scale(1); opacity: 1; }
-                100% { transform: scale(1.3); opacity: 0; }
-            }
-
-            @keyframes haloGlow {
-                0%, 100% { opacity: 0.8; transform: translateX(-50%) scale(1); }
-                50% { opacity: 1; transform: translateX(-50%) scale(1.1); }
-            }
-
-            @keyframes slideUpFadeIn {
-                from {
-                    opacity: 0;
-                    transform: translateY(20px) scale(0.95);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0) scale(1);
-                }
-            }
-
-            @keyframes messageSlideIn {
-                from {
-                    opacity: 0;
-                    transform: translateY(10px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-
-            @keyframes typingDots {
-                0%, 80%, 100% { transform: scale(1); opacity: 0.5; }
-                40% { transform: scale(1.2); opacity: 1; }
-            }
-
-            /* Responsive - Strict mobile constraints */
-            @media (max-width: 480px) {
-                .warriorbot-chat {
-                    width: 82vw !important;
-                    height: 50vh !important;
-                    min-height: 300px !important;
-                    max-height: 400px !important;
-                    right: 9vw !important;
-                    bottom: 90px !important;
-                    left: 9vw !important;
-                    position: fixed !important;
-                    overflow: hidden !important;
-                }
-                
-                /* Prevent chat expansion */
-                .chat-messages {
-                    max-height: calc(50vh - 140px) !important;
-                    overflow-y: auto !important;
-                    overflow-x: hidden !important;
-                }
-                
-                /* Hide WarriorBot when mobile menu is open */
-                body.mobile-menu-open #warriorbot-container {
-                    display: none !important;
-                }
-                
-                /* Prevent viewport issues */
-                #warriorbot-container {
-                    max-width: 100vw !important;
-                    max-height: 100vh !important;
-                    overflow: hidden !important;
-                }
-                
-                /* Force chat window constraints */
-                .warriorbot-chat.show {
-                    display: block !important;
-                    width: 82vw !important;
-                    height: 50vh !important;
-                    max-height: 400px !important;
-                }
-                
-                /* Prevent body scroll issues */
-                body.warriorbot-open {
-                    overflow-x: hidden !important;
-                }
-                
-                /* Message area strict bounds */
-                .message {
-                    max-width: 100% !important;
-                    word-wrap: break-word !important;
-                    overflow-wrap: break-word !important;
-                }
-                
-                #warriorbot-container {
-                    bottom: 15px;
-                    right: 15px;
-                }
-                
-                .quick-actions {
-                    gap: 2px;
-                    margin-bottom: 4px;
-                    padding: 0;
-                }
-                
-                .quick-btn {
-                    padding: 2px 4px;
-                    font-size: 9px;
-                    border-radius: 10px;
-                    flex: 1;
-                    min-width: 0;
-                    min-height: 20px;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    line-height: 1.1;
-                }
-                
-                .chat-messages {
-                    padding: 12px;
-                }
-                
-                .message {
-                    font-size: 13px;
-                    max-width: 90%;
-                    padding: 10px 14px;
-                }
-                
-                .chat-input-container {
-                    padding: 10px;
-                }
-                
-                #chat-input {
-                    font-size: 13px;
-                    padding: 10px;
-                }
-            }
-            
-            /* Tablet and small desktop - Controlled sizing */
-            @media (max-width: 768px) and (min-width: 481px) {
-                .warriorbot-chat {
-                    width: 320px !important;
-                    height: 450px !important;
-                    max-height: 60vh !important;
-                    right: 20px !important;
-                    bottom: 85px !important;
-                    position: fixed !important;
-                    overflow: hidden !important;
-                }
-                
-                .chat-messages {
-                    max-height: calc(60vh - 140px) !important;
-                    overflow-y: auto !important;
-                }
-                
-                /* Hide WarriorBot when mobile menu is open */
-                body.mobile-menu-open #warriorbot-container {
-                    display: none !important;
-                }
-                
-                .quick-btn {
-                    padding: 3px 7px;
-                    font-size: 10px;
-                    min-height: 22px;
-                }
-            }
-        `;
-        document.head.appendChild(style);
+    const prefix = "😅 My superpowered AI brain is not available right now — but don’t worry, Dante made me smart!\n\n";
+    const m = userMessage.toLowerCase();
+    if (m.includes('crisis') || m.includes("can't breathe") || m.includes('emergency')) {
+      return prefix + "🚨 Immediate Crisis Support\n\n1) Call emergency services if pain is 8/10+, fever >101°F/38.3°C, chest pain, breathing trouble, or stroke signs.\n2) At home: apply gentle heat, hydrate steadily (sips every 5–10 min), take prescribed meds, do slow deep breathing (in 4, hold 4, out 4).\n3) Pack an ER bag (ID, meds list, prior records).\n\nRed flags: chest pain, confusion, one-sided weakness, severe belly swelling, priapism >2 hrs.\n\nYou’re not alone — what symptoms are you feeling right now?";
+    }
+    if (m.includes('encourage') || m.includes('encouragement') || m.includes('hope')) {
+      return prefix + "💜 You are a mighty warrior. Your courage in the unseen battles is real and admirable.\n\n‘Those who hope in the Lord will renew their strength; they will soar on wings like eagles.’ – Isaiah 40:31\n\nTry a 60‑second reset: breathe in hope 4s, hold 4s, breathe out tension 6s. Name one small win from today — I’m celebrating it with you. 🦅";
+    }
+    if (m.includes('hydroxyurea') || m.includes('hydrox')) {
+      return prefix + "💊 Hydroxyurea (Droxia/Siklos) overview\n\nHow it helps: raises fetal hemoglobin (HbF), reduces sickling, fewer crises/hospitalizations, may lower transfusion needs.\nWhat to expect: daily pill, labs every 4–8 weeks at start, benefits build over 3–6 months.\nCommon Qs: it’s not a cure, side effects usually mild (mouth sores, nail changes).\nSafety: use reliable contraception; discuss pregnancy plans with your care team.\n\nGeneral info only — always follow your clinician’s guidance. What would you like to know more about?";
+    }
+    if (m.includes('gene') && m.includes('therapy')) {
+      return prefix + "🧬 Gene therapy for SCD (high‑level)\n\nApproach: edit or boost hemoglobin genes (e.g., CRISPR) to prevent sickling.\nBenefits: many participants report dramatic crisis reduction.\nConsiderations: eligibility, conditioning (chemo), hospital stay, cost/access vary by region.\nNext steps: talk to a hematology center about trials/referrals; ask about risks, fertility, and follow‑up.\n\nI can help draft questions for your doctor. Want that?";
+    }
+    if (m.includes('nigeria') || m.includes('clinic') || m.includes('clinics')) {
+      return prefix + "🇳🇬 SCD care centers (examples)\n• LUTH – Lagos University Teaching Hospital (Lagos)\n• UCH – University College Hospital (Ibadan)\n• UNTH – University of Nigeria Teaching Hospital (Enugu)\n• ABU Teaching Hospital (Zaria)\nTips: ask about SCD clinics/day hospitals, vaccination schedules, hydroxyurea programs, and NHIS coverage.\n\nTell me your city and I’ll try to narrow options.";
     }
 
-    bindEvents() {
-        const fab = document.getElementById('warriorbot-fab');
-        const closeBtn = document.getElementById('close-bot');
-        const sendBtn = document.getElementById('send-btn');
-        const voiceBtn = document.getElementById('voice-btn');
-        const chatInput = document.getElementById('chat-input');
-        const quickBtns = document.querySelectorAll('.quick-btn');
+    return prefix + "I'm here for you, warrior. 💜 Stay warm, hydrate, take prescribed meds, and seek urgent care for red flags (fever >101°F/38.3°C, chest pain, trouble breathing, stroke signs). You can also tap the quick chips for crisis steps, hydroxyurea, gene therapy, or clinics in Nigeria.";
+  }
 
-        fab.addEventListener('click', () => this.toggleBot());
-        closeBtn.addEventListener('click', () => this.closeBot());
-        sendBtn.addEventListener('click', () => this.sendMessage());
-        voiceBtn.addEventListener('click', () => this.toggleVoiceInput());
-        
-        chatInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                this.sendMessage();
-            }
-        });
+  async askOpenAI(userMessage) {
+    this.typing(true);
+    let reply = '';
+    try {
+      const endpoint = this.getApiEndpoint();
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ model: 'gpt-4o-mini', system: this.systemPrompt(), history: this.history.slice(-8), message: userMessage })
+      });
 
-        quickBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const message = btn.dataset.message;
-                this.sendMessage(message);
-            });
-        });
+      // Try to parse JSON safely
+      const ct = res.headers.get('content-type') || '';
+      let data = null;
+      if (ct.includes('application/json')) {
+        data = await res.json();
+      } else {
+        const text = await res.text();
+        data = { error: text };
+      }
+
+      if (!res.ok) {
+        console.warn('WarriorBot API error:', res.status, data && (data.error || data.details || data));
+        reply = await this.localFallback(userMessage);
+      } else {
+        reply = data.reply || '';
+      }
+    } catch (e) {
+      console.error('WarriorBot API fetch failed:', e);
+      reply = await this.localFallback(userMessage);
+    } finally {
+      this.typing(false);
     }
 
-    toggleBot() {
-        const container = document.getElementById('warriorbot-container');
-        const notification = document.getElementById('bot-notification');
-        
-        if (this.isOpen) {
-            this.closeBot();
-        } else {
-            container.classList.add('warriorbot-open');
-            container.classList.remove('warriorbot-closed');
-            document.body.classList.add('warriorbot-open');
-            this.isOpen = true;
-            notification.style.display = 'none';
-            
-            // Focus input after animation
-            setTimeout(() => {
-                document.getElementById('chat-input').focus();
-            }, 300);
-        }
+    this.bot(this.postProcess(reply || ''));
+  }
+
+  postProcess(txt) {
+    const L = txt.toLowerCase();
+    if (/(treatment|medication|hydroxy|transfusion|gene|dose|doctor|clinic)/.test(L)) {
+      return txt + "\n\n*This is general information, not medical advice. Always consult your healthcare provider.*";
     }
+    return txt;
+  }
 
-    closeBot() {
-        const container = document.getElementById('warriorbot-container');
-        container.classList.remove('warriorbot-open');
-        container.classList.add('warriorbot-closed');
-        document.body.classList.remove('warriorbot-open');
-        this.isOpen = false;
-    }
+  systemPrompt() {
+    return `You are WarriorBot, a compassionate ChatGPT assistant for people with sickle cell disease and their supporters on the We Warriors website.
+STYLE:
+- Warm, concise paragraphs, actionable bullet points, friendly emojis (💪🦅💜🙏) when helpful.
+- Empathetic and faith-friendly when asked; never judgmental.
+- Provide general information only; include emergency guidance and disclaimers for medical topics.
 
-    sendMessage(message = null) {
-        const input = document.getElementById('chat-input');
-        const messageText = message || input.value.trim();
-        
-        if (!messageText) return;
+COVER WELL:
+- Pain crisis steps + ER red flags.
+- Treatments: hydroxyurea, blood transfusions, pain management, gene therapy progress.
+- Daily living: hydration, warmth, triggers, exercise, stress, sleep.
+- Nigeria: LUTH Lagos, UCH Ibadan, UNTH Enugu, ABU Zaria; NHIS basics.
+- Encouragement: short verses/affirmations if requested.
 
-        // Clear input if not using quick button
-        if (!message) input.value = '';
+ALWAYS end with a gentle question to continue the conversation.`;
+  }
 
-        // Add user message
-        this.addMessage(messageText, 'user');
-
-        // Show typing indicator
-        this.showTyping();
-
-        // Process response with AI
-        setTimeout(async () => {
-            this.hideTyping();
-            const response = await this.generateResponse(messageText);
-            this.addMessage(response, 'bot');
-        }, 1500 + Math.random() * 1000); // Random delay for natural feel
-    }
-
-    addMessage(text, sender) {
-        const messagesContainer = document.getElementById('chat-messages');
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `message ${sender}`;
-        messageDiv.innerHTML = this.formatMessage(text);
-        
-        messagesContainer.appendChild(messageDiv);
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        
-        // Add to conversation history for AI context
-        this.conversationHistory.push({
-            message: text,
-            sender: sender,
-            timestamp: Date.now()
-        });
-        
-        // Keep only last 20 messages for performance
-        if (this.conversationHistory.length > 20) {
-            this.conversationHistory = this.conversationHistory.slice(-20);
-        }
-
-        // Update avatar state
-        if (sender === 'bot') {
-            this.updateAvatarState('speaking');
-            setTimeout(() => this.updateAvatarState('idle'), 3000);
-        }
-    }
-
-    formatMessage(text) {
-        // Convert markdown-like formatting to HTML
-        return text
-            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-            .replace(/\*(.*?)\*/g, '<em>$1</em>')
-            .replace(/\n/g, '<br>')
-            .replace(/• /g, '• '); // Keep bullet points
-    }
-
-    showTyping() {
-        const messagesContainer = document.getElementById('chat-messages');
-        const typingDiv = document.createElement('div');
-        typingDiv.className = 'typing-indicator';
-        typingDiv.id = 'typing-indicator';
-        typingDiv.innerHTML = `
-            <span>WarriorBot is thinking</span>
-            <div class="typing-dots">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        `;
-        
-        messagesContainer.appendChild(typingDiv);
-        messagesContainer.scrollTop = messagesContainer.scrollHeight;
-        this.updateAvatarState('thinking');
-    }
-
-    hideTyping() {
-        const typingIndicator = document.getElementById('typing-indicator');
-        if (typingIndicator) {
-            typingIndicator.remove();
-        }
-    }
-
-    async generateResponse(userMessage) {
-        const responseType = this.determineResponseType(userMessage);
-        
-        if (responseType === 'expert') {
-            // Use expert knowledge for medical/crisis topics
-            return this.getExpertResponse(userMessage);
-        } else {
-            // Use AI for emotional/spiritual support
-            return await this.getAIResponse(userMessage);
-        }
-    }
-    
-    determineResponseType(message) {
-        const lowerMessage = message.toLowerCase();
-        
-        // Medical/Health topics -> Expert responses
-        const medicalKeywords = [
-            'hydroxyurea', 'medication', 'medicine', 'drug', 'treatment',
-            'crisis', 'pain crisis', 'emergency', 'hospital', 'doctor',
-            'sickle cell', 'disease', 'symptoms', 'diagnosis', 'medical',
-            'blood test', 'hemoglobin', 'anemia', 'infection',
-            'vaso-occlusive', 'acute chest syndrome', 'stroke'
-        ];
-        
-        for (let keyword of medicalKeywords) {
-            if (lowerMessage.includes(keyword)) {
-                return 'expert';
-            }
-        }
-        
-        // Default to AI for emotional/spiritual support
-        return 'ai';
-    }
-    
-    async getAIResponse(userMessage) {
-        try {
-            // Try Direct AI first (simple and reliable)
-            if (window.DirectWarriorBotAI) {
-                const directAI = new window.DirectWarriorBotAI();
-                const response = await directAI.generateResponse(userMessage);
-                if (response && response.trim().length > 0) {
-                    return `🧠 **AI Support**\n\n${response}`;
-                }
-            }
-            
-            // Try complex AI system if available
-            if (this.aiSystem) {
-                const response = await this.aiSystem.generateResponse(userMessage, this.conversationHistory);
-                if (response && response.trim().length > 0) {
-                    return `🧠 **AI Support**\n\n${response}`;
-                }
-            }
-            
-            // Fallback to expert response if AI fails
-            console.log('AI unavailable, using expert fallback');
-            return this.getExpertResponse(userMessage);
-        } catch (error) {
-            console.log('AI response failed, using expert fallback:', error);
-            return this.getExpertResponse(userMessage);
-        }
-    }
-    
-    getExpertResponse(userMessage) {
-        const lowerMessage = userMessage.toLowerCase();
-        
-        // Hydroxyurea Information
-        if (lowerMessage.includes('hydroxyurea') || lowerMessage.includes('medication')) {
-            return `📚 **EXPERT KNOWLEDGE**
-
-💊 **Hydroxyurea - Complete Warrior Guide**
-
-**How It Helps:**
-• **Reduces pain crises** by 50% in many patients
-• **Increases fetal hemoglobin (HbF)** which doesn't sickle
-• **Decreases hospitalizations** and acute chest syndrome
-• **May prevent organ damage** over time
-
-**Important Details:**
-• **Daily medication** - usually one capsule per day
-• **Regular monitoring** - blood tests every 3-4 months
-• **Takes 3-6 months** to see full benefits
-• **Works for about 70%** of people with sickle cell
-
-**Common Side Effects:**
-• Lowered white blood cell count (temporary)
-• Darkening of skin/nails (harmless)
-• Mild nausea (usually goes away)
-
-**Key Points:**
-• ✅ Safe for pregnancy planning (discuss with doctor)
-• ✅ Can be taken long-term
-• ✅ Covered by most insurance
-• ✅ Generic versions available
-
-*Always follow your hematologist's guidance on dosing and monitoring.*`;
-        }
-        
-        // Pain Crisis Management
-        if (lowerMessage.includes('crisis') || lowerMessage.includes('pain')) {
-            return `📚 **EXPERT KNOWLEDGE**
-
-🚨 **Sickle Cell Pain Crisis - Immediate Action Plan**
-
-**RIGHT NOW - At Home:**
-🌡️ **Warmth** - Heating pads, warm baths, blankets
-💧 **Hydration** - Drink water steadily (avoid ice-cold)
-💊 **Pain Medicine** - Take prescribed medications as directed
-🛌 **Rest** - Find comfortable positions, avoid activity
-🫁 **Breathe** - Deep, slow breaths to help with pain
-📱 **Support** - Call someone for emotional support
-
-**SEEK EMERGENCY CARE IF:**
-• Pain is **10/10 severe** and not improving with home treatment
-• **Difficulty breathing** or chest pain
-• **High fever** (over 101°F/38.3°C)
-• **Signs of stroke**: sudden weakness, confusion, vision changes, severe headache
-• **Priapism** (males): painful erection lasting >2 hours
-• **Severe abdominal pain** with vomiting
-
-**HOSPITAL PREPARATION:**
-• Bring your **pain management plan**
-• List of **current medications**
-• **Emergency contacts**
-• **Comfort items** (phone charger, blanket)
-• **Advocate** if possible
-
-🦅 **You are a warrior. You WILL get through this crisis.** 💪`;
-        }
-        
-        // Sickle Cell Disease Education
-        if (lowerMessage.includes('sickle cell') || lowerMessage.includes('disease') || lowerMessage.includes('learn')) {
-            return `📚 **EXPERT KNOWLEDGE**
-
-📚 **Sickle Cell Disease - Complete Warrior Knowledge**
-
-**What It Is:**
-Sickle cell disease is a genetic condition where red blood cells become crescent-shaped ("sickled") instead of round. These sickled cells can block blood flow, causing pain and organ damage.
-
-**Types:**
-• **HbSS** (Sickle Cell Anemia) - most severe
-• **HbSC** - usually milder
-• **HbS Beta Thalassemia** - varies in severity
-
-**Common Symptoms:**
-🔴 **Pain crises** - most common symptom
-🔴 **Fatigue and weakness** - from anemia
-🔴 **Frequent infections** - spleen damage
-🔴 **Delayed growth** - in children
-🔴 **Vision problems** - retinal damage
-🔴 **Shortness of breath** - from anemia
-
-**Treatment Options:**
-💊 **Hydroxyurea** - reduces crises
-💊 **Voxelotor (Oxbryta)** - reduces sickling
-💊 **Crizanlizumab (Adakveo)** - prevents crises
-🩸 **Blood transfusions** - for severe complications
-🦴 **Bone marrow transplant** - potential cure for some
-
-**You Are Not Alone:**
-100,000+ Americans have sickle cell disease. You're part of a strong warrior community! 🦅
-
-*Work closely with a hematologist who specializes in sickle cell disease.*`;
-        }
-        
-        // Bible Verses / Faith - can be AI or expert
-        if (lowerMessage.includes('bible') || lowerMessage.includes('verse') || lowerMessage.includes('faith')) {
-            return `🙏 **Bible Verses for Warriors - Strength & Hope**
-
-**For Strength in Suffering:**
-*"He gives strength to the weary and increases the power of the weak."* - Isaiah 40:29
-
-*"I can do all things through Christ who strengthens me."* - Philippians 4:13
-
-*"The Lord your God is with you, the Mighty Warrior who saves."* - Zephaniah 3:17
-
-**For Hope in Dark Times:**
-*"For I know the plans I have for you," declares the Lord, "plans to prosper you and not to harm you, to give you hope and a future."* - Jeremiah 29:11
-
-*"Those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint."* - Isaiah 40:31
-
-**For Comfort in Pain:**
-*"Come to me, all you who are weary and burdened, and I will give you rest."* - Matthew 11:28
-
-*"The Lord is close to the brokenhearted and saves those who are crushed in spirit."* - Psalm 34:18
-
-You are God's beloved warrior - never forget that! 🌟`;
-        }
-        
-        // Encouragement - use expert knowledge version
-        if (lowerMessage.includes('encourage') || lowerMessage.includes('hope') || lowerMessage.includes('support')) {
-            return `💪 **You Are an Incredible Warrior**
-
-Listen to me - **you are absolutely extraordinary**. Every single day you wake up and face challenges that would break most people, yet here you are, still fighting, still hoping, still believing. That makes you a true warrior! 🦅
-
-**Your Strength is Limitless:**
-• You've survived **100%** of your worst days
-• Every crisis you've faced has made you stronger
-• Your courage inspires others, even when you don't see it
-• You are living proof that the human spirit is unbreakable
-
-**Remember This Truth:**
-Your condition does **NOT** define you. You are defined by:
-• Your heart full of love
-• Your spirit that refuses to quit
-• Your hope that lights the way for others
-• Your faith that moves mountains
-
-*"Those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint."* - Isaiah 40:31
-
-**You Are:**
-🌟 **Stronger** than you realize
-🌟 **Braver** than you believe  
-🌟 **More loved** than you know
-🌟 **More valuable** than precious gems
-🌟 **Chosen** for an incredible purpose
-
-**From pain comes strength. Through faith we hope. You are living proof of both.** 💜
-
-Keep fighting, keep believing, keep inspiring. The world needs your light! 🦅✨`;
-        }
-        
-        // Default encouraging response
-        return `🦅 **Hello, mighty warrior!**
-
-I'm here to walk alongside you on your journey. Whether you need:
-
-💪 **Encouragement** - When your spirit needs lifting
-💊 **Medical Information** - Expert knowledge about treatments  
-🚨 **Crisis Support** - Immediate help during difficult times
-🙏 **Spiritual Guidance** - Bible verses and faith-based comfort
-💜 **Emotional Support** - Someone who understands your struggles
-📚 **Education** - Learning about sickle cell disease
-
-I'm equipped with both AI intelligence for emotional support and expert medical knowledge to give you the most helpful response for your specific need.
-
-**"From pain comes strength • Through faith we hope"** - that's your story, warrior! 🌟
-
-What's on your heart today? I'm here to help in whatever way you need most.`;
-    }
-
-    updateAvatarState(state) {
-        const wings = document.querySelector('.warrior-avatar .warrior-wings');
-        const body = document.querySelector('.warrior-avatar .warrior-body');
-        
-        if (wings && body) {
-            wings.className = `warrior-wings ${state}`;
-            body.className = `warrior-body ${state}`;
-        }
-        
-        this.currentState = state;
-    }
-
-    showWelcomeMessage() {
-        const notification = document.getElementById('bot-notification');
-        notification.style.display = 'flex';
-        
-        // Auto-open after 5 seconds if user hasn't interacted
-        setTimeout(() => {
-            if (!this.isOpen) {
-                this.toggleBot();
-                setTimeout(() => {
-                    this.addMessage(`Hey there, warrior! 🌟 
-
-I'm WarriorBot, your **Hybrid AI Companion**. I noticed you're new here, so I wanted to introduce myself!
-
-🧠 **I combine AI intelligence with expert medical knowledge** to give you the best possible support:
-
-• **🧠 AI Support** for encouragement, conversation, and emotional care
-• **📚 Expert Knowledge** for medical information, crisis help, and health education
-
-I'm here 24/7 to help you with:
-• **Crisis support** during pain episodes
-• **Encouragement** when you need hope  
-• **Medical guidance** about treatments like hydroxyurea
-• **Faith-based support** with Bible verses and prayer
-• **Community** connection with fellow warriors
-
-Feel free to ask me anything - I'll automatically choose the best way to help you! You're never alone in this fight! 💪
-
-*"Those who hope in the Lord will soar on wings like eagles"* - Isaiah 40:31 🦅`, 'bot');
-                }, 500);
-            }
-        }, 5000);
-    }
-
-    toggleVoiceInput() {
-        // This would integrate with Web Speech API in a real implementation
-        alert('Voice input feature coming soon! For now, please type your message. 🎤');
-    }
-
-    loadConversations() {
-        return JSON.parse(localStorage.getItem('warriorbot_conversations') || '[]');
-    }
-
-    saveConversations() {
-        localStorage.setItem('warriorbot_conversations', JSON.stringify(this.conversations));
-    }
-
-    startAvatarAnimation() {
-        // Continuous subtle animations for the avatar
-        setInterval(() => {
-            if (this.currentState === 'idle') {
-                // Random small movements to make avatar feel alive
-                if (Math.random() < 0.1) { // 10% chance every interval
-                    this.updateAvatarState('listening');
-                    setTimeout(() => {
-                        if (this.currentState === 'listening') {
-                            this.updateAvatarState('idle');
-                        }
-                    }, 2000);
-                }
-            }
-        }, 3000);
-    }
+  injectStyles() {
+    const s = document.createElement('style');
+    s.textContent = ''
+      + '.wb{position:fixed;bottom:20px;right:20px;z-index:2147483647;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;box-sizing:border-box;}'
+      + '.wb *{box-sizing:inherit;}'
+      + '.wb-fab{position:relative;width:62px;height:62px;border-radius:50%;border:none;cursor:pointer;background:radial-gradient(120% 120% at 30% 20%,#ff6b6b 0%,#c41e3a 55%,#8b0000 120%);color:#111;box-shadow:0 12px 26px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;transition:transform .18s ease, filter .2s ease, box-shadow .2s ease;}'
+      + '.wb-fab:hover{transform:translateY(-1px) scale(1.04);filter:brightness(1.06);box-shadow:0 16px 34px rgba(0,0,0,.45);}'
+      + '.wb-fab-pulse{position:absolute;inset:0;border-radius:50%;box-shadow:0 0 0 0 rgba(239,68,68,.45);animation:wb-pulse 2s ease-out infinite;}'
+      + '@keyframes wb-pulse{0%{box-shadow:0 0 0 0 rgba(239,68,68,.45)}70%{box-shadow:0 0 0 18px rgba(239,68,68,0)}100%{box-shadow:0 0 0 0 rgba(239,68,68,0)}}'
+      + '.wb-neo-icon{position:relative;width:28px;height:28px;display:inline-block;}'
+      + '.wb-robot{position:absolute;left:0;bottom:0;width:22px;height:16px;background:rgba(255,255,255,.95);border:1px solid rgba(17,24,39,.15);border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,.18) inset, 0 1px 2px rgba(255,255,255,.6);}'
+      + '.wb-antenna{position:absolute;left:9px;top:-6px;width:2px;height:6px;background:rgba(255,255,255,.95);border:1px solid rgba(17,24,39,.15);border-bottom:none;border-top-left-radius:2px;border-top-right-radius:2px;box-shadow:0 1px 0 rgba(255,255,255,.6) inset;}'
+      + '.wb-antenna:after{content:"";position:absolute;left:-2px;top:-5px;width:6px;height:6px;border-radius:50%;background:#64ffda;box-shadow:0 0 6px rgba(100,255,218,.8);}'
+      + '.wb-eye{position:absolute;top:5px;width:4px;height:4px;border-radius:50%;background:#0ea5e9;box-shadow:0 0 6px rgba(14,165,233,.7);transform-origin:center;animation:wb-blink 4.5s infinite;}'
+      + '.wb-eye.left{left:5px;}'
+      + '.wb-eye.right{right:5px;animation-delay:1.1s;}'
+      + '@keyframes wb-blink{0%,92%,100%{transform:scaleY(1)}96%{transform:scaleY(.08)}}'
+      + '.wb-mouth{position:absolute;left:5px;right:5px;bottom:3px;height:3px;border-radius:2px;background:linear-gradient(90deg,rgba(14,165,233,.9),rgba(100,255,218,.9));box-shadow:0 0 6px rgba(14,165,233,.6);}'
+      + '.wb-moon{position:absolute;right:-3px;top:-4px;width:16px;height:16px;border-radius:50%;background:#ff6b6b;box-shadow:0 0 8px rgba(244,63,94,.55);animation:wb-orbit 3.2s ease-in-out infinite alternate;}'
+      + '.wb-moon:after{content:"";position:absolute;left:4px;top:1px;width:14px;height:14px;border-radius:50%;background:radial-gradient(120% 120% at 30% 20%,#ff6b6b 0%,#c41e3a 55%,#8b0000 120%);}'
+      + '@keyframes wb-orbit{0%{transform:translateY(0) rotate(0)}100%{transform:translateY(-2px) rotate(8deg)}}'
+      + '.wb-open .wb-panel{display:flex;}'
+      + '.wb-closed .wb-panel{display:none;}'
+      + '.wb-panel{position:absolute;bottom:80px;right:0;width:392px;height:620px;max-width:96vw;max-height:82vh;background:#ffffff;color:#0f172a;border:1px solid rgba(0,0,0,.06);border-radius:18px;box-shadow:0 22px 70px rgba(0,0,0,.28);display:flex;flex-direction:column;overflow:hidden;padding-top:60px;}'
+      + '.wb-head{position:absolute;top:0;left:0;right:0;height:60px;display:flex;align-items:center;justify-content:center;padding:8px 46px;background:linear-gradient(135deg,#8B0000,#C41E3A);color:#fff;border-top-left-radius:18px;border-top-right-radius:18px;}'
+      + '.wb-brand{display:flex;align-items:center;justify-content:center;width:100%;}'
+      + '.wb-title h3{margin:0;font-weight:700;font-size:18px;line-height:1.2;letter-spacing:.2px;text-align:center;}'
+      + '.wb-title p{margin:2px 0 0;font-size:12.5px;opacity:.95;text-align:center;}'
+      + '.wb-close{position:absolute;top:6px;right:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:50%;width:32px;height:32px;cursor:pointer;display:flex;align-items:center;justify-content:center;}'
+      + '.wb-body{flex:1;padding:14px 12px;overflow:auto;display:flex;flex-direction:column;gap:12px;background:linear-gradient(180deg,#ffffff 0%, #fafafa 100%);color:#0f172a;}'
+      + '.wb-msg{max-width:86%;padding:12px 14px;border-radius:16px;font-size:15px;line-height:1.6;letter-spacing:.2px;word-wrap:break-word;box-shadow:0 2px 8px rgba(0,0,0,.06);}'
+      + '.wb-msg a{color:#8B0000;text-decoration:underline;}'
+      + '.wb-bot{align-self:flex-start;background:#f3f4f6;border:1px solid #e5e7eb;color:#0f172a;}'
+      + '.wb-user{align-self:flex-end;background:linear-gradient(135deg,#8B0000,#C41E3A);color:#fff;box-shadow:0 4px 12px rgba(196,30,58,.35);}'
+      + '.wb-typing{display:flex;gap:6px;align-items:center;align-self:flex-start;background:#f3f4f6;padding:10px 14px;border-radius:16px;color:#0f172a;}'
+      + '.wb-typing i{width:7px;height:7px;background:#C41E3A;border-radius:50%;animation:wb-dot 1.2s infinite;opacity:.9;}'
+      + '@keyframes wb-dot{0%,80%,100%{transform:scale(1);opacity:.45}40%{transform:scale(1.25);opacity:1}}'
+      + '.wb-quick{display:flex;gap:8px;flex-wrap:wrap;padding:0 12px 8px;}'
+      + '.wb-chip{border:1px solid rgba(139,0,0,.28);background:rgba(139,0,0,.08);color:#7a0010;border-radius:999px;padding:5px 9px;font-size:11px;cursor:pointer;backdrop-filter:saturate(120%);}'
+      + '.wb-chip:hover{filter:brightness(1.05);}'
+      + '.wb-foot{display:flex;gap:8px;padding:10px 12px;border-top:1px solid rgba(0,0,0,.06);background:rgba(255,255,255,.9);backdrop-filter:blur(4px);}'
+      + '.wb-input{flex:1;border:2px solid rgba(139,0,0,.18);border-radius:22px;padding:11px 12px;background:#ffffff;color:#0f172a;font-size:14px;}'
+      + '.wb-input::placeholder{color:#6b7280;}'
+      + 'html[data-theme=\"dark\"] .wb-fab{border-color:rgba(255,255,255,.16);}'
+      + '.wb-send{background:linear-gradient(135deg,#8B0000,#C41E3A);color:#fff;border:none;border-radius:18px;padding:10px 14px;cursor:pointer;font-weight:700;letter-spacing:.2px;box-shadow:0 6px 14px rgba(196,30,58,.35);}'
+      + '@media(max-width:480px){.wb-panel{width:86vw;height:60vh;right:7vw}}'
+      + 'html[data-theme=\"dark\"] .wb-panel{background:rgba(8,10,14,.6);color:#e5e7eb;border:1px solid rgba(255,255,255,.08);box-shadow:0 22px 70px rgba(0,0,0,.6);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);}'
+      + 'html[data-theme=\"dark\"] .wb-head{background:transparent!important;color:#e5e7eb;border-bottom:1px solid rgba(255,255,255,.08);box-shadow:none;}'
+      + 'html[data-theme=\"dark\"] .wb-body{background:transparent;color:#e5e7eb;}'
+      + 'html[data-theme=\"dark\"] .wb-msg a{color:#fda4af;}'
+      + 'html[data-theme=\"dark\"] .wb-bot{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:#e5e7eb;box-shadow:none;}'
+      + 'html[data-theme=\"dark\"] .wb-typing{background:rgba(255,255,255,.06);color:#e5e7eb;box-shadow:none;}'
+      + 'html[data-theme="dark"] .wb-typing i{background:#f87171;opacity:.95;}'
+      + 'html[data-theme="dark"] .wb-chip{border:1px solid rgba(244,63,94,.5);background:rgba(244,63,94,.15);color:#ffe4e6;}'
+      + 'html[data-theme=\"dark\"] .wb-input{background:#0f172a;color:#e5e7eb;border-color:#334155;}'
+      + 'html[data-theme=\"dark\"] .wb-input::placeholder{color:#94a3b8;}'
+      + 'html[data-theme=\"dark\"] .wb-robot{background:rgba(11,15,20,.95);border-color:rgba(255,255,255,.12);box-shadow:0 2px 6px rgba(0,0,0,.5) inset, 0 1px 2px rgba(255,255,255,.06);}'
+    ;
+    document.head.appendChild(s);
+  }
 }
 
-// Initialize WarriorBot when DOM is ready
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-        window.WarriorBot = new WarriorBot();
-    });
+  document.addEventListener('DOMContentLoaded', () => { window.WarriorBot = new WarriorBot(); });
 } else {
-    window.WarriorBot = new WarriorBot();
+  window.WarriorBot = new WarriorBot();
 }
+

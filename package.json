@@ -41,12 +41,15 @@
     "url": "https://github.com/wewarriors/website/issues"
   },
   "devDependencies": {
+    "eslint": "^8.50.0",
     "live-server": "^1.2.2",
-    "serve": "^14.2.1",
     "prettier": "^3.0.3",
-    "eslint": "^8.50.0"
+    "serve": "^14.2.1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  },
   "engines": {
     "node": ">=16.0.0"
   },
