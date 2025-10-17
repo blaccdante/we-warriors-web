@@ -2,8 +2,16 @@
 (function() {
     'use strict';
     
-    // Get current theme from localStorage or default to 'light'
-    let currentTheme = localStorage.getItem('theme') || 'light';
+    // Get system preference or saved theme
+    function getSystemPreference() {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark';
+        }
+        return 'light';
+    }
+    
+    // Get current theme from localStorage, or system preference, or default to 'light'
+    let currentTheme = localStorage.getItem('theme') || getSystemPreference();
     
     // Apply theme function
     function applyTheme(theme) {
@@ -57,6 +65,18 @@
             mobileThemeSwitch.addEventListener('click', function(e) {
                 e.preventDefault();
                 toggleTheme();
+            });
+        }
+        
+        // Listen for system theme changes (only if user hasn't manually set preference)
+        if (window.matchMedia && !localStorage.getItem('theme')) {
+            const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+            mediaQuery.addEventListener('change', function(e) {
+                // Only auto-switch if user hasn't manually set a preference
+                if (!localStorage.getItem('theme')) {
+                    currentTheme = e.matches ? 'dark' : 'light';
+                    applyTheme(currentTheme);
+                }
             });
         }
     }

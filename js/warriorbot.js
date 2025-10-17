@@ -325,7 +325,7 @@ ALWAYS end with a gentle question to continue the conversation.`;
       + '.wb-send{background:linear-gradient(135deg,#8B0000,#C41E3A);color:#fff;border:none;border-radius:18px;padding:10px 14px;cursor:pointer;font-weight:700;letter-spacing:.2px;box-shadow:0 6px 14px rgba(196,30,58,.35);}'
       + '@media(max-width:480px){.wb-panel{width:86vw;height:60vh;right:7vw}}'
       + 'html[data-theme=\"dark\"] .wb-panel{background:rgba(8,10,14,.6);color:#e5e7eb;border:1px solid rgba(255,255,255,.08);box-shadow:0 22px 70px rgba(0,0,0,.6);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);}'
-      + 'html[data-theme=\"dark\"] .wb-head{background:transparent!important;color:#e5e7eb;border-bottom:1px solid rgba(255,255,255,.08);box-shadow:none;}'
+      + 'html[data-theme=\"dark\"] .wb-head{background:linear-gradient(135deg,#8B0000,#C41E3A)!important;color:#fff;border-bottom:none;}'
       + 'html[data-theme=\"dark\"] .wb-body{background:transparent;color:#e5e7eb;}'
       + 'html[data-theme=\"dark\"] .wb-msg a{color:#fda4af;}'
       + 'html[data-theme=\"dark\"] .wb-bot{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:#e5e7eb;box-shadow:none;}'

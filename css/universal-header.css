@@ -46,9 +46,9 @@
 }
 
 .header-container {
-    max-width: 1400px;
+    max-width: 1500px;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     height: 100%;
     display: flex;
     align-items: center;
@@ -98,10 +98,11 @@
 .header-nav {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1.25rem;
     list-style: none;
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 .nav-item {
@@ -141,17 +142,17 @@
 .nav-link {
     display: flex !important;
     align-items: center !important;
-    gap: 0.5rem !important;
-    padding: 0.75rem 1.25rem !important;
+    gap: 0.25rem !important;
+    padding: 0.6rem 0.8rem !important;
     text-decoration: none !important;
     color: var(--text-dark) !important;
     font-weight: 500 !important;
-    font-size: 1rem !important;
-    border-radius: 12px !important;
+    font-size: 0.9rem !important;
+    border-radius: 10px !important;
     transition: var(--transition) !important;
     white-space: nowrap !important;
     position: relative !important;
-    overflow: hidden !important;
+    overflow: visible !important;
     border: none !important;
     background: transparent !important;
 }
@@ -189,10 +190,12 @@
 /* Dropdown Arrow */
 .dropdown-toggle::after {
     content: '▾';
-    font-size: 0.8rem;
-    margin-left: 0.5rem;
+    font-size: 0.7rem;
+    margin-left: 0.25rem;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     transform-origin: center;
+    display: inline-block;
+    line-height: 1;
 }
 
 .nav-item:hover .dropdown-toggle::after {
@@ -492,37 +495,47 @@ body.mobile-menu-open {
     border-bottom-color: rgba(255, 215, 0, 0.2);
 }
 
-[data-theme="dark"] .dropdown-menu::before {
-    border-bottom-color: #1a1a1a;
-}
-
-[data-theme="dark"] .nav-link:hover {
-    color: var(--gold-accent);
-}
-
-[data-theme="dark"] .nav-link.active {
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 107, 107, 0.1));
-    color: var(--gold-accent);
-}
 
 [data-theme="dark"] .dropdown-link {
-    color: var(--text-light);
+    color: var(--text-light) !important;
+    padding: 0.875rem 1.5rem !important;
+    margin: 0 0.5rem !important;
+    border-radius: 12px !important;
 }
 
 [data-theme="dark"] .dropdown-link:hover {
-    background: rgba(255, 215, 0, 0.1);
-    color: var(--gold-accent);
+    background: rgba(255, 215, 0, 0.1) !important;
+    color: var(--gold-accent) !important;
+    transform: translateX(6px) scale(1.02) !important;
+    box-shadow: 0 4px 16px rgba(255, 215, 0, 0.1) !important;
 }
 
 [data-theme="dark"] .dropdown-link.active {
-    background: rgba(255, 215, 0, 0.15);
-    color: var(--gold-accent);
+    background: rgba(255, 215, 0, 0.15) !important;
+    color: var(--gold-accent) !important;
+}
+
+[data-theme="dark"] .dropdown-link.active::before {
+    width: 3px;
+    background: linear-gradient(135deg, var(--gold-accent), var(--primary-color));
 }
 
 [data-theme="dark"] .theme-toggle {
-    background: rgba(255, 215, 0, 0.1);
-    border-color: rgba(255, 215, 0, 0.3);
-    color: var(--text-light);
+    background: rgba(255, 215, 0, 0.1) !important;
+    border: 2px solid rgba(255, 215, 0, 0.3) !important;
+    color: var(--text-light) !important;
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+    background: rgba(255, 215, 0, 0.2) !important;
+    border-color: var(--gold-accent) !important;
+    transform: scale(1.1) rotate(15deg) !important;
 }
 
 [data-theme="dark"] .hamburger-line {
@@ -1583,6 +1596,16 @@ body.mobile-menu-open {
     backdrop-filter: none !important;
 }
 
+
+/* Ensure consistent spacing for both themes */
+.universal-header .nav-link {
+    padding: 0.75rem 1.25rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+}
+
+
 /* Global link override for entire header */
 .universal-header a,
 .universal-header a:link,
@@ -1648,6 +1671,7 @@ html {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
 }
+
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
