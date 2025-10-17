@@ -159,9 +159,13 @@ class WarriorBot {
   }
 
   getApiEndpoint() {
+    // Check for explicit configuration first
     const meta = document.querySelector('meta[name="warriorbot-endpoint"]');
     if (meta && meta.content) return meta.content;
     if (window.WARRIORBOT_API) return window.WARRIORBOT_API;
+    
+    // For production, use relative URL (Vercel will handle it)
+    // For localhost development, also use relative URL
     return '/api/warriorbot';
   }
 
@@ -206,7 +210,6 @@ class WarriorBot {
     let reply = '';
     try {
       const endpoint = this.getApiEndpoint();
-      console.log('WarriorBot: Making request to:', endpoint);
       
       const requestBody = { 
         model: 'gpt-4o-mini', 
@@ -236,18 +239,12 @@ class WarriorBot {
 
       if (!res.ok) {
         console.warn('WarriorBot API error:', res.status, data && (data.error || data.details || data));
-        // Show user the error for debugging
-        this.bot(`🔧 API Error (${res.status}): ${data.error || JSON.stringify(data)}\n\nFalling back to offline mode...`);
         reply = await this.localFallback(userMessage);
       } else {
         reply = data.reply || '';
       }
     } catch (e) {
       console.error('WarriorBot API fetch failed:', e);
-      console.error('Endpoint was:', this.getApiEndpoint());
-      console.error('Full error:', e);
-      // Show user the network error for debugging
-      this.bot(`🔧 Network Error: ${e.message}\nEndpoint: ${this.getApiEndpoint()}\n\nFalling back to offline mode...`);
       reply = await this.localFallback(userMessage);
     } finally {
       this.typing(false);
