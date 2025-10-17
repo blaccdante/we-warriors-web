@@ -224,12 +224,16 @@ class WarriorBot {
 
       if (!res.ok) {
         console.warn('WarriorBot API error:', res.status, data && (data.error || data.details || data));
+        // Show user the error for debugging
+        this.bot(`🔧 API Error (${res.status}): ${data.error || JSON.stringify(data)}\n\nFalling back to offline mode...`);
         reply = await this.localFallback(userMessage);
       } else {
         reply = data.reply || '';
       }
     } catch (e) {
       console.error('WarriorBot API fetch failed:', e);
+      // Show user the network error for debugging
+      this.bot(`🔧 Network Error: ${e.message}\n\nFalling back to offline mode...`);
       reply = await this.localFallback(userMessage);
     } finally {
       this.typing(false);
