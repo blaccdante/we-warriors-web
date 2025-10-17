@@ -488,12 +488,36 @@
     <!-- WarriorBot - Load last as it's heaviest -->
     <script defer src="../js/warriorbot.js"></script>
     <script>
-      // Initialize WarriorBot on page load
-      document.addEventListener('DOMContentLoaded', function() {
-        if (typeof WarriorBot !== 'undefined') {
-          new WarriorBot();
+      // Hard fallback: ensure a visible chat launcher even if styles clash or previous scripts fail
+      (function(){
+        function ensureWarriorBot(){
+          if (document.getElementById('warriorbot')) return; // already rendered
+          var s = document.createElement('script');
+          s.src = '../js/warriorbot.js?v=' + Date.now();
+          s.onload = function(){
+            setTimeout(function(){
+              var fab = document.getElementById('wb-fab');
+              if (fab){ fab.click(); }
+            }, 300);
+          };
+          document.body.appendChild(s);
         }
-      });
+        window.addEventListener('DOMContentLoaded', function(){
+          setTimeout(function(){
+            if (!document.getElementById('warriorbot')){
+              // show a small emergency launcher button
+              var b = document.createElement('button');
+              b.id = 'wb-boot';
+              b.textContent = '🤖';
+              b.title = 'Chat with WarriorBot';
+              b.setAttribute('aria-label','Chat with WarriorBot');
+              b.style.cssText = 'position:fixed;bottom:22px;right:22px;width:56px;height:56px;border-radius:50%;border:none;cursor:pointer;z-index:2147483647;background:linear-gradient(135deg,#8B0000,#C41E3A);color:#fff;box-shadow:0 10px 30px rgba(0,0,0,.25);font-size:22px;display:flex;align-items:center;justify-content:center;';
+              b.onclick = function(){ ensureWarriorBot(); b.remove(); };
+              document.body.appendChild(b);
+            }
+          }, 600);
+        });
+      })();
     </script>
 </body>
 </html>
