@@ -1,88 +1,144 @@
-<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="280" height="80" viewBox="0 0 280 80" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Gradients for the sickle cell shapes -->
-    <linearGradient id="cellGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#dc143c;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#8b0000;stop-opacity:1" />
+    <!-- Pain to Hope gradient (dark to light) -->
+    <linearGradient id="journeyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2C0A1A;stop-opacity:1" />
+      <stop offset="20%" style="stop-color:#5D1725;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#8B0000;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#C41E3A;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" />
     </linearGradient>
     
-    <linearGradient id="cellGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ff4757;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#c44569;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#8b0000;stop-opacity:1" />
+    <!-- Blood flow gradient -->
+    <radialGradient id="bloodGradient" cx="30%" cy="50%" r="70%">
+      <stop offset="0%" style="stop-color:#8B0000;stop-opacity:0.9" />
+      <stop offset="50%" style="stop-color:#C41E3A;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#FF6B6B;stop-opacity:0.6" />
+    </radialGradient>
+    
+    <!-- Hope gradient (warm glow) -->
+    <radialGradient id="hopeGradient" cx="70%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFA500;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#FF8C00;stop-opacity:0.4" />
+    </radialGradient>
+    
+    <!-- Strength text gradient -->
+    <linearGradient id="strengthGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3A3A3A;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#8B0000;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#C41E3A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" />
     </linearGradient>
     
-    <linearGradient id="cellGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ffa502;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#ff6348;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#dc143c;stop-opacity:1" />
-    </linearGradient>
+    <!-- Filters for emotional depth -->
+    <filter id="painGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
     
-    <linearGradient id="cellGradient4" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#ffa502;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#ff6348;stop-opacity:1" />
-    </linearGradient>
+    <filter id="hopeGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
     
-    <!-- Text gradient -->
-    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#8b0000;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#dc143c;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#ffa500;stop-opacity:1" />
-    </linearGradient>
-    
-    <!-- Drop shadow filter -->
-    <filter id="dropshadow" x="-50%" y="-50%" width="200%" height="200%">
-      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.3"/>
+    <filter id="textShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="1" dy="2" stdDeviation="3" flood-color="rgba(139,0,0,0.4)"/>
     </filter>
   </defs>
   
-  <!-- Background subtle pattern -->
-  <rect width="400" height="200" fill="url(#bgGradient)" opacity="0.1"/>
+  <!-- Main flowing symbol representing the journey -->
+  <g transform="translate(15, 20)">
+    
+    <!-- Pain representation - jagged, turbulent start -->
+    <path d="M5 40 Q8 25, 15 35 Q18 20, 25 30 Q28 15, 35 25 Q40 35, 35 45 Q30 55, 25 45 Q20 60, 15 50 Q10 65, 5 55 Q8 45, 5 40 Z" 
+          fill="url(#bloodGradient)" 
+          opacity="0.8"
+          filter="url(#painGlow)"/>
+    
+    <!-- Blood flow - the middle struggle, flowing but constrained -->
+    <path d="M30 35 Q45 20, 60 30 Q75 25, 90 35 Q85 50, 70 45 Q55 55, 40 50 Q45 40, 30 35 Z" 
+          fill="url(#journeyGradient)" 
+          opacity="0.9"/>
+    
+    <!-- Sickle cell representation - curved, distinctive shape -->
+    <path d="M50 25 Q65 15, 75 25 Q85 20, 95 30 Q90 40, 80 35 Q70 45, 60 40 Q55 35, 50 25 Z" 
+          fill="none" 
+          stroke="url(#bloodGradient)" 
+          stroke-width="3" 
+          opacity="0.7"/>
+    
+    <!-- Hope emerging - expanding, liberating flow -->
+    <path d="M75 30 Q95 15, 115 25 Q135 20, 155 30 Q165 35, 170 45 Q160 55, 145 50 Q125 60, 105 50 Q85 45, 75 30 Z" 
+          fill="url(#hopeGradient)" 
+          opacity="0.9"
+          filter="url(#hopeGlow)"/>
+    
+    <!-- Strength manifestation - bold, confident curves -->
+    <path d="M150 25 Q170 10, 190 20 Q210 15, 230 25 Q240 30, 245 40 Q235 50, 220 45 Q200 55, 180 50 Q160 45, 150 25 Z" 
+          fill="url(#journeyGradient)" 
+          opacity="1"/>
+    
+    <!-- Connection elements - showing the journey flow -->
+    <line x1="35" y1="40" x2="50" y2="35" stroke="url(#journeyGradient)" stroke-width="2" opacity="0.6"/>
+    <line x1="95" y1="35" x2="110" y2="35" stroke="url(#journeyGradient)" stroke-width="2" opacity="0.6"/>
+    <line x1="170" y1="40" x2="185" y2="35" stroke="url(#journeyGradient)" stroke-width="2" opacity="0.6"/>
+    
+    <!-- Pain markers - small jagged elements -->
+    <path d="M10 30 L12 25 L14 30 L16 25 L18 30" stroke="#2C0A1A" stroke-width="1.5" fill="none" opacity="0.7"/>
+    <path d="M8 50 L10 45 L12 50 L14 45 L16 50" stroke="#2C0A1A" stroke-width="1.5" fill="none" opacity="0.7"/>
+    
+    <!-- Blood cells - small circular elements -->
+    <circle cx="70" cy="35" r="3" fill="#8B0000" opacity="0.8"/>
+    <circle cx="80" cy="42" r="2.5" fill="#C41E3A" opacity="0.7"/>
+    <circle cx="85" cy="30" r="2" fill="#FF6B6B" opacity="0.6"/>
+    
+    <!-- Hope sparks - radiating light elements -->
+    <path d="M160 35 L162 32 L164 35 L162 38 Z" fill="#FFD700" opacity="0.9"/>
+    <path d="M165 40 L167 37 L169 40 L167 43 Z" fill="#FFA500" opacity="0.8"/>
+    <path d="M155 45 L157 42 L159 45 L157 48 Z" fill="#FF8C00" opacity="0.7"/>
+    
+    <!-- Strength rays - expanding outward -->
+    <line x1="220" y1="35" x2="235" y2="25" stroke="#FFD700" stroke-width="2" opacity="0.6"/>
+    <line x1="225" y1="40" x2="240" y2="35" stroke="#FFD700" stroke-width="2" opacity="0.6"/>
+    <line x1="220" y1="45" x2="235" y2="50" stroke="#FFD700" stroke-width="2" opacity="0.6"/>
+  </g>
   
-  <!-- Sickle cell chain design -->
-  <!-- Cell 1 - Far left -->
-  <ellipse cx="60" cy="120" rx="25" ry="45" fill="url(#cellGradient1)" transform="rotate(-15 60 120)" opacity="0.9"/>
-  <ellipse cx="55" cy="115" rx="18" ry="35" fill="url(#cellGradient1)" transform="rotate(-15 55 115)" opacity="0.7"/>
-  
-  <!-- Cell 2 -->
-  <ellipse cx="120" cy="110" rx="30" ry="50" fill="url(#cellGradient2)" transform="rotate(10 120 110)" opacity="0.9"/>
-  <ellipse cx="115" cy="105" rx="22" ry="38" fill="url(#cellGradient2)" transform="rotate(10 115 105)" opacity="0.7"/>
-  
-  <!-- Cell 3 - Center -->
-  <ellipse cx="180" cy="125" rx="35" ry="55" fill="url(#cellGradient3)" transform="rotate(-5 180 125)" opacity="0.9"/>
-  <ellipse cx="175" cy="120" rx="25" ry="42" fill="url(#cellGradient3)" transform="rotate(-5 175 120)" opacity="0.7"/>
-  
-  <!-- Cell 4 -->
-  <ellipse cx="240" cy="115" rx="32" ry="52" fill="url(#cellGradient2)" transform="rotate(20 240 115)" opacity="0.9"/>
-  <ellipse cx="235" cy="110" rx="23" ry="40" fill="url(#cellGradient2)" transform="rotate(20 235 110)" opacity="0.7"/>
-  
-  <!-- Cell 5 - Far right -->
-  <ellipse cx="300" cy="130" rx="28" ry="48" fill="url(#cellGradient4)" transform="rotate(-10 300 130)" opacity="0.9"/>
-  <ellipse cx="295" cy="125" rx="20" ry="36" fill="url(#cellGradient4)" transform="rotate(-10 295 125)" opacity="0.7"/>
-  
-  <!-- Connecting flow lines -->
-  <path d="M 85 120 Q 100 105 120 110" stroke="url(#cellGradient1)" stroke-width="3" fill="none" opacity="0.6"/>
-  <path d="M 150 110 Q 165 125 180 125" stroke="url(#cellGradient2)" stroke-width="3" fill="none" opacity="0.6"/>
-  <path d="M 215 125 Q 225 115 240 115" stroke="url(#cellGradient3)" stroke-width="3" fill="none" opacity="0.6"/>
-  <path d="M 272 115 Q 285 130 300 130" stroke="url(#cellGradient2)" stroke-width="3" fill="none" opacity="0.6"/>
-  
-  <!-- Main title "We" -->
-  <text x="50" y="70" font-family="'Playfair Display', serif" font-size="48" font-weight="600" 
-        fill="url(#textGradient)" filter="url(#dropshadow)">We</text>
-  
-  <!-- Main title "WARRIORS" -->
-  <text x="60" y="180" font-family="'Playfair Display', serif" font-size="42" font-weight="700" 
-        fill="url(#textGradient)" filter="url(#dropshadow)" letter-spacing="2px">WARRIORS</text>
-  
-  <!-- Decorative elements -->
-  <!-- Small accent cells -->
-  <circle cx="30" cy="90" r="8" fill="url(#cellGradient1)" opacity="0.6"/>
-  <circle cx="45" cy="75" r="6" fill="url(#cellGradient4)" opacity="0.5"/>
-  <circle cx="330" cy="90" r="10" fill="url(#cellGradient4)" opacity="0.6"/>
-  <circle cx="350" cy="110" r="7" fill="url(#cellGradient1)" opacity="0.5"/>
-  
-  <!-- Subtle strength symbol -->
-  <path d="M 320 60 L 330 45 L 340 60 L 335 65 L 325 65 Z" fill="url(#cellGradient4)" opacity="0.4"/>
+  <!-- Typography with emotional resonance -->
+  <g transform="translate(100, 25)">
+    <!-- "We" - soft, vulnerable beginning -->
+    <text x="0" y="0" 
+          font-family="Georgia, serif" 
+          font-size="26" 
+          font-weight="300" 
+          fill="url(#strengthGradient)" 
+          letter-spacing="3px"
+          filter="url(#textShadow)"
+          opacity="0.9">We</text>
+    
+    <!-- "WARRIORS" - powerful, triumphant -->
+    <text x="0" y="35" 
+          font-family="Arial Black, Arial, sans-serif" 
+          font-size="26" 
+          font-weight="900" 
+          fill="url(#strengthGradient)" 
+          letter-spacing="2px"
+          filter="url(#textShadow)">WARRIORS</text>
+    
+    <!-- Flowing underline representing the journey -->
+    <path d="M0 45 Q40 50, 80 45 Q120 40, 160 45 Q200 50, 240 45" 
+          stroke="url(#journeyGradient)" 
+          stroke-width="2" 
+          fill="none" 
+          opacity="0.8"/>
+    
+  </g>
 </svg>
