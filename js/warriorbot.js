@@ -206,10 +206,22 @@ class WarriorBot {
     let reply = '';
     try {
       const endpoint = this.getApiEndpoint();
+      console.log('WarriorBot: Making request to:', endpoint);
+      
+      const requestBody = { 
+        model: 'gpt-4o-mini', 
+        system: this.systemPrompt(), 
+        history: this.history.slice(-8), 
+        message: userMessage 
+      };
+      
       const res = await fetch(endpoint, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ model: 'gpt-4o-mini', system: this.systemPrompt(), history: this.history.slice(-8), message: userMessage })
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(requestBody)
       });
 
       // Try to parse JSON safely
@@ -232,8 +244,10 @@ class WarriorBot {
       }
     } catch (e) {
       console.error('WarriorBot API fetch failed:', e);
+      console.error('Endpoint was:', this.getApiEndpoint());
+      console.error('Full error:', e);
       // Show user the network error for debugging
-      this.bot(`🔧 Network Error: ${e.message}\n\nFalling back to offline mode...`);
+      this.bot(`🔧 Network Error: ${e.message}\nEndpoint: ${this.getApiEndpoint()}\n\nFalling back to offline mode...`);
       reply = await this.localFallback(userMessage);
     } finally {
       this.typing(false);
