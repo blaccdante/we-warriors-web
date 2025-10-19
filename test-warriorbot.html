@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WarriorBot Test</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            background: #f5f5f5;
+        }
+        .debug-panel {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-button {
+            background: #8B0000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .test-button:hover {
+            background: #C41E3A;
+        }
+        #debug-log {
+            background: #f8f8f8;
+            border: 1px solid #ddd;
+            padding: 10px;
+            height: 200px;
+            overflow-y: auto;
+            font-family: monospace;
+            font-size: 12px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>WarriorBot Debug Test</h1>
+    
+    <div class="debug-panel">
+        <h3>Test Controls</h3>
+        <button class="test-button" onclick="testWarriorBotInit()">Test WarriorBot Init</button>
+        <button class="test-button" onclick="testAPIEndpoint()">Test API Endpoint</button>
+        <button class="test-button" onclick="clearLog()">Clear Log</button>
+    </div>
+
+    <div class="debug-panel">
+        <h3>Debug Log</h3>
+        <div id="debug-log"></div>
+    </div>
+
+    <!-- Load WarriorBot -->
+    <script src="js/warriorbot.js"></script>
+    
+    <script>
+        function log(message) {
+            const debugLog = document.getElementById('debug-log');
+            const timestamp = new Date().toLocaleTimeString();
+            debugLog.textContent += `[${timestamp}] ${message}\n`;
+            debugLog.scrollTop = debugLog.scrollHeight;
+        }
+
+        function clearLog() {
+            document.getElementById('debug-log').textContent = '';
+        }
+
+        function testWarriorBotInit() {
+            log('Testing WarriorBot initialization...');
+            
+            // Check if WarriorBot class is available
+            if (typeof WarriorBot !== 'undefined') {
+                log('✅ WarriorBot class is loaded');
+            } else {
+                log('❌ WarriorBot class not found');
+                return;
+            }
+
+            // Check if WarriorBot elements exist in DOM
+            const fabButton = document.getElementById('wb-fab');
+            if (fabButton) {
+                log('✅ WarriorBot FAB button found in DOM');
+            } else {
+                log('❌ WarriorBot FAB button not found in DOM');
+            }
+
+            const panel = document.querySelector('.wb-panel');
+            if (panel) {
+                log('✅ WarriorBot panel found in DOM');
+            } else {
+                log('❌ WarriorBot panel not found in DOM');
+            }
+        }
+
+        async function testAPIEndpoint() {
+            log('Testing API endpoint...');
+            
+            try {
+                const response = await fetch('/api/warriorbot', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: 'Hello, this is a test'
+                    })
+                });
+
+                log(`API Response Status: ${response.status}`);
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    log(`✅ API Response: ${JSON.stringify(data)}`);
+                } else {
+                    const errorData = await response.text();
+                    log(`❌ API Error: ${errorData}`);
+                }
+            } catch (error) {
+                log(`❌ Fetch Error: ${error.message}`);
+            }
+        }
+
+        // Log when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            log('Page loaded, checking WarriorBot...');
+            
+            setTimeout(() => {
+                testWarriorBotInit();
+            }, 1000);
+        });
+
+        // Override console methods to capture errors
+        const originalError = console.error;
+        console.error = function(...args) {
+            log(`Console Error: ${args.join(' ')}`);
+            originalError.apply(console, args);
+        };
+
+        const originalLog = console.log;
+        console.log = function(...args) {
+            if (args[0] && args[0].includes && args[0].includes('WarriorBot')) {
+                log(`Console Log: ${args.join(' ')}`);
+            }
+            originalLog.apply(console, args);
+        };
+    </script>
+</body>
+</html>
