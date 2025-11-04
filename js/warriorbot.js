@@ -40,6 +40,7 @@ class WarriorBot {
             <button class="wb-close" id="wb-close" aria-label="Close chat">×</button>
           </header>
           <div class="wb-body" id="wb-body"></div>
+          <button class="wb-new" id="wb-new" aria-label="Scroll to latest messages" hidden>New messages ↓</button>
           <div class="wb-quick" id="wb-quick"></div>
           <footer class="wb-foot">
             <input id="wb-input" class="wb-input" type="text" maxlength="600" placeholder="Type your message…" aria-label="Message input" />
@@ -75,13 +76,23 @@ class WarriorBot {
     const close = document.getElementById('wb-close');
     const send = document.getElementById('wb-send');
     const input = document.getElementById('wb-input');
+    const body = document.getElementById('wb-body');
+    const newBtn = document.getElementById('wb-new');
 
-    fab.addEventListener('click', () => this.toggle(true));
+    fab.addEventListener('click', () => this.toggle());
     close.addEventListener('click', () => this.toggle(false));
     send.addEventListener('click', () => this.send());
     input.addEventListener('keypress', (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); this.send(); } });
 
     document.querySelectorAll('.wb-chip').forEach(b => b.addEventListener('click', () => this.quick(b.dataset.k)));
+
+    // Scroll handling: only autoscroll if user is near bottom
+    body.addEventListener('scroll', () => {
+      if (this.isNearBottom()) {
+        this.hideNewBadge();
+      }
+    });
+    newBtn.addEventListener('click', () => this.scrollToBottom(true));
   }
 
   toggle(open) {
@@ -89,7 +100,11 @@ class WarriorBot {
     const isOpen = open !== undefined ? open : root.classList.contains('wb-closed');
     root.classList.toggle('wb-open', isOpen);
     root.classList.toggle('wb-closed', !isOpen);
-    if (isOpen) document.getElementById('wb-input').focus();
+    if (isOpen) {
+      document.getElementById('wb-input').focus();
+      this.hideNewBadge();
+      this.scrollToBottom(false);
+    }
   }
 
   user(text) { this.add('user', text); }
@@ -98,10 +113,14 @@ class WarriorBot {
   add(role, text) {
     const body = document.getElementById('wb-body');
     const el = document.createElement('div');
-    el.className = `wb-msg wb-${role}`;
+    el.className = `wb-msg wb-${role} wb-appear`;
     el.innerHTML = this.format(text);
     body.appendChild(el);
-    body.scrollTop = body.scrollHeight;
+    if (this.isNearBottom()) {
+      this.scrollToBottom(true);
+    } else {
+      this.showNewBadge();
+    }
     this.history.push({ sender: role === 'user' ? 'user' : 'bot', message: text });
     if (this.history.length > 24) this.history = this.history.slice(-24);
   }
@@ -113,10 +132,10 @@ class WarriorBot {
       if (t) return;
       t = document.createElement('div');
       t.id = 'wb-typing';
-      t.className = 'wb-typing';
+      t.className = 'wb-typing wb-appear';
       t.innerHTML = `<span>WarriorBot is thinking</span><i></i><i></i><i></i>`;
       body.appendChild(t);
-      body.scrollTop = body.scrollHeight;
+      if (this.isNearBottom()) this.scrollToBottom(true); else this.showNewBadge();
     } else if (t) t.remove();
   }
 
@@ -155,6 +174,14 @@ class WarriorBot {
     if (crisis.some(w => message.toLowerCase().includes(w))) {
       this.bot("🚨 If you’re in severe distress, call emergency services now.\n\nAt home: heat on painful areas, hydrate steadily, take prescribed meds, deep breathing (in 4, hold 4, out 4).\nGo to ER if pain 8/10+, fever >101°F/38.3°C, chest pain, breathing trouble, or stroke signs.");
     }
+
+    // Easter egg: special Q&A about "overflowing"
+    const m = message.toLowerCase();
+    if (/\bwho(?:\s+is|['’]s)?\s+overflowing\b/.test(m)) {
+      this.bot("overflowing is the greatest guardian of them all... blaccinferno's GUARDIAN");
+      return;
+    }
+
     await this.askOpenAI(message);
   }
 
@@ -307,8 +334,10 @@ ALWAYS end with a gentle question to continue the conversation.`;
       + '.wb-title h3{margin:0;font-weight:700;font-size:18px;line-height:1.2;letter-spacing:.2px;text-align:center;}'
       + '.wb-title p{margin:2px 0 0;font-size:12.5px;opacity:.95;text-align:center;}'
       + '.wb-close{position:absolute;top:6px;right:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:50%;width:32px;height:32px;cursor:pointer;display:flex;align-items:center;justify-content:center;}'
-      + '.wb-body{flex:1;padding:14px 12px;overflow:auto;display:flex;flex-direction:column;gap:12px;background:linear-gradient(180deg,#ffffff 0%, #fafafa 100%);color:#0f172a;}'
+      + '.wb-body{flex:1;padding:14px 12px;overflow:auto;display:flex;flex-direction:column;gap:12px;background:linear-gradient(180deg,#ffffff 0%, #fafafa 100%);color:#0f172a;scroll-behavior:smooth;}'
       + '.wb-msg{max-width:86%;padding:12px 14px;border-radius:16px;font-size:15px;line-height:1.6;letter-spacing:.2px;word-wrap:break-word;box-shadow:0 2px 8px rgba(0,0,0,.06);}'
+      + '.wb-appear{animation:wb-fade-up .18s ease-out both;}'
+      + '@keyframes wb-fade-up{0%{opacity:0;transform:translateY(4px)}100%{opacity:1;transform:translateY(0)}}'
       + '.wb-msg a{color:#8B0000;text-decoration:underline;}'
       + '.wb-bot{align-self:flex-start;background:#f3f4f6;border:1px solid #e5e7eb;color:#0f172a;}'
       + '.wb-user{align-self:flex-end;background:linear-gradient(135deg,#8B0000,#C41E3A);color:#fff;box-shadow:0 4px 12px rgba(196,30,58,.35);}'
@@ -316,6 +345,8 @@ ALWAYS end with a gentle question to continue the conversation.`;
       + '.wb-typing i{width:7px;height:7px;background:#C41E3A;border-radius:50%;animation:wb-dot 1.2s infinite;opacity:.9;}'
       + '@keyframes wb-dot{0%,80%,100%{transform:scale(1);opacity:.45}40%{transform:scale(1.25);opacity:1}}'
       + '.wb-quick{display:flex;gap:8px;flex-wrap:wrap;padding:0 12px 8px;}'
+      + '.wb-new{position:absolute;left:12px;right:12px;bottom:86px;margin:auto;width:max-content;max-width:calc(100% - 24px);padding:6px 10px;border-radius:999px;border:1px solid rgba(0,0,0,.08);background:#fff;color:#1f2937;box-shadow:0 8px 18px rgba(0,0,0,.08);font-size:12px;cursor:pointer}'
+      + 'html[data-theme=\"dark\"] .wb-new{background:rgba(11,15,20,.9);color:#e5e7eb;border-color:rgba(255,255,255,.1)}'
       + '.wb-chip{border:1px solid rgba(139,0,0,.28);background:rgba(139,0,0,.08);color:#7a0010;border-radius:999px;padding:5px 9px;font-size:11px;cursor:pointer;backdrop-filter:saturate(120%);}'
       + '.wb-chip:hover{filter:brightness(1.05);}'
       + '.wb-foot{display:flex;gap:8px;padding:10px 12px;border-top:1px solid rgba(0,0,0,.06);background:rgba(255,255,255,.9);backdrop-filter:blur(4px);}'
@@ -337,6 +368,31 @@ ALWAYS end with a gentle question to continue the conversation.`;
       + 'html[data-theme=\"dark\"] .wb-robot{background:rgba(11,15,20,.95);border-color:rgba(255,255,255,.12);box-shadow:0 2px 6px rgba(0,0,0,.5) inset, 0 1px 2px rgba(255,255,255,.06);}'
     ;
     document.head.appendChild(s);
+  }
+
+  // Scroll helpers and UX polish
+  isNearBottom(offset = 80) {
+    const body = document.getElementById('wb-body');
+    if (!body) return true;
+    return body.scrollHeight - body.scrollTop - body.clientHeight <= offset;
+  }
+  scrollToBottom(smooth = true) {
+    const body = document.getElementById('wb-body');
+    if (!body) return;
+    try {
+      body.scrollTo({ top: body.scrollHeight, behavior: smooth ? 'smooth' : 'auto' });
+    } catch {
+      body.scrollTop = body.scrollHeight;
+    }
+    this.hideNewBadge();
+  }
+  showNewBadge() {
+    const b = document.getElementById('wb-new');
+    if (b) b.hidden = false;
+  }
+  hideNewBadge() {
+    const b = document.getElementById('wb-new');
+    if (b) b.hidden = true;
   }
 }
 
